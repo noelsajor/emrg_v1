@@ -1,0 +1,58 @@
+# =========================
+# Node
+# =========================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+
+# =========================
+# Environment Variables
+# =========================
+.env
+.env.*
+!.env.example
+
+# =========================
+# OS Files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Astro (site)
+# =========================
+site/node_modules/
+site/dist/
+site/.astro/
+
+# =========================
+# Sanity Studio
+# =========================
+studio/node_modules/
+studio/dist/
+studio/.sanity/
+studio/.cache/
+
+# =========================
+# Logs
+# =========================
+*.log
+
+# =========================
+# Vercel
+# =========================
+.vercel
+
+# =========================
+# Editor
+# =========================
+.vscode/
+.idea/
+
+# =========================
+# TypeScript
+# =========================
+*.tsbuildinfo
