@@ -3,5 +3,4 @@ import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
     site: 'https://emrg.studio',
-    integrations: [sitemap()],
 });
