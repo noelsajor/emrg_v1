@@ -1,0 +1,129 @@
+---
+---
+<section id="packages" aria-labelledby="packages-h">
+  <div class="packages-wrap">
+    <div class="sr">
+      <div class="section-rule">
+        <div class="section-rule-label" data-i18n="packages.rule">Pricing</div>
+        <div class="section-rule-line"></div>
+        <div class="section-rule-num">Tiered</div>
+      </div>
+      <h2 class="display" id="packages-h" data-i18n-html="packages.title">Modular <em>solutions</em>.</h2>
+      <p class="pillars-sub" data-i18n="packages.desc">Select your platform and choose a package that matches your current growth stage.</p>
+    </div>
+
+    <div class="platform-toggle sr sr-d1">
+      <button class="toggle-opt active" id="btn-shopify">Shopify</button>
+      <button class="toggle-opt" id="btn-woo">WooCommerce</button>
+    </div>
+
+    <div class="packages-grid sr sr-d2">
+      <!-- Starter -->
+      <div class="pkg">
+        <div class="pkg-header">
+          <h3 class="pkg-name-head" data-i18n="pkg.1.title">Starter</h3>
+          <p class="pkg-for" data-i18n="pkg.1.desc">For emerging brands ready to establish a professional presence.</p>
+        </div>
+        <div class="pkg-price-block">
+          <div class="pkg-price" id="pkg1-price">$4,500</div>
+          <div class="pkg-timeline" id="pkg1-time">2-3 Weeks</div>
+        </div>
+        <div class="pkg-features" id="pkg1-feats">
+          {['Custom Visual ID', 'Theme Setup', 'Basic SEO', 'Core Apps Setup'].map(f => (
+            <div class="pkg-feat">
+              <div class="feat-dash"></div>
+              <span>{f}</span>
+            </div>
+          ))}
+        </div>
+        <div class="pkg-cta">
+          <button class="btn-pkg">
+            <span data-i18n="packages.cta">Select Plan</span>
+            <span>→</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Growth -->
+      <div class="pkg featured">
+        <div class="pkg-header">
+          <div class="pkg-badge" data-i18n="pkg.badge">Most Popular</div>
+          <h3 class="pkg-name-head" data-i18n="pkg.2.title">Growth</h3>
+          <p class="pkg-for" data-i18n="pkg.2.desc">Engineered for brands scaling past $1M in annual revenue.</p>
+        </div>
+        <div class="pkg-price-block">
+          <div class="pkg-price" id="pkg2-price">$8,500</div>
+          <div class="pkg-timeline" id="pkg2-time">4-6 Weeks</div>
+        </div>
+        <div class="pkg-features" id="pkg2-feats">
+          {['Everything in Starter', 'Custom UI Design', 'Advanced SEO', 'CRO Baseline Audit', 'Integrations'].map(f => (
+            <div class="pkg-feat">
+              <div class="feat-dash"></div>
+              <span>{f}</span>
+            </div>
+          ))}
+        </div>
+        <div class="pkg-cta">
+          <button class="btn-pkg">
+            <span data-i18n="packages.cta">Select Plan</span>
+            <span>→</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Scale -->
+      <div class="pkg">
+        <div class="pkg-header">
+          <h3 class="pkg-name-head" data-i18n="pkg.3.title">Scale</h3>
+          <p class="pkg-for" data-i18n="pkg.3.desc">Enterprise-grade solutions for high-volume commerce engines.</p>
+        </div>
+        <div class="pkg-price-block">
+          <div class="pkg-price" id="pkg3-price">$16k+</div>
+          <div class="pkg-timeline" id="pkg3-time">8-12 Weeks</div>
+        </div>
+        <div class="pkg-features" id="pkg3-feats">
+          {['Everything in Growth', 'Custom Headless Build', 'ERP Integration', 'A/B Testing Cycle', '24/7 Support'].map(f => (
+            <div class="pkg-feat">
+              <div class="feat-dash"></div>
+              <span>{f}</span>
+            </div>
+          ))}
+        </div>
+        <div class="pkg-cta">
+          <button class="btn-pkg">
+            <span data-i18n="packages.cta">Select Plan</span>
+            <span>→</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+(function() {
+  var bS = document.getElementById('btn-shopify');
+  var bW = document.getElementById('btn-woo');
+  
+  var prices = {
+    shopify: ['$4,500', '$8,500', '$16k+'],
+    woo: ['$3,800', '$7,200', '$12k+']
+  };
+
+  function applyPlatform(p) {
+    if(!bS || !bW) return;
+    window.currentPlatform = p;
+    bS.classList.toggle('active', p === 'shopify');
+    bW.classList.toggle('active', p === 'woo');
+
+    document.getElementById('pkg1-price').textContent = prices[p][0];
+    document.getElementById('pkg2-price').textContent = prices[p][1];
+    document.getElementById('pkg3-price').textContent = prices[p][2];
+  }
+
+  if(bS) bS.addEventListener('click', function() { applyPlatform('shopify'); });
+  if(bW) bW.addEventListener('click', function() { applyPlatform('woo'); });
+  
+  window.applyPlatform = applyPlatform; // Expose for lang sync
+})();
+</script>

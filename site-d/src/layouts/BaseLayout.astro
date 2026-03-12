@@ -1,0 +1,491 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { 
+  title = "EMRG — Ecommerce Performance Studio",
+  description = "EMRG — Founder-led ecommerce performance studio. We design the brand, build the store, and engineer the growth system.",
+  image = "/og-image.jpg"
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content={description} data-i18n-attr="content:meta.description" />
+  <title>{title}</title>
+  
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} data-i18n-attr="content:meta.og_description" />
+  <meta property="og:image" content={new URL(image, Astro.site)} />
+  <meta property="og:type" content="website" />
+  
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"EMRG","url":"https://emrg.studio","email":"hello@emrg.studio"}</script>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.0/three.min.js" defer></script>
+</head>
+<body>
+  <div id="cursor"></div>
+  <div id="cursor-ring"></div>
+  <canvas id="canvas-bg"></canvas>
+  <div id="grain"></div>
+  <div id="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" data-i18n-attr="aria-label:aria.page_progress"></div>
+
+  <nav id="nav" aria-label="Main navigation" data-i18n-attr="aria-label:aria.main_nav">
+    <div class="nav-logo" tabindex="0" role="link" data-i18n-attr="aria-label:aria.emrg_home">
+      EMRG<span>.</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#services" data-i18n="nav.services">Services</a></li>
+      <li><a href="#work" data-i18n="nav.work">Work</a></li>
+      <li><a href="#process" data-i18n="nav.process">Process</a></li>
+      <li><a href="#packages" data-i18n="nav.packages">Packages</a></li>
+      <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
+      <li><a href="/blog">Blog</a></li>
+    </ul>
+    <div style="display: flex; align-items: center;">
+      <button class="nav-menu-btn-imm" id="mobile-menu-btn-imm" aria-haspopup="true" aria-controls="mobile-menu-imm" data-i18n-attr="aria-label:aria.open_menu">
+        <span data-i18n="nav.menu">Menu</span>
+      </button>
+      <a href="https://calendly.com" class="nav-cta" data-i18n="nav.book_call">Book a Call</a>
+      <button class="lang-toggle-imm" id="lang-toggle-desktop" aria-label="Switch language" data-i18n-attr="aria-label:aria.switch_lang">EN</button>
+    </div>
+  </nav>
+
+  <div id="mobile-menu-imm" class="mobile-menu-imm" role="dialog" aria-modal="true" aria-hidden="true" data-i18n-attr="aria-label:aria.mobile_menu">
+    <div class="mobile-menu-panel-imm">
+      <div class="mobile-menu-links-imm">
+        <a href="#services" class="mobile-menu-link-imm" data-i18n="nav.services" onclick="closeMobileMenu()">Services</a>
+        <a href="#work" class="mobile-menu-link-imm" data-i18n="nav.work" onclick="closeMobileMenu()">Work</a>
+        <a href="#process" class="mobile-menu-link-imm" data-i18n="nav.process" onclick="closeMobileMenu()">Process</a>
+        <a href="#packages" class="mobile-menu-link-imm" data-i18n="nav.packages" onclick="closeMobileMenu()">Packages</a>
+        <a href="#faq" class="mobile-menu-link-imm" data-i18n="nav.faq" onclick="closeMobileMenu()">FAQ</a>
+        <a href="/blog" class="mobile-menu-link-imm" onclick="closeMobileMenu()">Blog</a>
+      </div>
+      <div class="mobile-menu-actions-imm">
+        <button class="lang-toggle-imm" id="lang-toggle-mobile">EN</button>
+        <button class="btn-pkg-imm mobile-menu-close-imm" onclick="closeMobileMenu()" data-i18n="nav.close">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <aside id="scene-nav" aria-label="Section navigation" data-i18n-attr="aria-label:aria.section_nav">
+    <div class="scene-dot active" data-index="0" data-label="Home" data-i18n-attr="data-label:dots.home_label|aria-label:dots.home_aria"></div>
+    <div class="scene-dot" data-index="1" data-label="Results" data-i18n-attr="data-label:dots.results_label|aria-label:dots.results_aria"></div>
+    <div class="scene-dot" data-index="2" data-label="Services" data-i18n-attr="data-label:dots.services_label|aria-label:dots.services_aria"></div>
+    <div class="scene-dot" data-index="3" data-label="Work" data-i18n-attr="data-label:dots.work_label|aria-label:dots.work_aria"></div>
+    <div class="scene-dot" data-index="4" data-label="Process" data-i18n-attr="data-label:dots.process_label|aria-label:dots.process_aria"></div>
+    <div class="scene-dot" data-index="5" data-label="Packages" data-i18n-attr="data-label:dots.packages_label|aria-label:dots.packages_aria"></div>
+    <div class="scene-dot" data-index="6" data-label="Testimonials" data-i18n-attr="data-label:dots.testimonials_label|aria-label:dots.testimonials_aria"></div>
+    <div class="scene-dot" data-index="7" data-label="FAQ" data-i18n-attr="data-label:dots.faq_label|aria-label:dots.faq_aria"></div>
+    <div class="scene-dot" data-index="8" data-label="Contact" data-i18n-attr="data-label:dots.contact_label|aria-label:dots.contact_aria"></div>
+  </aside>
+
+  <div id="scroll-hint">
+    <span class="scroll-hint-text" data-i18n="scroll.hint">Scroll to explore</span>
+    <div class="scroll-hint-line"></div>
+  </div>
+
+  <main id="scroll-container">
+    <slot />
+  </main>
+
+  <script is:inline>
+    (function() {
+      'use strict';
+      
+      // We need to wait for Three.js to load if it's external, or just use the inline logic
+      // For simplicity and speed, I'll keep the script block similar to the original,
+      // but wrap it in an initialization that checks for dependencies.
+
+      const TOTAL_SCENES = 9;
+      let currentScene = 0;
+      let isTransitioning = false;
+      
+      // Help with hydration/initial delay
+      window.addEventListener('DOMContentLoaded', () => {
+        const scenes = document.querySelectorAll('.scene');
+        const dots = document.querySelectorAll('.scene-dot');
+        const progressBar = document.getElementById('progress-bar');
+        const scrollHint = document.getElementById('scroll-hint');
+
+        function updateDots() {
+          dots.forEach(d => d.classList.remove('active'));
+          const active = dots[currentScene];
+          if (active) active.classList.add('active');
+        }
+
+        function updateProgress() {
+          const p = (currentScene / (TOTAL_SCENES - 1)) * 100;
+          if (progressBar) progressBar.style.width = p + '%';
+        }
+
+        window.goToScene = function(idx) {
+          const target = Math.max(0, Math.min(TOTAL_SCENES - 1, idx));
+          if (target === currentScene || isTransitioning) return;
+          isTransitioning = true;
+
+          const allScenes = document.querySelectorAll('.scene');
+          const prev = allScenes[currentScene];
+          const next = allScenes[target];
+
+          if (prev) prev.classList.remove('active');
+          if (next) next.classList.add('active');
+
+          currentScene = target;
+          updateDots();
+          updateProgress();
+
+          if (currentScene > 0) scrollHint?.classList.add('hidden');
+          else scrollHint?.classList.remove('hidden');
+
+          setTimeout(() => { isTransitioning = false; }, 550);
+        };
+
+        dots.forEach(dot => {
+          dot.addEventListener('click', () => {
+            const idx = parseInt(dot.getAttribute('data-index'), 10);
+            if (!Number.isNaN(idx)) window.goToScene(idx);
+          });
+        });
+
+        window.addEventListener('keydown', (e) => {
+          if (isTransitioning) return;
+          if (e.key === 'ArrowDown' || e.key === 'PageDown') {
+            e.preventDefault();
+            window.goToScene(currentScene + 1);
+          }
+          if (e.key === 'ArrowUp' || e.key === 'PageUp') {
+            e.preventDefault();
+            window.goToScene(currentScene - 1);
+          }
+        });
+
+        let wheelLock = false;
+        window.addEventListener('wheel', (e) => {
+          if (wheelLock || isTransitioning) return;
+          wheelLock = true;
+          if (e.deltaY > 0) window.goToScene(currentScene + 1);
+          else if (e.deltaY < 0) window.goToScene(currentScene - 1);
+          setTimeout(() => { wheelLock = false; }, 650);
+        }, { passive: false });
+
+        let touchStartY = 0;
+        window.addEventListener('touchstart', (e) => {
+          touchStartY = e.touches[0].clientY;
+        }, { passive: true });
+
+        window.addEventListener('touchend', (e) => {
+          const endY = e.changedTouches[0].clientY;
+          const diff = touchStartY - endY;
+          if (Math.abs(diff) < 45) return;
+          if (diff > 0) window.goToScene(currentScene + 1);
+          else window.goToScene(currentScene - 1);
+        }, { passive: true });
+
+        // Cursor
+        const cursor = document.getElementById('cursor');
+        const ring = document.getElementById('cursor-ring');
+        let cx = window.innerWidth / 2;
+        let cy = window.innerHeight / 2;
+        let rx = cx;
+        let ry = cy;
+
+        window.addEventListener('mousemove', (e) => {
+          cx = e.clientX;
+          cy = e.clientY;
+          if (cursor) {
+            cursor.style.left = cx + 'px';
+            cursor.style.top = cy + 'px';
+          }
+        });
+
+        function animateRing() {
+          rx += (cx - rx) * 0.14;
+          ry += (cy - ry) * 0.14;
+          if (ring) {
+            ring.style.left = rx + 'px';
+            ring.style.top = ry + 'px';
+          }
+          requestAnimationFrame(animateRing);
+        }
+        animateRing();
+
+        function setHovering(state) {
+          if (state) document.body.classList.add('hovering');
+          else document.body.classList.remove('hovering');
+        }
+
+        document.querySelectorAll('a, button, .scene-dot, .nav-logo').forEach(el => {
+          el.addEventListener('mouseenter', () => setHovering(true));
+          el.addEventListener('mouseleave', () => setHovering(false));
+        });
+
+        // i18n Logic
+        const I18N = {
+          en: {
+            nav: { services: "Services", work: "Work", process: "Process", packages: "Packages", faq: "FAQ", book_call: "Book a Call", menu: "Menu", close: "Close" },
+            scroll: { hint: "Scroll to explore" },
+            dots: { 
+              home_label: "Home", home_aria: "Go to Home",
+              results_label: "Results", results_aria: "Go to Results",
+              services_label: "Services", services_aria: "Go to Services",
+              work_label: "Work", work_aria: "Go to Work",
+              process_label: "Process", process_aria: "Go to Process",
+              packages_label: "Packages", packages_aria: "Go to Packages",
+              testimonials_label: "Testimonials", testimonials_aria: "Go to Testimonials",
+              faq_label: "FAQ", faq_aria: "Go to FAQ",
+              contact_label: "Contact", contact_aria: "Go to Contact"
+            },
+            aria: { page_progress: "Page progress", section_nav: "Section navigation", main_nav: "Main navigation", emrg_home: "EMRG home", open_menu: "Open menu", close_menu: "Close menu", mobile_menu: "Menu", switch_lang: "Switch language" }
+            // ... truncated for layout, full dict applied in applyLang
+          },
+          es: {
+            nav: { services: "Servicios", work: "Work", process: "Proceso", packages: "Paquetes", faq: "FAQ", book_call: "Agendar llamada", menu: "Menú", close: "Cerrar" },
+            scroll: { hint: "Desliza para explorar" },
+            dots: {
+              home_label: "Inicio", home_aria: "Ir a Inicio",
+              results_label: "Resultados", results_aria: "Ir a Resultados",
+              services_label: "Servicios", services_aria: "Ir a Servicios",
+              work_label: "Work", work_aria: "Ir a Work",
+              process_label: "Proceso", process_aria: "Ir a Proceso",
+              packages_label: "Paquetes", packages_aria: "Ir a Paquetes",
+              testimonials_label: "Testimonios", testimonials_aria: "Ir a Testimonios",
+              faq_label: "FAQ", faq_aria: "Ir a FAQ",
+              contact_label: "Contacto", contact_aria: "Ir a Contacto"
+            },
+            aria: { page_progress: "Progreso de página", section_nav: "Navegación de secciones", main_nav: "Navegación principal", emrg_home: "Inicio de EMRG", open_menu: "Abrir menú", close_menu: "Cerrar menú", mobile_menu: "Menú", switch_lang: "Cambiar idioma" }
+          }
+        };
+
+        // Note: Full I18N dictionary would be huge here. 
+        // In a real Astro app, we'd probably use a library or separate file.
+        // For preservation, I'll include the full dictionary from the source HTML.
+        // [REPLACING WITH FULL DATA BELOW]
+      });
+
+      // (Restarting inner closure for clean logic)
+    })();
+  </script>
+
+  <script is:inline>
+    // Full I18N and Scripts preserved from source
+    (function() {
+      const I18N = {
+        en: {
+          meta: { description: "EMRG — Founder-led ecommerce performance studio. We design the brand, build the store, and engineer the growth system.", og_description: "We design the brand. We build the store. We engineer the growth system." },
+          aria: { page_progress: "Page progress", section_nav: "Section navigation", main_nav: "Main navigation", emrg_home: "EMRG home", open_menu: "Open menu", close_menu: "Close menu", mobile_menu: "Menu", select_platform: "Select platform", switch_lang: "Switch language" },
+          dots: { home_label: "Home", home_aria: "Go to Home", results_label: "Results", results_aria: "Go to Results", services_label: "Services", services_aria: "Go to Services", work_label: "Work", work_aria: "Go to Work", process_label: "Process", process_aria: "Go to Process", packages_label: "Packages", packages_aria: "Go to Packages", testimonials_label: "Testimonials", testimonials_aria: "Go to Testimonials", faq_label: "FAQ", faq_aria: "Go to FAQ", contact_label: "Contact", contact_aria: "Go to Contact" },
+          nav: { services: "Services", work: "Work", process: "Process", packages: "Packages", faq: "FAQ", book_call: "Book a Call", menu: "Menu", close: "Close" },
+          scroll: { hint: "Scroll to explore" },
+          hero: { eyebrow: "Founder-Led Ecommerce Performance Studio", title: "We Design.<br>We Build.<br>We <span class=\"accent\">Engineer.</span>", sub: "End-to-end ecommerce execution — brand identity, store engineering, and growth infrastructure for DTC brands built to win.", cta_book: "Book a 15-min Call →", cta_work: "View Work", chip1: "7-Day Launch", chip2: "CRO-First Execution", chip3: "Built for Scale" },
+          trust: { label: "By the numbers", title: "Results that<br><em>compound.</em>", stat1: "Ecommerce builds delivered", stat2: "Day average launch", stat3: "Average CVR improvement", stat4: "Conversion-focused by default", note: "Results vary by business, product, and market conditions." },
+          pillars: { label: "What we do", title: "Three pillars.<br><em>One system.</em>", sub: "Every engagement covers what moves the needle. Brand, store, and growth infrastructure — as one integrated system.", start: "Start →", p1: { title: "Brand & Packaging", tag1:"Brand identity", tag2:"Packaging design", tag3:"Visual systems", tag4:"Product storytelling" }, p2: { title: "Ecommerce Engineering", tag1:"Shopify / WooCommerce", tag2:"PDP systems", tag3:"Pixel & analytics", tag4:"SEO foundation" }, p3: { title: "Growth Systems", tag1:"Email & SMS flows", tag2:"Post-purchase", tag3:"Loyalty & referrals", tag4:"CRO sprints" } },
+          work: { label: "Featured work", title: "Outcomes,<br><em>not outputs.</em>", drag: "Drag to explore", c1: { tag: "Shopify · Brand Identity", desc: "Entering a saturated skincare market with no digital presence. Needed a brand and store capable of converting cold traffic from day one.", m1: "CVR vs<br>industry avg", m2: "Launch<br>timeline", m3: "AOV<br>lift" }, c2: { tag: "WooCommerce · Growth Systems", desc: "Existing store suffering from slow load times, poor mobile UX, and no post-purchase retention system. Rebuilt from the ground up.", m1: "Page load<br>time", m2: "Repeat purchase<br>rate", m3: "AOV" }, c3: { tag: "Shopify · Brand · CRO", desc: "Apparel brand pivoting from wholesale to DTC. Needed a flagship store and full brand system built for conversion from day one.", m1: "CVR<br>improvement", m2: "Full<br>launch", m3: "ROAS<br>month 1" } },
+          process: { label: "How we work", title: "Zero to live.<br><em>Days, not months.</em>", s1: { title: "Audit & Strategy", desc: "We assess brand, market, competitors, and conversion opportunities. Clear direction before a single pixel is designed." }, s2: { title: "Brand & UX Direction", desc: "Identity, visual language, and store architecture defined. Conversion logic at every decision." }, s3: { title: "Build & Integration", desc: "Store built, pixels fired, flows configured, SEO laid. Everything tested before it touches a customer." }, s4: { title: "Launch & Optimize", desc: "Go live with confidence. We monitor, iterate, and optimize based on real data — not assumptions." } },
+          packages: { label: "Packages", title: "Productized.<br><em>Predictable.</em>", popular: "Most Popular", p1: { name:"Launch Sprint", for:"For brands launching their first DTC store." }, p2: { name:"Growth Sprint", for:"Full-stack execution for brands ready to scale." }, p3: { name:"Growth Partner", for:"Ongoing senior-level execution, month to month.", time:"Ongoing · minimum 3 months" }, mo: "/mo", book: "Book a Call →", platform: { shopify: { p1_time: "5–7 day Shopify launch", p1_feats: ["Custom Shopify theme build","Up to 5 pages","Pixel setup (Meta, GA4)","SEO foundation","Performance optimization","Welcome email flow","2 rounds of revisions"], p2_time: "Full Shopify build · 10–14 days", p2_feats: ["Everything in Launch Sprint","Brand identity & packaging","Full pixel suite (Meta, GA4, TikTok)","Post-purchase email + SMS flows","CRO audit & UX sprint","Loyalty & referral setup","30-day post-launch support"] }, woo: { p1_time: "5–7 day WooCommerce launch", p1_feats: ["Custom WooCommerce build","Up to 5 pages","Pixel setup (Meta, GA4)","WooCommerce performance tuning","SEO foundation","Welcome email flow","2 rounds of revisions"], p2_time: "Full WooCommerce build · 12–16 days", p2_feats: ["Everything in Launch Sprint","Brand identity & packaging","Full pixel suite (Meta, GA4, TikTok)","Post-purchase email + SMS flows","Plugin optimization & CRO sprint","Loyalty & referral setup","30-day post-launch support"] } } },
+          testi: { label: "What founders say", title: "Trusted by<br><em>builders.</em>", q1: "We went from idea to live Shopify store in 6 days. The build quality and attention to conversion detail was unlike anything I had seen. First week traffic converted at nearly 4%.", q2: "They rebuilt our WooCommerce store and set up our email flows in under two weeks. Page speed improved dramatically. Repeat purchase rate climbed month over month.", q3: "EMRG doesn't feel like an agency. They work like a senior partner who actually cares about what happens after launch. The growth system they set up is still paying dividends six months later.", q4: "We came with just a product and a rough concept. Packaging, identity, store, tracking, flows — all done. Six days later we were live and profitable by week three.", r1: "Founder, Solera Skincare", r2: "Head of Marketing, Varka Nutrition", r3: "Founder, Dune Apparel", r4: "Founder, Lumos Wellness" },
+          faq: { label: "FAQ", title: "Straight<br><em>answers.</em>", contact: "Still have something else?<br><a href=\"mailto:hello@emrg.studio\">hello@emrg.studio</a>", q1: "Can you really launch in 7 days?", a1: "Yes. Our Launch Sprint is scoped specifically for a 5–7 day delivery cycle. This requires your assets and product info ready at kickoff. Larger builds take longer — we're always transparent upfront.", q2: "What do you need from us to get started?", a2: "For a store build: product info, existing brand assets if any, copy, and platform access. For brand work: a brief on your product, audience, and market positioning. We guide you through our onboarding process.", q3: "Do you handle packaging design?", a3: "Yes. Brand identity and packaging are part of our Growth Sprint and available as standalone engagements. Files delivered print-ready and spec'd for your manufacturer.", q4: "Do you support existing stores?", a4: "Absolutely. We work with established brands on CRO sprints, rebuilds, flow optimization, and growth systems. We'll audit your store and identify where revenue is being left on the table.", q5: "What about SEO?", a5: "Every store includes SEO foundation — structured data, clean URLs, optimized meta tags, image alt text, sitemap, and page speed optimization. Ongoing SEO content is available in our Growth Partner retainer.", q6: "What happens after launch?", a6: "Growth Sprint includes 30 days of post-launch support. After that, our Growth Partner retainer is available for brands that want continued optimization and execution. We don't disappear after handoff.", q7: "Do you manage paid ads?", a7: "We handle the infrastructure that makes ads perform — pixel setup, tracking, landing pages, and post-click experience. We don't run campaigns, but we ensure your store converts the traffic your ads send.", q8: "How do revisions work?", a8: "All packages include defined revision rounds (2 for Launch Sprint, 3 for Growth Sprint). Revisions are consolidated sessions. Additional rounds can be added if needed." },
+          cta: { eyebrow: "Ready to build", title: "Build something<br>that <em>converts.</em>", sub: "Tell us where you are. We'll show you where to go. One conversation is all it takes.", book: "Book a 15-min Call →", email: "Email us directly", note: "We reply within 24–48 hours." },
+          footer: { privacy: "Privacy", terms: "Terms", copy: "© 2025 EMRG. All rights reserved." }
+        },
+        es: {
+          meta: { description: "EMRG — Estudio de performance ecommerce liderado por founders. Diseñamos la marca, construimos la tienda y desarrollamos el sistema de crecimiento.", og_description: "Diseñamos la marca. Construimos la tienda. Desarrollamos el sistema de crecimiento." },
+          aria: { page_progress: "Progreso de página", section_nav: "Navegación de secciones", main_nav: "Navegación principal", emrg_home: "Inicio de EMRG", open_menu: "Abrir menú", close_menu: "Cerrar menú", mobile_menu: "Menú", select_platform: "Seleccionar plataforma", switch_lang: "Cambiar idioma" },
+          dots: { home_label: "Inicio", home_aria: "Ir a Inicio", results_label: "Resultados", results_aria: "Ir a Resultados", services_label: "Servicios", services_aria: "Ir a Servicios", work_label: "Work", work_aria: "Ir a Work", process_label: "Proceso", process_aria: "Ir a Proceso", packages_label: "Paquetes", packages_aria: "Ir a Paquetes", testimonials_label: "Testimonios", testimonials_aria: "Ir a Testimonios", faq_label: "FAQ", faq_aria: "Ir a FAQ", contact_label: "Contacto", contact_aria: "Ir a Contacto" },
+          nav: { services: "Servicios", work: "Work", process: "Proceso", packages: "Paquetes", faq: "FAQ", book_call: "Agendar llamada", menu: "Menú", close: "Cerrar" },
+          scroll: { hint: "Desliza para explorar" },
+          hero: { eyebrow: "Estudio de performance ecommerce liderado por founders", title: "Diseñamos.<br>Construimos.<br><span class=\"accent\">Optimizamos.</span>", sub: "Ejecución ecommerce end-to-end — identidad de marca, ingeniería de tienda e infraestructura de crecimiento para marcas DTC creadas para ganar.", cta_book: "Agendar llamada de 15 min →", cta_work: "Ver work", chip1: "Lanzamiento en 7 días", chip2: "Ejecución CRO-first", chip3: "Diseñado para escalar" },
+          trust: { label: "En números", title: "Resultados que<br><em>se acumulan.</em>", stat1: "Tiendas ecommerce entregadas", stat2: "Días promedio de lanzamiento", stat3: "Mejora promedio de CVR", stat4: "Conversión primero, por defecto", note: "Los resultados varían según negocio, producto y condiciones del mercado." },
+          pillars: { label: "Lo que hacemos", title: "Tres pilares.<br><em>Un sistema.</em>", sub: "Cada engagement cubre lo que mueve la aguja: marca, tienda e infraestructura de crecimiento — como un solo sistema integrado.", start: "Empezar →", p1: { title: "Marca & Packaging", tag1:"Identidad de marca", tag2:"Diseño de packaging", tag3:"Sistemas visuales", tag4:"Storytelling de producto" }, p2: { title: "Ingeniería Ecommerce", tag1:"Shopify / WooCommerce", tag2:"Sistemas de PDP", tag3:"Pixel & analítica", tag4:"Base SEO" }, p3: { title: "Sistemas de Crecimiento", tag1:"Flows de Email & SMS", tag2:"Post-compra", tag3:"Lealtad & referidos", tag4:"Sprints de CRO" } },
+          work: { label: "Work destacado", title: "Resultados,<br><em>no entregables.</em>", drag: "Arrastra para explorar", c1: { tag: "Shopify · Identidad de marca", desc: "Entrar a un mercado de skincare saturado sin presencia digital. Necesitaban una marca y una tienda capaces de convertir tráfico frío desde el día uno.", m1: "CVR vs<br>promedio industria", m2: "Tiempo de<br>lanzamiento", m3: "AOV<br>lift" }, c2: { tag: "WooCommerce · Sistemas de crecimiento", desc: "Tienda existente con carga lenta, mala UX móvil y sin retención post-compra. Reconstruida desde cero.", m1: "Tiempo de carga<br>página", m2: "Tasa de recompra<br>recurrente", m3: "AOV" }, c3: { tag: "Shopify · Marca · CRO", desc: "Marca de apparel pivotando de wholesale a DTC. Necesitaban una tienda flagship y un sistema de marca completo construido para convertir desde el día uno.", m1: "Mejora<br>de CVR", m2: "Lanzamiento<br>completo", m3: "ROAS<br>mes 1" } },
+          process: { label: "Cómo trabajamos", title: "De cero a live.<br><em>Días, no meses.</em>", s1: { title: "Auditoría & Estrategia", desc: "Evaluamos marca, mercado, competidores y oportunidades de conversión. Dirección clara antes de diseñar un solo píxel." }, s2: { title: "Dirección de Marca & UX", desc: "Definimos identidad, lenguaje visual y arquitectura de la tienda. Lógica de conversión en cada decisión." }, s3: { title: "Build & Integración", desc: "Construimos la tienda, configuramos pixels, flujos y SEO. Todo probado antes de llegar a un cliente." }, s4: { title: "Lanzar & Optimizar", desc: "Salimos live con confianza. Monitoreamos, iteramos y optimizamos con datos reales — no supuestos." } },
+          packages: { label: "Paquetes", title: "Productizado.<br><em>Predecible.</em>", popular: "Más popular", p1: { name:"Launch Sprint", for:"Para marcas que lanzan su primera tienda DTC." }, p2: { name:"Growth Sprint", for:"Ejecución full-stack para marcas listas para escalar." }, p3: { name:"Growth Partner", for:"Ejecución senior continua, mes a mes.", time:"Continuo · mínimo 3 meses" }, mo: "/mes", book: "Agendar llamada →", platform: { shopify: { p1_time: "Lanzamiento Shopify · 5–7 días", p1_feats: ["Build de theme Shopify a medida","Hasta 5 páginas","Setup de pixels (Meta, GA4)","Base SEO","Optimización de performance","Flow de bienvenida","2 rondas de revisiones"], p2_time: "Build Shopify completo · 10–14 días", p2_feats: ["Todo lo de Launch Sprint","Identidad de marca & packaging","Suite completa de pixels (Meta, GA4, TikTok)","Flows post-compra Email + SMS","Auditoría CRO & sprint UX","Setup de lealtad & referidos","Soporte post-lanzamiento 30 días"] }, woo: { p1_time: "Lanzamiento WooCommerce · 5–7 días", p1_feats: ["Build WooCommerce a medida","Hasta 5 páginas","Setup de pixels (Meta, GA4)","Tuning de performance WooCommerce","Base SEO","Flow de bienvenida","2 rondas de revisiones"], p2_time: "Build WooCommerce completo · 12–16 días", p2_feats: ["Todo lo de Launch Sprint","Identidad de marca & packaging","Suite completa de pixels (Meta, GA4, TikTok)","Flows post-compra Email + SMS","Optimización de plugins & sprint CRO","Setup de lealtad & referidos","Soporte post-lanzamiento 30 días"] } } },
+          testi: { label: "Lo que dicen los founders", title: "Confiado por<br><em>builders.</em>", q1: "Pasamos de idea a tienda Shopify live en 6 días. La calidad del build y el nivel de detalle en conversión fue diferente a todo lo que había visto. La primera semana convertimos casi al 4%.", q2: "Reconstruyeron nuestro WooCommerce y configuraron flujos de email en menos de dos semanas. La velocidad mejoró muchísimo. La recompra subió mes a mes.", q3: "EMRG no se siente como una agencia. Trabajan como un partner senior que de verdad se preocupa por lo que pasa después del launch. El sistema de crecimiento que montaron sigue pagando dividendos seis meses después.", q4: "Llegamos con un producto y una idea. Packaging, identidad, tienda, tracking, flows — todo listo. Seis días después estábamos live y rentables para la semana tres.", r1: "Founder, Solera Skincare", r2: "Head of Marketing, Varka Nutrition", r3: "Founder, Dune Apparel", r4: "Founder, Lumos Wellness" },
+          faq: { label: "FAQ", title: "Respuestas<br><em>directas.</em>", contact: "¿Tienes otra pregunta?<br><a href=\"mailto:hello@emrg.studio\">hello@emrg.studio</a>", q1: "¿De verdad pueden lanzar en 7 días?", a1: "Sí. Nuestro Launch Sprint está diseñado específicamente para un ciclo de entrega de 5–7 días. Esto requiere que tus assets e info de producto estén listos al kickoff. Builds más grandes toman más tiempo — siempre lo aclaramos desde el inicio.", q2: "¿Qué necesitan de nosotros para comenzar?", a2: "Para una tienda: info de producto, assets de marca (si existen), copy y accesos a la plataforma. Para marca: un brief de tu producto, audiencia y posicionamiento. Te guiamos en el onboarding.", q3: "¿Hacen diseño de packaging?", a3: "Sí. Identidad y packaging forman parte de Growth Sprint y también están disponibles como trabajo standalone. Entregamos archivos listos para imprenta y especificados para tu fabricante.", q4: "¿Trabajan con tiendas existentes?", a4: "Totalmente. Trabajamos con marcas establecidas en sprints de CRO, rebuilds, optimización de flows y sistemas de crecimiento. Auditamos tu tienda y encontramos dónde se está dejando dinero en la mesa.", q5: "¿Y el SEO?", a5: "Cada tienda incluye base SEO — datos estructurados, URLs limpias, meta tags optimizados, alt text, sitemap y optimización de velocidad. SEO de contenido ongoing está disponible en Growth Partner.", q6: "¿Qué pasa después del launch?", a6: "Growth Sprint incluye 30 días de soporte post-lanzamiento. Luego, Growth Partner está disponible para marcas que quieren optimización y ejecución continua. No desaparecemos después del handoff.", q7: "¿Manejan paid ads?", a7: "Nos encargamos de la infraestructura para que los ads rindan — pixels, tracking, landing pages y experiencia post-click. No corremos campañas, pero hacemos que la tienda convierta el tráfico que tus ads traen.", q8: "¿Cómo funcionan las revisiones?", a8: "Todos los paquetes incluyen rondas definidas de revisión (2 para Launch Sprint, 3 para Growth Sprint). Las revisiones son sesiones consolidadas. Se pueden agregar rondas extra si hace falta." },
+          cta: { eyebrow: "Listos para construir", title: "Construye algo<br>que <em>convierta.</em>", sub: "Cuéntanos dónde estás. Te mostramos a dónde ir. Una conversación es suficiente.", book: "Agendar llamada de 15 min →", email: "Escríbenos directo", note: "Respondemos en 24–48 hours." },
+          footer: { privacy: "Privacidad", terms: "Términos", copy: "© 2025 EMRG. Todos los derechos reservados." }
+        }
+      };
+
+      const STORAGE_KEY = 'emrg_lang';
+      const langButtons = [
+        document.getElementById('lang-toggle-desktop'),
+        document.getElementById('lang-toggle-mobile')
+      ].filter(Boolean);
+
+      function getByPath(obj, path) {
+        return path.split('.').reduce((acc, k) => (acc && acc[k] != null ? acc[k] : null), obj);
+      }
+
+      function setButtonLabels(lang) {
+        const label = (lang === 'es') ? 'ES' : 'EN';
+        langButtons.forEach(btn => { btn.textContent = label; });
+      }
+
+      function updatePackages(lang) {
+        const dict = I18N[lang] || I18N.en;
+        const tbS = document.getElementById('tbS');
+        const isShopify = tbS ? tbS.classList.contains('active') : true;
+        const platform = isShopify ? 'shopify' : 'woo';
+        const p = dict.packages && dict.packages.platform && dict.packages.platform[platform];
+        if (!p) return;
+
+        const pk1Time = document.getElementById('pk1-time');
+        const pk2Time = document.getElementById('pk2-time');
+        const pk1Feats = document.getElementById('pk1-feats');
+        const pk2Feats = document.getElementById('pk2-feats');
+
+        if (pk1Time) pk1Time.textContent = p.p1_time;
+        if (pk2Time) pk2Time.textContent = p.p2_time;
+        if (pk1Feats) pk1Feats.innerHTML = (p.p1_feats || []).map(f => `<div class="pkg-feat-imm">${f}</div>`).join('');
+        if (pk2Feats) pk2Feats.innerHTML = (p.p2_feats || []).map(f => `<div class="pkg-feat-imm">${f}</div>`).join('');
+      }
+
+      function applyLang(lang) {
+        const safeLang = (lang === 'es') ? 'es' : 'en';
+        const dict = I18N[safeLang] || I18N.en;
+
+        document.documentElement.setAttribute('lang', safeLang);
+        setButtonLabels(safeLang);
+
+        const nodes = document.querySelectorAll('[data-i18n]');
+        nodes.forEach(el => {
+          const key = el.getAttribute('data-i18n');
+          const val = getByPath(dict, key);
+          if (val == null) return;
+          const useHtml = el.getAttribute('data-i18n-html') === 'true';
+          if (useHtml) el.innerHTML = val;
+          else el.textContent = val;
+        });
+
+        const attrNodes = document.querySelectorAll('[data-i18n-attr]');
+        attrNodes.forEach(el => {
+          const spec = el.getAttribute('data-i18n-attr');
+          if (!spec) return;
+          spec.split('|').map(s => s.trim()).filter(Boolean).forEach(pair => {
+            const parts = pair.split(':');
+            if (parts.length < 2) return;
+            const attr = parts[0].trim();
+            const key = parts.slice(1).join(':').trim();
+            const val = getByPath(dict, key);
+            if (val == null) return;
+            el.setAttribute(attr, val);
+          });
+        });
+
+        updatePackages(safeLang);
+      }
+
+      function detectInitialLang() {
+        const stored = (localStorage.getItem(STORAGE_KEY) || '').toLowerCase();
+        if (stored === 'en' || stored === 'es') return stored;
+        const navLang = (navigator.language || '').toLowerCase();
+        return navLang.startsWith('es') ? 'es' : 'en';
+      }
+
+      function setLang(lang) {
+        const safeLang = (lang === 'es') ? 'es' : 'en';
+        localStorage.setItem(STORAGE_KEY, safeLang);
+        applyLang(safeLang);
+      }
+
+      function toggleLang() {
+        const current = (document.documentElement.getAttribute('lang') || 'en').toLowerCase();
+        setLang(current === 'es' ? 'en' : 'es');
+      }
+
+      // Mobile menu
+      const mobileMenu = document.getElementById('mobile-menu-imm');
+      const mobileBtn = document.getElementById('mobile-menu-btn-imm');
+
+      window.closeMobileMenu = function() {
+        if (!mobileMenu) return;
+        mobileMenu.classList.remove('open');
+        mobileMenu.setAttribute('aria-hidden', 'true');
+        if (mobileBtn) mobileBtn.setAttribute('aria-expanded', 'false');
+      };
+
+      function openMobileMenu() {
+        if (!mobileMenu) return;
+        mobileMenu.classList.add('open');
+        mobileMenu.setAttribute('aria-hidden', 'false');
+        if (mobileBtn) mobileBtn.setAttribute('aria-expanded', 'true');
+      }
+
+      if (mobileBtn) {
+        mobileBtn.addEventListener('click', () => {
+          if (mobileMenu?.classList.contains('open')) window.closeMobileMenu();
+          else openMobileMenu();
+        });
+      }
+
+      langButtons.forEach(btn => {
+        btn.addEventListener('click', toggleLang);
+      });
+
+      setLang(detectInitialLang());
+
+      // Three.js Background
+      let renderer, scene3d, camera, mesh, clock;
+      function initThree() {
+        const canvas = document.getElementById('canvas-bg');
+        if (!canvas || typeof THREE === 'undefined') return;
+        renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        scene3d = new THREE.Scene();
+        camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 100);
+        camera.position.z = 4.2;
+        clock = new THREE.Clock();
+        const geo = new THREE.PlaneGeometry(8, 8, 80, 80);
+        const mat = new THREE.MeshBasicMaterial({ color: 0x00e5c8, transparent: true, opacity: 0.07, wireframe: true });
+        mesh = new THREE.Mesh(geo, mat);
+        mesh.rotation.x = -0.65;
+        mesh.position.y = -0.4;
+        scene3d.add(mesh);
+        animateThree();
+      }
+      function animateThree() {
+        requestAnimationFrame(animateThree);
+        const t = clock.getElapsedTime();
+        if (mesh) {
+          const pos = mesh.geometry.attributes.position;
+          for (let i = 0; i < pos.count; i++) {
+            const x = pos.getX(i);
+            const y = pos.getY(i);
+            const z = Math.sin(x * 0.8 + t * 0.8) * 0.08 + Math.cos(y * 0.9 + t * 0.7) * 0.08;
+            pos.setZ(i, z);
+          }
+          pos.needsUpdate = true;
+          mesh.rotation.z = t * 0.03;
+        }
+        renderer.render(scene3d, camera);
+      }
+      
+      window.addEventListener('load', () => {
+        if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          initThree();
+        }
+      });
+      window.addEventListener('resize', () => {
+        if (!renderer) return;
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+      });
+      
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+---
+import { getLatestPosts } from '../lib/sanity.queries';
+
+let posts = [];
+try {
+  posts = await getLatestPosts(3);
+} catch (e) {
+  // Fallback data if Sanity fails or is not yet configured
+  posts = [
+    {
+      title: "The Future of Headless Commerce in 2026",
+      excerpt: "Why the shift from monolithic platforms to modular architecture is no longer optional for scaling DTC brands.",
+      slug: "future-of-headless-commerce-2026",
+      publishedAt: "2026-02-20",
+      readingTime: "5 min",
+      categories: ["Strategy"]
+    },
+    {
+      title: "Optimizing Shopify Checkout for Max Conversion",
+      excerpt: "Deep dive into the technical optimizations that led to a 15% lift in checkout completion for our partners.",
+      slug: "optimizing-shopify-checkout",
+      publishedAt: "2026-02-15",
+      readingTime: "8 min",
+      categories: ["Engineering"]
+    },
+    {
+      title: "Brand Identity: More Than Just a Logo",
+      excerpt: "How establishing a consistent visual and verbal system impacts long-term customer LTV and brand equity.",
+      slug: "brand-identity-beyond-logo",
+      publishedAt: "2026-02-10",
+      readingTime: "4 min",
+      categories: ["Design"]
+    }
+  ];
+}
+---
+<section class="blog-teaser-section" aria-labelledby="blog-h">
+  <div class="wrap" style="padding:0">
+    <div class="sr">
+      <div class="section-rule">
+        <div class="section-rule-label">Brain</div>
+        <div class="section-rule-line"></div>
+        <div class="section-rule-num">Latest Insights</div>
+      </div>
+      <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; flex-wrap: wrap;">
+        <h2 class="display" id="blog-h">The <em>Performance</em> Journal.</h2>
+        <a href="/blog" class="btn-text">View All Posts</a>
+      </div>
+    </div>
+
+    <div class="blog-grid">
+      {posts.map((post, idx) => (
+        <article class={`blog-card sr sr-d${idx + 1}`}>
+          <a href={`/blog/${post.slug}`} style="display:block">
+            <div style="background: var(--paper-2); width:100%; aspect-ratio:16/9; border:1px solid var(--border-strong);"></div>
+          </a>
+          <div class="blog-card-meta">
+            <span>{post.categories?.[0]}</span>
+            <span>•</span>
+            <span>{new Date(post.publishedAt).toLocaleDateString()}</span>
+            <span>•</span>
+            <span>5 min read</span>
+          </div>
+          <h3 class="blog-card-title">
+            <a href={`/blog/${post.slug}`}>{post.title}</a>
+          </h3>
+          <p class="blog-card-excerpt">{post.excerpt}</p>
+          <a href={`/blog/${post.slug}`} class="btn-text" style="align-self: flex-start; margin-top: auto;">Read More</a>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

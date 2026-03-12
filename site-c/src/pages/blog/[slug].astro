@@ -1,0 +1,104 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import BlogCard from '../../components/BlogCard.astro';
+import { generateSchemaMarkup, generateBreadcrumbSchema } from '../../lib/seo.ts';
+
+// export async function getStaticPaths() {
+//   const posts = await client.fetch(`*[_type == "post"]{ "slug": slug.current }`);
+//   return posts.map(post => ({ params: { slug: post.slug } }));
+// }
+
+// Mock static paths for now
+export function getStaticPaths() {
+  return [
+    { params: { slug: 'future-dtc-architecture' } },
+    { params: { slug: 'brand-identity-growth' } }
+  ];
+}
+
+const { slug } = Astro.params;
+
+// Mock data
+const post = {
+  title: "The Future of DTC Architecture",
+  excerpt: "How headless systems are changing the conversion landscape for growing brands.",
+  publishedAt: "2025-02-24",
+  author: { name: "EMRG Team" },
+  categories: ["Engineering"],
+  readingTime: 5,
+  body: [
+    { _type: 'block', children: [{ text: "Headless commerce is no longer just a buzzword. It's the infrastructure required to hit the sub-second load times that modern DTC consumers expect. By decoupling the presentation layer (Astro) from the commerce backend (Shopify), brands can deliver experiences that are both visually stunning and technically superior." }] }
+  ],
+  relatedPosts: []
+};
+
+const jsonLd = generateSchemaMarkup({
+  title: post.title,
+  description: post.excerpt,
+  type: 'article',
+  publishedAt: post.publishedAt,
+  authorName: post.author.name
+});
+
+const breadcrumbs = generateBreadcrumbSchema([
+  { name: 'Home', item: 'https://emrg.studio/' },
+  { name: 'Blog', item: 'https://emrg.studio/blog' },
+  { name: post.title, item: `https://emrg.studio/blog/${slug}` }
+]);
+---
+
+<BaseLayout title={`${post.title} — EMRG`} description={post.excerpt}>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbs)} />
+  
+  <Header />
+
+  <article style="padding: 160px 80px 80px; min-height: 100vh; position: relative; z-index: 5;">
+    <div style="max-width: 800px; margin: 0 auto;">
+      <div class="case-tag-imm" style="margin-bottom: 24px;">
+        {post.categories[0]} · {post.readingTime} min read
+      </div>
+      <h1 class="hero-title" style="font-size: clamp(2.5rem, 6vw, 4.5rem); margin-bottom: 32px; line-height: 1.1;">{post.title}</h1>
+      <p class="hero-sub" style="margin: 0 0 48px; max-width: 100%; font-size: 1.25rem;">{post.excerpt}</p>
+      
+      <div style="padding: 24px 0; border-top: 1px solid var(--rim); border-bottom: 1px solid var(--rim); margin-bottom: 64px; display: flex; justify-content: space-between; align-items: center;">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <div style="width: 40px; height: 40px; background: var(--teal); border-radius: 50%;"></div>
+          <div>
+            <div style="font-size: 0.8rem; font-weight: 600;">{post.author.name}</div>
+            <div style="font-size: 0.65rem; color: var(--mist);">Ecommerce Strategist</div>
+          </div>
+        </div>
+        <div style="font-size: 0.65rem; color: var(--mist); text-transform: uppercase;">
+          Published {new Date(post.publishedAt).toLocaleDateString()}
+        </div>
+      </div>
+
+      <div class="prose" style="color: var(--smoke); line-height: 1.8; font-size: 1.1rem; letter-spacing: 0.01em;">
+        {post.body.map(block => (
+          <p style="margin-bottom: 24px;">{block.children[0].text}</p>
+        ))}
+      </div>
+
+      <div style="margin-top: 100px; padding: 64px; border: 1px solid var(--teal); background: rgba(0,229,200,0.05); text-align: center;">
+        <h2 class="scene-title" style="font-size: 2.5rem; margin-bottom: 24px;">Ready to engineer<br>your growth?</h2>
+        <a href="https://cal.com/emrg" class="btn-glow">Book a Call →</a>
+      </div>
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+	body {
+		overflow: auto !important;
+		cursor: default !important;
+	}
+	#cursor, #cursor-ring, #canvas-bg, #scene-nav, #scroll-hint {
+		display: none !important;
+	}
+	#nav {
+		background: rgba(2,4,8,0.8);
+		backdrop-filter: blur(12px);
+	}
+</style>

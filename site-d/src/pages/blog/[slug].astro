@@ -1,0 +1,244 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BlogCard from '../../components/BlogCard.astro';
+import { client, urlFor } from '../../lib/sanity.client';
+import { postBySlugQuery } from '../../lib/sanity.queries';
+import { generateSchemaMarkup, generateBreadcrumbSchema } from '../../lib/seo';
+
+export async function getStaticPaths() {
+  let posts = [];
+  try {
+    posts = await client.fetch(`*[_type == "post" && defined(slug.current)]{ "slug": slug.current }`);
+  } catch (e) {
+    console.warn("Sanity fetch failed for static paths, using placeholders");
+    posts = [
+      { slug: 'future-dtc-architecture' },
+      { slug: 'brand-identity-growth' },
+      { slug: 'post-purchase-optimization' }
+    ];
+  }
+  return posts.map(post => ({ params: { slug: post.slug } }));
+}
+
+const { slug } = Astro.params;
+
+let post;
+try {
+  post = await client.fetch(postBySlugQuery, { slug });
+} catch (e) {
+  console.warn(`Sanity fetch failed for slug ${slug}, using fallback mock data`);
+}
+
+// Fallback / Mock data if fetch fails
+if (!post) {
+  const mocks = {
+    'future-dtc-architecture': {
+      title: "The Future of DTC Architecture",
+      excerpt: "How headless systems are changing the conversion landscape for growing brands.",
+      publishedAt: new Date().toISOString(),
+      author: { name: "EMRG Team" },
+      categories: ["Engineering"],
+      readingTime: 5,
+      body: [
+        { _type: 'block', children: [{ text: "Headless commerce is no longer just a buzzword. It's the infrastructure required to hit the sub-second load times that modern DTC consumers expect. By decoupling the presentation layer (Astro) from the commerce backend (Shopify), brands can deliver experiences that are both visually stunning and technically superior." }] }
+      ],
+      relatedPosts: []
+    }
+  };
+  post = mocks[slug] || {
+    title: "Insight Entry",
+    excerpt: "Detailed ecommerce intelligence and engineering strategy.",
+    publishedAt: new Date().toISOString(),
+    author: { name: "EMRG Team" },
+    categories: ["Strategy"],
+    readingTime: 5,
+    body: [{ _type: 'block', children: [{ text: "Content loading or unavailable." }] }],
+    relatedPosts: []
+  };
+}
+
+const jsonLd = generateSchemaMarkup({
+  title: post.title,
+  description: post.excerpt,
+  type: 'article',
+  publishedAt: post.publishedAt,
+  authorName: post.author?.name
+});
+
+const breadcrumbs = generateBreadcrumbSchema([
+  { name: 'Home', item: 'https://emrg.studio/' },
+  { name: 'Blog', item: 'https://emrg.studio/blog' },
+  { name: post.title, item: `https://emrg.studio/blog/${slug}` }
+]);
+---
+
+<BaseLayout title={`${post.title} — EMRG`} description={post.excerpt}>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbs)} />
+  
+  <article class="post-article">
+    <div class="post-container">
+      <div class="case-tag-imm" style="margin-bottom: 24px;">
+        {post.categories?.[0]} · {post.readingTime} min read
+      </div>
+      <h1 class="hero-title post-title">{post.title}</h1>
+      <p class="hero-sub post-excerpt">{post.excerpt}</p>
+      
+      <div class="post-meta">
+        <div class="post-author">
+          <div class="author-avatar"></div>
+          <div>
+            <div class="author-name">{post.author?.name || "EMRG"}</div>
+            <div class="author-role">Ecommerce Strategist</div>
+          </div>
+        </div>
+        <div class="post-date">
+          Published {new Date(post.publishedAt).toLocaleDateString()}
+        </div>
+      </div>
+
+      <div class="prose">
+        {post.body?.map(block => (
+          block._type === 'block' ? 
+            <p>{block.children?.[0]?.text}</p> : 
+            block._type === 'image' ? 
+            <img src={urlFor(block).url()} alt={block.alt || ""} /> : null
+        ))}
+      </div>
+
+      <div class="post-cta">
+        <h2 class="scene-title post-cta-title">Ready to engineer<br />your growth?</h2>
+        <a href="https://cal.com/emrg" class="btn-glow">Book a Call →</a>
+      </div>
+
+      {post.relatedPosts?.length > 0 && (
+        <div class="related-section">
+          <h3 class="scene-label">Related Reading</h3>
+          <div class="blog-grid">
+            {post.relatedPosts.map(p => <BlogCard post={p} showExcerpt={false} />)}
+          </div>
+        </div>
+      )}
+    </div>
+  </article>
+</BaseLayout>
+
+<style is:global>
+	body {
+		overflow: auto !important;
+		cursor: default !important;
+	}
+	#cursor, #cursor-ring, #canvas-bg, #scene-nav, #scroll-hint {
+		display: none !important;
+	}
+	#nav {
+		background: rgba(2,4,8,0.8);
+		backdrop-filter: blur(12px);
+		border-bottom: 1px solid var(--rim);
+	}
+</style>
+
+<style>
+  .post-article {
+    padding: 160px 80px 80px;
+    min-height: 100vh;
+    position: relative;
+    z-index: 5;
+    background: var(--void);
+  }
+  .post-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+  }
+  .post-title {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    margin-bottom: 32px;
+    line-height: 1.1;
+    text-align: left;
+  }
+  .post-excerpt {
+    margin: 0 0 48px;
+    max-width: 100%;
+    font-size: 1.25rem;
+    color: var(--smoke);
+    text-align: left;
+  }
+  .post-meta {
+    padding: 24px 0;
+    border-top: 1px solid var(--rim);
+    border-bottom: 1px solid var(--rim);
+    margin-bottom: 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .post-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .author-avatar {
+    width: 40px;
+    height: 40px;
+    background: var(--teal);
+    border-radius: 50%;
+  }
+  .author-name {
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+  .author-role {
+    font-size: 0.65rem;
+    color: var(--mist);
+  }
+  .post-date {
+    font-size: 0.65rem;
+    color: var(--mist);
+    text-transform: uppercase;
+  }
+  .prose {
+    color: var(--smoke);
+    line-height: 1.8;
+    font-size: 1.1rem;
+    letter-spacing: 0.01em;
+  }
+  .prose p {
+    margin-bottom: 24px;
+  }
+  .prose img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin: 40px 0;
+  }
+  .post-cta {
+    margin-top: 100px;
+    padding: 64px;
+    border: 1px solid var(--teal);
+    background: rgba(0,229,200,0.05);
+    text-align: center;
+  }
+  .post-cta-title {
+    font-size: 2.5rem;
+    margin-bottom: 24px;
+  }
+  .related-section {
+    margin-top: 100px;
+  }
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 24px;
+    margin-top: 32px;
+  }
+  @media (max-width: 768px) {
+    .post-article {
+      padding: 120px 24px 64px;
+    }
+    .post-meta {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+    }
+  }
+</style>

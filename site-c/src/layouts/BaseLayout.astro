@@ -1,0 +1,60 @@
+---
+import '../styles/global.css';
+
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const { 
+  title = "EMRG — Ecommerce Performance Studio", 
+  description = "EMRG — Founder-led ecommerce performance studio. We design the brand, build the store, and engineer the growth system." 
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content={description}>
+		<title>{title}</title>
+		
+		<link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
+		
+		<meta property="og:title" content={title}>
+		<meta property="og:description" content={description}>
+		<meta property="og:image" content="https://emrg.studio/og-image.jpg">
+		<meta property="og:url" content={new URL(Astro.url.pathname, Astro.site)}>
+		<meta property="og:type" content="website">
+		
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:title" content={title}>
+		<meta name="twitter:description" content={description}>
+		
+		<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"EMRG","url":"https://emrg.studio","email":"hello@emrg.studio"}</script>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<!-- Cursor -->
+		<div id="cursor" aria-hidden="true"></div>
+		<div id="cursor-ring" aria-hidden="true"></div>
+
+		<!-- Three.js canvas -->
+		<canvas id="canvas-bg" aria-hidden="true"></canvas>
+
+		<!-- Grain -->
+		<div id="grain" aria-hidden="true"></div>
+
+		<!-- Progress bar -->
+		<div id="progress-bar" role="progressbar" aria-label="Page progress" aria-valuemin="0" aria-valuemax="100"></div>
+
+		<slot />
+
+		<!-- Three.js CDN -->
+		<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+		<script src="../scripts/main.js"></script>
+	</body>
+</html>

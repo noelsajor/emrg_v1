@@ -1,0 +1,100 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BlogCard from '../../components/BlogCard.astro';
+import { client } from '../../lib/sanity.client';
+import { paginatedPostsQuery } from '../../lib/sanity.queries';
+
+let posts = [];
+try {
+  posts = await client.fetch(paginatedPostsQuery, { start: 0, end: 12 });
+} catch (e) {
+  console.warn("Sanity fetch failed on blog index, using placeholders", e);
+  posts = [
+    {
+      title: "The Future of DTC Architecture",
+      slug: "future-dtc-architecture",
+      excerpt: "How headless systems are changing the conversion landscape for growing brands.",
+      publishedAt: new Date().toISOString(),
+      readingTime: 5,
+      categories: ["Engineering"]
+    },
+    {
+      title: "Brand Identity as a Growth Lever",
+      slug: "brand-identity-growth",
+      excerpt: "Why performance brands are investing in high-fidelity design early.",
+      publishedAt: new Date().toISOString(),
+      readingTime: 4,
+      categories: ["Design"]
+    },
+    {
+      title: "Optimizing the Post-Purchase Flow",
+      slug: "post-purchase-optimization",
+      excerpt: "Increasing LTV through strategic email and SMS infrastructure.",
+      publishedAt: new Date().toISOString(),
+      readingTime: 6,
+      categories: ["Growth"]
+    }
+  ];
+}
+---
+
+<BaseLayout title="Insights & Research — EMRG" description="Performance ecommerce insights, engineering deep dives, and growth strategy for DTC founders.">
+	<main class="blog-main">
+		<div class="blog-container">
+			<div class="scene-label">Insights</div>
+			<h1 class="hero-title blog-hero-title">The EMRG<br><span class="accent">Intelligence.</span></h1>
+			
+			<div class="blog-grid">
+				{posts.map(post => <BlogCard post={post} />)}
+			</div>
+		</div>
+	</main>
+</BaseLayout>
+
+<style is:global>
+	body {
+		overflow: auto !important;
+		cursor: default !important;
+	}
+	#cursor, #cursor-ring, #canvas-bg, #scene-nav, #scroll-hint {
+		display: none !important;
+	}
+	#nav {
+		background: rgba(2,4,8,0.8);
+		backdrop-filter: blur(12px);
+		border-bottom: 1px solid var(--rim);
+	}
+</style>
+
+<style>
+  .blog-main {
+    padding: 160px 80px 80px;
+    min-height: 100vh;
+    position: relative;
+    z-index: 5;
+    background: var(--void);
+  }
+  .blog-container {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .blog-hero-title {
+    font-size: clamp(3rem, 7vw, 6rem);
+    margin-bottom: 64px;
+    text-transform: uppercase;
+    text-align: left;
+  }
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 24px;
+  }
+  @media (max-width: 768px) {
+    .blog-main {
+      padding: 120px 24px 64px;
+    }
+    .blog-hero-title {
+      margin-bottom: 40px;
+    }
+  }
+</style>

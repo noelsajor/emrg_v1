@@ -1,0 +1,194 @@
+---
+import '../styles/global.css';
+import i18nData from '../data/i18n.json';
+
+interface Props {
+  title?: string;
+  description?: string;
+  ogTitle?: string;
+  ogDescription?: string;
+}
+
+const { 
+  title = "EMRG — Ecommerce Performance Studio", 
+  description = "EMRG is a founder-led ecommerce performance studio. We design the brand, build the store, and engineer the growth system for DTC product brands.",
+  ogTitle,
+  ogDescription
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" id="meta-desc" content={description}>
+    <meta name="robots" content="index, follow">
+    <title>{title}</title>
+
+    <meta property="og:title" content={ogTitle || title}>
+    <meta property="og:description" id="og-desc" content={ogDescription || description}>
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://emrg.studio">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "EMRG",
+      "url": "https://emrg.studio",
+      "description": "Founder-led ecommerce performance studio.",
+      "email": "hello@emrg.studio"
+    }
+    </script>
+</head>
+<body>
+    <slot />
+
+    <script is:inline define:vars={{ i18nData }}>
+    (function() {
+      'use strict';
+      var I18N = i18nData;
+      var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      /* DETECT & APPLY LANG */
+      function detectLang() {
+        var stored = null;
+        try { stored = localStorage.getItem('emrg_lang'); } catch(e) {}
+        if (stored === 'en' || stored === 'es') return stored;
+        var browser = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+        return browser.indexOf('es') === 0 ? 'es' : 'en';
+      }
+
+      function applyLang(lang) {
+        var dict = I18N[lang];
+        if (!dict) return;
+        document.documentElement.lang = lang;
+        
+        var md = document.getElementById('meta-desc');
+        if (md) md.setAttribute('content', dict['meta.desc']);
+        var og = document.getElementById('og-desc');
+        if (og) og.setAttribute('content', dict['og.desc']);
+
+        document.querySelectorAll('[data-i18n]').forEach(function(el) {
+          var val = dict[el.getAttribute('data-i18n')];
+          if (val !== undefined) el.textContent = val;
+        });
+
+        document.querySelectorAll('[data-i18n-html]').forEach(function(el) {
+          var val = dict[el.getAttribute('data-i18n-html')];
+          if (val !== undefined) el.innerHTML = val;
+        });
+
+        // Sync platform toggle if exists
+        if (window.applyPlatform) window.applyPlatform(window.currentPlatform || 'shopify');
+
+        // Update buttons
+        var isEs = lang === 'es';
+        ['lang-en', 'lang-en-mob'].forEach(id => {
+            const btn = document.getElementById(id);
+            if(btn) { btn.classList.toggle('active', !isEs); btn.setAttribute('aria-pressed', !isEs); }
+        });
+        ['lang-es', 'lang-es-mob'].forEach(id => {
+            const btn = document.getElementById(id);
+            if(btn) { btn.classList.toggle('active', isEs); btn.setAttribute('aria-pressed', isEs); }
+        });
+      }
+
+      function switchLang(lang) {
+        try { localStorage.setItem('emrg_lang', lang); } catch(e) {}
+        applyLang(lang);
+      }
+
+      /* NAV SCROLL */
+      var nav = document.getElementById('nav');
+      var sects = document.querySelectorAll('section[id]');
+      window.addEventListener('scroll', function() {
+        if(nav) nav.classList.toggle('scrolled', window.scrollY > 40);
+        var cur = '';
+        sects.forEach(function(s) { if (window.scrollY >= s.offsetTop - 120) cur = s.id; });
+        document.querySelectorAll('.nav-links a').forEach(function(a) { 
+            a.classList.toggle('active', a.getAttribute('href') === '#' + cur); 
+        });
+      }, { passive: true });
+
+      /* MOBILE MENU */
+      var ham = document.getElementById('hamburger');
+      var mob = document.getElementById('mobile-menu');
+      var closeMenu = function() {
+        if(!ham || !mob) return;
+        ham.classList.remove('open');
+        ham.setAttribute('aria-expanded', 'false');
+        mob.classList.remove('open');
+        mob.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      };
+      if(ham && mob) {
+          ham.addEventListener('click', function() {
+            var isOpen = !mob.classList.contains('open');
+            ham.classList.toggle('open', isOpen);
+            ham.setAttribute('aria-expanded', isOpen);
+            mob.classList.toggle('open', isOpen);
+            mob.setAttribute('aria-hidden', !isOpen);
+            document.body.style.overflow = isOpen ? 'hidden' : '';
+          });
+          document.querySelectorAll('.mm-link').forEach(function(l) { l.addEventListener('click', closeMenu); });
+      }
+
+      /* FAQ */
+      document.querySelectorAll('.faq-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          var exp = btn.getAttribute('aria-expanded') === 'true';
+          document.querySelectorAll('.faq-btn').forEach(function(b) {
+            b.setAttribute('aria-expanded', 'false');
+            var ans = document.getElementById(b.getAttribute('aria-controls'));
+            if (ans) ans.classList.remove('open');
+          });
+          if (!exp) {
+            btn.setAttribute('aria-expanded', 'true');
+            var ans2 = document.getElementById(btn.getAttribute('aria-controls'));
+            if (ans2) ans2.classList.add('open');
+          }
+        });
+      });
+
+      /* SCROLL REVEAL */
+      if (!reduced) {
+        var obs = new IntersectionObserver(function(entries) {
+          entries.forEach(function(e) { if (e.isIntersecting) { e.target.classList.add('vis'); obs.unobserve(e.target); } });
+        }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
+        document.querySelectorAll('.sr').forEach(function(el) { obs.observe(el); });
+      } else {
+        document.querySelectorAll('.sr').forEach(function(el) { el.classList.add('vis'); });
+      }
+
+      /* PLATFORM TOGGLE LOGIC (Simplified for global access) */
+      window.currentPlatform = 'shopify';
+      window.applyPlatform = function(p) {
+        window.currentPlatform = p;
+        var lang = document.documentElement.lang || 'en';
+        // Simplified mapping for the toggle logic
+        const pkg1Time = document.getElementById('pkg1-time');
+        if(!pkg1Time) return;
+        // The implementation in the components will handle the content injection
+        // This is just to ensure the toggle works if triggered before component hydration
+      };
+
+      /* INIT */
+      const initialLang = detectLang();
+      applyLang(initialLang);
+
+      /* Global Listeners */
+      document.addEventListener('click', function(e) {
+          if(e.target.id === 'lang-en' || e.target.id === 'lang-en-mob') switchLang('en');
+          if(e.target.id === 'lang-es' || e.target.id === 'lang-es-mob') switchLang('es');
+      });
+
+    })();
+    </script>
+</body>
+</html>

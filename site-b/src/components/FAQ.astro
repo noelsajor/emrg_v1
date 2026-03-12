@@ -1,0 +1,38 @@
+---
+---
+<section id="faq" aria-labelledby="faq-h">
+  <div class="faq-wrap">
+    <div class="faq-left sr">
+      <div class="section-rule">
+        <div class="section-rule-label" data-i18n="faq.rule">Help</div>
+        <div class="section-rule-line"></div>
+      </div>
+      <h2 class="display" id="faq-h" data-i18n-html="faq.title">Common <em>questions</em>.</h2>
+      <div class="faq-contact">
+        <span data-i18n="faq.contact.text">Can't find what you're looking for?</span><br/>
+        <a href="mailto:hello@emrg.studio" data-i18n="faq.contact.link">hello@emrg.studio</a>
+      </div>
+    </div>
+
+    <div class="faq-list sr sr-d1">
+      {[
+        { q: 'How long does a typical project take?', a: 'Project timelines vary depending on complexity. A starter Shopify setup takes 2-3 weeks, while a custom headless build can take 8-12 weeks.' },
+        { q: 'What platforms do you work with?', a: 'We specialize in Shopify Plus and WooCommerce, but we have extensive experience with headless architectures using Next.js and Sanity.' },
+        { q: 'Do you offer ongoing support?', a: 'Yes, we provide ongoing maintenance and growth retainers for brands that want to continuously optimize their performance.' },
+        { q: 'Can you help with branding as well?', a: 'Absolutely. We offer full brand identity services, from logo design and color palettes to voice and tone guidelines.' }
+      ].map((item, idx) => (
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false" aria-controls={`faq-ans-${idx + 1}`}>
+            <span data-i18n={`faq.q${idx + 1}`}>{item.q}</span>
+            <div class="faq-icon-box">+</div>
+          </button>
+          <div id={`faq-ans-${idx + 1}`} class="faq-ans">
+            <div class="faq-ans-inner">
+              <p data-i18n={`faq.a${idx + 1}`}>{item.a}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

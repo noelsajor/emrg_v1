@@ -1,0 +1,45 @@
+---
+---
+<section id="work" aria-labelledby="work-h">
+  <div class="work-header sr">
+    <div>
+      <div class="section-rule">
+        <div class="section-rule-label" data-i18n="work.rule">Our Work</div>
+        <div class="section-rule-line"></div>
+        <div class="section-rule-num">01 — 32</div>
+      </div>
+      <h2 class="display" id="work-h" data-i18n-html="work.title">Selected <em>performances</em>.</h2>
+    </div>
+    <a href="#cta" class="btn-text" data-i18n="work.all">View All Cases</a>
+  </div>
+
+  <div class="work-grid">
+    {[
+      { num: '01', name: 'Zencaster', type: 'Shopify Plus / DTC', summary: 'Architected a custom headless storefront resulting in a 40% increase in checkout conversion rate.', stat1: '40%', lbl1: 'Conv. Lift', stat2: '2.4s', lbl2: 'Load Time' },
+      { num: '02', name: 'Nomade', type: 'Branding / UI Design', summary: 'Developed a premium visual identity and digital experience for a luxury travel lifestyle brand.', stat1: '120k', lbl1: 'Month Views', stat2: '24%', lbl2: 'Avg. Margin' },
+      { num: '03', name: 'Lumos', type: 'Growth System', summary: 'Engineered a retention-focused growth engine that reduced churn by 18% in the first quarter.', stat1: '18%', lbl1: 'Churn Red.', stat2: '3x', lbl2: 'ROAS' }
+    ].map((item, idx) => (
+      <div class={`case-row sr sr-d${idx + 1}`}>
+        <div class="case-num">{item.num}</div>
+        <div class="case-brand-name">
+          <div class="case-brand-serif">{item.name}</div>
+          <div class="case-brand-type">{item.type}</div>
+        </div>
+        <div class="case-summary">{item.summary}</div>
+        <div class="case-stats">
+          <div class="stat-line">
+            <div class="stat-val">{item.stat1}</div>
+            <div class="stat-lbl">{item.lbl1}</div>
+          </div>
+          <div class="stat-line">
+            <div class="stat-val">{item.stat2}</div>
+            <div class="stat-lbl">{item.lbl2}</div>
+          </div>
+        </div>
+        <div class="case-link">
+          <span data-i18n="work.study">View Study</span>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

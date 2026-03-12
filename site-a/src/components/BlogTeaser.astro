@@ -1,0 +1,66 @@
+---
+import { getPosts } from '../lib/sanity';
+import BlogCard from './BlogCard.astro';
+
+const posts = await getPosts();
+const featuredPosts = posts.slice(0, 3);
+---
+
+<section id="blog-teaser" aria-labelledby="blog-teaser-heading">
+  <div class="container">
+    <div class="work-header">
+      <div>
+        <div class="section-label">Insights</div>
+        <h2 class="section-title" id="blog-teaser-heading">The Performance Journal</h2>
+      </div>
+      <a href="/blog" class="btn btn-outline">View All Articles</a>
+    </div>
+
+    <div class="blog-grid">
+      {featuredPosts.length > 0 ? (
+        featuredPosts.map((post: any) => (
+          <BlogCard post={post} />
+        ))
+      ) : (
+        <div class="blog-empty">
+          <p>New insights coming soon. Stay tuned.</p>
+        </div>
+      )}
+    </div>
+  </div>
+</section>
+
+<style>
+  #blog-teaser {
+    padding: 100px 0;
+    background: var(--bg);
+    border-top: 1px solid var(--gray-4);
+  }
+
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 32px;
+    margin-top: 48px;
+  }
+
+  .blog-empty {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 80px 40px;
+    background: var(--bg-2);
+    border: 1px dashed var(--gray-3);
+    border-radius: 12px;
+    color: var(--gray-2);
+  }
+
+  @media (max-width: 768px) {
+    #blog-teaser {
+      padding: 60px 0;
+    }
+    
+    .blog-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

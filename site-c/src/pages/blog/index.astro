@@ -1,0 +1,58 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import BlogCard from '../../components/BlogCard.astro';
+import { client } from '../../lib/sanity.client';
+import { paginatedPostsQuery } from '../../lib/sanity.queries';
+
+// const posts = await client.fetch(paginatedPostsQuery, { start: 0, end: 12 });
+
+const posts = [
+  {
+    title: "The Future of DTC Architecture",
+    slug: "future-dtc-architecture",
+    excerpt: "How headless systems are changing the conversion landscape for growing brands.",
+    publishedAt: "2025-02-24",
+    readingTime: 5,
+    categories: ["Engineering"]
+  },
+  {
+    title: "Brand Identity as a Growth Lever",
+    slug: "brand-identity-growth",
+    excerpt: "Why performance brands are investing in high-fidelity design early.",
+    publishedAt: "2025-02-20",
+    readingTime: 4,
+    categories: ["Design"]
+  }
+];
+---
+
+<BaseLayout title="Insights & Research — EMRG" description="Performance ecommerce insights, engineering deep dives, and growth strategy for DTC founders.">
+	<Header />
+	
+	<main style="padding: 160px 80px 80px; min-height: 100vh; position: relative; z-index: 5;">
+		<div style="max-width: 1100px; margin: 0 auto;">
+			<div class="scene-label">Insights</div>
+			<h1 class="hero-title" style="font-size: clamp(3rem, 7vw, 6rem); margin-bottom: 64px; text-transform: uppercase;">The EMRG<br><span class="accent">Intelligence.</span></h1>
+			
+			<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 24px;">
+				{posts.map(post => <BlogCard post={post} />)}
+			</div>
+		</div>
+	</main>
+</BaseLayout>
+
+<style>
+	/* Background consistency */
+	body {
+		overflow: auto !important; /* Allow scroll on blog index */
+		cursor: default !important; /* Standard cursor for readability */
+	}
+	#cursor, #cursor-ring, #canvas-bg, #scene-nav, #scroll-hint {
+		display: none !important;
+	}
+	#nav {
+		background: rgba(2,4,8,0.8);
+		backdrop-filter: blur(12px);
+	}
+</style>
