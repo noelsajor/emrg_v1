@@ -56,5 +56,17 @@ const {
 		<!-- Three.js CDN -->
 		<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 		<script src="../scripts/main.js"></script>
+		<script is:inline>
+			// Hash routing for scroller
+			window.addEventListener('load', () => {
+				const hash = window.location.hash;
+				if (hash.startsWith('#scene-')) {
+					const idx = parseInt(hash.replace('#scene-', ''));
+					if (!isNaN(idx) && window.goToScene) {
+						setTimeout(() => window.goToScene(idx), 500);
+					}
+				}
+			});
+		</script>
 	</body>
 </html>

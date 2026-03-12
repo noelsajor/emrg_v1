@@ -1,0 +1,366 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import SceneNav from '../components/SceneNav.astro';
+import CTA from '../components/CTA.astro';
+---
+
+<BaseLayout title="Enfoque Emprendedores/PYMES | EMRG" description="Sistemas de escalado digital para pequeñas y medianas empresas. Infraestructura técnica para el crecimiento.">
+  <SceneNav />
+  <Header />
+
+  <div id="scroll-container">
+    <section class="scene active" id="scene-0">
+      <div class="content-wrap">
+        <div class="hero-grid-pymes">
+          <div class="hero-copy">
+            <p class="scene-label">Crecimiento para PYMES & Emprendedores</p>
+            <h1 class="hero-title">Escalado <span class="accent">Sistematizado.</span></h1>
+            <p class="hero-sub">
+              No necesitas más herramientas, necesitas un sistema. Ayudamos a PYMES a profesionalizar su presencia digital y automatizar sus canales de adquisición de clientes.
+            </p>
+
+            <div class="hero-actions-pymes">
+              <button class="nav-cta" onclick="window.goToScene(5)">Consultar Plan de Escalado</button>
+              <button class="btn-outline-pymes" onclick="window.goToScene(2)">Ver Soluciones</button>
+            </div>
+
+            <div class="hero-chips">
+               <span class="chip-pill">SME Scaling</span>
+               <span class="chip-pill">Process Automation</span>
+               <span class="chip-pill">Tech Foundation</span>
+            </div>
+          </div>
+
+          <aside class="hero-card-pymes">
+             <div class="pymes-visual">
+                <div class="pymes-bar" style="height: 40%"></div>
+                <div class="pymes-bar" style="height: 60%"></div>
+                <div class="pymes-bar" style="height: 90%"></div>
+                <div class="pymes-bar" style="height: 75%"></div>
+             </div>
+             <p class="card-note">Infraestructura diseñada para aguantar el crecimiento sin aumentar la complejidad operativa.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="scene" id="scene-1">
+      <div class="content-wrap">
+        <div class="section-header-pymes">
+          <p class="scene-label">El Techo</p>
+          <h2 class="scene-title">¿Por qué muchas PYMES <em>dejan de crecer?</em></h2>
+        </div>
+
+        <div class="pillars-grid-pymes">
+          <article class="pillar-row-pymes">
+            <h3 class="pillar-name">Caos Tecnológico</h3>
+            <p class="pillar-tagline">Uso de múltiples herramientas que no se hablan entre sí, generando fricción y pérdida de datos.</p>
+          </article>
+          <article class="pillar-row-pymes">
+            <h3 class="pillar-name">Web Pasiva</h3>
+            <p class="pillar-tagline">Tener una web no es suficiente. Si no es el centro de tu estrategia de ventas, es un gasto, no una inversión.</p>
+          </article>
+          <article class="pillar-row-pymes">
+            <h3 class="pillar-name">Falta de Medición</h3>
+            <p class="pillar-tagline">Tomar decisiones por intuición en lugar de datos reales sobre de dónde vienen tus mejores clientes.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="scene" id="scene-2">
+      <div class="content-wrap">
+        <div class="section-header-pymes">
+          <p class="scene-label">Soluciones</p>
+          <h2 class="scene-title">Estructura para el <em>Siguiente Nivel.</em></h2>
+        </div>
+
+        <div class="solutions-grid-pymes">
+          <div class="sol-item">
+            <span class="pillar-num">01</span>
+            <h3>Ecommerce Optimization</h3>
+            <p>Mejoramos el funnel de venta para maximizar el valor de cada visita.</p>
+          </div>
+          <div class="sol-item">
+            <span class="pillar-num">02</span>
+            <h3>Lead Gen Automation</h3>
+            <p>Sistemas que capturan y nutren leads sin intervención manual constante.</p>
+          </div>
+          <div class="sol-item">
+            <span class="pillar-num">03</span>
+            <h3>Data Infrastructure</h3>
+            <p>Setup de analítica avanzada para entender el ROI de cada acción.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="scene" id="scene-3">
+      <div class="content-wrap">
+        <div class="section-header-pymes">
+          <p class="scene-label">Diferencial</p>
+          <h2 class="scene-title">Metodología <em>EMRG Growth.</em></h2>
+        </div>
+        
+        <div class="process-steps-pymes">
+          <div class="p-step">
+            <span class="step-num">Audit</span>
+            <p>Identificamos cuellos de botella en tu sistema actual.</p>
+          </div>
+          <div class="p-step">
+            <span class="step-num">Fix</span>
+            <p>Solucionamos la base técnica y el mensaje comercial.</p>
+          </div>
+          <div class="p-step">
+            <span class="step-num">Scale</span>
+            <p>Inyectamos tráfico cualificado y optimizamos la conversión.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="scene" id="scene-4">
+      <div class="content-wrap">
+         <div class="section-header-pymes">
+            <p class="scene-label">Confianza</p>
+            <h2 class="scene-title">Resultados <em>Tangibles.</em></h2>
+         </div>
+         <div class="results-grid-pymes">
+            <div class="res-card">
+               <h4>+40%</h4>
+               <p>Incremento en facturación orgánica tras optimización SEO.</p>
+            </div>
+            <div class="res-card">
+               <h4>2.5x</h4>
+               <p>Mejora en la tasa de conversión de leads cualificados.</p>
+            </div>
+            <div class="res-card">
+               <h4>-30%</h4>
+               <p>Reducción en el costo de adquisición de cliente (CAC).</p>
+            </div>
+         </div>
+      </div>
+    </section>
+
+    <section class="scene" id="scene-5">
+      <div class="content-wrap form-split-pymes">
+         <div class="form-copy-pymes">
+            <p class="scene-label">Contacto</p>
+            <h2 class="scene-title">¿Listo para <em>Escalar?</em></h2>
+            <p class="hero-sub">Cuéntanos sobre tu negocio y diseñaremos un plan de acción a medida.</p>
+         </div>
+         <form class="qualification-form-pymes personal-form">
+            <input type="text" placeholder="NOMBRE Y APELLIDO" required />
+            <input type="text" placeholder="NOMBRE DE LA EMPRESA" required />
+            <input type="email" placeholder="EMAIL DE CONTACTO" required />
+            <select required>
+               <option value="">FACTURACIÓN ANUAL ESTIMADA</option>
+               <option>Menos de $100k</option>
+               <option>$100k - $500k</option>
+               <option>$500k - $1M</option>
+               <option>Más de $1M</option>
+            </select>
+            <button class="nav-cta" type="submit">Enviar Solicitud</button>
+            <p class="form-success-pymes" style="display:none; margin-top: 1rem; color: var(--teal); font-size: 0.8rem; font-weight: 600;">SOLICITUD ENVIADA CORRECTAMENTE.</p>
+         </form>
+      </div>
+    </section>
+
+    <CTA />
+  </div>
+</BaseLayout>
+
+<style>
+  .content-wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 56px;
+    width: 100%;
+  }
+
+  .accent {
+    color: var(--teal);
+  }
+
+  .hero-grid-pymes {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 80px;
+    align-items: center;
+    width: 100%;
+  }
+
+  .hero-actions-pymes {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+
+  .btn-outline-pymes {
+    background: transparent;
+    padding: 10px 24px;
+    border: 1px solid var(--rim2);
+    color: var(--white);
+    font-family: var(--body);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+  .btn-outline-pymes:hover {
+    border-color: var(--teal);
+    background: var(--teal-glow);
+  }
+
+  .hero-card-pymes {
+    background: rgba(11, 21, 32, 0.4);
+    border: 1px solid var(--rim2);
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .pymes-visual {
+     display: flex;
+     align-items: flex-end;
+     gap: 15px;
+     height: 150px;
+  }
+
+  .pymes-bar {
+     flex: 1;
+     background: var(--teal);
+     opacity: 0.6;
+     transition: all 0.6s;
+  }
+  .scene.active .pymes-bar { opacity: 1; }
+
+  .card-note {
+     font-size: 0.85rem;
+     color: var(--smoke);
+     line-height: 1.6;
+  }
+
+  .pillars-grid-pymes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-top: 40px;
+  }
+
+  .pillar-row-pymes {
+    padding: 30px;
+    border: 1px solid var(--rim);
+    background: rgba(255,255,255,0.02);
+  }
+
+  .pillar-name {
+    font-family: var(--title);
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+    color: var(--white);
+  }
+
+  .solutions-grid-pymes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .sol-item {
+    padding: 40px;
+    background: var(--surface);
+    border: 1px solid var(--rim);
+  }
+
+  .sol-item h3 {
+    font-family: var(--title);
+    font-size: 1.4rem;
+    margin: 15px 0;
+    color: var(--white);
+  }
+
+  .process-steps-pymes {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    border-top: 1px solid var(--rim);
+    padding-top: 40px;
+  }
+
+  .p-step {
+    max-width: 250px;
+  }
+
+  .step-num {
+    display: block;
+    font-family: var(--title);
+    font-size: 2.5rem;
+    color: var(--teal);
+    margin-bottom: 15px;
+  }
+
+  .results-grid-pymes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+
+  .res-card {
+    background: var(--deep);
+    padding: 40px;
+    border-left: 3px solid var(--teal);
+  }
+
+  .res-card h4 {
+    font-family: var(--title);
+    font-size: 3rem;
+    color: var(--white);
+    margin-bottom: 10px;
+  }
+
+  .form-split-pymes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .qualification-form-pymes {
+    display: grid;
+    gap: 20px;
+  }
+
+  input, select {
+    width: 100%;
+    background: var(--deep);
+    border: 1px solid var(--rim2);
+    color: var(--white);
+    padding: 16px;
+    font-family: var(--body);
+    font-size: 0.8rem;
+  }
+
+  @media (max-width: 1024px) {
+    .hero-grid-pymes, .pillars-grid-pymes, .solutions-grid-pymes, .process-steps-pymes, .results-grid-pymes, .form-split-pymes {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const mainForm = document.querySelector('.personal-form');
+    if (mainForm) {
+      mainForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        mainForm.reset();
+        document.querySelector('.form-success-pymes').style.display = 'block';
+      });
+    }
+  });
+</script>

@@ -2,36 +2,22 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/Header.astro';
 import BlogCard from '../../components/BlogCard.astro';
-import { generateSchemaMarkup, generateBreadcrumbSchema } from '../../lib/seo.ts';
+import { generateSchemaMarkup, generateBreadcrumbSchema } from '../../lib/seo';
+import { client, urlFor } from '../../lib/sanity.client';
+import { postBySlugQuery } from '../../lib/sanity.queries';
 
-// export async function getStaticPaths() {
-//   const posts = await client.fetch(`*[_type == "post"]{ "slug": slug.current }`);
-//   return posts.map(post => ({ params: { slug: post.slug } }));
-// }
-
-// Mock static paths for now
-export function getStaticPaths() {
-  return [
-    { params: { slug: 'future-dtc-architecture' } },
-    { params: { slug: 'brand-identity-growth' } }
-  ];
+export async function getStaticPaths() {
+  const posts = await client.fetch(`*[_type == "post" && defined(slug.current)]{ "slug": slug.current }`);
+  return posts.map((post: any) => ({ params: { slug: post.slug } }));
 }
 
 const { slug } = Astro.params;
 
-// Mock data
-const post = {
-  title: "The Future of DTC Architecture",
-  excerpt: "How headless systems are changing the conversion landscape for growing brands.",
-  publishedAt: "2025-02-24",
-  author: { name: "EMRG Team" },
-  categories: ["Engineering"],
-  readingTime: 5,
-  body: [
-    { _type: 'block', children: [{ text: "Headless commerce is no longer just a buzzword. It's the infrastructure required to hit the sub-second load times that modern DTC consumers expect. By decoupling the presentation layer (Astro) from the commerce backend (Shopify), brands can deliver experiences that are both visually stunning and technically superior." }] }
-  ],
-  relatedPosts: []
-};
+const post = await client.fetch(postBySlugQuery, { slug });
+
+if (!post) {
+  return Astro.redirect('/404');
+}
 
 const jsonLd = generateSchemaMarkup({
   title: post.title,
@@ -57,16 +43,22 @@ const breadcrumbs = generateBreadcrumbSchema([
   <article style="padding: 160px 80px 80px; min-height: 100vh; position: relative; z-index: 5;">
     <div style="max-width: 800px; margin: 0 auto;">
       <div class="case-tag-imm" style="margin-bottom: 24px;">
-        {post.categories[0]} · {post.readingTime} min read
+        {post.categories?.[0] || "Strategy"} · {post.readingTime || 5} min read
       </div>
       <h1 class="hero-title" style="font-size: clamp(2.5rem, 6vw, 4.5rem); margin-bottom: 32px; line-height: 1.1;">{post.title}</h1>
       <p class="hero-sub" style="margin: 0 0 48px; max-width: 100%; font-size: 1.25rem;">{post.excerpt}</p>
+
+      {post.mainImage && (
+        <div style="margin-bottom: 64px; border: 1px solid var(--rim); border-radius: 12px; overflow: hidden; background: var(--deep); box-shadow: 0 20px 40px rgba(0,0,0,0.4);">
+          <img src={urlFor(post.mainImage).url()} alt={post.title} style="width: 100%; height: auto; display: block;" />
+        </div>
+      )}
       
       <div style="padding: 24px 0; border-top: 1px solid var(--rim); border-bottom: 1px solid var(--rim); margin-bottom: 64px; display: flex; justify-content: space-between; align-items: center;">
         <div style="display: flex; align-items: center; gap: 12px;">
           <div style="width: 40px; height: 40px; background: var(--teal); border-radius: 50%;"></div>
           <div>
-            <div style="font-size: 0.8rem; font-weight: 600;">{post.author.name}</div>
+            <div style="font-size: 0.8rem; font-weight: 600;">{post.author?.name || "EMRG Team"}</div>
             <div style="font-size: 0.65rem; color: var(--mist);">Ecommerce Strategist</div>
           </div>
         </div>
@@ -76,10 +68,33 @@ const breadcrumbs = generateBreadcrumbSchema([
       </div>
 
       <div class="prose" style="color: var(--smoke); line-height: 1.8; font-size: 1.1rem; letter-spacing: 0.01em;">
-        {post.body.map(block => (
-          <p style="margin-bottom: 24px;">{block.children[0].text}</p>
-        ))}
+        {post.body?.map((block: any) => {
+          if (block._type === 'block') {
+            const style = block.style || 'normal';
+            if (style === 'h2') return <h2 style="color: var(--white); font-family: var(--title); font-size: 2.2rem; margin: 48px 0 24px; letter-spacing: 0.04em;">{block.children.map((c: any) => c.text).join('')}</h2>;
+            if (style === 'h3') return <h3 style="color: var(--white); font-family: var(--title); font-size: 1.8rem; margin: 40px 0 20px; letter-spacing: 0.04em;">{block.children.map((c: any) => c.text).join('')}</h3>;
+            return <p style="margin-bottom: 24px;">{block.children.map((c: any) => c.text).join('')}</p>;
+          }
+          if (block._type === 'image') {
+            return (
+              <figure style="margin: 48px 0; border: 1px solid var(--rim); border-radius: 8px; overflow: hidden; background: var(--deep);">
+                <img src={urlFor(block).url()} alt={block.alt || ""} style="width: 100%; height: auto; display: block;" />
+                {block.caption && <figcaption style="padding: 16px; font-size: 0.8rem; color: var(--mist); text-align: center; border-top: 1px solid var(--rim);">{block.caption}</figcaption>}
+              </figure>
+            );
+          }
+          return null;
+        })}
       </div>
+
+      {post.relatedPosts?.length > 0 && (
+        <div style="margin-top: 100px; padding-top: 64px; border-top: 1px solid var(--rim);">
+          <div class="scene-label" style="margin-bottom: 32px;">Related Reading</div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 24px;">
+            {post.relatedPosts.map((p: any) => <BlogCard post={p} showExcerpt={false} />)}
+          </div>
+        </div>
+      )}
 
       <div style="margin-top: 100px; padding: 64px; border: 1px solid var(--teal); background: rgba(0,229,200,0.05); text-align: center;">
         <h2 class="scene-title" style="font-size: 2.5rem; margin-bottom: 24px;">Ready to engineer<br>your growth?</h2>
@@ -100,5 +115,9 @@ const breadcrumbs = generateBreadcrumbSchema([
 	#nav {
 		background: rgba(2,4,8,0.8);
 		backdrop-filter: blur(12px);
+	}
+	.hero-title {
+		opacity: 1 !important;
+		transform: none !important;
 	}
 </style>

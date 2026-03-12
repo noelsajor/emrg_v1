@@ -1,0 +1,206 @@
+---
+---
+<section class="about-scene">
+  <div class="container">
+    <div class="scene-content">
+      <div class="label">Manifesto</div>
+      <h1 class="title">Engineering <em>Performance.</em></h1>
+      <div class="about-grid">
+        <div class="p-wrap">
+          <p>We believe that growth is a technical challenge, not just a creative one. Our studio was built to solve the fragmentation in the ecommerce ecosystem.</p>
+          <p>By unifying design, engineering, and data, we deliver stores that aren't just beautiful—they're highly efficient revenue tools.</p>
+        </div>
+        <div class="values-list">
+          <div class="value-item">
+            <span class="num">01</span>
+            <span class="txt">Speed is Paramount</span>
+          </div>
+          <div class="value-item">
+            <span class="num">02</span>
+            <span class="txt">Data over Assumptions</span>
+          </div>
+          <div class="value-item">
+            <span class="num">03</span>
+            <span class="txt">Systems over One-offs</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="focus-scroller">
+  <div class="container">
+    <div class="focus-head">
+      <div class="label">Expertise</div>
+      <h2 class="title">Strategic <em>Industries.</em></h2>
+    </div>
+    <div class="focus-grid-main">
+      <a href="/enfoque-salud" class="focus-box">
+        <span class="box-num">01</span>
+        <h3>Enfoque en Salud</h3>
+        <p>Technical architecture for high-stakes health brands.</p>
+        <div class="box-link">Go to Page //</div>
+      </a>
+      <a href="/enfoque-legal" class="focus-box">
+        <span class="box-num">02</span>
+        <h3>Enfoque Legal</h3>
+        <p>Trusted digital infrastructure for elite law firms.</p>
+        <div class="box-link">Go to Page //</div>
+      </a>
+      <a href="/enfoque-pymes" class="focus-box">
+        <span class="box-num">03</span>
+        <h3>Enfoque Emprendedore/PYMES</h3>
+        <p>Scalable growth engines for small and medium businesses.</p>
+        <div class="box-link">Go to Page //</div>
+      </a>
+      <a href="/enfoque-retail" class="focus-box">
+        <span class="box-num">04</span>
+        <h3>Enfoque Retail/Mayoristas</h3>
+        <p>Complex B2B and B2C infrastructure for scale.</p>
+        <div class="box-link">Go to Page //</div>
+      </a>
+      <a href="/enfoque-marca-personal" class="focus-box">
+        <span class="box-num">05</span>
+        <h3>Enfoque Marca Personal</h3>
+        <p>Authority building and digital systems for experts.</p>
+        <div class="box-link">Go to Page //</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about-scene {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 0;
+    position: relative;
+    background: var(--void);
+  }
+  .scene-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+  .label {
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 24px;
+  }
+  .title {
+    font-family: var(--title);
+    font-size: clamp(3rem, 7vw, 6rem);
+    line-height: 0.95;
+    letter-spacing: 0.04em;
+    margin-bottom: 64px;
+    color: var(--white);
+  }
+  .title em {
+    font-style: normal;
+    color: var(--teal);
+  }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 80px;
+  }
+  .p-wrap p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--smoke);
+    margin-bottom: 32px;
+  }
+  .values-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .value-item {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 24px 0;
+    border-bottom: 1px solid var(--rim);
+  }
+  .value-item:first-child {
+    border-top: 1px solid var(--rim);
+  }
+  .num {
+    font-family: var(--title);
+    font-size: 1.2rem;
+    color: var(--teal);
+  }
+  .txt {
+    font-size: 0.8rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--white);
+  }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+  .focus-scroller {
+    padding: 120px 0;
+    background: var(--void);
+    border-top: 1px solid var(--rim);
+  }
+  .focus-head { margin-bottom: 60px; }
+  .focus-grid-main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+  .focus-box {
+    background: var(--surface);
+    border: 1px solid var(--rim);
+    padding: 40px;
+    text-decoration: none;
+    transition: all 0.4s;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .focus-box:hover {
+    border-color: var(--teal);
+    transform: translateY(-8px);
+    background: var(--teal-glow);
+  }
+  .box-num {
+    font-size: 0.72rem;
+    color: var(--teal);
+    font-weight: 600;
+  }
+  .focus-box h3 {
+    font-family: var(--title);
+    font-size: 1.6rem;
+    color: var(--white);
+    text-transform: uppercase;
+  }
+  .focus-box p {
+    font-size: 0.9rem;
+    color: var(--smoke);
+    line-height: 1.5;
+  }
+  .box-link {
+    font-family: var(--title);
+    font-size: 0.75rem;
+    color: var(--teal);
+    margin-top: auto;
+    font-weight: 600;
+  }
+  @media (max-width: 992px) {
+    .about-grid {
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }
+    .focus-grid-main {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,389 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import CtaSection from '../components/CtaSection.astro';
+---
+
+<BaseLayout title="Enfoque Retail y Mayoristas | EMRG" description="Acompañamos a pequeños negocios en su salto digital. Tu primera web, visibilidad en Google y captación de clientes.">
+  <Nav />
+  
+  <main class="expertise-page">
+    <section class="expertise-hero">
+      <div class="container">
+        <div class="hero-content">
+          <div class="expertise-tag">Digitalización Local</div>
+          <h1>El Salto <span class="highlight">Digital.</span></h1>
+          <p class="hero-lead">Si tu negocio no aparece en Google, no existe online. Ayudamos a pequeños negocios a crear su primera página web y captar clientes de forma práctica.</p>
+          <div class="hero-actions">
+            <a href="#contacto" class="btn-primary">Quiero mi Diagnóstico</a>
+            <a href="#solucion" class="btn-secondary">Ver Paquetes</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="expertise-pillars">
+       <div class="container">
+          <div class="pillars-grid">
+             <div class="pillar-card">
+                <span class="p-num">01</span>
+                <h3>Visibilidad en Mapas</h3>
+                <p>Aparece cuando los clientes buscan tu servicio en tu zona.</p>
+             </div>
+             <div class="pillar-card">
+                <span class="p-num">02</span>
+                <h3>Web Profesional</h3>
+                <p>Una página clara que genera confianza y explica qué ofreces.</p>
+             </div>
+             <div class="pillar-card">
+                <span class="p-num">03</span>
+                <h3>Captación Directa</h3>
+                <p>Sistemas simples para recibir mensajes y llamadas de nuevos clientes.</p>
+             </div>
+          </div>
+       </div>
+    </section>
+
+    <section id="problema" class="expertise-problem section">
+      <div class="container">
+        <div class="grid-split">
+          <div class="text-block">
+            <h2 class="section-title">El riesgo de ser <span class="accent">invisible.</span></h2>
+            <p>Hoy, si no estás en la red, no estás en la mente del consumidor. Muchos negocios pierden oportunidades cada día por no tener una base digital mínima.</p>
+            
+            <div class="issue-box">
+               <div class="issue-item">
+                  <strong>Inexistencia en Búsquedas</strong>
+                  <p>Tus potenciales clientes encuentran antes a tu competencia que a ti.</p>
+               </div>
+               <div class="issue-item">
+                  <strong>Falta de Credibilidad</strong>
+                  <p>Sin web, el cliente duda de la profesionalidad de tu servicio.</p>
+               </div>
+            </div>
+          </div>
+          <div class="visual-quote">
+            <blockquote>
+              "No se trata de estar en todas partes, sino de estar donde tu cliente te está buscando ahora mismo."
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="solucion" class="expertise-services section">
+      <div class="container">
+        <h2 class="section-title">Soluciones <span class="highlight">Prácticas.</span></h2>
+        <div class="services-list">
+          <div class="service-item">
+            <h3>Presencia Inicial</h3>
+            <p>Tu primera web informativa con diseño responsive y bot de WhatsApp.</p>
+          </div>
+          <div class="service-item">
+            <h3>Impulso Local</h3>
+            <p>Optimización para Google Maps y estructura enfocada en conversión.</p>
+          </div>
+          <div class="service-item">
+            <h3>Gestión de Leads</h3>
+            <p>Formularios y canales de atención rápida para no perder contactos.</p>
+          </div>
+          <div class="service-item">
+            <h3>Soporte Estratégico</h3>
+            <p>Te acompañamos en tus primeros pasos digitales sin tecnicismos.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" class="expertise-contact section">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-info">
+            <h2 class="section-title">Solicita tu <br/><span class="highlight">Diagnóstico Gratis.</span></h2>
+            <p>Completa el formulario y cuéntanos qué necesitas para que tu negocio empiece a brillar online.</p>
+            <div class="form-perks">
+               <div>✓ Análisis de visibilidad actual</div>
+               <div>✓ Recomendaciones de estructura web</div>
+               <div>✓ Plan de acción local</div>
+            </div>
+          </div>
+          <form class="diagnosis-form retail-form">
+            <div class="form-grid">
+               <input type="text" placeholder="Tu Nombre" required />
+               <input type="text" placeholder="Nombre del Negocio" required />
+            </div>
+            <div class="form-grid">
+               <input type="text" placeholder="Rubro/Actividad" required />
+               <input type="text" placeholder="Ciudad" required />
+            </div>
+            <textarea placeholder="¿Cuál es tu objetivo principal con la web?" required></textarea>
+            <div class="form-grid">
+               <input type="email" placeholder="Email" required />
+               <input type="tel" placeholder="WhatsApp" required />
+            </div>
+            <button type="submit" class="btn-primary">Solicitar Diagnóstico</button>
+            <p class="success-msg" style="display:none; margin-top: 1rem; color: var(--accent);">Gracias. Nos pondremos en contacto muy pronto.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <CtaSection />
+  <Footer />
+</BaseLayout>
+
+<style>
+  :root {
+    --accent: #8b5cf6;
+    --accent-dark: #6d28d9;
+    --void: #09090b;
+    --glass: rgba(255, 255, 255, 0.02);
+    --border: rgba(255, 255, 255, 0.07);
+  }
+
+  .expertise-page {
+    background: var(--void);
+    color: #fff;
+    font-family: 'Syne', sans-serif;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .section {
+    padding: 120px 0;
+  }
+
+  .highlight {
+    color: var(--accent);
+  }
+
+  .accent {
+    color: var(--accent-dark);
+  }
+
+  .expertise-tag {
+    display: inline-block;
+    padding: 6px 16px;
+    background: var(--glass);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: 2rem;
+    color: var(--accent);
+  }
+
+  .expertise-hero {
+    padding: 220px 0 100px;
+  }
+
+  .expertise-hero h1 {
+    font-size: clamp(3.5rem, 9vw, 8rem);
+    line-height: 0.85;
+    letter-spacing: -0.05em;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-lead {
+    font-size: 1.3rem;
+    color: #a1a1aa;
+    max-width: 650px;
+    line-height: 1.5;
+    margin-bottom: 3.5rem;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .pillars-grid {
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     gap: 30px;
+     border-top: 1px solid var(--border);
+     padding-top: 60px;
+  }
+
+  .pillar-card {
+     padding: 40px;
+     background: var(--glass);
+     border: 1px solid var(--border);
+  }
+
+  .p-num {
+     display: block;
+     font-size: 1rem;
+     color: var(--accent);
+     margin-bottom: 1.5rem;
+     font-weight: 800;
+  }
+
+  .pillar-card h3 {
+     font-size: 1.8rem;
+     margin-bottom: 1rem;
+  }
+
+  .grid-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 120px;
+    align-items: center;
+  }
+
+  .section-title {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    margin-bottom: 2.5rem;
+    line-height: 0.95;
+  }
+
+  .text-block p {
+    font-size: 1.2rem;
+    color: #a1a1aa;
+    line-height: 1.7;
+    margin-bottom: 3rem;
+  }
+
+  .issue-box {
+     display: grid;
+     gap: 2rem;
+  }
+
+  .issue-item strong {
+     display: block;
+     color: var(--accent);
+     margin-bottom: 0.5rem;
+  }
+
+  .visual-quote {
+     font-size: 2.5rem;
+     line-height: 1.1;
+     font-style: italic;
+     color: #fff;
+     position: relative;
+  }
+  .visual-quote::before {
+     content: '"';
+     position: absolute;
+     left: -40px;
+     top: -20px;
+     font-size: 5rem;
+     color: var(--accent);
+     opacity: 0.2;
+  }
+
+  .services-list {
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     gap: 30px;
+     margin-top: 40px;
+  }
+
+  .service-item {
+     padding: 50px;
+     background: var(--glass);
+     border: 1px solid var(--border);
+  }
+
+  .service-item h3 {
+     font-size: 2rem;
+     margin-bottom: 1.5rem;
+     color: #fff;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 100px;
+  }
+
+  .form-perks {
+     margin-top: 3rem;
+     display: grid;
+     gap: 1rem;
+     font-size: 1.1rem;
+     color: var(--accent);
+  }
+
+  .diagnosis-form {
+    display: grid;
+    gap: 1.5rem;
+    background: #0f0f13;
+    padding: 60px;
+    border: 1px solid var(--border);
+  }
+
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  input, select, textarea {
+    background: transparent;
+    border: 1px solid var(--border);
+    padding: 1.25rem;
+    color: #fff;
+    font-family: inherit;
+    width: 100%;
+  }
+
+  textarea {
+    height: 120px;
+  }
+
+  .btn-primary {
+    background: var(--accent);
+    color: var(--void);
+    padding: 1.25rem 2.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    text-align: center;
+  }
+
+  .btn-primary:hover {
+    background: #fff;
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: #fff;
+    border: 1px solid var(--border);
+    padding: 1.25rem 2.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  @media (max-width: 1024px) {
+    .grid-split, .contact-grid, .pillars-grid, .services-list, .form-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.querySelector('.retail-form');
+    if (form) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        form.reset();
+        form.querySelector('.success-msg').style.display = 'block';
+      });
+    }
+  });
+</script>

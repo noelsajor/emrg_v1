@@ -1,0 +1,341 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import SceneNav from '../components/SceneNav.astro';
+import CTA from '../components/CTA.astro';
+---
+
+<BaseLayout title="Enfoque Retail/Mayoristas | EMRG" description="Soluciones ecommerce B2B y B2C para grandes retailers y distribuidores. Ingeniería para el volumen.">
+  <SceneNav />
+  <Header />
+
+  <div id="scroll-container">
+    <section class="scene active" id="scene-0">
+      <div class="content-wrap">
+        <div class="hero-grid-retail">
+          <div class="hero-copy">
+            <p class="scene-label">Infraestructura para Retail & Mayoristas</p>
+            <h1 class="hero-title">Escala sin <span class="accent">Límites.</span></h1>
+            <p class="hero-sub">
+              Sistemas ecommerce robustos diseñados para manejar catálogos complejos, integraciones ERP y grandes volúmenes de transacciones B2C y B2B.
+            </p>
+
+            <div class="hero-actions-retail">
+              <button class="nav-cta" onclick="window.goToScene(5)">Auditoría de Sistemas</button>
+              <button class="btn-outline-retail" onclick="window.goToScene(2)">Ver Soluciones</button>
+            </div>
+
+            <div class="hero-chips">
+               <span class="chip-pill">B2B/B2C Hybrid</span>
+               <span class="chip-pill">ERP Integration</span>
+               <span class="chip-pill">High Volume</span>
+            </div>
+          </div>
+
+          <aside class="hero-card-retail">
+             <div class="retail-box-visual">
+                <div class="r-dot"></div>
+                <div class="r-dot"></div>
+                <div class="r-dot"></div>
+                <div class="r-dot"></div>
+             </div>
+             <p class="card-note">Ingeniería preparada para picos de tráfico extremo y operaciones logísticas complejas.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="scene" id="scene-1">
+      <div class="content-wrap">
+        <div class="section-header-retail">
+          <p class="scene-label">Desafíos</p>
+          <h2 class="scene-title">Complejidad que <em>frena la venta.</em></h2>
+        </div>
+
+        <div class="pillars-grid-retail">
+          <article class="pillar-row-retail">
+            <h3 class="pillar-name">Stock Desincronizado</h3>
+            <p class="pillar-tagline">Falta de integración real entre tienda online y almacén físico, causando roturas de stock y mala experiencia.</p>
+          </article>
+          <article class="pillar-row-retail">
+            <h3 class="pillar-name">UX para Mayoristas</h3>
+            <p class="pillar-tagline">Procesos de compra B2B lentos y manuales que alejan al cliente profesional de la plataforma digital.</p>
+          </article>
+          <article class="pillar-row-retail">
+            <h3 class="pillar-name">Lentitud en Carga</h3>
+            <p class="pillar-tagline">Catálogos de miles de SKUs que ralentizan la navegación y desploman la conversión móvil.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="scene" id="scene-2">
+      <div class="content-wrap">
+        <div class="section-header-retail">
+          <p class="scene-label">Soluciones</p>
+          <h2 class="scene-title">Ingeniería para el <em>Alto Volumen.</em></h2>
+        </div>
+
+        <div class="solutions-grid-retail">
+          <div class="sol-item">
+            <span class="pillar-num">01</span>
+            <h3>Headless Commerce</h3>
+            <p>Velocidad extrema y flexibilidad total para catálogos masivos.</p>
+          </div>
+          <div class="sol-item">
+            <span class="pillar-num">02</span>
+            <h3>Omnicanalidad Real</h3>
+            <p>Sincronización total entre retail físico y digital en tiempo real.</p>
+          </div>
+          <div class="sol-item">
+            <span class="pillar-num">03</span>
+            <h3>B2B Portals</h3>
+            <p>Plataformas de autoservicio para clientes mayoristas con precios dinámicos.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="scene" id="scene-3">
+      <div class="content-wrap">
+        <div class="section-header-retail">
+          <p class="scene-label">Capacidades</p>
+          <h2 class="scene-title">Integraciones de <em>Nivel Enterprise.</em></h2>
+        </div>
+        
+        <div class="tech-stack-retail">
+           <div class="tech-item">SAP / Oracle Integration</div>
+           <div class="tech-item">PIM Systems</div>
+           <div class="tech-item">Multi-warehouse Logic</div>
+           <div class="tech-item">Advanced Search / Discovery</div>
+           <div class="tech-item">Custom Checkout Flows</div>
+           <div class="tech-item">BI & Reporting</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="scene" id="scene-4">
+      <div class="content-wrap">
+         <div class="section-header-retail">
+            <p class="scene-label">Expertise</p>
+            <h2 class="scene-title">Confianza de <em>Gigantes.</em></h2>
+         </div>
+         <div class="retail-stats-grid">
+            <div class="stat-card">
+               <span class="stat-val">99.9%</span>
+               <p>Uptime durante picos de Black Friday.</p>
+            </div>
+            <div class="stat-card">
+               <span class="stat-val">&lt;1.5s</span>
+               <p>Tiempo de carga promedio en móvil.</p>
+            </div>
+            <div class="stat-card">
+               <span class="stat-val">+35%</span>
+               <p>Mejora en eficiencia de pedidos B2B.</p>
+            </div>
+         </div>
+      </div>
+    </section>
+
+    <section class="scene" id="scene-5">
+      <div class="content-wrap form-split-retail">
+         <div class="form-copy-retail">
+            <p class="scene-label">Proyectos</p>
+            <h2 class="scene-title">Impulsa tu <em>Operación.</em></h2>
+            <p class="hero-sub">Analizamos tu arquitectura técnica y diseñamos el siguiente paso evolutivo de tu retail.</p>
+         </div>
+         <form class="qualification-form-retail personal-form">
+            <input type="text" placeholder="NOMBRE COMPLETO" required />
+            <input type="text" placeholder="EMPRESA / RETAILER" required />
+            <input type="email" placeholder="EMAIL CORPORATIVO" required />
+            <select required>
+               <option value="">NÚMERO DE SKUs</option>
+               <option>100 - 1,000</option>
+               <option>1,000 - 10,000</option>
+               <option>Más de 10,000</option>
+            </select>
+            <button class="nav-cta" type="submit">Solicitar Consulta Técnica</button>
+            <p class="form-success-retail" style="display:none; margin-top: 1rem; color: var(--teal); font-size: 0.8rem; font-weight: 600;">SOLICITUD ENVIADA CORRECTAMENTE.</p>
+         </form>
+      </div>
+    </section>
+
+    <CTA />
+  </div>
+</BaseLayout>
+
+<style>
+  .content-wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 56px;
+    width: 100%;
+  }
+
+  .accent {
+    color: var(--teal);
+  }
+
+  .hero-grid-retail {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 80px;
+    align-items: center;
+    width: 100%;
+  }
+
+  .hero-actions-retail {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+
+  .btn-outline-retail {
+    background: transparent;
+    padding: 10px 24px;
+    border: 1px solid var(--rim2);
+    color: var(--white);
+    font-family: var(--body);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+  .btn-outline-retail:hover {
+    border-color: var(--teal);
+    background: var(--teal-glow);
+  }
+
+  .hero-card-retail {
+    background: rgba(11, 21, 32, 0.4);
+    border: 1px solid var(--rim2);
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .retail-box-visual {
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     gap: 10px;
+     height: 100px;
+     width: 100px;
+  }
+  .r-dot {
+     background: var(--teal);
+     opacity: 0.3;
+  }
+  .scene.active .r-dot {
+     opacity: 1;
+     animation: pulse 2s infinite alternate;
+  }
+  @keyframes pulse { to { opacity: 0.2; } }
+
+  .card-note {
+     font-size: 0.85rem;
+     color: var(--smoke);
+     line-height: 1.6;
+  }
+
+  .pillars-grid-retail {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-top: 40px;
+  }
+
+  .pillar-row-retail {
+    padding: 30px;
+    border-top: 2px solid var(--rim);
+    background: rgba(255,255,255,0.01);
+  }
+
+  .pillar-name {
+    font-family: var(--title);
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+    color: var(--white);
+  }
+
+  .solutions-grid-retail {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+
+  .sol-item {
+    padding: 40px;
+    background: var(--surface);
+    border: 1px solid var(--rim);
+  }
+
+  .tech-stack-retail {
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     gap: 20px;
+     margin-top: 40px;
+  }
+  .tech-item {
+     padding: 20px;
+     border: 1px solid var(--rim2);
+     font-size: 0.8rem;
+     color: var(--white);
+     text-transform: uppercase;
+     letter-spacing: 0.05em;
+     text-align: center;
+  }
+
+  .retail-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
+
+  .stat-card {
+    text-align: center;
+  }
+
+  .stat-val {
+    display: block;
+    font-family: var(--title);
+    font-size: 3.5rem;
+    color: var(--teal);
+    margin-bottom: 10px;
+  }
+
+  .form-split-retail {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+  }
+
+  input, select {
+    width: 100%;
+    background: var(--deep);
+    border: 1px solid var(--rim2);
+    color: var(--white);
+    padding: 16px;
+  }
+
+  @media (max-width: 1024px) {
+    .hero-grid-retail, .pillars-grid-retail, .solutions-grid-retail, .tech-stack-retail, .retail-stats-grid, .form-split-retail {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const mainForm = document.querySelector('.personal-form');
+    if (mainForm) {
+      mainForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        mainForm.reset();
+        document.querySelector('.form-success-retail').style.display = 'block';
+      });
+    }
+  });
+</script>

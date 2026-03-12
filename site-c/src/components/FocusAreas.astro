@@ -1,0 +1,153 @@
+---
+---
+
+<section id="scene-focus" class="scene">
+  <div class="container">
+    <div class="section-header">
+      <p class="scene-label">Expertise</p>
+      <h2 class="scene-title">Strategic <em>Specializations.</em></h2>
+    </div>
+
+    <div class="focus-grid-imm">
+      <a href="/enfoque-salud" class="focus-card-imm">
+        <div class="card-num">01</div>
+        <div class="card-main">
+          <h3>Enfoque en Salud</h3>
+          <p>Technical architecture for high-stakes healthcare ecosystem.</p>
+        </div>
+        <div class="card-arrow">LAUNCH //</div>
+      </a>
+
+      <a href="/enfoque-legal" class="focus-card-imm">
+        <div class="card-num">02</div>
+        <div class="card-main">
+          <h3>Enfoque Legal</h3>
+          <p>Authority-driven design systems for the legal industry.</p>
+        </div>
+        <div class="card-arrow">LAUNCH //</div>
+      </a>
+
+      <a href="/enfoque-pymes" class="focus-card-imm">
+        <div class="card-num">03</div>
+        <div class="card-main">
+          <h3>Enfoque Emprendedores/PYMES</h3>
+          <p>Strategic scaling engines for small & medium businesses.</p>
+        </div>
+        <div class="card-arrow">LAUNCH //</div>
+      </a>
+
+      <a href="/enfoque-retail" class="focus-card-imm">
+        <div class="card-num">04</div>
+        <div class="card-main">
+          <h3>Enfoque Retail/Mayoristas</h3>
+          <p>Complex B2B/B2C hybrid systems for retail giants.</p>
+        </div>
+        <div class="card-arrow">LAUNCH //</div>
+      </a>
+
+      <a href="/enfoque-marca-personal" class="focus-card-imm">
+        <div class="card-num">05</div>
+        <div class="card-main">
+          <h3>Enfoque Marca Personal</h3>
+          <p>Authority-building platforms for high-impact individuals.</p>
+        </div>
+        <div class="card-arrow">LAUNCH //</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  .section-header {
+    margin-bottom: 60px;
+  }
+
+  .scene-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 12px;
+  }
+
+  .scene-title {
+    font-family: var(--title);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    color: var(--white);
+    line-height: 1;
+  }
+
+  .scene-title em {
+    font-style: normal;
+    color: var(--teal);
+  }
+
+  .focus-grid-imm {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border-top: 1px solid var(--rim);
+  }
+
+  .focus-card-imm {
+    display: grid;
+    grid-template-columns: 80px 1fr 120px;
+    align-items: center;
+    padding: 40px 0;
+    border-bottom: 1px solid var(--rim);
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .focus-card-imm:hover {
+    padding-left: 20px;
+    background: var(--teal-glow);
+    border-bottom-color: var(--teal);
+  }
+
+  .card-num {
+    font-family: var(--body);
+    font-size: 0.8rem;
+    color: var(--teal);
+    font-weight: 600;
+  }
+
+  .card-main h3 {
+    font-family: var(--title);
+    font-size: 1.8rem;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 8px;
+  }
+
+  .card-main p {
+    font-size: 0.95rem;
+    color: var(--smoke);
+    margin: 0;
+  }
+
+  .card-arrow {
+    font-family: var(--title);
+    font-size: 0.8rem;
+    color: var(--teal);
+    letter-spacing: 0.1em;
+    text-align: right;
+    font-weight: 600;
+  }
+
+  @media (max-width: 768px) {
+    .focus-card-imm {
+      grid-template-columns: 1fr;
+      gap: 16px;
+      padding: 30px 0;
+    }
+    .card-arrow { text-align: left; }
+  }
+</style>

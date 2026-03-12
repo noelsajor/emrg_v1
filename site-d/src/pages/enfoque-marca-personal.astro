@@ -1,0 +1,386 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Contact from '../components/Contact.astro';
+---
+
+<BaseLayout title="Enfoque Marca Personal | EMRG" description="Estrategia digital 360 para consultores, expertos y profesionales que quieren construir autoridad y atraer mejores clientes.">
+  
+  <!-- Intro Scene -->
+  <section class="scene active" id="scene-0">
+    <div class="content-wrap-imm">
+      <div class="hero-flex-imm">
+        <div class="hero-copy-imm">
+          <p class="scene-label-imm">Autoridad & Influencia</p>
+          <h1 class="hero-title-imm">Expertise <br/><span class="accent-teal">Sistematizado.</span></h1>
+          <p class="hero-sub-imm">Build authority, gain visibility, and attract high-value clients with a 360 digital framework.</p>
+          <div class="hero-actions-imm">
+            <a href="#scene-4" class="btn-pkg-imm" onclick="window.goToScene(4); return false;">Solicitar Auditoría</a>
+          </div>
+        </div>
+        
+        <div class="hero-metric-box">
+           <div class="hero-quote-imm">
+              <p>“Tu marca personal no necesita más ruido. Necesita un sistema que convierta expertise en confianza.”</p>
+           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem Scene -->
+  <section class="scene" id="scene-1">
+    <div class="content-wrap-imm">
+      <div class="scene-header-imm">
+        <p class="scene-label-imm">El Problema</p>
+        <h2 class="section-title-imm">Tener experiencia no garantiza <em>ser elegido.</em></h2>
+      </div>
+      
+      <div class="pillars-list-imm">
+         <div class="pillar-box-imm">
+            <span class="pillar-idx-imm">01</span>
+            <h3>Mensaje Genérico</h3>
+            <p>Si tu propuesta suena igual que el resto del mercado, compites por precio en lugar de liderar.</p>
+         </div>
+         <div class="pillar-box-imm">
+            <span class="pillar-idx-imm">02</span>
+            <h3>Visibilidad Débil</h3>
+            <p>Sin SEO ni activos de autoridad, tu marca personal es invisible para clientes de alto valor.</p>
+         </div>
+         <div class="pillar-box-imm">
+            <span class="pillar-idx-imm">03</span>
+            <h3>Falta de Filtros</h3>
+            <p>Dependencia absoluta de recomendaciones sin un sistema que cualifique tus prospectos.</p>
+         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Authority Scene -->
+  <section class="scene" id="scene-2">
+    <div class="content-wrap-imm">
+      <div class="scene-header-imm">
+         <p class="scene-label-imm">Metodología</p>
+         <h2 class="section-title-imm">Framework <em>Authority 360.</em></h2>
+      </div>
+      
+      <div class="services-imm-grid">
+         <div class="serv-card-imm">
+            <span class="pillar-idx-imm">FASE 1</span>
+            <h3>Diagnóstico</h3>
+            <p>Auditoría de activos, posicionamiento y puntos de fuga en captación.</p>
+         </div>
+         <div class="serv-card-imm">
+            <span class="pillar-idx-imm">FASE 2</span>
+            <h3>Claridad</h3>
+            <p>Definición de mensaje comercial, categoría y especialización de nicho.</p>
+         </div>
+         <div class="serv-card-imm">
+            <span class="pillar-idx-imm">FASE 3</span>
+            <h3>Sistemas</h3>
+            <p>Despliegue de web estratégica, SEO y activos de validación profesional.</p>
+         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project Proof Scene -->
+  <section class="scene" id="scene-3">
+    <div class="content-wrap-imm">
+      <div class="scene-header-imm">
+         <p class="scene-label-imm">Impacto</p>
+         <h2 class="section-title-imm">Resultados de <em>Posicionamiento.</em></h2>
+      </div>
+      
+      <div class="cases-scroll-imm">
+         <div class="case-item-imm">
+            <span class="case-cat-imm">CONSULTORÍA</span>
+            <h3>Lead Gen +200%</h3>
+            <p>Estructura de autoridad que triplicó las consultas mensuales.</p>
+         </div>
+         <div class="case-item-imm">
+            <span class="case-cat-imm">MENTORÍA</span>
+            <h3>High-Ticket Flow</h3>
+            <p>Reposicionamiento digital logrando clientes de mayor valor.</p>
+         </div>
+         <div class="case-item-imm">
+            <span class="case-cat-imm">EXPERT TECH</span>
+            <h3>Global Visibility</h3>
+            <p>SEO personal para dominar la categoría en múltiples regiones.</p>
+         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form Scene -->
+  <section class="scene" id="scene-4">
+    <div class="content-wrap-imm form-layout-imm">
+       <div class="form-info-imm">
+          <p class="scene-label-imm">Auditoría</p>
+          <h2 class="section-title-imm">Eleva tu Marca.</h2>
+          <p class="hero-sub-imm">Detectamos bloqueos estratégicos y trazamos tu hoja de ruta hacia la autoridad digital.</p>
+       </div>
+       <div class="form-box-imm">
+          <form class="personal-audit-form-imm">
+             <div class="form-grid-imm">
+                <input type="text" placeholder="NOMBRE COMPLETO" required />
+                <input type="text" placeholder="ESPECIALIDAD" required />
+             </div>
+             <input type="text" placeholder="PROYECTO / MARCA" required />
+             <div class="form-grid-imm">
+                <select required style="background:var(--surface); border:1px solid var(--rim); color:white; padding:18px;">
+                   <option value="">OBJETIVO</option>
+                   <option>Visibilidad</option>
+                   <option>Autoridad</option>
+                   <option>Leads</option>
+                </select>
+                <input type="email" placeholder="EMAIL" required />
+             </div>
+             <button class="btn-pkg-imm" type="submit">SOLICITAR AUDITORÍA</button>
+          </form>
+          <p class="audit-success-imm" style="display:none; color: var(--teal); margin-top: 1rem; font-size:0.8rem; font-weight: 800;">Enviado correctamente. Revisaremos tu caso.</p>
+       </div>
+    </div>
+  </section>
+
+  <Contact />
+
+</BaseLayout>
+
+<style>
+  .content-wrap-imm {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 48px;
+    width: 100%;
+  }
+
+  .scene-label-imm {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: var(--teal);
+    margin-bottom: 24px;
+    display: block;
+    font-weight: 800;
+  }
+
+  .accent-teal {
+    color: var(--teal);
+    text-shadow: 0 0 20px var(--teal-dim);
+  }
+
+  .hero-flex-imm {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .hero-copy-imm {
+    max-width: 650px;
+  }
+
+  .hero-title-imm {
+    font-size: clamp(3rem, 8vw, 6.5rem);
+    line-height: 0.9;
+    margin-bottom: 32px;
+    font-family: var(--title);
+    text-transform: uppercase;
+  }
+
+  .section-title-imm {
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    line-height: 1;
+    margin-bottom: 40px;
+    font-family: var(--title);
+    text-transform: uppercase;
+  }
+
+  .hero-sub-imm {
+    font-size: 1.15rem;
+    color: var(--smoke);
+    max-width: 500px;
+    margin-bottom: 40px;
+    line-height: 1.6;
+  }
+
+  .btn-pkg-imm {
+    background: var(--teal);
+    color: #000;
+    padding: 18px 36px;
+    font-weight: 900;
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    transition: 0.3s;
+    border: none;
+    cursor: pointer;
+    font-family: var(--body);
+    text-transform: uppercase;
+    display: inline-block;
+  }
+
+  .btn-pkg-imm:hover {
+    background: #fff;
+    transform: translateY(-2px);
+  }
+
+  .hero-metric-box {
+    background: var(--surface);
+    border: 1px solid var(--rim);
+    padding: 60px;
+    max-width: 450px;
+  }
+
+  .hero-quote-imm {
+     font-size: 1.8rem;
+     line-height: 1.4;
+     color: var(--white);
+     font-family: var(--title);
+     font-style: italic;
+  }
+
+  .pillars-list-imm {
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     gap: 32px;
+     margin-top: 40px;
+  }
+
+  .pillar-box-imm {
+     border-top: 1px solid var(--rim);
+     padding-top: 32px;
+  }
+
+  .pillar-idx-imm {
+     font-family: monospace;
+     font-size: 0.85rem;
+     color: var(--teal);
+     display: block;
+     margin-bottom: 24px;
+     font-weight: 800;
+  }
+
+  .pillar-box-imm h3 {
+     font-size: 2rem;
+     margin-bottom: 16px;
+     font-family: var(--title);
+     text-transform: uppercase;
+  }
+
+  .pillar-box-imm p {
+     font-size: 0.95rem;
+     color: var(--smoke);
+     line-height: 1.6;
+  }
+
+  .services-imm-grid {
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     gap: 32px;
+     margin-top: 40px;
+  }
+
+  .serv-card-imm {
+     background: var(--surface);
+     padding: 40px;
+     border: 1px solid var(--rim);
+     transition: 0.3s;
+  }
+
+  .serv-card-imm:hover {
+    border-color: var(--teal);
+  }
+
+  .serv-card-imm h3 {
+     color: var(--white);
+     margin-bottom: 16px;
+     font-family: var(--title);
+     text-transform: uppercase;
+     font-size: 1.8rem;
+  }
+
+  .serv-card-imm p {
+     color: var(--smoke);
+     font-size: 0.95rem;
+     line-height: 1.6;
+  }
+
+  .cases-scroll-imm {
+     display: flex;
+     gap: 32px;
+     margin-top: 40px;
+  }
+
+  .case-item-imm {
+     flex: 1;
+     border: 1px solid var(--rim);
+     padding: 40px;
+     background: var(--surface);
+  }
+
+  .case-cat-imm {
+     font-size: 0.75rem;
+     color: var(--teal);
+     letter-spacing: 0.15em;
+     display: block;
+     margin-bottom: 16px;
+     font-weight: 800;
+  }
+
+  .case-item-imm h3 {
+    font-size: 2rem;
+    font-family: var(--title);
+    margin-bottom: 12px;
+  }
+
+  .form-layout-imm {
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     gap: 100px;
+     align-items: center;
+  }
+
+  .form-grid-imm {
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     gap: 16px;
+  }
+
+  .form-box-imm form {
+     display: flex;
+     flex-direction: column;
+     gap: 16px;
+  }
+
+  input {
+     background: var(--void);
+     border: 1px solid var(--rim);
+     padding: 18px;
+     color: var(--white);
+     font-family: var(--body);
+  }
+
+  @media (max-width: 1024px) {
+    .content-wrap-imm { padding: 0 24px; }
+    .hero-flex-imm, .pillars-list-imm, .services-imm-grid, .cases-scroll-imm, .form-layout-imm, .form-grid-imm {
+      grid-template-columns: 1fr;
+      flex-direction: column;
+    }
+    .hero-metric-box { display: none; }
+  }
+</style>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const auditForm = document.querySelector('.personal-audit-form-imm');
+    if (auditForm) {
+      auditForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        auditForm.reset();
+        const success = document.querySelector('.audit-success-imm');
+        if (success) success.style.display = 'block';
+      });
+    }
+  });
+</script>

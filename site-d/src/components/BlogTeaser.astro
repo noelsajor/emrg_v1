@@ -4,45 +4,14 @@ import { latestPostsQuery } from '../lib/sanity.queries';
 import BlogCard from './BlogCard.astro';
 
 // Attempt to fetch, fallback to placeholders if project ID is not set or fetch fails
-let posts = [];
-try {
-  posts = await client.fetch(latestPostsQuery);
-} catch (e) {
-  console.warn("Sanity fetch failed, using placeholders", e);
-  posts = [
-    {
-      title: "The Future of DTC Architecture",
-      slug: "future-dtc-architecture",
-      excerpt: "How headless systems are changing the conversion landscape for growing brands.",
-      publishedAt: new Date().toISOString(),
-      readingTime: 5,
-      categories: ["Engineering"]
-    },
-    {
-      title: "Brand Identity as a Growth Lever",
-      slug: "brand-identity-growth",
-      excerpt: "Why performance brands are investing in high-fidelity design early.",
-      publishedAt: new Date().toISOString(),
-      readingTime: 4,
-      categories: ["Design"]
-    },
-    {
-      title: "Optimizing the Post-Purchase Flow",
-      slug: "post-purchase-optimization",
-      excerpt: "Increasing LTV through strategic email and SMS infrastructure.",
-      publishedAt: new Date().toISOString(),
-      readingTime: 6,
-      categories: ["Growth"]
-    }
-  ];
-}
+const posts = await client.fetch(latestPostsQuery);
 ---
 <section class="scene" id="scene-blog" aria-labelledby="blog-h">
   <div class="scene-label">Insights</div>
   <h2 class="scene-title" id="blog-h">Ecommerce<br /><em>intelligence.</em></h2>
   
   <div class="testi-layout" style="margin-top: 48px;">
-    {posts.map((post) => (
+    {posts.map((post: any) => (
       <BlogCard post={post} />
     ))}
   </div>

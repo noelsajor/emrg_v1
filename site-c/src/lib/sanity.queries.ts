@@ -18,7 +18,8 @@ export const paginatedPostsQuery = groq`*[_type == "post" && defined(slug.curren
   publishedAt,
   mainImage,
   "categories": categories[]->title,
-  "author": author->name
+  "author": author->name,
+  "readingTime": round(length(pt::text(body)) / 5 / 200)
 }`;
 
 export const postBySlugQuery = groq`*[_type == "post" && slug.current == $slug][0] {

@@ -1,0 +1,383 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import SceneNav from '../components/SceneNav.astro';
+import CTA from '../components/CTA.astro';
+---
+
+<BaseLayout title="Enfoque Marca Personal | EMRG" description="Estrategia digital 360 para consultores, expertos y profesionales que quieren construir autoridad y atraer mejores clientes.">
+  <SceneNav />
+  <Header />
+
+  <div id="scroll-container">
+    <section class="scene active" id="scene-0">
+      <div class="content-wrap">
+        <div class="hero-grid-legal">
+          <div class="hero-copy">
+            <p class="scene-label">Autoridad & Influencia</p>
+            <h1 class="hero-title">Experiencia <span class="accent">Convertida.</span></h1>
+            <p class="hero-sub">
+              Estrategia digital 360 para consultores, expertos y profesionales. 
+              Construimos el sistema que transforma tu conocimiento en autoridad, visibilidad y mejores clientes.
+            </p>
+
+            <div class="hero-actions-legal">
+              <button class="nav-cta" onclick="window.goToScene(5)">Auditoría Estratégica</button>
+              <button class="btn-outline-legal" onclick="window.goToScene(2)">Ver Framework</button>
+            </div>
+
+            <div class="hero-chips">
+               <span class="chip-pill">Authority Building</span>
+               <span class="chip-pill">Personal SEO</span>
+               <span class="chip-pill">Expertise Systems</span>
+            </div>
+          </div>
+
+          <aside class="hero-card-legal">
+             <div class="hero-quote-imm">
+                <p>“Tu marca personal no necesita más ruido. Necesita una estructura que convierta expertise en confianza.”</p>
+             </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="scene" id="scene-1">
+      <div class="content-wrap">
+        <div class="section-header-legal">
+          <p class="scene-label">El Problema</p>
+          <h2 class="scene-title">Tener experiencia no garantiza <em>ser elegido.</em></h2>
+        </div>
+
+        <div class="pillars-grid-legal">
+          <article class="pillar-row-legal">
+            <span class="pillar-num">01</span>
+            <div class="pillar-content">
+              <h3 class="pillar-name">Invisibilidad</h3>
+              <p class="pillar-tagline">Muchos profesionales valiosos siguen siendo invisibles digitalmente para su cliente ideal.</p>
+            </div>
+          </article>
+          <article class="pillar-row-legal">
+            <span class="pillar-num">02</span>
+            <div class="pillar-content">
+              <h3 class="pillar-name">Mensaje Débil</h3>
+              <p class="pillar-tagline">Comunicación sin diferenciación que te hace competir como uno más en el mercado.</p>
+            </div>
+          </article>
+          <article class="pillar-row-legal">
+            <span class="pillar-num">03</span>
+            <div class="pillar-content">
+              <h3 class="pillar-name">Falta de Sistemas</h3>
+              <p class="pillar-tagline">Dependencia absoluta de recomendaciones y falta de un canal de adquisición propio.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="scene" id="scene-2">
+      <div class="content-wrap">
+        <div class="section-header-legal">
+          <p class="scene-label">Framework</p>
+          <h2 class="scene-title">Growth <em>Authority 360.</em></h2>
+          <p class="hero-sub" style="margin: 0; max-width: 600px;">Un proceso en 4 etapas para construir una presencia que inspire confianza y genere oportunidades.</p>
+        </div>
+
+        <div class="work-scroll-track-legal">
+          <article class="case-card-imm">
+            <span class="case-tag-imm">Fase 01</span>
+            <h3 class="case-brand-imm">Diagnóstico</h3>
+             <p class="case-desc-imm">Auditoría de activos, posicionamiento y puntos de fuga en captación.</p>
+          </article>
+          <article class="case-card-imm">
+            <span class="case-tag-imm">Fase 02</span>
+            <h3 class="case-brand-imm">Claridad</h3>
+            <p class="case-desc-imm">Definición de mensaje comercial, categoría y propuesta de valor única.</p>
+          </article>
+          <article class="case-card-imm">
+            <span class="case-tag-imm">Fase 03</span>
+            <h3 class="case-brand-imm">Autoridad</h3>
+            <p class="case-desc-imm">Despliegue de web estratégica, SEO y activos de validación de alto impacto.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="scene" id="scene-3">
+      <div class="content-wrap">
+        <div class="section-header-legal">
+          <p class="scene-label">Servicios</p>
+          <h2 class="scene-title">Estructura para <em>Expertos Serios.</em></h2>
+        </div>
+
+        <div class="services-grid-legal">
+          <div class="service-item-legal">
+             <span class="pillar-num">01</span>
+             <h3 class="case-brand-imm">SEO de Marca</h3>
+          </div>
+          <div class="service-item-legal">
+             <span class="pillar-num">02</span>
+             <h3 class="case-brand-imm">Web Estratégica</h3>
+          </div>
+          <div class="service-item-legal">
+             <span class="pillar-num">03</span>
+             <h3 class="case-brand-imm">Lead Generation</h3>
+          </div>
+          <div class="service-item-legal">
+             <span class="pillar-num">04</span>
+             <h3 class="case-brand-imm">Content Strategy</h3>
+          </div>
+          <div class="service-item-legal">
+             <span class="pillar-num">05</span>
+             <h3 class="case-brand-imm">CRO for Experts</h3>
+          </div>
+          <div class="service-item-legal">
+             <span class="pillar-num">06</span>
+             <h3 class="case-brand-imm">Personal Brand Ads</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="scene" id="scene-4">
+      <div class="content-wrap">
+        <div class="section-header-legal">
+          <p class="scene-label">Prueba</p>
+          <h2 class="scene-title">Resultados de <em>Posicionamiento.</em></h2>
+        </div>
+
+        <div class="cases-row-legal">
+          <article class="case-card-imm">
+             <h3 class="case-brand-imm">Consultor Senior</h3>
+             <p class="case-desc-imm">Aumento del 200% en captación de leads cualificados mediante Landing de Autoridad.</p>
+          </article>
+          <article class="case-card-imm featured-case">
+             <h3 class="case-brand-imm">Experto Tech</h3>
+             <p class="case-desc-imm">Dominio de keywords de su especialidad logrando visibilidad en 3 mercados.</p>
+          </article>
+           <article class="case-card-imm">
+             <h3 class="case-brand-imm">Personal Mentor</h3>
+             <p class="case-desc-imm">Rediseño de funnel logrando triplicar el ticket promedio de sus servicios.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="scene" id="scene-5">
+      <div class="content-wrap form-split-legal">
+         <div class="form-copy-legal">
+            <p class="scene-label">Consulta</p>
+            <h2 class="scene-title">Inicia tu <em>Auditoría.</em></h2>
+            <p class="hero-sub">Revisamos tu presencia digital para detectar bloqueos en tu crecimiento.</p>
+         </div>
+         <form class="qualification-form-legal personal-form">
+            <div class="form-grid">
+               <input type="text" placeholder="NOMBRE COMPLETO" required />
+               <input type="text" placeholder="ESPECIALIDAD" required />
+            </div>
+            <div class="form-row">
+               <input type="text" placeholder="MARCA O PROYECTO" required />
+            </div>
+            <div class="form-grid">
+               <select required>
+                  <option value="">OBJETIVO</option>
+                  <option>Visibilidad</option>
+                  <option>Autoridad</option>
+                  <option>Leads Qualificados</option>
+               </select>
+               <input type="email" placeholder="EMAIL" required />
+            </div>
+            <button class="nav-cta" type="submit">Solicitar Auditoría</button>
+            <p class="form-success-legal" style="display:none; margin-top: 1rem; color: var(--teal); font-size: 0.8rem; font-weight: 600;">SOLICITUD ENVIADA CON ÉXITO.</p>
+         </form>
+      </div>
+    </section>
+
+    <CTA />
+  </div>
+</BaseLayout>
+
+<style>
+  .content-wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 56px;
+    width: 100%;
+  }
+
+  .accent {
+    color: var(--teal);
+  }
+
+  .hero-grid-legal {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 80px;
+    align-items: center;
+    width: 100%;
+  }
+
+  .hero-actions-legal {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+
+  .btn-outline-legal {
+    background: transparent;
+    padding: 10px 24px;
+    border: 1px solid var(--rim2);
+    color: var(--white);
+    font-family: var(--body);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+  .btn-outline-legal:hover {
+    border-color: var(--teal);
+    background: var(--teal-glow);
+  }
+
+  .hero-card-legal {
+    background: rgba(11, 21, 32, 0.4);
+    border: 1px solid var(--rim2);
+    backdrop-filter: blur(12px);
+    padding: 60px;
+  }
+
+  .hero-quote-imm {
+     font-size: 1.8rem;
+     line-height: 1.3;
+     color: var(--white);
+     font-family: var(--title);
+     font-style: italic;
+  }
+
+  .pillars-grid-legal {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+    margin-top: 40px;
+  }
+
+  .pillar-row-legal {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 24px 0;
+    border-top: 1px solid var(--rim);
+  }
+
+  .pillar-num {
+    font-family: var(--body);
+    font-size: 0.7rem;
+    color: var(--teal);
+    font-weight: 600;
+  }
+
+  .pillar-name {
+    font-family: var(--title);
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+    color: var(--white);
+  }
+
+  .pillar-tagline {
+    font-size: 0.85rem;
+    color: var(--smoke);
+  }
+
+  .work-scroll-track-legal {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 60px;
+  }
+
+  .services-grid-legal {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: var(--rim);
+    border: 1px solid var(--rim);
+    width: 100%;
+  }
+
+  .service-item-legal {
+    background: var(--surface);
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .cases-row-legal {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 40px;
+  }
+
+  .featured-case {
+    border-color: var(--teal);
+    background: var(--teal-glow);
+  }
+
+  .form-split-legal {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .qualification-form-legal {
+    display: grid;
+    gap: 20px;
+    width: 100%;
+  }
+
+  .form-grid {
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     gap: 15px;
+  }
+
+  input, select {
+    width: 100%;
+    background: var(--deep);
+    border: 1px solid var(--rim2);
+    color: var(--white);
+    padding: 16px;
+    font-family: var(--body);
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+  }
+  input:focus, select:focus {
+    outline: none;
+    border-color: var(--teal);
+    box-shadow: 0 0 15px var(--teal-glow);
+  }
+
+  @media (max-width: 1024px) {
+    .hero-grid-legal, .pillars-grid-legal, .work-scroll-track-legal, .services-grid-legal, .cases-row-legal, .form-split-legal, .form-grid {
+      grid-template-columns: 1fr;
+    }
+    .hero-card-legal { display: none; }
+  }
+</style>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const mainForm = document.querySelector('.personal-form');
+    if (mainForm) {
+      mainForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        mainForm.reset();
+        document.querySelector('.form-success-legal').style.display = 'block';
+      });
+    }
+  });
+</script>

@@ -17,7 +17,7 @@ export async function getStaticPaths() {
       { slug: 'post-purchase-optimization' }
     ];
   }
-  return posts.map(post => ({ params: { slug: post.slug } }));
+  return posts.map((post: any) => ({ params: { slug: post.slug } }));
 }
 
 const { slug } = Astro.params;
@@ -83,6 +83,12 @@ const breadcrumbs = generateBreadcrumbSchema([
       </div>
       <h1 class="hero-title post-title">{post.title}</h1>
       <p class="hero-sub post-excerpt">{post.excerpt}</p>
+
+      {post.mainImage && (
+        <div class="post-feature-image">
+          <img src={urlFor(post.mainImage).url()} alt={post.title} />
+        </div>
+      )}
       
       <div class="post-meta">
         <div class="post-author">
@@ -98,12 +104,23 @@ const breadcrumbs = generateBreadcrumbSchema([
       </div>
 
       <div class="prose">
-        {post.body?.map(block => (
-          block._type === 'block' ? 
-            <p>{block.children?.[0]?.text}</p> : 
-            block._type === 'image' ? 
-            <img src={urlFor(block).url()} alt={block.alt || ""} /> : null
-        ))}
+        {post.body?.map((block: any) => {
+          if (block._type === 'block') {
+            const style = block.style || 'normal';
+            if (style === 'h2') return <h2 style="color: var(--white); font-family: var(--title); font-size: 2.2rem; margin: 48px 0 24px; letter-spacing: 0.04em; text-align: left;">{block.children.map((c: any) => c.text).join('')}</h2>;
+            if (style === 'h3') return <h3 style="color: var(--white); font-family: var(--title); font-size: 1.8rem; margin: 40px 0 20px; letter-spacing: 0.04em; text-align: left;">{block.children.map((c: any) => c.text).join('')}</h3>;
+            return <p style="margin-bottom: 24px; text-align: left;">{block.children.map((c: any) => c.text).join('')}</p>;
+          }
+          if (block._type === 'image') {
+            return (
+              <figure style="margin: 48px 0; border: 1px solid var(--rim); border-radius: 8px; overflow: hidden; background: var(--deep);">
+                <img src={urlFor(block).url()} alt={block.alt || ""} style="width: 100%; height: auto; display: block;" />
+                {block.caption && <figcaption style="padding: 16px; font-size: 0.8rem; color: var(--mist); text-align: center; border-top: 1px solid var(--rim);">{block.caption}</figcaption>}
+              </figure>
+            );
+          }
+          return null;
+        })}
       </div>
 
       <div class="post-cta">
@@ -115,7 +132,7 @@ const breadcrumbs = generateBreadcrumbSchema([
         <div class="related-section">
           <h3 class="scene-label">Related Reading</h3>
           <div class="blog-grid">
-            {post.relatedPosts.map(p => <BlogCard post={p} showExcerpt={false} />)}
+            {post.relatedPosts.map((p: any) => <BlogCard post={p} showExcerpt={false} />)}
           </div>
         </div>
       )}
@@ -135,6 +152,10 @@ const breadcrumbs = generateBreadcrumbSchema([
 		background: rgba(2,4,8,0.8);
 		backdrop-filter: blur(12px);
 		border-bottom: 1px solid var(--rim);
+	}
+	.hero-title {
+		opacity: 1 !important;
+		transform: none !important;
 	}
 </style>
 
@@ -163,6 +184,19 @@ const breadcrumbs = generateBreadcrumbSchema([
     font-size: 1.25rem;
     color: var(--smoke);
     text-align: left;
+  }
+  .post-feature-image {
+    margin-bottom: 64px;
+    border: 1px solid var(--rim);
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--deep);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  }
+  .post-feature-image img {
+    width: 100%;
+    height: auto;
+    display: block;
   }
   .post-meta {
     padding: 24px 0;

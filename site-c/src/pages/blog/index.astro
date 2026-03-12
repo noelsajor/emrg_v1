@@ -5,26 +5,7 @@ import BlogCard from '../../components/BlogCard.astro';
 import { client } from '../../lib/sanity.client';
 import { paginatedPostsQuery } from '../../lib/sanity.queries';
 
-// const posts = await client.fetch(paginatedPostsQuery, { start: 0, end: 12 });
-
-const posts = [
-  {
-    title: "The Future of DTC Architecture",
-    slug: "future-dtc-architecture",
-    excerpt: "How headless systems are changing the conversion landscape for growing brands.",
-    publishedAt: "2025-02-24",
-    readingTime: 5,
-    categories: ["Engineering"]
-  },
-  {
-    title: "Brand Identity as a Growth Lever",
-    slug: "brand-identity-growth",
-    excerpt: "Why performance brands are investing in high-fidelity design early.",
-    publishedAt: "2025-02-20",
-    readingTime: 4,
-    categories: ["Design"]
-  }
-];
+const posts = await client.fetch(paginatedPostsQuery, { start: 0, end: 12 });
 ---
 
 <BaseLayout title="Insights & Research — EMRG" description="Performance ecommerce insights, engineering deep dives, and growth strategy for DTC founders.">
@@ -54,5 +35,9 @@ const posts = [
 	#nav {
 		background: rgba(2,4,8,0.8);
 		backdrop-filter: blur(12px);
+	}
+	.hero-title {
+		opacity: 1 !important;
+		transform: none !important;
 	}
 </style>

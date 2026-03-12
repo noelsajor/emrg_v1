@@ -1,0 +1,299 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Enfoque Emprendedores y PYMES | EMRG" description="SEO, CRO y estrategia digital para ecommerce, retailers y mayoristas que quieren escalar facturación.">
+  
+  <section class="scene active" id="scene-0">
+    <div class="hero-block-imm">
+      <p class="label-imm">Ecommerce & Performance</p>
+      <h1 class="title-imm">Máquina de <br/><span class="teal-glow">Ventas.</span></h1>
+      <p class="desc-imm">SEO, CRO y rendimiento digital para retailers y mayoristas que buscan dominar el canal online. Escalamos facturación mediante activos de alto impacto.</p>
+      
+      <div class="action-grid-imm">
+        <a href="#scene-3" class="btn-imm" onclick="window.goToScene(3); return false;">Inicia Auditoría //</a>
+        <div class="metric-chip-imm">
+           <span class="m-val-imm">+38% Conv</span>
+           <span class="m-val-imm">+72% SEO</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="scene" id="scene-1">
+    <div class="content-wrap-imm">
+      <h2 class="section-title-imm">El Problema: <span class="teal-glow">Fugas de Facturación.</span></h2>
+      
+      <div class="pillars-imm">
+        <div class="pillar-box-imm">
+          <span class="p-num-imm">01</span>
+          <h3>SEO Ineficiente</h3>
+          <p>Categorías que no rankean y pierden visitas ante competidores directos.</p>
+        </div>
+        <div class="pillar-box-imm">
+          <span class="p-num-imm">02</span>
+          <h3>Abandono Masivo</h3>
+          <p>Fricciones en la UX que frenan la conversión en el checkout.</p>
+        </div>
+        <div class="pillar-box-imm">
+          <span class="p-num-imm">03</span>
+          <h3>Crecimiento Ciego</h3>
+          <p>Falta de un sistema de datos para priorizar acciones con ROI.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="scene" id="scene-2">
+    <div class="content-wrap-imm">
+      <h2 class="section-title-imm">Metodología <span class="teal-glow">Performance.</span></h2>
+      <div class="services-imm">
+         <div class="service-row-imm">
+            <span>01</span>
+            <h3>Ecommerce Architecture</h3>
+         </div>
+         <div class="service-row-imm">
+            <span>02</span>
+            <h3>Conversion Rate Ops</h3>
+         </div>
+         <div class="service-row-imm">
+            <span>03</span>
+            <h3>Scaling Strategy</h3>
+         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="scene" id="scene-3">
+    <div class="content-wrap-imm">
+      <div class="contact-split-imm">
+        <div class="contact-text-imm">
+          <h2 class="section-title-imm">Auditoría <span class="teal-glow">E-commerce.</span></h2>
+          <p class="desc-imm">Evaluamos tu ecosistema para detectar fugas y trazar tu hoja de ruta de crecimiento.</p>
+        </div>
+        
+        <form class="imm-form pymes-form">
+          <div class="form-row-imm">
+            <input type="text" placeholder="NOMBRE" required />
+            <input type="text" placeholder="EMPRESA" required />
+          </div>
+          <div class="form-row-imm">
+            <input type="text" placeholder="PLATAFORMA" required />
+            <select required style="background:var(--surface); border:1px solid var(--rim); color:white; padding:18px;">
+               <option value="">NEGOCIO</option>
+               <option>Retail</option>
+               <option>Mayorista</option>
+            </select>
+          </div>
+          <textarea placeholder="RETOS PRINCIPALES..." required></textarea>
+          <button type="submit" class="btn-imm">Solicitar Análisis //</button>
+          <p class="success-imm" style="display:none; margin-top: 1rem; color: var(--teal); font-weight: 800;">SOLICITUD ENVIADA EXITOSAMENTE.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .content-wrap-imm {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    width: 100%;
+  }
+
+  .label-imm {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: var(--teal);
+    margin-bottom: 24px;
+    display: block;
+    font-weight: 800;
+  }
+
+  .title-imm {
+    font-size: clamp(3.5rem, 8vw, 7rem);
+    line-height: 0.9;
+    font-weight: 900;
+    margin-bottom: 32px;
+    font-family: var(--title);
+    text-transform: uppercase;
+  }
+
+  .section-title-imm {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    line-height: 1;
+    font-weight: 900;
+    margin-bottom: 48px;
+    font-family: var(--title);
+    text-transform: uppercase;
+  }
+
+  .teal-glow {
+    color: var(--teal);
+    text-shadow: 0 0 20px var(--teal-dim);
+  }
+
+  .desc-imm {
+    font-size: 1.15rem;
+    color: var(--smoke);
+    max-width: 550px;
+    line-height: 1.6;
+    margin-bottom: 48px;
+  }
+
+  .action-grid-imm {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .btn-imm {
+    background: var(--teal);
+    color: #000;
+    padding: 18px 36px;
+    font-weight: 900;
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    transition: 0.3s;
+    border: none;
+    cursor: pointer;
+    font-family: var(--body);
+    text-transform: uppercase;
+  }
+
+  .btn-imm:hover {
+    background: #fff;
+    transform: translateY(-2px);
+  }
+
+  .metric-chip-imm {
+     display: flex;
+     gap: 20px;
+     font-size: 0.75rem;
+     color: var(--teal);
+     font-family: monospace;
+     font-weight: 800;
+  }
+
+  .pillars-imm {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
+
+  .pillar-box-imm {
+    padding: 48px;
+    border: 1px solid var(--rim);
+    background: var(--surface);
+    transition: 0.3s;
+  }
+
+  .pillar-box-imm:hover {
+    border-color: var(--teal);
+  }
+
+  .p-num-imm {
+    color: var(--teal);
+    font-size: 0.85rem;
+    margin-bottom: 24px;
+    display: block;
+    font-weight: 800;
+  }
+
+  .pillar-box-imm h3 {
+    font-size: 2rem;
+    margin-bottom: 16px;
+    font-family: var(--title);
+    text-transform: uppercase;
+  }
+
+  .services-imm {
+     width: 100%;
+  }
+
+  .service-row-imm {
+     display: flex;
+     align-items: center;
+     gap: 48px;
+     padding: 32px 0;
+     border-bottom: 1px solid var(--rim);
+     transition: 0.3s;
+  }
+
+  .service-row-imm:hover {
+    padding-left: 24px;
+    border-bottom-color: var(--teal);
+  }
+
+  .service-row-imm span {
+    color: var(--teal);
+    font-weight: 800;
+    font-family: monospace;
+  }
+
+  .service-row-imm h3 {
+     font-size: 3.5rem;
+     font-family: var(--title);
+     text-transform: uppercase;
+  }
+
+  .contact-split-imm {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 80px;
+    width: 100%;
+    align-items: center;
+  }
+
+  .imm-form {
+    display: grid;
+    gap: 20px;
+    background: var(--surface);
+    padding: 48px;
+    border: 1px solid var(--rim);
+  }
+
+  .form-row-imm {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  input, textarea {
+    background: var(--void);
+    border: 1px solid var(--rim);
+    padding: 18px;
+    color: #fff;
+    width: 100%;
+    font-family: var(--body);
+  }
+
+  textarea {
+    height: 120px;
+    resize: none;
+  }
+
+  @media (max-width: 1024px) {
+    .pillars-imm, .contact-split-imm, .form-row-imm {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.querySelector('.pymes-form');
+    if (form) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        form.reset();
+        const success = form.querySelector('.success-imm');
+        if (success) success.style.display = 'block';
+      });
+    }
+  });
+</script>

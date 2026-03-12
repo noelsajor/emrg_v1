@@ -1,0 +1,160 @@
+---
+---
+
+<section id="scene-focus" class="scene">
+  <div class="content-wrap-imm">
+    <div class="section-header-imm">
+      <p class="scene-label-imm" data-i18n="about.focus_eyebrow">Expertise</p>
+      <h2 class="section-title-imm" data-i18n="about.focus_title">Strategic Focus</h2>
+    </div>
+
+    <div class="focus-list-imm">
+      <a href="/enfoque-salud" class="focus-row-imm">
+        <div class="row-left">
+          <span class="row-num">01</span>
+          <span class="row-title" data-i18n="about.focus_salud">Enfoque en Salud</span>
+        </div>
+        <div class="row-center">
+          <p data-i18n="about.focus_salud_desc">Bio-technical performance for high-stakes healthcare ecosystem.</p>
+        </div>
+        <div class="row-right">
+          <span class="row-link">Launch //</span>
+        </div>
+      </a>
+      
+      <a href="/enfoque-legal" class="focus-row-imm">
+        <div class="row-left">
+          <span class="row-num">02</span>
+          <span class="row-title" data-i18n="about.focus_legal">Enfoque Legal</span>
+        </div>
+        <div class="row-center">
+          <p data-i18n="about.focus_legal_desc">Authority-driven design systems for the legal industry.</p>
+        </div>
+        <div class="row-right">
+          <span class="row-link">Launch //</span>
+        </div>
+      </a>
+
+      <a href="/enfoque-pymes" class="focus-row-imm">
+        <div class="row-left">
+          <span class="row-num">03</span>
+          <span class="row-title" data-i18n="about.focus_pymes">Enfoque Emprendedores/PYMES</span>
+        </div>
+        <div class="row-center">
+          <p data-i18n="about.focus_pymes_desc">Strategic scaling engines for small & medium businesses.</p>
+        </div>
+        <div class="row-right">
+          <span class="row-link">Launch //</span>
+        </div>
+      </a>
+
+      <a href="/enfoque-retail" class="focus-row-imm">
+        <div class="row-left">
+          <span class="row-num">04</span>
+          <span class="row-title" data-i18n="about.focus_retail">Enfoque Retail/Mayoristas</span>
+        </div>
+        <div class="row-center">
+          <p data-i18n="about.focus_retail_desc">Complex B2B/B2C hybrid systems for retail giants.</p>
+        </div>
+        <div class="row-right">
+          <span class="row-link">Launch //</span>
+        </div>
+      </a>
+
+      <a href="/enfoque-marca-personal" class="focus-row-imm">
+        <div class="row-left">
+          <span class="row-num">05</span>
+          <span class="row-title" data-i18n="about.focus_personal">Enfoque Marca Personal</span>
+        </div>
+        <div class="row-center">
+          <p data-i18n="about.focus_personal_desc">Authority building and digital systems for experts.</p>
+        </div>
+        <div class="row-right">
+          <span class="row-link">Launch //</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .content-wrap-imm {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 48px;
+    width: 100%;
+  }
+
+  .focus-list-imm {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid var(--rim);
+    margin-top: 40px;
+  }
+
+  .focus-row-imm {
+    display: grid;
+    grid-template-columns: 350px 1fr 150px;
+    align-items: center;
+    padding: 32px 0;
+    border-bottom: 1px solid var(--rim);
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .focus-row-imm:hover {
+    padding-left: 20px;
+    background: var(--teal-glow);
+    border-bottom-color: var(--teal);
+  }
+
+  .row-left {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .row-num {
+    font-family: var(--body);
+    font-size: 0.75rem;
+    color: var(--teal);
+    font-weight: 800;
+  }
+
+  .row-title {
+    font-family: var(--title);
+    font-size: 1.8rem;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .row-center p {
+    font-size: 0.95rem;
+    color: var(--smoke);
+    margin: 0;
+    max-width: 500px;
+    line-height: 1.6;
+  }
+
+  .row-link {
+    font-family: var(--title);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: var(--teal);
+    letter-spacing: 0.1em;
+    text-align: right;
+    display: block;
+    font-weight: 800;
+  }
+
+  @media (max-width: 1024px) {
+    .focus-row-imm {
+      grid-template-columns: 1fr;
+      gap: 16px;
+      padding: 24px 0;
+    }
+    .row-link { text-align: left; }
+    .row-center p { max-width: 100%; }
+  }
+</style>

@@ -4,6 +4,7 @@ import '../styles/global.css';
 interface Props {
   title?: string;
   description?: string;
+  image?: string;
 }
 
 const { 
@@ -42,16 +43,11 @@ const {
   <div id="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" data-i18n-attr="aria-label:aria.page_progress"></div>
 
   <nav id="nav" aria-label="Main navigation" data-i18n-attr="aria-label:aria.main_nav">
-    <div class="nav-logo" tabindex="0" role="link" data-i18n-attr="aria-label:aria.emrg_home">
+    <a href="/" class="nav-logo" id="logo-link" data-i18n-attr="aria-label:aria.emrg_home">
       EMRG<span>.</span>
-    </div>
-    <ul class="nav-links">
-      <li><a href="#services" data-i18n="nav.services">Services</a></li>
-      <li><a href="#work" data-i18n="nav.work">Work</a></li>
-      <li><a href="#process" data-i18n="nav.process">Process</a></li>
-      <li><a href="#packages" data-i18n="nav.packages">Packages</a></li>
-      <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
-      <li><a href="/blog">Blog</a></li>
+    </a>
+    <ul class="nav-links" id="nav-list">
+      <!-- Generated dynamically -->
     </ul>
     <div style="display: flex; align-items: center;">
       <button class="nav-menu-btn-imm" id="mobile-menu-btn-imm" aria-haspopup="true" aria-controls="mobile-menu-imm" data-i18n-attr="aria-label:aria.open_menu">
@@ -64,13 +60,8 @@ const {
 
   <div id="mobile-menu-imm" class="mobile-menu-imm" role="dialog" aria-modal="true" aria-hidden="true" data-i18n-attr="aria-label:aria.mobile_menu">
     <div class="mobile-menu-panel-imm">
-      <div class="mobile-menu-links-imm">
-        <a href="#services" class="mobile-menu-link-imm" data-i18n="nav.services" onclick="closeMobileMenu()">Services</a>
-        <a href="#work" class="mobile-menu-link-imm" data-i18n="nav.work" onclick="closeMobileMenu()">Work</a>
-        <a href="#process" class="mobile-menu-link-imm" data-i18n="nav.process" onclick="closeMobileMenu()">Process</a>
-        <a href="#packages" class="mobile-menu-link-imm" data-i18n="nav.packages" onclick="closeMobileMenu()">Packages</a>
-        <a href="#faq" class="mobile-menu-link-imm" data-i18n="nav.faq" onclick="closeMobileMenu()">FAQ</a>
-        <a href="/blog" class="mobile-menu-link-imm" onclick="closeMobileMenu()">Blog</a>
+      <div class="mobile-menu-links-imm" id="mobile-nav-list">
+        <!-- Generated dynamically -->
       </div>
       <div class="mobile-menu-actions-imm">
         <button class="lang-toggle-imm" id="lang-toggle-mobile">EN</button>
@@ -80,15 +71,7 @@ const {
   </div>
 
   <aside id="scene-nav" aria-label="Section navigation" data-i18n-attr="aria-label:aria.section_nav">
-    <div class="scene-dot active" data-index="0" data-label="Home" data-i18n-attr="data-label:dots.home_label|aria-label:dots.home_aria"></div>
-    <div class="scene-dot" data-index="1" data-label="Results" data-i18n-attr="data-label:dots.results_label|aria-label:dots.results_aria"></div>
-    <div class="scene-dot" data-index="2" data-label="Services" data-i18n-attr="data-label:dots.services_label|aria-label:dots.services_aria"></div>
-    <div class="scene-dot" data-index="3" data-label="Work" data-i18n-attr="data-label:dots.work_label|aria-label:dots.work_aria"></div>
-    <div class="scene-dot" data-index="4" data-label="Process" data-i18n-attr="data-label:dots.process_label|aria-label:dots.process_aria"></div>
-    <div class="scene-dot" data-index="5" data-label="Packages" data-i18n-attr="data-label:dots.packages_label|aria-label:dots.packages_aria"></div>
-    <div class="scene-dot" data-index="6" data-label="Testimonials" data-i18n-attr="data-label:dots.testimonials_label|aria-label:dots.testimonials_aria"></div>
-    <div class="scene-dot" data-index="7" data-label="FAQ" data-i18n-attr="data-label:dots.faq_label|aria-label:dots.faq_aria"></div>
-    <div class="scene-dot" data-index="8" data-label="Contact" data-i18n-attr="data-label:dots.contact_label|aria-label:dots.contact_aria"></div>
+    <!-- Dots generated dynamically by script -->
   </aside>
 
   <div id="scroll-hint">
@@ -108,21 +91,131 @@ const {
       // For simplicity and speed, I'll keep the script block similar to the original,
       // but wrap it in an initialization that checks for dependencies.
 
-      const TOTAL_SCENES = 9;
+      let TOTAL_SCENES = 0;
       let currentScene = 0;
       let isTransitioning = false;
       
       // Help with hydration/initial delay
       window.addEventListener('DOMContentLoaded', () => {
         const scenes = document.querySelectorAll('.scene');
+        TOTAL_SCENES = scenes.length;
+        const navContainer = document.getElementById('scene-nav');
+        const navList = document.getElementById('nav-list');
+        const mobileNavList = document.getElementById('mobile-nav-list');
+        const labels = ['Home', 'Results', 'Services', 'Expertise', 'Work', 'Blog', 'Process', 'Packages', 'Testimonials', 'FAQ', 'Contact'];
+        const i18nKeysForNav = ['home', 'results', 'services', 'focus', 'work', 'blog', 'process', 'packages', 'testimonials', 'faq', 'contact'];
+
+        if (navContainer) navContainer.innerHTML = '';
+        if (navList) navList.innerHTML = '';
+        if (mobileNavList) mobileNavList.innerHTML = '';
+        
+        scenes.forEach((_, i) => {
+          const label = labels[i] || `Section ${i+1}`;
+          const key = i18nKeysForNav[i] || `section_${i}`;
+
+          // Create Dot
+          if (navContainer) {
+            const dot = document.createElement('div');
+            dot.className = 'scene-dot' + (i === 0 ? ' active' : '');
+            dot.setAttribute('data-index', i);
+            dot.setAttribute('data-label', label);
+            dot.setAttribute('data-i18n-attr', `data-label:dots.${key}_label|aria-label:dots.${key}_aria`);
+            navContainer.appendChild(dot);
+          }
+
+          // Create Nav Item (Desktop)
+          if (navList) {
+            const li = document.createElement('li');
+            const a = document.createElement('a');
+            a.href = `#scene-${i}`;
+            a.className = i === 0 ? 'active' : '';
+            a.setAttribute('data-index', i);
+            a.setAttribute('data-i18n', `dots.${key}_label`);
+            a.textContent = label;
+            li.appendChild(a);
+            navList.appendChild(li);
+
+            a.addEventListener('click', (e) => {
+              e.preventDefault();
+              window.goToScene(i);
+              if (window.closeMobileMenu) window.closeMobileMenu();
+            });
+          }
+
+          // Create Nav Item (Mobile)
+          if (mobileNavList) {
+            const a = document.createElement('a');
+            a.href = `#scene-${i}`;
+            a.className = 'mobile-menu-link-imm' + (i === 0 ? ' active' : '');
+            a.setAttribute('data-index', i);
+            a.setAttribute('data-i18n', `dots.${key}_label`);
+            a.textContent = label;
+            mobileNavList.appendChild(a);
+
+            a.addEventListener('click', (e) => {
+              e.preventDefault();
+              window.goToScene(i);
+              if (window.closeMobileMenu) window.closeMobileMenu();
+            });
+          }
+        });
+
+        // Add static "About Us" and "Blog" links to navs if it's the home page
+        const addStaticLinks = (container, isMobile) => {
+          if (!container || (window.location.pathname !== '/' && window.location.pathname !== '/index.html')) return;
+          
+          ['about', 'blog'].forEach(slug => {
+            const a = document.createElement('a');
+            a.href = `/${slug}`;
+            if (isMobile) a.className = 'mobile-menu-link-imm';
+            a.setAttribute('data-i18n', slug === 'about' ? 'nav.about' : 'dots.blog_label');
+            a.textContent = slug === 'about' ? 'About Us' : 'Blog';
+            
+            if (isMobile) {
+              container.appendChild(a);
+            } else {
+              const li = document.createElement('li');
+              li.appendChild(a);
+              container.appendChild(li);
+            }
+          });
+        };
+
+        if (navList) addStaticLinks(navList, false);
+        if (mobileNavList) addStaticLinks(mobileNavList, true);
+
+        // If no scenes, enable normal scrolling and hide immersive-only UI
+        if (TOTAL_SCENES === 0) {
+          document.documentElement.style.overflow = 'auto';
+          document.body.style.overflow = 'auto';
+          const scrollContainer = document.getElementById('scroll-container');
+          if (scrollContainer) {
+            scrollContainer.style.position = 'relative';
+            scrollContainer.style.height = 'auto';
+            scrollContainer.style.overflow = 'visible';
+          }
+          if (navContainer) navContainer.style.display = 'none';
+          if (progressBar) progressBar.style.display = 'none';
+          if (scrollHint) scrollHint.style.display = 'none';
+          return;
+        }
+
         const dots = document.querySelectorAll('.scene-dot');
         const progressBar = document.getElementById('progress-bar');
         const scrollHint = document.getElementById('scroll-hint');
 
         function updateDots() {
-          dots.forEach(d => d.classList.remove('active'));
-          const active = dots[currentScene];
-          if (active) active.classList.add('active');
+          const allDots = document.querySelectorAll('.scene-dot');
+          const allNavLinks = document.querySelectorAll('#nav-list a[data-index]');
+          const allMobileLinks = document.querySelectorAll('#mobile-nav-list a[data-index]');
+          
+          allDots.forEach(d => d.classList.remove('active'));
+          allNavLinks.forEach(l => l.classList.remove('active'));
+          allMobileLinks.forEach(l => l.classList.remove('active'));
+          
+          if (allDots[currentScene]) allDots[currentScene].classList.add('active');
+          if (allNavLinks[currentScene]) allNavLinks[currentScene].classList.add('active');
+          if (allMobileLinks[currentScene]) allMobileLinks[currentScene].classList.add('active');
         }
 
         function updateProgress() {
@@ -152,12 +245,24 @@ const {
           setTimeout(() => { isTransitioning = false; }, 550);
         };
 
-        dots.forEach(dot => {
+        const allDots = document.querySelectorAll('.scene-dot');
+        allDots.forEach(dot => {
           dot.addEventListener('click', () => {
             const idx = parseInt(dot.getAttribute('data-index'), 10);
             if (!Number.isNaN(idx)) window.goToScene(idx);
           });
         });
+
+        // Logo click handler
+        const logoLink = document.getElementById('logo-link');
+        if (logoLink) {
+          logoLink.addEventListener('click', (e) => {
+            if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
+              e.preventDefault();
+              window.goToScene(0);
+            }
+          });
+        }
 
         window.addEventListener('keydown', (e) => {
           if (isTransitioning) return;
@@ -234,13 +339,38 @@ const {
         // i18n Logic
         const I18N = {
           en: {
-            nav: { services: "Services", work: "Work", process: "Process", packages: "Packages", faq: "FAQ", book_call: "Book a Call", menu: "Menu", close: "Close" },
+            nav: { services: "Services", work: "Work", process: "Process", packages: "Packages", about: "About Us", faq: "FAQ", book_call: "Book a Call", menu: "Menu", close: "Close" },
+            about: {
+              eyebrow: "The Studio",
+              title: "Engineered to <span class=\"accent\">Win.</span>",
+              p1: "We are a tactical ecommerce performance studio. We unite brand identity and technical engineering to build high-converting growth systems for DTC brands.",
+              trait1: "Speed First",
+              trait1_desc: "We launch full-stack stores in 7 days, eliminating the \"agency lag\" that kills momentum.",
+              trait2: "Tech Depth",
+              trait2_desc: "Under the hood of every design is rigid, scalable code built for extreme mobile performance.",
+              trait3: "Growth Focus",
+              trait3_desc: "We don't just build sites; we build the infrastructure that compounds revenue.",
+              focus_eyebrow: "Expertise",
+              focus_title: "Strategic Focus",
+              focus_salud: "Enfoque en Salud",
+              focus_salud_desc: "Bio-technical performance for high-stakes healthcare ecosystem.",
+              focus_legal: "Enfoque Legal",
+              focus_legal_desc: "Authority-driven design systems for the legal industry.",
+              focus_pymes: "Enfoque Emprendedores/PYMES",
+              focus_pymes_desc: "Strategic scaling engines for small & medium businesses.",
+              focus_retail: "Enfoque Retail/Mayoristas",
+              focus_retail_desc: "Complex B2B/B2C hybrid systems for retail giants.",
+              focus_personal: "Enfoque Marca Personal",
+              focus_personal_desc: "Authority-building platforms for high-impact individuals."
+            },
             scroll: { hint: "Scroll to explore" },
             dots: { 
               home_label: "Home", home_aria: "Go to Home",
               results_label: "Results", results_aria: "Go to Results",
               services_label: "Services", services_aria: "Go to Services",
+              focus_label: "Expertise", focus_aria: "Go to Expertise",
               work_label: "Work", work_aria: "Go to Work",
+              blog_label: "Blog", blog_aria: "Go to Blog",
               process_label: "Process", process_aria: "Go to Process",
               packages_label: "Packages", packages_aria: "Go to Packages",
               testimonials_label: "Testimonials", testimonials_aria: "Go to Testimonials",
@@ -251,13 +381,38 @@ const {
             // ... truncated for layout, full dict applied in applyLang
           },
           es: {
-            nav: { services: "Servicios", work: "Work", process: "Proceso", packages: "Paquetes", faq: "FAQ", book_call: "Agendar llamada", menu: "Menú", close: "Cerrar" },
+            nav: { services: "Servicios", work: "Work", process: "Proceso", packages: "Paquetes", about: "Nosotros", faq: "FAQ", book_call: "Agendar llamada", menu: "Menú", close: "Cerrar" },
+            about: {
+              eyebrow: "El Estudio",
+              title: "Ingeniería para <span class=\"accent\">Ganar.</span>",
+              p1: "Somos un estudio táctico de rendimiento de comercio electrónico. Unimos la identidad de marca y la ingeniería técnica para crear sistemas de crecimiento de alta conversión para marcas DTC.",
+              trait1: "Velocidad Primero",
+              trait1_desc: "Lanzamos tiendas full-stack en 7 días, eliminando el retraso de las agencias que mata el impulso.",
+              trait2: "Profundidad Técnica",
+              trait2_desc: "Debajo de cada diseño hay un código rígido y escalable creado para un rendimiento móvil extremo.",
+              trait3: "Enfoque en Crecimiento",
+              trait3_desc: "No solo creamos sitios; construimos la infraestructura que multiplica los ingresos.",
+              focus_eyebrow: "Especialización",
+              focus_title: "Enfoque Estratégico",
+              focus_salud: "Enfoque en Salud",
+              focus_salud_desc: "Rendimiento bio-técnico para ecosistemas de salud de alto impacto.",
+              focus_legal: "Enfoque Legal",
+              focus_legal_desc: "Sistemas de diseño basados en autoridad para la industria legal.",
+              focus_pymes: "Enfoque Emprendedores/PYMES",
+              focus_pymes_desc: "Motores de escalado estratégicos para pequeñas y medianas empresas.",
+              focus_retail: "Enfoque Retail/Mayoristas",
+              focus_retail_desc: "Sistemas híbridos B2B/B2C complejos para gigantes del retail.",
+              focus_personal: "Enfoque Marca Personal",
+              focus_personal_desc: "Plataformas de creación de autoridad para individuos de alto impacto."
+            },
             scroll: { hint: "Desliza para explorar" },
             dots: {
               home_label: "Inicio", home_aria: "Ir a Inicio",
               results_label: "Resultados", results_aria: "Ir a Resultados",
               services_label: "Servicios", services_aria: "Ir a Servicios",
+              focus_label: "Especialización", focus_aria: "Ir a Especialización",
               work_label: "Work", work_aria: "Ir a Work",
+              blog_label: "Blog", blog_aria: "Ir a Blog",
               process_label: "Proceso", process_aria: "Ir a Proceso",
               packages_label: "Paquetes", packages_aria: "Ir a Paquetes",
               testimonials_label: "Testimonios", testimonials_aria: "Ir a Testimonios",
@@ -285,8 +440,31 @@ const {
         en: {
           meta: { description: "EMRG — Founder-led ecommerce performance studio. We design the brand, build the store, and engineer the growth system.", og_description: "We design the brand. We build the store. We engineer the growth system." },
           aria: { page_progress: "Page progress", section_nav: "Section navigation", main_nav: "Main navigation", emrg_home: "EMRG home", open_menu: "Open menu", close_menu: "Close menu", mobile_menu: "Menu", select_platform: "Select platform", switch_lang: "Switch language" },
-          dots: { home_label: "Home", home_aria: "Go to Home", results_label: "Results", results_aria: "Go to Results", services_label: "Services", services_aria: "Go to Services", work_label: "Work", work_aria: "Go to Work", process_label: "Process", process_aria: "Go to Process", packages_label: "Packages", packages_aria: "Go to Packages", testimonials_label: "Testimonials", testimonials_aria: "Go to Testimonials", faq_label: "FAQ", faq_aria: "Go to FAQ", contact_label: "Contact", contact_aria: "Go to Contact" },
-          nav: { services: "Services", work: "Work", process: "Process", packages: "Packages", faq: "FAQ", book_call: "Book a Call", menu: "Menu", close: "Close" },
+          dots: { home_label: "Home", home_aria: "Go to Home", results_label: "Results", results_aria: "Go to Results", services_label: "Services", services_aria: "Go to Services", focus_label: "Expertise", focus_aria: "Go to Expertise", work_label: "Work", work_aria: "Go to Work", blog_label: "Blog", blog_aria: "Go to Blog", process_label: "Process", process_aria: "Go to Process", packages_label: "Packages", packages_aria: "Go to Packages", testimonials_label: "Testimonials", testimonials_aria: "Go to Testimonials", faq_label: "FAQ", faq_aria: "Go to FAQ", contact_label: "Contact", contact_aria: "Go to Contact" },
+          nav: { services: "Services", work: "Work", process: "Process", packages: "Packages", about: "About Us", faq: "FAQ", book_call: "Book a Call", menu: "Menu", close: "Close" },
+          about: {
+            eyebrow: "The Studio",
+            title: "Engineered to <span class=\"accent\">Win.</span>",
+            p1: "We are a tactical ecommerce performance studio. We unite brand identity and technical engineering to build high-converting growth systems for DTC brands.",
+            trait1: "Speed First",
+            trait1_desc: "We launch full-stack stores in 7 days, eliminating the \"agency lag\" that kills momentum.",
+            trait2: "Tech Depth",
+            trait2_desc: "Under the hood of every design is rigid, scalable code built for extreme mobile performance.",
+            trait3: "Growth Focus",
+            trait3_desc: "We don't just build sites; we build the infrastructure that compounds revenue.",
+            focus_eyebrow: "Expertise",
+            focus_title: "Strategic Focus",
+            focus_salud: "Enfoque en Salud",
+            focus_salud_desc: "Bio-technical performance for high-stakes healthcare ecosystem.",
+            focus_legal: "Enfoque Legal",
+            focus_legal_desc: "Authority-driven design systems for the legal industry.",
+            focus_pymes: "Enfoque Emprendedores/PYMES",
+            focus_pymes_desc: "Strategic scaling engines for small & medium businesses.",
+            focus_retail: "Enfoque Retail/Mayoristas",
+            focus_retail_desc: "Complex B2B/B2C hybrid systems for retail giants.",
+            focus_personal: "Enfoque Marca Personal",
+            focus_personal_desc: "Authority-building platforms for high-impact individuals."
+          },
           scroll: { hint: "Scroll to explore" },
           hero: { eyebrow: "Founder-Led Ecommerce Performance Studio", title: "We Design.<br>We Build.<br>We <span class=\"accent\">Engineer.</span>", sub: "End-to-end ecommerce execution — brand identity, store engineering, and growth infrastructure for DTC brands built to win.", cta_book: "Book a 15-min Call →", cta_work: "View Work", chip1: "7-Day Launch", chip2: "CRO-First Execution", chip3: "Built for Scale" },
           trust: { label: "By the numbers", title: "Results that<br><em>compound.</em>", stat1: "Ecommerce builds delivered", stat2: "Day average launch", stat3: "Average CVR improvement", stat4: "Conversion-focused by default", note: "Results vary by business, product, and market conditions." },
@@ -302,8 +480,31 @@ const {
         es: {
           meta: { description: "EMRG — Estudio de performance ecommerce liderado por founders. Diseñamos la marca, construimos la tienda y desarrollamos el sistema de crecimiento.", og_description: "Diseñamos la marca. Construimos la tienda. Desarrollamos el sistema de crecimiento." },
           aria: { page_progress: "Progreso de página", section_nav: "Navegación de secciones", main_nav: "Navegación principal", emrg_home: "Inicio de EMRG", open_menu: "Abrir menú", close_menu: "Cerrar menú", mobile_menu: "Menú", select_platform: "Seleccionar plataforma", switch_lang: "Cambiar idioma" },
-          dots: { home_label: "Inicio", home_aria: "Ir a Inicio", results_label: "Resultados", results_aria: "Ir a Resultados", services_label: "Servicios", services_aria: "Ir a Servicios", work_label: "Work", work_aria: "Ir a Work", process_label: "Proceso", process_aria: "Ir a Proceso", packages_label: "Paquetes", packages_aria: "Ir a Paquetes", testimonials_label: "Testimonios", testimonials_aria: "Ir a Testimonios", faq_label: "FAQ", faq_aria: "Ir a FAQ", contact_label: "Contacto", contact_aria: "Ir a Contacto" },
-          nav: { services: "Servicios", work: "Work", process: "Proceso", packages: "Paquetes", faq: "FAQ", book_call: "Agendar llamada", menu: "Menú", close: "Cerrar" },
+          dots: { home_label: "Inicio", home_aria: "Ir a Inicio", results_label: "Resultados", results_aria: "Ir a Resultados", services_label: "Servicios", services_aria: "Ir a Servicios", focus_label: "Especialización", focus_aria: "Ir a Especialización", work_label: "Work", work_aria: "Ir a Work", blog_label: "Blog", blog_aria: "Ir a Blog", process_label: "Proceso", process_aria: "Ir a Proceso", packages_label: "Paquetes", packages_aria: "Ir a Paquetes", testimonials_label: "Testimonios", testimonials_aria: "Ir a Testimonios", faq_label: "FAQ", faq_aria: "Ir a FAQ", contact_label: "Contacto", contact_aria: "Ir a Contacto" },
+          nav: { services: "Servicios", work: "Work", process: "Proceso", packages: "Paquetes", about: "Nosotros", faq: "FAQ", book_call: "Agendar llamada", menu: "Menú", close: "Cerrar" },
+          about: {
+            eyebrow: "El Estudio",
+            title: "Ingeniería para <span class=\"accent\">Ganar.</span>",
+            p1: "Somos un estudio táctico de rendimiento de comercio electrónico. Unimos la identidad de marca y la ingeniería técnica para crear sistemas de crecimiento de alta conversión para marcas DTC.",
+            trait1: "Velocidad Primero",
+            trait1_desc: "Lanzamos tiendas full-stack en 7 días, eliminando el retraso de las agencias que mata el impulso.",
+            trait2: "Profundidad Técnica",
+            trait2_desc: "Debajo de cada diseño hay un código rígido y escalable creado para un rendimiento móvil extremo.",
+            trait3: "Enfoque en Crecimiento",
+            trait3_desc: "No solo creamos sitios; construimos la infraestructura que multiplica los ingresos.",
+            focus_eyebrow: "Especialización",
+            focus_title: "Enfoque Estratégico",
+            focus_salud: "Enfoque en Salud",
+            focus_salud_desc: "Rendimiento bio-técnico para ecosistemas de salud de alto impacto.",
+            focus_legal: "Enfoque Legal",
+            focus_legal_desc: "Sistemas de diseño basados en autoridad para la industria legal.",
+            focus_pymes: "Enfoque Emprendedores/PYMES",
+            focus_pymes_desc: "Motores de escalado estratégicos para pequeñas y medianas empresas.",
+            focus_retail: "Enfoque Retail/Mayoristas",
+            focus_retail_desc: "Sistemas híbridos B2B/B2C complejos para gigantes del retail.",
+            focus_personal: "Enfoque Marca Personal",
+            focus_personal_desc: "Plataformas de creación de autoridad para individuos de alto impacto."
+          },
           scroll: { hint: "Desliza para explorar" },
           hero: { eyebrow: "Estudio de performance ecommerce liderado por founders", title: "Diseñamos.<br>Construimos.<br><span class=\"accent\">Optimizamos.</span>", sub: "Ejecución ecommerce end-to-end — identidad de marca, ingeniería de tienda e infraestructura de crecimiento para marcas DTC creadas para ganar.", cta_book: "Agendar llamada de 15 min →", cta_work: "Ver work", chip1: "Lanzamiento en 7 días", chip2: "Ejecución CRO-first", chip3: "Diseñado para escalar" },
           trust: { label: "En números", title: "Resultados que<br><em>se acumulan.</em>", stat1: "Tiendas ecommerce entregadas", stat2: "Días promedio de lanzamiento", stat3: "Mejora promedio de CVR", stat4: "Conversión primero, por defecto", note: "Los resultados varían según negocio, producto y condiciones del mercado." },

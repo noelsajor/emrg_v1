@@ -2,14 +2,10 @@
 ---
 <header>
   <nav id="nav" aria-label="Main navigation">
-    <div class="nav-logo" onclick="goToScene(0)" role="link" tabindex="0" aria-label="EMRG home">EM<span>R</span>G</div>
-    <ul class="nav-links" role="list">
-      <li><a href="#" onclick="goToScene(2);return false;">Services</a></li>
-      <li><a href="#" onclick="goToScene(3);return false;">Work</a></li>
-      <li><a href="#" onclick="goToScene(5);return false;">Process</a></li>
-      <li><a href="#" onclick="goToScene(6);return false;">Packages</a></li>
-      <li><a href="#" onclick="goToScene(8);return false;">FAQ</a></li>
+    <a href="/" class="nav-logo" onclick="if(window.location.pathname === '/' || window.location.pathname === '/index.html'){ if(window.goToScene) { window.goToScene(0); return false; } }" aria-label="EMRG home">EM<span>R</span>G</a>
+    <ul id="nav-list" class="nav-links" role="list">
+      <!-- Generated dynamically by main.js -->
     </ul>
-    <a href="#" class="nav-cta" onclick="goToScene(9);return false;">Book a Call</a>
+    <a href="#" class="nav-cta" onclick="goToScene(10);return false;">Book a Call</a>
   </nav>
 </header>

@@ -217,6 +217,7 @@ body.hovering #cursor-ring {
     letter-spacing: 0.08em;
     color: var(--white);
     cursor: pointer;
+    text-decoration: none;
 }
 
 .nav-logo span {
@@ -240,8 +241,10 @@ body.hovering #cursor-ring {
     transition: color 0.25s;
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links a.active {
     color: var(--white);
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
 }
 
 .nav-cta {
@@ -1846,8 +1849,10 @@ body.hovering #cursor-ring {
     transition: color 0.25s;
 }
 
-.mobile-menu-link-imm:hover {
+.mobile-menu-link-imm:hover,
+.mobile-menu-link-imm.active {
     color: var(--white);
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
 }
 
 .mobile-menu-actions-imm {

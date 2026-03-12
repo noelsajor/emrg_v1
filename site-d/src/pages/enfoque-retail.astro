@@ -1,0 +1,295 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Enfoque Retail y Mayoristas | EMRG" description="Acompañamos a pequeños negocios en su salto digital. Tu primera web, visibilidad en Google y captación de clientes.">
+  
+  <section class="scene active" id="scene-0">
+    <div class="hero-block-imm">
+      <p class="label-imm">Digitalización Local</p>
+      <h1 class="title-imm">El Salto <br/><span class="teal-glow">Digital.</span></h1>
+      <p class="desc-imm">Si tu negocio no aparece en Google, no existe online. Ayudamos a pequeños negocios a crear su página web, aparecer en mapas y empezar a captar clientes.</p>
+      
+      <div class="action-grid-imm">
+        <a href="#scene-3" class="btn-imm" onclick="window.goToScene(3); return false;">Solicita Diagnóstico //</a>
+        <div class="metric-chip-imm">
+           <span class="m-val-imm">MAPS SYNC</span>
+           <span class="m-val-imm">FIRST WEB</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="scene" id="scene-1">
+    <div class="content-wrap-imm">
+      <h2 class="section-title-imm">El Riesgo: <span class="teal-glow">Inexistencia Digital.</span></h2>
+      
+      <div class="pillars-imm">
+        <div class="pillar-box-imm">
+          <span class="p-num-imm">01</span>
+          <h3>Oscuridad Local</h3>
+          <p>Clientes cercanos encuentran a tu competencia en el mapa antes que a ti.</p>
+        </div>
+        <div class="pillar-box-imm">
+          <span class="p-num-imm">02</span>
+          <h3>Brecha de Credibilidad</h3>
+          <p>Sin una web propia que explique quién eres, el cliente duda de tu servicio.</p>
+        </div>
+        <div class="pillar-box-imm">
+          <span class="p-num-imm">03</span>
+          <h3>Techo de Crecimiento</h3>
+          <p>Dependencia exclusiva del boca a boca sin un canal de captación 24/7.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="scene" id="scene-2">
+    <div class="content-wrap-imm">
+      <h2 class="section-title-imm">Nuestros <span class="teal-glow">Paquetes Prácticos.</span></h2>
+      <div class="services-imm">
+         <div class="service-row-imm">
+            <span>01</span>
+            <h3>Presencia Inicial</h3>
+         </div>
+         <div class="service-row-imm">
+            <span>02</span>
+            <h3>Impulso Local Ads</h3>
+         </div>
+         <div class="service-row-imm">
+            <span>03</span>
+            <h3>Soporte Estratégico</h3>
+         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="scene" id="scene-3">
+    <div class="content-wrap-imm">
+      <div class="contact-split-imm">
+        <div class="contact-text-imm">
+          <h2 class="section-title-imm">Quiero mi <span class="teal-glow">Diagnóstico.</span></h2>
+          <p class="desc-imm">Evaluamos tu visibilidad actual y te mostramos cómo dar el primer paso online.</p>
+        </div>
+        
+        <form class="imm-form retail-form">
+          <div class="form-row-imm">
+            <input type="text" placeholder="NOMBRE" required />
+            <input type="text" placeholder="NEGOCIO" required />
+          </div>
+          <div class="form-row-imm">
+            <input type="text" placeholder="RUBRO" required />
+            <input type="text" placeholder="CIUDAD" required />
+          </div>
+          <textarea placeholder="¿CUÁL ES TU OBJETIVO?" required></textarea>
+          <button type="submit" class="btn-imm">Solicitar Diagnóstico //</button>
+          <p class="success-imm" style="display:none; margin-top: 1rem; color: var(--teal); font-weight: 800;">MENSAJE ENVIADO. REVISAREMOS TU CASO.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .content-wrap-imm {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    width: 100%;
+  }
+
+  .label-imm {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: var(--teal);
+    margin-bottom: 24px;
+    display: block;
+    font-weight: 800;
+  }
+
+  .title-imm {
+    font-size: clamp(3.5rem, 8vw, 7rem);
+    line-height: 0.9;
+    font-weight: 900;
+    margin-bottom: 32px;
+    font-family: var(--title);
+    text-transform: uppercase;
+  }
+
+  .section-title-imm {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    line-height: 1;
+    font-weight: 900;
+    margin-bottom: 48px;
+    font-family: var(--title);
+    text-transform: uppercase;
+  }
+
+  .teal-glow {
+    color: var(--teal);
+    text-shadow: 0 0 20px var(--teal-dim);
+  }
+
+  .desc-imm {
+    font-size: 1.15rem;
+    color: var(--smoke);
+    max-width: 550px;
+    line-height: 1.6;
+    margin-bottom: 48px;
+  }
+
+  .action-grid-imm {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .btn-imm {
+    background: var(--teal);
+    color: #000;
+    padding: 18px 36px;
+    font-weight: 900;
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    transition: 0.3s;
+    border: none;
+    cursor: pointer;
+    font-family: var(--body);
+    text-transform: uppercase;
+  }
+
+  .btn-imm:hover {
+    background: #fff;
+    transform: translateY(-2px);
+  }
+
+  .metric-chip-imm {
+     display: flex;
+     gap: 20px;
+     font-size: 0.75rem;
+     color: var(--teal);
+     font-family: monospace;
+     font-weight: 800;
+  }
+
+  .pillars-imm {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
+
+  .pillar-box-imm {
+    padding: 48px;
+    border: 1px solid var(--rim);
+    background: var(--surface);
+    transition: 0.3s;
+  }
+
+  .pillar-box-imm:hover {
+    border-color: var(--teal);
+  }
+
+  .p-num-imm {
+    color: var(--teal);
+    font-size: 0.85rem;
+    margin-bottom: 24px;
+    display: block;
+    font-weight: 800;
+  }
+
+  .pillar-box-imm h3 {
+    font-size: 2rem;
+    margin-bottom: 16px;
+    font-family: var(--title);
+    text-transform: uppercase;
+  }
+
+  .services-imm {
+     width: 100%;
+  }
+
+  .service-row-imm {
+     display: flex;
+     align-items: center;
+     gap: 48px;
+     padding: 32px 0;
+     border-bottom: 1px solid var(--rim);
+     transition: 0.3s;
+  }
+
+  .service-row-imm:hover {
+    padding-left: 24px;
+    border-bottom-color: var(--teal);
+  }
+
+  .service-row-imm span {
+    color: var(--teal);
+    font-weight: 800;
+    font-family: monospace;
+  }
+
+  .service-row-imm h3 {
+     font-size: 3.5rem;
+     font-family: var(--title);
+     text-transform: uppercase;
+  }
+
+  .contact-split-imm {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 80px;
+    width: 100%;
+    align-items: center;
+  }
+
+  .imm-form {
+    display: grid;
+    gap: 20px;
+    background: var(--surface);
+    padding: 48px;
+    border: 1px solid var(--rim);
+  }
+
+  .form-row-imm {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  input, textarea {
+    background: var(--void);
+    border: 1px solid var(--rim);
+    padding: 18px;
+    color: #fff;
+    width: 100%;
+    font-family: var(--body);
+  }
+
+  textarea {
+    height: 120px;
+    resize: none;
+  }
+
+  @media (max-width: 1024px) {
+    .pillars-imm, .contact-split-imm, .form-row-imm {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.querySelector('.retail-form');
+    if (form) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        form.reset();
+        const success = form.querySelector('.success-imm');
+        if (success) success.style.display = 'block';
+      });
+    }
+  });
+</script>

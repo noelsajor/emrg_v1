@@ -1,0 +1,439 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import CtaSection from '../components/CtaSection.astro';
+---
+
+<BaseLayout title="Enfoque Emprendedores y PYMES | EMRG" description="SEO, CRO y estrategia digital para ecommerce, retailers y mayoristas que quieren escalar facturación.">
+  <Nav />
+  
+  <main class="expertise-page">
+    <section class="expertise-hero">
+      <div class="container">
+        <div class="hero-content">
+          <div class="expertise-tag">Performance & Growth</div>
+          <h1>Estrategia para una <span class="highlight">Máquina de Ventas.</span></h1>
+          <p class="hero-lead">Ayudamos a retailers y mayoristas a aumentar tráfico orgánico, mejorar la tasa de conversión y escalar ingresos con una estrategia enfocada en rendimiento.</p>
+          <div class="hero-actions">
+            <a href="#contacto" class="btn-primary">Solicitar Auditoría</a>
+            <a href="#metodologia" class="btn-secondary">Nuestra Metodología</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="expertise-pillars">
+       <div class="container">
+          <div class="pillars-grid">
+             <div class="pillar-card">
+                <span class="p-num">01</span>
+                <h3>SEO Comercial</h3>
+                <p>Posicionamos categorías y productos con alta intención de compra.</p>
+             </div>
+             <div class="pillar-card">
+                <span class="p-num">02</span>
+                <h3>Conversión CRO</h3>
+                <p>Optimizamos el funnel para maximizar los ingresos por cada visita.</p>
+             </div>
+             <div class="pillar-card">
+                <span class="p-num">03</span>
+                <h3>Estrategia Data-Driven</h3>
+                <p>Roadmap de crecimiento basado en impacto real en facturación.</p>
+             </div>
+          </div>
+       </div>
+    </section>
+
+    <section class="expertise-problem section">
+      <div class="container">
+        <div class="grid-split">
+          <div class="text-block">
+            <h2 class="section-title">El ecommerce que <span class="accent">deja de escalar.</span></h2>
+            <p>Muchas tiendas online atraen tráfico pero pierden ventas por errores en estructura, UX o falta de una estrategia integral que conecte adquisición con rentabilidad.</p>
+            
+            <div class="issue-box">
+               <div class="issue-item">
+                  <strong>Visibilidad Limitada</strong>
+                  <p>Categorías que no rankean y pierden demanda frente a la competencia.</p>
+               </div>
+               <div class="issue-item">
+                  <strong>Abandono de Carrito</strong>
+                  <p>Fricciones en el proceso de compra que frenan la conversión final.</p>
+               </div>
+            </div>
+          </div>
+          <div class="visual-quote">
+            <blockquote>
+              "Más visitas no bastan. Necesitas una estructura digital diseñada para que esas visitas se conviertan en ingresos."
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="expertise-stats section dark-bg">
+       <div class="container">
+          <div class="stats-showcase">
+             <div class="stat-item">
+                <span class="stat-val">+38%</span>
+                <span class="stat-lbl">Conversión</span>
+             </div>
+             <div class="stat-item">
+                <span class="stat-val">+72%</span>
+                <span class="stat-lbl">Tráfico Orgánico</span>
+             </div>
+             <div class="stat-item">
+                <span class="stat-val">+29%</span>
+                <span class="stat-lbl">Revenue per Session</span>
+             </div>
+          </div>
+       </div>
+    </section>
+
+    <section id="metodologia" class="expertise-services section">
+      <div class="container">
+        <h2 class="section-title">Servicios de <span class="highlight">Alto Rendimiento.</span></h2>
+        <div class="services-list">
+          <div class="service-item">
+            <h3>SEO para Ecommerce</h3>
+            <p>Arquitectura técnica y keyword mapping enfocado en ventas.</p>
+          </div>
+          <div class="service-item">
+            <h3>CRO & UX Optimization</h3>
+            <p>Refinamos cada punto de contacto para reducir la fricción.</p>
+          </div>
+          <div class="service-item">
+            <h3>B2B/B2C Scaling</h3>
+            <p>Estrategias híbridas para mayoristas en expansión digital.</p>
+          </div>
+          <div class="service-item">
+            <h3>Roadmap Estratégico</h3>
+            <p>Priorización de acciones por impacto comercial y retorno.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" class="expertise-contact section">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-info">
+            <h2 class="section-title">Solicita tu <br/><span class="highlight">Auditoría Ecommerce.</span></h2>
+            <p>Evaluamos tu ecosistema digital para detectar las fugas de ingresos y oportunidades de crecimiento.</p>
+            <div class="form-perks">
+               <div>✓ Diagnóstico SEO técnico y comercial</div>
+               <div>✓ Análisis de funnel y conversión</div>
+               <div>✓ Roadmap de acciones prioritarias</div>
+            </div>
+          </div>
+          <form class="diagnosis-form pymes-form">
+            <div class="form-grid">
+               <input type="text" placeholder="Tu Nombre" required />
+               <input type="text" placeholder="Empresa" required />
+            </div>
+            <div class="form-grid">
+               <select required>
+                  <option value="">Tipo de Negocio</option>
+                  <option>Retail</option>
+                  <option>Mayorista</option>
+                  <option>Híbrido</option>
+               </select>
+               <input type="text" placeholder="Plataforma (Shopify, WC, etc)" required />
+            </div>
+            <textarea placeholder="Cuéntanos tus retos principales de facturación y tráfico..." required></textarea>
+            <div class="form-grid">
+               <input type="email" placeholder="Email" required />
+               <input type="tel" placeholder="WhatsApp" required />
+            </div>
+            <button type="submit" class="btn-primary">Solicitar Auditoría</button>
+            <p class="success-msg" style="display:none; margin-top: 1rem; color: var(--accent);">Petición recibida. Revisaremos tu caso minuciosamente.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <CtaSection />
+  <Footer />
+</BaseLayout>
+
+<style>
+  :root {
+    --accent: #a78bfa;
+    --accent-dark: #7c3aed;
+    --void: #09090b;
+    --glass: rgba(255, 255, 255, 0.02);
+    --border: rgba(255, 255, 255, 0.07);
+  }
+
+  .expertise-page {
+    background: var(--void);
+    color: #fff;
+    font-family: 'Syne', sans-serif;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .section {
+    padding: 120px 0;
+  }
+
+  .highlight {
+    color: var(--accent);
+  }
+
+  .accent {
+    color: var(--accent-dark);
+  }
+
+  .expertise-tag {
+    display: inline-block;
+    padding: 6px 16px;
+    background: var(--glass);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: 2rem;
+    color: var(--accent);
+  }
+
+  .expertise-hero {
+    padding: 220px 0 100px;
+  }
+
+  .expertise-hero h1 {
+    font-size: clamp(3.5rem, 9vw, 8rem);
+    line-height: 0.85;
+    letter-spacing: -0.05em;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-lead {
+    font-size: 1.3rem;
+    color: #a1a1aa;
+    max-width: 650px;
+    line-height: 1.5;
+    margin-bottom: 3.5rem;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .pillars-grid {
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     gap: 30px;
+     border-top: 1px solid var(--border);
+     padding-top: 60px;
+  }
+
+  .pillar-card {
+     padding: 40px;
+     background: var(--glass);
+     border: 1px solid var(--border);
+  }
+
+  .p-num {
+     display: block;
+     font-size: 1rem;
+     color: var(--accent);
+     margin-bottom: 1.5rem;
+     font-weight: 800;
+  }
+
+  .pillar-card h3 {
+     font-size: 1.8rem;
+     margin-bottom: 1rem;
+  }
+
+  .grid-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 120px;
+    align-items: center;
+  }
+
+  .section-title {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    margin-bottom: 2.5rem;
+    line-height: 0.95;
+  }
+
+  .text-block p {
+    font-size: 1.2rem;
+    color: #a1a1aa;
+    line-height: 1.7;
+    margin-bottom: 3rem;
+  }
+
+  .issue-box {
+     display: grid;
+     gap: 2rem;
+  }
+
+  .issue-item strong {
+     display: block;
+     color: var(--accent);
+     margin-bottom: 0.5rem;
+  }
+
+  .visual-quote {
+     font-size: 2.5rem;
+     line-height: 1.1;
+     font-style: italic;
+     color: #fff;
+     position: relative;
+  }
+  .visual-quote::before {
+     content: '"';
+     position: absolute;
+     left: -40px;
+     top: -20px;
+     font-size: 5rem;
+     color: var(--accent);
+     opacity: 0.2;
+  }
+
+  .dark-bg {
+    background: #0d0d10;
+  }
+
+  .stats-showcase {
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     gap: 40px;
+     text-align: center;
+  }
+
+  .stat-val {
+     display: block;
+     font-size: 4rem;
+     font-weight: 800;
+     color: var(--accent);
+     margin-bottom: 0.5rem;
+  }
+
+  .stat-lbl {
+     font-size: 0.8rem;
+     text-transform: uppercase;
+     letter-spacing: 0.2em;
+     color: #71717a;
+  }
+
+  .services-list {
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     gap: 30px;
+     margin-top: 40px;
+  }
+
+  .service-item {
+     padding: 50px;
+     background: var(--glass);
+     border: 1px solid var(--border);
+  }
+
+  .service-item h3 {
+     font-size: 2rem;
+     margin-bottom: 1.5rem;
+     color: #fff;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 100px;
+  }
+
+  .form-perks {
+     margin-top: 3rem;
+     display: grid;
+     gap: 1rem;
+     font-size: 1.1rem;
+     color: var(--accent);
+  }
+
+  .diagnosis-form {
+    display: grid;
+    gap: 1.5rem;
+    background: #0f0f13;
+    padding: 60px;
+    border: 1px solid var(--border);
+  }
+
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  input, select, textarea {
+    background: transparent;
+    border: 1px solid var(--border);
+    padding: 1.25rem;
+    color: #fff;
+    font-family: inherit;
+    width: 100%;
+  }
+
+  textarea {
+    height: 120px;
+  }
+
+  .btn-primary {
+    background: var(--accent);
+    color: var(--void);
+    padding: 1.25rem 2.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    text-align: center;
+  }
+
+  .btn-primary:hover {
+    background: #fff;
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: #fff;
+    border: 1px solid var(--border);
+    padding: 1.25rem 2.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  @media (max-width: 1024px) {
+    .grid-split, .contact-grid, .pillars-grid, .stats-showcase, .services-list, .form-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.querySelector('.pymes-form');
+    if (form) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        form.reset();
+        form.querySelector('.success-msg').style.display = 'block';
+      });
+    }
+  });
+</script>

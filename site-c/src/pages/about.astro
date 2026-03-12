@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import AboutPage from '../components/AboutPage.astro';
+import CTA from '../components/CTA.astro';
+---
+
+<BaseLayout title="About Us | EMRG">
+  <Header />
+  <main>
+    <AboutPage />
+    <CTA />
+  </main>
+</BaseLayout>
+
+<style is:global>
+  /* Fixed bg for consistency */
+  body {
+    background: #020408;
+  }
+  main {
+    position: relative;
+    z-index: 2;
+  }
+</style>
