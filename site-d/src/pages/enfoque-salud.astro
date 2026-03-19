@@ -9,18 +9,16 @@ import Contact from '../components/Contact.astro';
     <div class="content-wrap-imm">
       <div class="hero-flex-imm">
         <div class="hero-copy-imm">
-          <p class="scene-label-imm">Especialización en Salud & Performance</p>
-          <h1 class="hero-title-imm">Más pacientes. <br/><span class="accent-teal">Más impacto.</span></h1>
-          <p class="hero-sub-imm">SEO médico y crecimiento digital diseñado para clínicas que buscan liderar su mercado local con autoridad.</p>
+          <p class="scene-label-imm">Sector Salud</p>
+          <h1 class="hero-title-imm">¿Tus pacientes te buscan en Google o <span class="accent-teal">solo te encuentran por recomendación?</span></h1>
+          <p class="hero-sub-imm">Creamos sitios web que generan confianza y citas médicas en automático. Diseño web para médicos y clínicas que buscan autoridad digital.</p>
           <div class="hero-actions-imm">
-            <a href="#scene-5" class="btn-pkg-imm" onclick="window.goToScene(5); return false;">Solicitar Auditoría</a>
+            <a href="#scene-5" class="btn-pkg-imm" onclick="window.goToScene(5); return false;">Quiero digitalizar mi consulta</a>
           </div>
         </div>
         
-        <div class="hero-metric-box">
-           <div class="hero-quote-imm">
-              <p>“El sector salud no necesita más tráfico, necesita más confianza cualificada.”</p>
-           </div>
+        <div class="hero-image-box-imm">
+           <img src="/images/hero-medical.png" alt="Consultorio" class="hero-img-imm" />
         </div>
       </div>
     </div>
@@ -30,7 +28,7 @@ import Contact from '../components/Contact.astro';
     <div class="content-wrap-imm">
       <div class="scene-header-imm">
         <p class="scene-label-imm">El Problema</p>
-        <h2 class="section-title-imm">Muchos centros tienen webs, pero no un <em>sistema de captación.</em></h2>
+        <h2 class="section-title-imm">¿Tu web actual parece un <em class="accent-teal">folleto viejo?</em></h2>
       </div>
       
       <div class="pillars-list-imm">
@@ -56,25 +54,25 @@ import Contact from '../components/Contact.astro';
   <section class="scene" id="scene-2">
     <div class="content-wrap-imm">
       <div class="scene-header-imm">
-         <p class="scene-label-imm">Metodología</p>
+         <p class="scene-label-imm">La Solución</p>
          <h2 class="section-title-imm">Framework <em>Health Growth.</em></h2>
       </div>
       
       <div class="services-imm-grid">
          <div class="serv-card-imm">
             <span class="pillar-idx-imm">FASE 1</span>
-            <h3>SEO Médico</h3>
-            <p>Posicionamiento de especialidades y keywords de alta intención de consulta.</p>
+            <h3>Diseño UX/UI Médico</h3>
+            <p>Webs rápidas y confiables enfocadas en el profesionalismo.</p>
          </div>
          <div class="serv-card-imm">
             <span class="pillar-idx-imm">FASE 2</span>
-            <h3>Autoridad Web</h3>
-            <p>Diseño enfocado en CRO para convertir visitas en pacientes reales.</p>
+            <h3>SEO Local</h3>
+            <p>Google Maps y búsquedas geolocalizadas para atraer pacientes.</p>
          </div>
          <div class="serv-card-imm">
             <span class="pillar-idx-imm">FASE 3</span>
-            <h3>Escalado Local</h3>
-            <p>Domina tu zona geográfica con estrategias de visibilidad 360.</p>
+            <h3>Contenido Experto</h3>
+            <p>Posicionamiento de marca y autoridad a través de blog especializado.</p>
          </div>
       </div>
     </div>
@@ -125,8 +123,8 @@ import Contact from '../components/Contact.astro';
     <div class="content-wrap-imm form-layout-imm">
        <div class="form-info-imm">
           <p class="scene-label-imm">Diagnóstico</p>
-          <h2 class="section-title-imm">Agenda tu Auditoría.</h2>
-          <p class="hero-sub-imm">Detectamos puntos críticos en tu presencia digital para empezar a atraer pacientes cualificados.</p>
+          <h2 class="section-title-imm">Quiero digitalizar mi consulta y <em class="accent-teal">atraer más pacientes.</em></h2>
+          <p class="hero-sub-imm">Agenda tu auditoría gratuita y descubre cómo podemos ayudarte.</p>
        </div>
        <div class="form-box-imm">
           <form class="health-audit-form-imm">
@@ -136,10 +134,35 @@ import Contact from '../components/Contact.astro';
              </div>
              <input type="email" placeholder="EMAIL PROFESIONAL" required />
              <textarea placeholder="RETOS ACTUALES..." required style="min-height: 100px;"></textarea>
-             <button class="btn-pkg-imm" type="submit">SOLICITAR ANÁLISIS</button>
+             <button class="btn-pkg-imm" type="submit">Quiero mi auditoría ahora</button>
           </form>
           <p class="audit-success-imm" style="display:none; color: var(--teal); margin-top: 1rem; font-size:0.85rem; font-weight: 800;">Recibido. Contactaremos con tu clínica pronto.</p>
        </div>
+    </div>
+  </section>
+
+  <section class="scene" id="scene-6-proof" style="background: var(--surface);">
+    <div class="content-wrap-imm">
+      <div class="scene-header-imm">
+         <p class="scene-label-imm">Prueba Social</p>
+         <h2 class="section-title-imm">Confianza avalada por el <em class="accent-teal">sector.</em></h2>
+      </div>
+      <div class="carousel-container-imm">
+        <div class="carousel-track-imm" id="testimonial-track-imm">
+          <div class="carousel-slide-imm active">
+            <p>“Profesionales que entienden las necesidades de los especialistas.”</p>
+            <strong>Dr. Alejandro Ruiz</strong>
+          </div>
+          <div class="carousel-slide-imm">
+            <p>“Mi clínica duplicó las citas con el nuevo enfoque SEO local.”</p>
+            <strong>Dra. Elena Martínez</strong>
+          </div>
+        </div>
+        <div class="carousel-nav-imm">
+          <button class="dot-imm active"></button>
+          <button class="dot-imm"></button>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -151,18 +174,18 @@ import Contact from '../components/Contact.astro';
   .content-wrap-imm {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 48px;
+    padding: 0 56px;
     width: 100%;
   }
 
   .scene-label-imm {
-    font-size: 0.75rem;
+    font-size: 0.65rem;
     text-transform: uppercase;
-    letter-spacing: 0.3em;
+    letter-spacing: 0.22em;
     color: var(--teal);
-    margin-bottom: 24px;
+    margin-bottom: 16px;
     display: block;
-    font-weight: 800;
+    font-weight: 600;
   }
 
   .accent-teal {
@@ -182,37 +205,37 @@ import Contact from '../components/Contact.astro';
   }
 
   .hero-title-imm {
-    font-size: clamp(3rem, 8vw, 6.5rem);
-    line-height: 0.9;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1;
     margin-bottom: 32px;
     font-family: var(--title);
-    text-transform: uppercase;
+    letter-spacing: -0.01em;
   }
 
   .section-title-imm {
-    font-size: clamp(2.2rem, 5vw, 4rem);
+    font-size: clamp(2rem, 4.5vw, 3.5rem);
     line-height: 1;
-    margin-bottom: 40px;
+    margin-bottom: 48px;
     font-family: var(--title);
-    text-transform: uppercase;
+    letter-spacing: -0.01em;
   }
 
   .hero-sub-imm {
-    font-size: 1.15rem;
+    font-size: clamp(0.9rem, 1.5vw, 1.1rem);
     color: var(--smoke);
-    max-width: 500px;
-    margin-bottom: 40px;
-    line-height: 1.6;
+    max-width: 480px;
+    margin-bottom: 48px;
+    line-height: 1.7;
   }
 
   .btn-pkg-imm {
     background: var(--teal);
-    color: #000;
-    padding: 18px 36px;
-    font-weight: 900;
+    color: #fff;
+    padding: 12px 28px;
+    font-weight: 600;
     text-decoration: none;
-    font-size: 0.85rem;
-    letter-spacing: 0.1em;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
     transition: 0.3s;
     border: none;
     cursor: pointer;
@@ -223,6 +246,7 @@ import Contact from '../components/Contact.astro';
 
   .btn-pkg-imm:hover {
     background: #fff;
+    color: #000;
     transform: translateY(-2px);
   }
 
@@ -232,6 +256,53 @@ import Contact from '../components/Contact.astro';
     padding: 60px;
     max-width: 450px;
   }
+
+  .hero-image-box-imm {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 20px;
+    border: 1px solid var(--rim);
+    overflow: hidden;
+    box-shadow: 0 0 40px rgba(115, 96, 248, 0.2);
+    transition: 0.5s;
+  }
+
+  .hero-image-box-imm:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 60px rgba(115, 96, 248, 0.4);
+  }
+
+  .hero-img-imm {
+    width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: 16/10;
+    object-fit: cover;
+  }
+
+  /* Carousel */
+  .carousel-container-imm {
+    margin-top: 40px;
+    overflow: hidden;
+    padding-bottom: 40px;
+  }
+  .carousel-track-imm {
+    display: flex;
+    transition: 0.5s;
+  }
+  .carousel-slide-imm {
+    min-width: 100%;
+    padding: 40px;
+    text-align: center;
+    opacity: 0.3;
+    transition: 0.5s;
+    background: rgba(255,255,255,0.02);
+  }
+  .carousel-slide-imm.active { opacity: 1; border: 1px solid var(--teal); }
+  .carousel-slide-imm p { font-size: 1.5rem; font-style: italic; margin-bottom: 16px; font-family: var(--title); }
+  .carousel-nav-imm { display: flex; justify-content: center; gap: 8px; margin-top: 24px; }
+  .dot-imm { width: 8px; height: 8px; border-radius: 50%; background: var(--rim); border: none; cursor: pointer; }
+  .dot-imm.active { background: var(--teal); width: 20px; border-radius: 10px; }
 
   .hero-quote-imm {
      font-size: 1.8rem;
@@ -254,12 +325,13 @@ import Contact from '../components/Contact.astro';
   }
 
   .pillar-idx-imm {
-     font-family: monospace;
-     font-size: 0.85rem;
+     font-family: var(--body);
+     font-size: 0.65rem;
      color: var(--teal);
      display: block;
-     margin-bottom: 24px;
-     font-weight: 800;
+     margin-bottom: 16px;
+     font-weight: 600;
+     letter-spacing: 0.1em;
   }
 
   .pillar-box-imm h3 {
@@ -270,9 +342,9 @@ import Contact from '../components/Contact.astro';
   }
 
   .pillar-box-imm p {
-     font-size: 0.95rem;
+     font-size: 0.8rem;
      color: var(--smoke);
-     line-height: 1.6;
+     line-height: 1.7;
   }
 
   .services-imm-grid {
@@ -303,8 +375,8 @@ import Contact from '../components/Contact.astro';
 
   .serv-card-imm p {
      color: var(--smoke);
-     font-size: 0.95rem;
-     line-height: 1.6;
+     font-size: 0.8rem;
+     line-height: 1.7;
   }
 
   .cases-scroll-imm {
@@ -351,8 +423,10 @@ import Contact from '../components/Contact.astro';
 
   .service-row-imm span {
     color: var(--teal);
-    font-weight: 800;
-    font-family: monospace;
+    font-weight: 600;
+    font-family: var(--body);
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
   }
 
   .service-row-imm h3 {
@@ -410,5 +484,21 @@ import Contact from '../components/Contact.astro';
         if (success) success.style.display = 'block';
       });
     }
+
+    // Carousel
+    const track = document.getElementById('testimonial-track-imm');
+    const slides = Array.from(track ? track.children : []);
+    const dots = Array.from(document.querySelectorAll('.dot-imm'));
+    let curIdx = 0;
+
+    function upd(i) {
+      if(!track) return;
+      track.style.transform = `translateX(-${i*100}%)`;
+      slides.forEach((s, idx) => s.classList.toggle('active', idx === i));
+      dots.forEach((d, idx) => d.classList.toggle('active', idx === i));
+      curIdx = i;
+    }
+    dots.forEach((d, i) => d.addEventListener('click', () => upd(i)));
+    if(slides.length > 0) setInterval(() => upd((curIdx+1)%slides.length), 5000);
   });
 </script>

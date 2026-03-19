@@ -5,125 +5,128 @@ import Footer from '../components/Footer.astro';
 import CtaSection from '../components/CtaSection.astro';
 ---
 
-<BaseLayout title="Enfoque Retail y Mayoristas | EMRG" description="Acompañamos a pequeños negocios en su salto digital. Tu primera web, visibilidad en Google y captación de clientes.">
+<BaseLayout title="Enfoque Retail y Mayoristas | EMRG" description="Gestión integral de marketing digital para negocios que venden en grande. Tiendas online de alto rendimiento y SEO para catálogos masivos.">
   <Nav />
   
-  <main class="expertise-page">
-    <section class="expertise-hero">
-      <div class="container">
-        <div class="hero-content">
-          <div class="expertise-tag">Digitalización Local</div>
-          <h1>El Salto <span class="highlight">Digital.</span></h1>
-          <p class="hero-lead">Si tu negocio no aparece en Google, no existe online. Ayudamos a pequeños negocios a crear su primera página web y captar clientes de forma práctica.</p>
-          <div class="hero-actions">
-            <a href="#contacto" class="btn-primary">Quiero mi Diagnóstico</a>
-            <a href="#solucion" class="btn-secondary">Ver Paquetes</a>
+  <main id="retail-focus">
+    <section class="hero-section section">
+      <div class="container hero-grid-retail">
+        <div class="hero-copy">
+          <div class="eyebrow-retail">Sector Retail</div>
+          <h1>Lleva tu inventario a las pantallas de tus <span class="highlight">clientes ideales.</span></h1>
+          <p class="hero-text-retail">Gestión integral de marketing digital para negocios que venden en grande. Construimos la infraestructura que soporta tu crecimiento masivo.</p>
+          <div class="hero-actions-retail">
+            <a href="#contacto" class="btn btn-primary">Escalar mis Ventas</a>
+            <a href="#solucion" class="btn btn-secondary">Ver Servicios</a>
           </div>
+        </div>
+        <div class="hero-image-retail">
+          <img src="/images/hero-retail.png" alt="Retail Management Dashboard" class="hero-img-main" />
         </div>
       </div>
     </section>
 
-    <section class="expertise-pillars">
+    <section class="section section-alt-retail">
        <div class="container">
-          <div class="pillars-grid">
-             <div class="pillar-card">
+          <div class="pillars-grid-retail">
+             <div class="pillar-card-retail">
                 <span class="p-num">01</span>
-                <h3>Visibilidad en Mapas</h3>
-                <p>Aparece cuando los clientes buscan tu servicio en tu zona.</p>
+                <h3>Tiendas de Alto Rendimiento</h3>
+                <p>E-commerce robusto preparado para manejar catálogos masivos y picos de tráfico extremo.</p>
              </div>
-             <div class="pillar-card">
+             <div class="pillar-card-retail">
                 <span class="p-num">02</span>
-                <h3>Web Profesional</h3>
-                <p>Una página clara que genera confianza y explica qué ofreces.</p>
+                <h3>SEO de Categorías</h3>
+                <p>Posicionamiento estratégico para productos específicos y categorías de alta demanda en el mercado.</p>
              </div>
-             <div class="pillar-card">
+             <div class="pillar-card-retail">
                 <span class="p-num">03</span>
-                <h3>Captación Directa</h3>
-                <p>Sistemas simples para recibir mensajes y llamadas de nuevos clientes.</p>
+                <h3>Growth Automatizado</h3>
+                <p>Email Marketing para carritos abandonados y promociones inteligentes que cierran ventas solos.</p>
              </div>
           </div>
        </div>
     </section>
 
-    <section id="problema" class="expertise-problem section">
+    <section id="resultados" class="section">
       <div class="container">
-        <div class="grid-split">
+        <div class="grid-split-retail">
           <div class="text-block">
-            <h2 class="section-title">El riesgo de ser <span class="accent">invisible.</span></h2>
-            <p>Hoy, si no estás en la red, no estás en la mente del consumidor. Muchos negocios pierden oportunidades cada día por no tener una base digital mínima.</p>
+            <h2 class="section-title">Enfoque en <span class="accent">Resultados.</span></h2>
+            <p>No solo gestionamos, escalamos. Nuestras estrategias están diseñadas para convertir el tráfico en ingresos predecibles y sostenibles.</p>
             
-            <div class="issue-box">
-               <div class="issue-item">
-                  <strong>Inexistencia en Búsquedas</strong>
-                  <p>Tus potenciales clientes encuentran antes a tu competencia que a ti.</p>
+            <div class="stats-retail-list">
+               <div class="stat-retail-item">
+                  <strong>+45% Conversión</strong>
+                  <div class="bar-container"><div class="bar" style="width: 85%;"></div></div>
                </div>
-               <div class="issue-item">
-                  <strong>Falta de Credibilidad</strong>
-                  <p>Sin web, el cliente duda de la profesionalidad de tu servicio.</p>
+               <div class="stat-retail-item">
+                  <strong>+120% Tráfico Orgánico</strong>
+                  <div class="bar-container"><div class="bar" style="width: 95%;"></div></div>
                </div>
             </div>
           </div>
           <div class="visual-quote">
             <blockquote>
-              "No se trata de estar en todas partes, sino de estar donde tu cliente te está buscando ahora mismo."
+              "Estrategias de contenido integral que convierten seguidores en compradores."
             </blockquote>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="solucion" class="expertise-services section">
+    <section id="solucion" class="section section-alt-retail">
       <div class="container">
-        <h2 class="section-title">Soluciones <span class="highlight">Prácticas.</span></h2>
-        <div class="services-list">
-          <div class="service-item">
-            <h3>Presencia Inicial</h3>
-            <p>Tu primera web informativa con diseño responsive y bot de WhatsApp.</p>
+        <h2 class="section-title">Servicios <span class="highlight">Clave.</span></h2>
+        <div class="services-list-retail">
+          <div class="service-item-retail">
+            <h3>E-commerce Enterprise</h3>
+            <p>Arquitectura web optimizada para catálogos dinámicos y transacciones fluidas de gran volumen.</p>
           </div>
-          <div class="service-item">
-            <h3>Impulso Local</h3>
-            <p>Optimización para Google Maps y estructura enfocada en conversión.</p>
+          <div class="service-item-retail">
+            <h3>Automatización CRM</h3>
+            <p>Retención de clientes mediante flujos de email marketing que recuperan ventas perdidas.</p>
           </div>
-          <div class="service-item">
-            <h3>Gestión de Leads</h3>
-            <p>Formularios y canales de atención rápida para no perder contactos.</p>
+          <div class="service-item-retail">
+            <h3>SEO para Retail</h3>
+            <p>Visibilidad orgánica total para tus términos de búsqueda más rentables y categorías estrella.</p>
           </div>
-          <div class="service-item">
-            <h3>Soporte Estratégico</h3>
-            <p>Te acompañamos en tus primeros pasos digitales sin tecnicismos.</p>
+          <div class="service-item-retail">
+            <h3>Social Cataloging</h3>
+            <p>Gestión de redes sociales enfocada en catálogos de producto que impulsan la compra directa.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="contacto" class="expertise-contact section">
+    <section id="contacto" class="section">
       <div class="container">
-        <div class="contact-grid">
+        <div class="contact-grid-retail">
           <div class="contact-info">
-            <h2 class="section-title">Solicita tu <br/><span class="highlight">Diagnóstico Gratis.</span></h2>
-            <p>Completa el formulario y cuéntanos qué necesitas para que tu negocio empiece a brillar online.</p>
+            <h2 class="section-title">Hablemos de cómo <br/><span class="highlight">escalar tus ventas.</span></h2>
+            <p>Completa el formulario y diseñaremos una hoja de ruta para llevar tu inventario al siguiente nivel digital este mismo mes.</p>
             <div class="form-perks">
-               <div>✓ Análisis de visibilidad actual</div>
-               <div>✓ Recomendaciones de estructura web</div>
-               <div>✓ Plan de acción local</div>
+               <div>✓ Auditoría de infraestructura actual</div>
+               <div>✓ Análisis de competencia en categorías</div>
+               <div>✓ Plan de automatización de ventas</div>
             </div>
           </div>
-          <form class="diagnosis-form retail-form">
+          <form class="qualification-form-retail retail-form">
             <div class="form-grid">
                <input type="text" placeholder="Tu Nombre" required />
-               <input type="text" placeholder="Nombre del Negocio" required />
+               <input type="text" placeholder="Empresa / Retailer" required />
             </div>
             <div class="form-grid">
-               <input type="text" placeholder="Rubro/Actividad" required />
+               <input type="text" placeholder="Volumen de Catálogo" required />
                <input type="text" placeholder="Ciudad" required />
             </div>
-            <textarea placeholder="¿Cuál es tu objetivo principal con la web?" required></textarea>
+            <textarea placeholder="¿Cuál es tu meta de ventas para este trimestre?" required></textarea>
             <div class="form-grid">
-               <input type="email" placeholder="Email" required />
+               <input type="email" placeholder="Email Corporativo" required />
                <input type="tel" placeholder="WhatsApp" required />
             </div>
-            <button type="submit" class="btn-primary">Solicitar Diagnóstico</button>
-            <p class="success-msg" style="display:none; margin-top: 1rem; color: var(--accent);">Gracias. Nos pondremos en contacto muy pronto.</p>
+            <button type="submit" class="btn btn-primary btn-full">Hablemos hoy</button>
+            <p class="success-msg" style="display:none; margin-top: 1rem; color: var(--accent);">Diseñaremos tu estrategia de escalado. Nos pondremos en contacto muy pronto.</p>
           </form>
         </div>
       </div>
@@ -135,18 +138,15 @@ import CtaSection from '../components/CtaSection.astro';
 </BaseLayout>
 
 <style>
-  :root {
-    --accent: #8b5cf6;
-    --accent-dark: #6d28d9;
-    --void: #09090b;
-    --glass: rgba(255, 255, 255, 0.02);
-    --border: rgba(255, 255, 255, 0.07);
+  /* Base Overrides for Retail Focus */
+  #retail-focus {
+    background: var(--bg);
+    color: #fff;
   }
 
-  .expertise-page {
-    background: var(--void);
-    color: #fff;
-    font-family: 'Syne', sans-serif;
+  .hero-section {
+    padding-top: 10rem;
+    padding-bottom: 5rem;
   }
 
   .container {
@@ -156,7 +156,11 @@ import CtaSection from '../components/CtaSection.astro';
   }
 
   .section {
-    padding: 120px 0;
+    padding: 100px 0;
+  }
+
+  .section-alt-retail {
+    background: var(--bg-2);
   }
 
   .highlight {
@@ -164,160 +168,211 @@ import CtaSection from '../components/CtaSection.astro';
   }
 
   .accent {
-    color: var(--accent-dark);
+    color: var(--accent-light);
   }
 
-  .expertise-tag {
-    display: inline-block;
-    padding: 6px 16px;
-    background: var(--glass);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
+  /* Typography */
+  #retail-focus h1 {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    line-height: 1.2;
     margin-bottom: 2rem;
-    color: var(--accent);
+    max-width: 18ch;
+    letter-spacing: -0.02em;
   }
 
-  .expertise-hero {
-    padding: 220px 0 100px;
-  }
-
-  .expertise-hero h1 {
-    font-size: clamp(3.5rem, 9vw, 8rem);
-    line-height: 0.85;
-    letter-spacing: -0.05em;
+  .section-title {
+    font-size: clamp(2rem, 3.5vw, 3rem);
     margin-bottom: 2.5rem;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
   }
 
-  .hero-lead {
-    font-size: 1.3rem;
-    color: #a1a1aa;
-    max-width: 650px;
-    line-height: 1.5;
-    margin-bottom: 3.5rem;
+  /* Components */
+  .eyebrow-retail {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0 0 1.5rem;
+    color: var(--accent);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
   }
 
-  .hero-actions {
+  .eyebrow-retail::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 15px var(--accent);
+  }
+
+  .hero-text-retail {
+    font-size: 1.1rem;
+    color: var(--gray-2);
+    max-width: 50ch;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+  }
+
+  /* Grid Layouts */
+  .hero-grid-retail {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .hero-image-retail {
+    position: relative;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+    box-shadow: 0 0 50px rgba(139, 92, 246, 0.15);
+    width: 100%;
+  }
+
+  .hero-img-main {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-lg);
+    display: block;
+    object-fit: cover;
+  }
+
+  .hero-actions-retail {
     display: flex;
-    gap: 1.5rem;
+    gap: 1rem;
+    margin-bottom: 2rem;
   }
 
-  .pillars-grid {
+  /* Pillars */
+  .pillars-grid-retail {
      display: grid;
      grid-template-columns: repeat(3, 1fr);
-     gap: 30px;
-     border-top: 1px solid var(--border);
-     padding-top: 60px;
+     gap: 1.5rem;
   }
 
-  .pillar-card {
-     padding: 40px;
-     background: var(--glass);
+  .pillar-card-retail {
+     padding: 2.5rem 2rem;
+     background: var(--bg-card);
      border: 1px solid var(--border);
+     border-radius: var(--radius);
+     transition: 0.3s;
+  }
+
+  .pillar-card-retail:hover {
+    border-color: var(--accent);
+    transform: translateY(-5px);
   }
 
   .p-num {
      display: block;
-     font-size: 1rem;
+     font-size: 0.85rem;
      color: var(--accent);
      margin-bottom: 1.5rem;
      font-weight: 800;
   }
 
-  .pillar-card h3 {
-     font-size: 1.8rem;
+  .pillar-card-retail h3 {
+     font-size: 1.5rem;
      margin-bottom: 1rem;
+     line-height: 1.2;
   }
 
-  .grid-split {
+  /* Results Split */
+  .grid-split-retail {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 120px;
+    gap: 6rem;
     align-items: center;
   }
 
-  .section-title {
-    font-size: clamp(2.5rem, 5vw, 4.5rem);
-    margin-bottom: 2.5rem;
-    line-height: 0.95;
-  }
-
   .text-block p {
-    font-size: 1.2rem;
-    color: #a1a1aa;
+    font-size: 1.1rem;
+    color: var(--gray-2);
     line-height: 1.7;
     margin-bottom: 3rem;
   }
 
-  .issue-box {
+  .stats-retail-list {
      display: grid;
-     gap: 2rem;
+     gap: 1.5rem;
   }
 
-  .issue-item strong {
+  .stat-retail-item strong {
      display: block;
-     color: var(--accent);
-     margin-bottom: 0.5rem;
+     color: var(--white);
+     margin-bottom: 0.6rem;
+     font-size: 1rem;
+  }
+
+  .bar-container {
+    width: 100%;
+    height: 4px;
+    background: var(--border);
+    border-radius: 100px;
+  }
+
+  .bar {
+    height: 100%;
+    background: var(--accent);
+    border-radius: 100px;
+    position: relative;
   }
 
   .visual-quote {
-     font-size: 2.5rem;
-     line-height: 1.1;
+     font-size: 2rem;
+     line-height: 1.2;
      font-style: italic;
-     color: #fff;
-     position: relative;
-  }
-  .visual-quote::before {
-     content: '"';
-     position: absolute;
-     left: -40px;
-     top: -20px;
-     font-size: 5rem;
-     color: var(--accent);
-     opacity: 0.2;
+     color: var(--white);
+     opacity: 0.9;
   }
 
-  .services-list {
+  /* Services List */
+  .services-list-retail {
      display: grid;
      grid-template-columns: 1fr 1fr;
-     gap: 30px;
-     margin-top: 40px;
+     gap: 1.5rem;
   }
 
-  .service-item {
-     padding: 50px;
-     background: var(--glass);
+  .service-item-retail {
+     padding: 2.5rem;
+     background: var(--bg-card);
      border: 1px solid var(--border);
+     border-radius: var(--radius-lg);
   }
 
-  .service-item h3 {
-     font-size: 2rem;
-     margin-bottom: 1.5rem;
-     color: #fff;
+  .service-item-retail h3 {
+     font-size: 1.8rem;
+     margin-bottom: 1.2rem;
+     color: var(--white);
   }
 
-  .contact-grid {
+  /* Contact Grid */
+  .contact-grid-retail {
     display: grid;
     grid-template-columns: 1fr 1.2fr;
-    gap: 100px;
+    gap: 5rem;
+    align-items: start;
   }
 
   .form-perks {
-     margin-top: 3rem;
+     margin-top: 2.5rem;
      display: grid;
      gap: 1rem;
-     font-size: 1.1rem;
-     color: var(--accent);
+     font-size: 1rem;
+     color: var(--accent-light);
   }
 
-  .diagnosis-form {
+  .qualification-form-retail {
     display: grid;
     gap: 1.5rem;
-    background: #0f0f13;
-    padding: 60px;
+    background: var(--bg-card);
+    padding: 3rem;
     border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
   }
 
   .form-grid {
@@ -327,51 +382,36 @@ import CtaSection from '../components/CtaSection.astro';
   }
 
   input, select, textarea {
-    background: transparent;
+    background: rgba(0,0,0,0.2);
     border: 1px solid var(--border);
-    padding: 1.25rem;
+    padding: 1.1rem;
     color: #fff;
     font-family: inherit;
     width: 100%;
+    border-radius: 4px;
+    font-size: 0.95rem;
   }
 
   textarea {
-    height: 120px;
+    height: 110px;
+    resize: none;
   }
 
-  .btn-primary {
-    background: var(--accent);
-    color: var(--void);
-    padding: 1.25rem 2.5rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    border: none;
-    cursor: pointer;
-    transition: 0.3s;
-    text-align: center;
+  .btn-full {
+    width: 100%;
   }
 
-  .btn-primary:hover {
-    background: #fff;
-  }
-
-  .btn-secondary {
-    background: transparent;
-    color: #fff;
-    border: 1px solid var(--border);
-    padding: 1.25rem 2.5rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-
+  /* Responsive Fixes */
   @media (max-width: 1024px) {
-    .grid-split, .contact-grid, .pillars-grid, .services-list, .form-grid {
+    .container { padding: 0 1.5rem; }
+    .hero-grid-retail, .grid-split-retail, .contact-grid-retail, .pillars-grid-retail, .services-list-retail, .form-grid {
       grid-template-columns: 1fr;
+      gap: 3rem;
     }
+    .hero-image-retail { order: -1; }
+    .hero-section { padding-top: 8rem; }
+    #retail-focus h1 { font-size: 2.2rem; }
+    .visual-quote { font-size: 1.5rem; }
   }
 </style>
 
@@ -382,7 +422,8 @@ import CtaSection from '../components/CtaSection.astro';
       form.addEventListener('submit', (e) => {
         e.preventDefault();
         form.reset();
-        form.querySelector('.success-msg').style.display = 'block';
+        const success = form.querySelector('.success-msg');
+        if (success) success.style.display = 'block';
       });
     }
   });

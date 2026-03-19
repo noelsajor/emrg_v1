@@ -246,17 +246,23 @@ ol {
 }
 
 .nav-logo {
-    font-family: var(--font-serif);
-    font-size: 1.6rem;
-    color: var(--ink);
-    letter-spacing: -0.02em;
-    line-height: 1;
+  display: flex;
+  align-items: center;
+  transition: opacity var(--t);
 }
 
-.nav-logo em {
-    font-style: italic;
-    color: var(--accent);
+.logo-img {
+  height: 24px;
+  width: auto;
+  display: block;
+  filter: brightness(0);
 }
+
+.nav-logo:hover {
+  opacity: 0.8;
+}
+
+
 
 .nav-links {
     display: flex;

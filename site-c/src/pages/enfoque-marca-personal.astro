@@ -5,7 +5,7 @@ import SceneNav from '../components/SceneNav.astro';
 import CTA from '../components/CTA.astro';
 ---
 
-<BaseLayout title="Enfoque Marca Personal | EMRG" description="Estrategia digital 360 para consultores, expertos y profesionales que quieren construir autoridad y atraer mejores clientes.">
+<BaseLayout title="Enfoque Marca Personal | EMRG" description="SEO, Contenidos y Estrategia Digital para quienes no se conforman con lo básico. Convierte tu web en un imán de leads.">
   <SceneNav />
   <Header />
 
@@ -14,29 +14,27 @@ import CTA from '../components/CTA.astro';
       <div class="content-wrap">
         <div class="hero-grid-legal">
           <div class="hero-copy">
-            <p class="scene-label">Autoridad & Influencia</p>
-            <h1 class="hero-title">Experiencia <span class="accent">Convertida.</span></h1>
+            <p class="scene-label">Personal Branding</p>
+            <h1 class="hero-title">¿Tu web solo <span class="accent">la ves tú?</span></h1>
             <p class="hero-sub">
-              Estrategia digital 360 para consultores, expertos y profesionales. 
-              Construimos el sistema que transforma tu conocimiento en autoridad, visibilidad y mejores clientes.
+              SEO, Contenidos y Estrategia Digital para quienes no se conforman con lo básico. 
+              Vamos a cambiar eso y convertir tu presencia en un imán de leads.
             </p>
 
             <div class="hero-actions-legal">
-              <button class="nav-cta" onclick="window.goToScene(5)">Auditoría Estratégica</button>
-              <button class="btn-outline-legal" onclick="window.goToScene(2)">Ver Framework</button>
+              <button class="nav-cta" onclick="window.goToScene(5)">Diseñar mi Estrategia</button>
+              <button class="btn-outline-legal" onclick="window.goToScene(1)">Web vs. Imán de Leads</button>
             </div>
 
             <div class="hero-chips">
-               <span class="chip-pill">Authority Building</span>
-               <span class="chip-pill">Personal SEO</span>
-               <span class="chip-pill">Expertise Systems</span>
+               <span class="chip-pill">Lead Magnet</span>
+               <span class="chip-pill">Authority SEO</span>
+               <span class="chip-pill">Conversion Pathways</span>
             </div>
           </div>
 
           <aside class="hero-card-legal">
-             <div class="hero-quote-imm">
-                <p>“Tu marca personal no necesita más ruido. Necesita una estructura que convierta expertise en confianza.”</p>
-             </div>
+             <img src="/images/hero-branding.png" alt="High-Authority Personal Brand" class="hero-img-scene" />
           </aside>
         </div>
       </div>
@@ -45,59 +43,39 @@ import CTA from '../components/CTA.astro';
     <section class="scene" id="scene-1">
       <div class="content-wrap">
         <div class="section-header-legal">
-          <p class="scene-label">El Problema</p>
-          <h2 class="scene-title">Tener experiencia no garantiza <em>ser elegido.</em></h2>
+          <p class="scene-label">La Evolución</p>
+          <h2 class="scene-title">El <em>Antes y Después.</em></h2>
         </div>
 
         <div class="pillars-grid-legal">
-          <article class="pillar-row-legal">
-            <span class="pillar-num">01</span>
+          <article class="pillar-row-legal before-card">
+            <span class="pillar-num">ANTES</span>
             <div class="pillar-content">
-              <h3 class="pillar-name">Invisibilidad</h3>
-              <p class="pillar-tagline">Muchos profesionales valiosos siguen siendo invisibles digitalmente para su cliente ideal.</p>
+              <h3 class="pillar-name">Web "Tarjeta"</h3>
+              <ul class="pillar-list-imm">
+                 <li>Invisibilidad en buscadores</li>
+                 <li>Estética genérica sin alma</li>
+                 <li>Sin llamadas a la acción</li>
+              </ul>
+            </div>
+          </article>
+          <article class="pillar-row-legal after-card featured-pillar">
+            <span class="pillar-num">DESPUÉS</span>
+            <div class="pillar-content">
+              <h3 class="pillar-name">Imán de Leads</h3>
+              <ul class="pillar-list-imm">
+                 <li>Dominio de palabras clave</li>
+                 <li>Diseño que inspira autoridad</li>
+                 <li>Rutas de conversión claras</li>
+              </ul>
             </div>
           </article>
           <article class="pillar-row-legal">
-            <span class="pillar-num">02</span>
+            <span class="pillar-num">IMPACTO</span>
             <div class="pillar-content">
-              <h3 class="pillar-name">Mensaje Débil</h3>
-              <p class="pillar-tagline">Comunicación sin diferenciación que te hace competir como uno más en el mercado.</p>
+              <h3 class="pillar-name">Crecimiento</h3>
+              <p class="pillar-tagline">Transformamos un gasto digital en un generador de negocio 24/7 para tu marca.</p>
             </div>
-          </article>
-          <article class="pillar-row-legal">
-            <span class="pillar-num">03</span>
-            <div class="pillar-content">
-              <h3 class="pillar-name">Falta de Sistemas</h3>
-              <p class="pillar-tagline">Dependencia absoluta de recomendaciones y falta de un canal de adquisición propio.</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="scene" id="scene-2">
-      <div class="content-wrap">
-        <div class="section-header-legal">
-          <p class="scene-label">Framework</p>
-          <h2 class="scene-title">Growth <em>Authority 360.</em></h2>
-          <p class="hero-sub" style="margin: 0; max-width: 600px;">Un proceso en 4 etapas para construir una presencia que inspire confianza y genere oportunidades.</p>
-        </div>
-
-        <div class="work-scroll-track-legal">
-          <article class="case-card-imm">
-            <span class="case-tag-imm">Fase 01</span>
-            <h3 class="case-brand-imm">Diagnóstico</h3>
-             <p class="case-desc-imm">Auditoría de activos, posicionamiento y puntos de fuga en captación.</p>
-          </article>
-          <article class="case-card-imm">
-            <span class="case-tag-imm">Fase 02</span>
-            <h3 class="case-brand-imm">Claridad</h3>
-            <p class="case-desc-imm">Definición de mensaje comercial, categoría y propuesta de valor única.</p>
-          </article>
-          <article class="case-card-imm">
-            <span class="case-tag-imm">Fase 03</span>
-            <h3 class="case-brand-imm">Autoridad</h3>
-            <p class="case-desc-imm">Despliegue de web estratégica, SEO y activos de validación de alto impacto.</p>
           </article>
         </div>
       </div>
@@ -107,33 +85,29 @@ import CTA from '../components/CTA.astro';
       <div class="content-wrap">
         <div class="section-header-legal">
           <p class="scene-label">Servicios</p>
-          <h2 class="scene-title">Estructura para <em>Expertos Serios.</em></h2>
+          <h2 class="scene-title">Estrategia <em>Integral.</em></h2>
         </div>
 
         <div class="services-grid-legal">
           <div class="service-item-legal">
              <span class="pillar-num">01</span>
-             <h3 class="case-brand-imm">SEO de Marca</h3>
+             <h3 class="case-brand-imm">Auditoría SEO Profunda</h3>
+             <p class="service-desc-imm">Encontramos fugas de autoridad en tus activos.</p>
           </div>
           <div class="service-item-legal">
              <span class="pillar-num">02</span>
-             <h3 class="case-brand-imm">Web Estratégica</h3>
+             <h3 class="case-brand-imm">Web Optimizada</h3>
+             <p class="service-desc-imm">Velocidad extrema y enfoque móvil total.</p>
           </div>
           <div class="service-item-legal">
              <span class="pillar-num">03</span>
-             <h3 class="case-brand-imm">Lead Generation</h3>
+             <h3 class="case-brand-imm">Blog Corporativo</h3>
+             <p class="service-desc-imm">Contenidos que atraen clientes cualificados.</p>
           </div>
           <div class="service-item-legal">
              <span class="pillar-num">04</span>
-             <h3 class="case-brand-imm">Content Strategy</h3>
-          </div>
-          <div class="service-item-legal">
-             <span class="pillar-num">05</span>
-             <h3 class="case-brand-imm">CRO for Experts</h3>
-          </div>
-          <div class="service-item-legal">
-             <span class="pillar-num">06</span>
-             <h3 class="case-brand-imm">Personal Brand Ads</h3>
+             <h3 class="case-brand-imm">Redes con Propósito</h3>
+             <p class="service-desc-imm">Gestión enfocada en conversión comercial.</p>
           </div>
         </div>
       </div>
@@ -142,23 +116,14 @@ import CTA from '../components/CTA.astro';
     <section class="scene" id="scene-4">
       <div class="content-wrap">
         <div class="section-header-legal">
-          <p class="scene-label">Prueba</p>
-          <h2 class="scene-title">Resultados de <em>Posicionamiento.</em></h2>
+          <p class="scene-label">Diferenciador</p>
+          <h2 class="scene-title">Por qué <em>EMRG.</em></h2>
         </div>
 
         <div class="cases-row-legal">
-          <article class="case-card-imm">
-             <h3 class="case-brand-imm">Consultor Senior</h3>
-             <p class="case-desc-imm">Aumento del 200% en captación de leads cualificados mediante Landing de Autoridad.</p>
-          </article>
-          <article class="case-card-imm featured-case">
-             <h3 class="case-brand-imm">Experto Tech</h3>
-             <p class="case-desc-imm">Dominio de keywords de su especialidad logrando visibilidad en 3 mercados.</p>
-          </article>
-           <article class="case-card-imm">
-             <h3 class="case-brand-imm">Personal Mentor</h3>
-             <p class="case-desc-imm">Rediseño de funnel logrando triplicar el ticket promedio de sus servicios.</p>
-          </article>
+          <div class="quote-scene-full">
+            <p class="hero-quote-imm">"Somos tu equipo de marketing externo, pero con tu misma pasión."</p>
+          </div>
         </div>
       </div>
     </section>
@@ -166,29 +131,24 @@ import CTA from '../components/CTA.astro';
     <section class="scene" id="scene-5">
       <div class="content-wrap form-split-legal">
          <div class="form-copy-legal">
-            <p class="scene-label">Consulta</p>
-            <h2 class="scene-title">Inicia tu <em>Auditoría.</em></h2>
-            <p class="hero-sub">Revisamos tu presencia digital para detectar bloqueos en tu crecimiento.</p>
+            <p class="scene-label">Contacto</p>
+            <h2 class="scene-title">Hablemos de tu <em>Proyecto.</em></h2>
+            <p class="hero-sub">Cuéntanos sobre tus metas y diseñamos tu estrategia personalizada hoy mismo.</p>
          </div>
          <form class="qualification-form-legal personal-form">
             <div class="form-grid">
-               <input type="text" placeholder="NOMBRE COMPLETO" required />
-               <input type="text" placeholder="ESPECIALIDAD" required />
+               <input type="text" placeholder="TU NOMBRE" required />
+               <input type="text" placeholder="TU PROFESIÓN" required />
             </div>
             <div class="form-row">
-               <input type="text" placeholder="MARCA O PROYECTO" required />
+               <textarea placeholder="CUÉNTANOS TU PROYECTO..." required style="width: 100%; height: 100px; padding: 16px; background: var(--deep); border: 1px solid var(--rim2); color: white;"></textarea>
             </div>
             <div class="form-grid">
-               <select required>
-                  <option value="">OBJETIVO</option>
-                  <option>Visibilidad</option>
-                  <option>Autoridad</option>
-                  <option>Leads Qualificados</option>
-               </select>
                <input type="email" placeholder="EMAIL" required />
+               <input type="tel" placeholder="WHATSAPP" required />
             </div>
-            <button class="nav-cta" type="submit">Solicitar Auditoría</button>
-            <p class="form-success-legal" style="display:none; margin-top: 1rem; color: var(--teal); font-size: 0.8rem; font-weight: 600;">SOLICITUD ENVIADA CON ÉXITO.</p>
+            <button class="nav-cta" type="submit">Diseñar mi Estrategia</button>
+            <p class="form-success-legal" style="display:none; margin-top: 1rem; color: var(--teal); font-size: 0.8rem; font-weight: 600;">ESTRATEGIA SOLICITADA CON ÉXITO.</p>
          </form>
       </div>
     </section>
@@ -205,16 +165,36 @@ import CTA from '../components/CTA.astro';
     width: 100%;
   }
 
+  .section-header-legal {
+    margin-bottom: 48px;
+  }
+
   .accent {
     color: var(--teal);
   }
 
   .hero-grid-legal {
     display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
+    grid-template-columns: 1fr 1fr;
     gap: 80px;
     align-items: center;
     width: 100%;
+  }
+
+  .hero-grid-legal .hero-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1;
+    letter-spacing: -0.01em;
+  }
+
+  .hero-grid-legal .hero-sub {
+    max-width: 480px;
+    text-align: left;
+    margin: 0 0 32px;
+  }
+
+  .scene-title {
+    font-size: clamp(2rem, 4.5vw, 3.5rem);
   }
 
   .hero-actions-legal {
@@ -242,33 +222,49 @@ import CTA from '../components/CTA.astro';
   }
 
   .hero-card-legal {
-    background: rgba(11, 21, 32, 0.4);
     border: 1px solid var(--rim2);
-    backdrop-filter: blur(12px);
-    padding: 60px;
+    background: white;
+    padding: 10px;
+  }
+
+  .hero-img-scene {
+    width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: 4/5;
+    object-fit: cover;
   }
 
   .hero-quote-imm {
-     font-size: 1.8rem;
-     line-height: 1.3;
+     font-size: 2.5rem;
+     line-height: 1.2;
      color: var(--white);
      font-family: var(--title);
      font-style: italic;
+     text-align: center;
+     max-width: 900px;
+     margin: 0 auto;
   }
 
   .pillars-grid-legal {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 60px;
-    margin-top: 40px;
+    gap: 40px;
+    margin-top: 0;
   }
 
   .pillar-row-legal {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    padding: 24px 0;
-    border-top: 1px solid var(--rim);
+    padding: 40px;
+    border: 1px solid var(--rim2);
+    background: var(--surface);
+  }
+
+  .featured-pillar {
+    border-color: var(--teal);
+    background: var(--teal-glow);
   }
 
   .pillar-num {
@@ -276,54 +272,57 @@ import CTA from '../components/CTA.astro';
     font-size: 0.7rem;
     color: var(--teal);
     font-weight: 600;
+    letter-spacing: 0.2em;
   }
 
   .pillar-name {
     font-family: var(--title);
     font-size: 1.8rem;
-    margin-bottom: 8px;
+    margin-bottom: 20px;
     color: var(--white);
   }
 
-  .pillar-tagline {
-    font-size: 0.85rem;
+  .pillar-list-imm {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 12px;
     color: var(--smoke);
+    font-size: 0.9rem;
   }
 
-  .work-scroll-track-legal {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    margin-top: 60px;
+  .pillar-list-imm li::before {
+    content: "→";
+    margin-right: 10px;
+    color: var(--teal);
   }
 
   .services-grid-legal {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2px;
-    background: var(--rim);
-    border: 1px solid var(--rim);
-    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-top: 0;
   }
 
   .service-item-legal {
     background: var(--surface);
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+    padding: 60px;
+    border: 1px solid var(--rim2);
+    transition: 0.3s;
   }
-
-  .cases-row-legal {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    margin-top: 40px;
-  }
-
-  .featured-case {
+  .service-item-legal:hover {
     border-color: var(--teal);
-    background: var(--teal-glow);
+  }
+
+  .service-desc-imm {
+    font-size: 0.9rem;
+    color: var(--smoke);
+    margin-top: 10px;
+  }
+
+  .quote-scene-full {
+    width: 100%;
+    padding: 100px 0;
   }
 
   .form-split-legal {
@@ -362,7 +361,7 @@ import CTA from '../components/CTA.astro';
   }
 
   @media (max-width: 1024px) {
-    .hero-grid-legal, .pillars-grid-legal, .work-scroll-track-legal, .services-grid-legal, .cases-row-legal, .form-split-legal, .form-grid {
+    .hero-grid-legal, .pillars-grid-legal, .services-grid-legal, .form-split-legal, .form-grid {
       grid-template-columns: 1fr;
     }
     .hero-card-legal { display: none; }

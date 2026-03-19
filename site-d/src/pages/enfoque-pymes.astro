@@ -1,20 +1,24 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Contact from '../components/Contact.astro';
 ---
 
-<BaseLayout title="Enfoque Emprendedores y PYMES | EMRG" description="SEO, CRO y estrategia digital para ecommerce, retailers y mayoristas que quieren escalar facturación.">
+<BaseLayout title="Enfoque Emprendedores/PYMES | EMRG" description="Deja de ser invisible. Es hora de que el mundo encuentre tu negocio. Diseño y optimización estratégica para que tu marca despegue.">
   
   <section class="scene active" id="scene-0">
-    <div class="hero-block-imm">
-      <p class="label-imm">Ecommerce & Performance</p>
-      <h1 class="title-imm">Máquina de <br/><span class="teal-glow">Ventas.</span></h1>
-      <p class="desc-imm">SEO, CRO y rendimiento digital para retailers y mayoristas que buscan dominar el canal online. Escalamos facturación mediante activos de alto impacto.</p>
-      
-      <div class="action-grid-imm">
-        <a href="#scene-3" class="btn-imm" onclick="window.goToScene(3); return false;">Inicia Auditoría //</a>
-        <div class="metric-chip-imm">
-           <span class="m-val-imm">+38% Conv</span>
-           <span class="m-val-imm">+72% SEO</span>
+    <div class="content-wrap-imm">
+      <div class="hero-flex-imm">
+        <div class="hero-copy-imm">
+          <p class="scene-label-imm">E-commerce & Growth</p>
+          <h1 class="hero-title-imm">Deja de ser invisible. Es hora de que el mundo <span class="teal-glow">encuentre tu negocio.</span></h1>
+          <p class="hero-sub-imm">Diseño de sitios web desde cero y optimización estratégica para que tu marca despegue. Construimos el motor digital que tu visión demanda.</p>
+          <div class="hero-actions-imm">
+            <a href="#scene-5" class="btn-pkg-imm" onclick="window.goToScene(5); return false;">¡Sí, quiero lanzar mi negocio!</a>
+          </div>
+        </div>
+        
+        <div class="hero-image-box-imm">
+           <img src="/images/hero-pymes.png" alt="SME Digital Growth" class="hero-img-imm" />
         </div>
       </div>
     </div>
@@ -22,43 +26,36 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   <section class="scene" id="scene-1">
     <div class="content-wrap-imm">
-      <h2 class="section-title-imm">El Problema: <span class="teal-glow">Fugas de Facturación.</span></h2>
-      
-      <div class="pillars-imm">
-        <div class="pillar-box-imm">
-          <span class="p-num-imm">01</span>
-          <h3>SEO Ineficiente</h3>
-          <p>Categorías que no rankean y pierden visitas ante competidores directos.</p>
-        </div>
-        <div class="pillar-box-imm">
-          <span class="p-num-imm">02</span>
-          <h3>Abandono Masivo</h3>
-          <p>Fricciones en la UX que frenan la conversión en el checkout.</p>
-        </div>
-        <div class="pillar-box-imm">
-          <span class="p-num-imm">03</span>
-          <h3>Crecimiento Ciego</h3>
-          <p>Falta de un sistema de datos para priorizar acciones con ROI.</p>
-        </div>
+      <div class="hook-card-imm">
+        <p class="scene-label-imm">El Gancho</p>
+        <h2 class="section-title-imm">¿Sabías que el <span class="teal-glow">80% de las personas</span> investigan en internet antes de comprar?</h2>
+        <p class="hero-sub-imm">Si no estás allí, simplemente no existes. Nosotros transformamos tu presencia digital en un canal de captación masiva.</p>
       </div>
     </div>
   </section>
 
   <section class="scene" id="scene-2">
     <div class="content-wrap-imm">
-      <h2 class="section-title-imm">Metodología <span class="teal-glow">Performance.</span></h2>
-      <div class="services-imm">
-         <div class="service-row-imm">
-            <span>01</span>
-            <h3>Ecommerce Architecture</h3>
+      <div class="scene-header-imm">
+        <p class="scene-label-imm">Servicios</p>
+        <h2 class="section-title-imm">Paquetes de <em>Despegue.</em></h2>
+      </div>
+      
+      <div class="services-imm-grid">
+         <div class="serv-card-imm">
+            <span class="pillar-idx-imm">Fase 1</span>
+            <h3>Tienda Online</h3>
+            <p>E-commerce fácil de usar y optimizado para convertir visitas en ingresos reales.</p>
          </div>
-         <div class="service-row-imm">
-            <span>02</span>
-            <h3>Conversion Rate Ops</h3>
+         <div class="serv-card-imm">
+            <span class="pillar-idx-imm">Fase 2</span>
+            <h3>SEO Nativo</h3>
+            <p>Optimización desde el día 1 para que tu marca lidere las búsquedas en Google.</p>
          </div>
-         <div class="service-row-imm">
-            <span>03</span>
-            <h3>Scaling Strategy</h3>
+         <div class="serv-card-imm">
+            <span class="pillar-idx-imm">Fase 3</span>
+            <h3>Contenidos</h3>
+            <p>Nosotros escribimos por ti. Gestión de narrativa que conecta con tu audiencia.</p>
          </div>
       </div>
     </div>
@@ -66,32 +63,93 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   <section class="scene" id="scene-3">
     <div class="content-wrap-imm">
-      <div class="contact-split-imm">
-        <div class="contact-text-imm">
-          <h2 class="section-title-imm">Auditoría <span class="teal-glow">E-commerce.</span></h2>
-          <p class="desc-imm">Evaluamos tu ecosistema para detectar fugas y trazar tu hoja de ruta de crecimiento.</p>
-        </div>
-        
-        <form class="imm-form pymes-form">
-          <div class="form-row-imm">
-            <input type="text" placeholder="NOMBRE" required />
-            <input type="text" placeholder="EMPRESA" required />
-          </div>
-          <div class="form-row-imm">
-            <input type="text" placeholder="PLATAFORMA" required />
-            <select required style="background:var(--surface); border:1px solid var(--rim); color:white; padding:18px;">
-               <option value="">NEGOCIO</option>
-               <option>Retail</option>
-               <option>Mayorista</option>
-            </select>
-          </div>
-          <textarea placeholder="RETOS PRINCIPALES..." required></textarea>
-          <button type="submit" class="btn-imm">Solicitar Análisis //</button>
-          <p class="success-imm" style="display:none; margin-top: 1rem; color: var(--teal); font-weight: 800;">SOLICITUD ENVIADA EXITOSAMENTE.</p>
-        </form>
+      <div class="scene-header-imm">
+         <p class="scene-label-imm">Beneficios</p>
+         <h2 class="section-title-imm">Ventas <em>Sin Fronteras.</em></h2>
+      </div>
+      
+      <div class="benefits-scroller-imm">
+         <div class="benefit-item-imm">
+            <span class="benefit-cat-imm">OMNICANALIDAD</span>
+            <h3>Ventas 24/7</h3>
+            <p>Tu negocio nunca descansa. Recibe pedidos y leads en cualquier momento.</p>
+         </div>
+         <div class="benefit-item-imm">
+            <span class="benefit-cat-imm">ESCALADO</span>
+            <h3>Alcance Nacional</h3>
+            <p>Rompe los límites físicos y llega a clientes de todo el territorio.</p>
+         </div>
+         <div class="benefit-item-imm">
+            <span class="benefit-cat-imm">AUTORIDAD</span>
+            <h3>Profesionalismo</h3>
+            <p>Valida tu marca con una arquitectura digital que genera confianza inmediata.</p>
+         </div>
       </div>
     </div>
   </section>
+
+  <section class="scene" id="scene-4" style="background: var(--surface);">
+    <div class="content-wrap-imm">
+      <div class="scene-header-imm">
+         <p class="scene-label-imm">Resultados</p>
+         <h2 class="section-title-imm">Tu éxito <em class="teal-glow">nuestra meta.</em></h2>
+      </div>
+      <div class="services-list-imm">
+         <div class="service-row-imm"><span>01</span><h3>+100 Negocios Lanzados</h3></div>
+         <div class="service-row-imm"><span>02</span><h3>Crecimiento Sistematizado</h3></div>
+         <div class="service-row-imm"><span>03</span><h3>Soporte Estratégico</h3></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="scene" id="scene-5">
+    <div class="content-wrap-imm form-layout-imm">
+       <div class="form-info-imm">
+          <p class="scene-label-imm">Contacto</p>
+          <h2 class="section-title-imm">¡Sí, quiero lanzar mi negocio al <em class="teal-glow">mundo digital!</em></h2>
+          <p class="hero-sub-imm">Agenda tu auditoría gratuita y descubre cómo elevar tu marca al siguiente nivel.</p>
+       </div>
+       <div class="form-box-imm">
+          <form class="pymes-launch-form-imm" id="pymes-form">
+             <div class="form-grid-imm">
+                <input type="text" placeholder="NOMBRE COMPLETO" required />
+                <input type="text" placeholder="NOMBRE DEL NEGOCIO" required />
+             </div>
+             <input type="email" placeholder="EMAIL DE CONTACTO" required />
+             <textarea placeholder="CUÉNTANOS SOBRE TU PROYECTO..." required style="min-height: 100px;"></textarea>
+             <button class="btn-pkg-imm" type="submit">Solicitar Auditoría Ahora</button>
+          </form>
+          <p class="launch-success-imm" style="display:none; color: var(--teal); margin-top: 1rem; font-size:0.85rem; font-weight: 800;">SOLICITUD ENVIADA. NOS PONDREMOS EN CONTACTO PRONTO.</p>
+       </div>
+    </div>
+  </section>
+
+  <section class="scene" id="scene-6-proof" style="background: var(--surface);">
+    <div class="content-wrap-imm">
+      <div class="scene-header-imm">
+         <p class="scene-label-imm">Prueba Social</p>
+         <h2 class="section-title-imm">Confianza avalada por el <em class="teal-glow">sector.</em></h2>
+      </div>
+      <div class="carousel-container-imm">
+        <div class="carousel-track-imm" id="testimonial-track-imm">
+          <div class="carousel-slide-imm active">
+            <p>“Pasamos de vender localmente a enviar a todo el país en menos de un mes. El sistema es impecable.”</p>
+            <strong>Fundadora — Tienda de Diseño</strong>
+          </div>
+          <div class="carousel-slide-imm">
+            <p>“Por primera vez mi negocio aparece primero en Google. La inversión se recuperó en dos semanas.”</p>
+            <strong>Dueño — Empresa de Distribución</strong>
+          </div>
+        </div>
+        <div class="carousel-nav-imm">
+          <button class="dot-imm active"></button>
+          <button class="dot-imm"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Contact />
 
 </BaseLayout>
 
@@ -99,36 +157,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .content-wrap-imm {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 40px;
+    padding: 0 56px;
     width: 100%;
   }
 
-  .label-imm {
-    font-size: 0.75rem;
+  .scene-label-imm {
+    font-size: 0.65rem;
     text-transform: uppercase;
-    letter-spacing: 0.3em;
+    letter-spacing: 0.22em;
     color: var(--teal);
-    margin-bottom: 24px;
+    margin-bottom: 16px;
     display: block;
-    font-weight: 800;
-  }
-
-  .title-imm {
-    font-size: clamp(3.5rem, 8vw, 7rem);
-    line-height: 0.9;
-    font-weight: 900;
-    margin-bottom: 32px;
-    font-family: var(--title);
-    text-transform: uppercase;
-  }
-
-  .section-title-imm {
-    font-size: clamp(2.5rem, 5vw, 4.5rem);
-    line-height: 1;
-    font-weight: 900;
-    margin-bottom: 48px;
-    font-family: var(--title);
-    text-transform: uppercase;
+    font-weight: 600;
   }
 
   .teal-glow {
@@ -136,83 +176,159 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     text-shadow: 0 0 20px var(--teal-dim);
   }
 
-  .desc-imm {
-    font-size: 1.15rem;
-    color: var(--smoke);
-    max-width: 550px;
-    line-height: 1.6;
-    margin-bottom: 48px;
-  }
-
-  .action-grid-imm {
+  .hero-flex-imm {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 40px;
+    width: 100%;
   }
 
-  .btn-imm {
+  .hero-copy-imm {
+    max-width: 650px;
+  }
+
+  .hero-title-imm {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1;
+    margin-bottom: 32px;
+    font-family: var(--title);
+    letter-spacing: -0.01em;
+  }
+
+  .section-title-imm {
+    font-size: clamp(2rem, 4.5vw, 3.5rem);
+    line-height: 1;
+    margin-bottom: 48px;
+    font-family: var(--title);
+    letter-spacing: -0.01em;
+  }
+
+  .hero-sub-imm {
+    font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+    color: var(--smoke);
+    max-width: 480px;
+    margin-bottom: 48px;
+    line-height: 1.7;
+  }
+
+  .btn-pkg-imm {
     background: var(--teal);
-    color: #000;
-    padding: 18px 36px;
-    font-weight: 900;
+    color: #fff;
+    padding: 12px 28px;
+    font-weight: 600;
     text-decoration: none;
-    font-size: 0.85rem;
-    letter-spacing: 0.1em;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
     transition: 0.3s;
     border: none;
     cursor: pointer;
     font-family: var(--body);
     text-transform: uppercase;
+    display: inline-block;
   }
 
-  .btn-imm:hover {
+  .btn-pkg-imm:hover {
     background: #fff;
+    color: #000;
     transform: translateY(-2px);
   }
 
-  .metric-chip-imm {
-     display: flex;
-     gap: 20px;
-     font-size: 0.75rem;
-     color: var(--teal);
-     font-family: monospace;
-     font-weight: 800;
-  }
-
-  .pillars-imm {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
-  }
-
-  .pillar-box-imm {
-    padding: 48px;
+  .hero-image-box-imm {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 20px;
     border: 1px solid var(--rim);
-    background: var(--surface);
-    transition: 0.3s;
+    overflow: hidden;
+    box-shadow: 0 0 40px rgba(115, 96, 248, 0.2);
+    transition: 0.5s;
   }
 
-  .pillar-box-imm:hover {
+  .hero-image-box-imm:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 60px rgba(115, 96, 248, 0.4);
+  }
+
+  .hero-img-imm {
+    width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: 16/10;
+    object-fit: cover;
+  }
+
+  .hook-card-imm {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px;
+    border: 1px solid var(--rim);
+    background: rgba(255,255,255,0.02);
+  }
+
+  .services-imm-grid {
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     gap: 32px;
+  }
+
+  .serv-card-imm {
+     background: var(--surface);
+     padding: 40px;
+     border: 1px solid var(--rim);
+     transition: 0.3s;
+  }
+
+  .serv-card-imm:hover {
     border-color: var(--teal);
   }
 
-  .p-num-imm {
-    color: var(--teal);
-    font-size: 0.85rem;
-    margin-bottom: 24px;
-    display: block;
-    font-weight: 800;
+  .pillar-idx-imm {
+     font-family: var(--body);
+     font-size: 0.65rem;
+     color: var(--teal);
+     font-weight: 600;
+     letter-spacing: 0.1em;
+     margin-bottom: 16px;
+     display: block;
   }
 
-  .pillar-box-imm h3 {
+  .serv-card-imm h3 {
+     color: var(--white);
+     margin-bottom: 16px;
+     font-family: var(--title);
+     text-transform: uppercase;
+     font-size: 1.8rem;
+  }
+
+  .benefits-scroller-imm {
+     display: flex;
+     gap: 32px;
+  }
+
+  .benefit-item-imm {
+     flex: 1;
+     border: 1px solid var(--rim);
+     padding: 40px;
+     background: var(--surface);
+  }
+
+  .benefit-cat-imm {
+     font-size: 0.75rem;
+     color: var(--teal);
+     letter-spacing: 0.15em;
+     display: block;
+     margin-bottom: 16px;
+     font-weight: 800;
+  }
+
+  .benefit-item-imm h3 {
     font-size: 2rem;
-    margin-bottom: 16px;
     font-family: var(--title);
-    text-transform: uppercase;
+    margin-bottom: 12px;
   }
 
-  .services-imm {
-     width: 100%;
+  .services-list-imm {
+    width: 100%;
   }
 
   .service-row-imm {
@@ -224,76 +340,109 @@ import BaseLayout from '../layouts/BaseLayout.astro';
      transition: 0.3s;
   }
 
-  .service-row-imm:hover {
-    padding-left: 24px;
-    border-bottom-color: var(--teal);
-  }
-
   .service-row-imm span {
     color: var(--teal);
-    font-weight: 800;
-    font-family: monospace;
+    font-weight: 600;
+    font-family: var(--body);
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
   }
 
   .service-row-imm h3 {
-     font-size: 3.5rem;
+     font-size: 3rem;
      font-family: var(--title);
      text-transform: uppercase;
   }
 
-  .contact-split-imm {
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 80px;
-    width: 100%;
-    align-items: center;
+  .form-layout-imm {
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     gap: 100px;
+     align-items: center;
   }
 
-  .imm-form {
-    display: grid;
-    gap: 20px;
-    background: var(--surface);
-    padding: 48px;
-    border: 1px solid var(--rim);
+  .form-grid-imm {
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     gap: 16px;
   }
 
-  .form-row-imm {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+  .form-box-imm form {
+     display: flex;
+     flex-direction: column;
+     gap: 16px;
   }
 
   input, textarea {
-    background: var(--void);
-    border: 1px solid var(--rim);
-    padding: 18px;
-    color: #fff;
-    width: 100%;
-    font-family: var(--body);
+     background: var(--void);
+     border: 1px solid var(--rim);
+     padding: 18px;
+     color: var(--white);
+     font-family: var(--body);
+     border-radius: 8px;
   }
 
-  textarea {
-    height: 120px;
-    resize: none;
+  /* Carousel */
+  .carousel-container-imm {
+    margin-top: 40px;
+    overflow: hidden;
+    padding-bottom: 40px;
   }
+  .carousel-track-imm {
+    display: flex;
+    transition: 0.5s;
+  }
+  .carousel-slide-imm {
+    min-width: 100%;
+    padding: 40px;
+    text-align: center;
+    opacity: 0.3;
+    transition: 0.5s;
+    background: rgba(255,255,255,0.02);
+  }
+  .carousel-slide-imm.active { opacity: 1; border: 1px solid var(--teal); }
+  .carousel-slide-imm p { font-size: 1.5rem; font-style: italic; margin-bottom: 16px; font-family: var(--title); }
+  .carousel-nav-imm { display: flex; justify-content: center; gap: 8px; margin-top: 24px; }
+  .dot-imm { width: 8px; height: 8px; border-radius: 50%; background: var(--rim); border: none; cursor: pointer; }
+  .dot-imm.active { background: var(--teal); width: 20px; border-radius: 10px; }
+
 
   @media (max-width: 1024px) {
-    .pillars-imm, .contact-split-imm, .form-row-imm {
+    .hero-flex-imm, .services-imm-grid, .benefits-scroller-imm, .form-layout-imm {
       grid-template-columns: 1fr;
+      flex-direction: column;
+      gap: 40px;
     }
+    .hero-image-box-imm { order: -1; }
   }
 </style>
 
 <script is:inline>
   document.addEventListener('DOMContentLoaded', () => {
-    const form = document.querySelector('.pymes-form');
-    if (form) {
-      form.addEventListener('submit', (e) => {
+    const f = document.getElementById('pymes-form');
+    if (f) {
+      f.addEventListener('submit', (e) => {
         e.preventDefault();
-        form.reset();
-        const success = form.querySelector('.success-imm');
+        f.reset();
+        const success = document.querySelector('.launch-success-imm');
         if (success) success.style.display = 'block';
       });
     }
+
+    // Carousel
+    const track = document.getElementById('testimonial-track-imm');
+    const slides = Array.from(track ? track.children : []);
+    const dots = Array.from(document.querySelectorAll('.dot-imm'));
+    let curIdx = 0;
+
+    function upd(i) {
+      if(!track) return;
+      track.style.transform = `translateX(-${i*100}%)`;
+      slides.forEach((s, idx) => s.classList.toggle('active', idx === i));
+      dots.forEach((d, idx) => d.classList.toggle('active', idx === i));
+      curIdx = i;
+    }
+    dots.forEach((d, i) => d.addEventListener('click', () => upd(i)));
+    if(slides.length > 0) setInterval(() => upd((curIdx+1)%slides.length), 5000);
   });
 </script>

@@ -61,11 +61,11 @@
     if (navList) {
       navList.innerHTML = '';
       scenes.forEach((_, i) => {
+        if (i === 0) return; // Skip Home — logo handles it
         const li = document.createElement('li');
         const a = document.createElement('a');
         a.href = `#scene-${i}`;
         a.textContent = labels[i] || `Section ${i + 1}`;
-        if (i === 0) a.classList.add('active');
         a.setAttribute('data-index', i);
         a.addEventListener('click', (e) => {
           e.preventDefault();
@@ -86,7 +86,7 @@
   /* ===================== THREE.JS PARTICLE FIELD ===================== */
   const canvas = document.getElementById('canvas-bg');
   let renderer, scene3, camera, particles, particlePositions, velocities;
-  const PARTICLE_COUNT = 1800;
+  const PARTICLE_COUNT = 1000;
 
   function initThree() {
     if (!canvas) return;
@@ -115,11 +115,11 @@
         z: (Math.random() - 0.5) * 0.008
       });
 
-      const teal = Math.random() > 0.35;
-      if (teal) {
-        colors[i * 3] = 0;
-        colors[i * 3 + 1] = 0.9 + Math.random() * 0.1;
-        colors[i * 3 + 2] = 0.8 + Math.random() * 0.2;
+      const isAccent = Math.random() > 0.35;
+      if (isAccent) {
+        colors[i * 3] = 0.7 + Math.random() * 0.1;
+        colors[i * 3 + 1] = 0.8 + Math.random() * 0.1;
+        colors[i * 3 + 2] = 0.2 + Math.random() * 0.15;
       } else {
         colors[i * 3] = 0.8 + Math.random() * 0.2;
         colors[i * 3 + 1] = 0.8 + Math.random() * 0.2;
@@ -132,10 +132,10 @@
     particlePositions = positions;
 
     const mat = new THREE.PointsMaterial({
-      size: 0.55,
+      size: 0.45,
       vertexColors: true,
       transparent: true,
-      opacity: 0.7,
+      opacity: 0.25,
       sizeAttenuation: true,
       depthWrite: false
     });
@@ -146,7 +146,7 @@
     for (let n = 0; n < 3; n++) {
       const nebGeo = new THREE.SphereGeometry(20 + n * 10, 8, 8);
       const nebMat = new THREE.MeshBasicMaterial({
-        color: n === 0 ? 0x00e5c8 : (n === 1 ? 0x003344 : 0x001122),
+        color: n === 0 ? 0xbad341 : (n === 1 ? 0x003344 : 0x001122),
         transparent: true,
         opacity: n === 0 ? 0.015 : 0.025,
         side: THREE.BackSide

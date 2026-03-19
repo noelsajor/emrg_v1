@@ -1,20 +1,21 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Contact from '../components/Contact.astro';
 ---
 
-<BaseLayout title="Enfoque Retail y Mayoristas | EMRG" description="Acompañamos a pequeños negocios en su salto digital. Tu primera web, visibilidad en Google y captación de clientes.">
+<BaseLayout title="Enfoque Retail y Mayoristas | EMRG" description="Gestión integral de marketing digital para negocios que venden en grande. Tiendas online de alto rendimiento y SEO para catálogos masivos.">
   
   <section class="scene active" id="scene-0">
     <div class="hero-block-imm">
-      <p class="label-imm">Digitalización Local</p>
-      <h1 class="title-imm">El Salto <br/><span class="teal-glow">Digital.</span></h1>
-      <p class="desc-imm">Si tu negocio no aparece en Google, no existe online. Ayudamos a pequeños negocios a crear su página web, aparecer en mapas y empezar a captar clientes.</p>
+      <p class="label-imm">Retail & Mayoristas</p>
+      <h1 class="title-imm">Vende en <br/><span class="teal-glow">Grande.</span></h1>
+      <p class="desc-imm">Lleva tu inventario a las pantallas de tus clientes ideales. Gestión integral de marketing digital para negocios que operan en gran volumen.</p>
       
       <div class="action-grid-imm">
-        <a href="#scene-3" class="btn-imm" onclick="window.goToScene(3); return false;">Solicita Diagnóstico //</a>
+        <a href="#scene-3" class="btn-imm" onclick="window.goToScene(3); return false;">Hablemos de Escalar //</a>
         <div class="metric-chip-imm">
-           <span class="m-val-imm">MAPS SYNC</span>
-           <span class="m-val-imm">FIRST WEB</span>
+           <span class="m-val-imm">INVENTORY SYNC</span>
+           <span class="m-val-imm">GROWTH DATA</span>
         </div>
       </div>
     </div>
@@ -22,23 +23,21 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   <section class="scene" id="scene-1">
     <div class="content-wrap-imm">
-      <h2 class="section-title-imm">El Riesgo: <span class="teal-glow">Inexistencia Digital.</span></h2>
+      <h2 class="section-title-imm">Enfoque en <span class="teal-glow">Resultados.</span></h2>
+      <p class="desc-imm">No solo gestionamos, escalamos. Nuestras estrategias están diseñadas para convertir el tráfico en ingresos predecibles.</p>
       
-      <div class="pillars-imm">
-        <div class="pillar-box-imm">
-          <span class="p-num-imm">01</span>
-          <h3>Oscuridad Local</h3>
-          <p>Clientes cercanos encuentran a tu competencia en el mapa antes que a ti.</p>
+      <div class="stats-grid-imm">
+        <div class="stat-box-imm">
+           <span class="s-val-imm">+120%</span>
+           <p>Crecimiento en tráfico orgánico de categorías.</p>
         </div>
-        <div class="pillar-box-imm">
-          <span class="p-num-imm">02</span>
-          <h3>Brecha de Credibilidad</h3>
-          <p>Sin una web propia que explique quién eres, el cliente duda de tu servicio.</p>
+        <div class="stat-box-imm highlight-imm">
+           <span class="s-val-imm">+45%</span>
+           <p>Mejora en tasa de conversión e-commerce.</p>
         </div>
-        <div class="pillar-box-imm">
-          <span class="p-num-imm">03</span>
-          <h3>Techo de Crecimiento</h3>
-          <p>Dependencia exclusiva del boca a boca sin un canal de captación 24/7.</p>
+        <div class="stat-box-imm">
+           <span class="s-val-imm">+3x</span>
+           <p>Retorno de inversión en email marketing.</p>
         </div>
       </div>
     </div>
@@ -46,19 +45,23 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   <section class="scene" id="scene-2">
     <div class="content-wrap-imm">
-      <h2 class="section-title-imm">Nuestros <span class="teal-glow">Paquetes Prácticos.</span></h2>
+      <h2 class="section-title-imm">Servicios <span class="teal-glow">Clave.</span></h2>
       <div class="services-imm">
          <div class="service-row-imm">
             <span>01</span>
-            <h3>Presencia Inicial</h3>
+            <h3>Tiendas High-Performance</h3>
          </div>
          <div class="service-row-imm">
             <span>02</span>
-            <h3>Impulso Local Ads</h3>
+            <h3>Email Automático</h3>
          </div>
          <div class="service-row-imm">
             <span>03</span>
-            <h3>Soporte Estratégico</h3>
+            <h3>SEO de Categoría</h3>
+         </div>
+         <div class="service-row-imm">
+            <span>04</span>
+            <h3>Social Cataloging</h3>
          </div>
       </div>
     </div>
@@ -68,26 +71,38 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <div class="content-wrap-imm">
       <div class="contact-split-imm">
         <div class="contact-text-imm">
-          <h2 class="section-title-imm">Quiero mi <span class="teal-glow">Diagnóstico.</span></h2>
-          <p class="desc-imm">Evaluamos tu visibilidad actual y te mostramos cómo dar el primer paso online.</p>
+          <h2 class="section-title-imm">Escalar tus <span class="teal-glow">Ventas.</span></h2>
+          <p class="desc-imm">Hablemos de cómo escalar tus ventas este mes con una infraestructura digital profesional y contenido que convierte.</p>
         </div>
         
         <form class="imm-form retail-form">
           <div class="form-row-imm">
             <input type="text" placeholder="NOMBRE" required />
-            <input type="text" placeholder="NEGOCIO" required />
+            <input type="text" placeholder="EMPRESA" required />
           </div>
           <div class="form-row-imm">
-            <input type="text" placeholder="RUBRO" required />
+            <input type="text" placeholder="CATÁLOGO (SKUs)" required />
             <input type="text" placeholder="CIUDAD" required />
           </div>
-          <textarea placeholder="¿CUÁL ES TU OBJETIVO?" required></textarea>
-          <button type="submit" class="btn-imm">Solicitar Diagnóstico //</button>
-          <p class="success-imm" style="display:none; margin-top: 1rem; color: var(--teal); font-weight: 800;">MENSAJE ENVIADO. REVISAREMOS TU CASO.</p>
+          <textarea placeholder="¿CUÁL ES TU META DE VENTAS?" required></textarea>
+          <button type="submit" class="btn-imm">Hablemos de Escalar //</button>
+          <p class="success-imm" style="display:none; margin-top: 1rem; color: var(--teal); font-weight: 800;">SOLICITUD RECIBIDA. NOS PONDREMOS EN CONTACTO.</p>
         </form>
       </div>
     </div>
   </section>
+
+  <section class="scene" id="scene-4-proof" style="background: var(--surface);">
+    <div class="content-wrap-imm">
+       <div class="differentiator-imm">
+          <p class="scene-label-imm">Diferenciador</p>
+          <h2 class="section-title-imm">Contenido que <em class="teal-glow">vende.</em></h2>
+          <p class="desc-imm" style="max-width: 800px;">"Estrategias de contenido integral que convierten seguidores en compradores. Gestión de redes sociales enfocada 100% en catálogo y conversión comercial."</p>
+       </div>
+    </div>
+  </section>
+
+  <Contact />
 
 </BaseLayout>
 
@@ -95,36 +110,36 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .content-wrap-imm {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 40px;
+    padding: 0 56px;
     width: 100%;
   }
 
   .label-imm {
-    font-size: 0.75rem;
+    font-size: 0.65rem;
     text-transform: uppercase;
-    letter-spacing: 0.3em;
+    letter-spacing: 0.22em;
     color: var(--teal);
-    margin-bottom: 24px;
+    margin-bottom: 16px;
     display: block;
-    font-weight: 800;
+    font-weight: 600;
   }
 
   .title-imm {
-    font-size: clamp(3.5rem, 8vw, 7rem);
-    line-height: 0.9;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1;
     font-weight: 900;
     margin-bottom: 32px;
     font-family: var(--title);
-    text-transform: uppercase;
+    letter-spacing: -0.01em;
   }
 
   .section-title-imm {
-    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-size: clamp(2rem, 4.5vw, 3.5rem);
     line-height: 1;
     font-weight: 900;
     margin-bottom: 48px;
     font-family: var(--title);
-    text-transform: uppercase;
+    letter-spacing: -0.01em;
   }
 
   .teal-glow {
@@ -133,10 +148,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   }
 
   .desc-imm {
-    font-size: 1.15rem;
+    font-size: clamp(0.9rem, 1.5vw, 1.1rem);
     color: var(--smoke);
-    max-width: 550px;
-    line-height: 1.6;
+    max-width: 480px;
+    line-height: 1.7;
     margin-bottom: 48px;
   }
 
@@ -148,12 +163,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   .btn-imm {
     background: var(--teal);
-    color: #000;
-    padding: 18px 36px;
-    font-weight: 900;
+    color: #fff;
+    padding: 12px 28px;
+    font-weight: 600;
     text-decoration: none;
-    font-size: 0.85rem;
-    letter-spacing: 0.1em;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
     transition: 0.3s;
     border: none;
     cursor: pointer;
@@ -163,6 +178,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   .btn-imm:hover {
     background: #fff;
+    color: #000;
     transform: translateY(-2px);
   }
 
@@ -175,37 +191,19 @@ import BaseLayout from '../layouts/BaseLayout.astro';
      font-weight: 800;
   }
 
-  .pillars-imm {
+  .stats-grid-imm {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
+    gap: 32px;
   }
-
-  .pillar-box-imm {
-    padding: 48px;
+  .stat-box-imm {
+    padding: 40px;
     border: 1px solid var(--rim);
     background: var(--surface);
-    transition: 0.3s;
   }
-
-  .pillar-box-imm:hover {
-    border-color: var(--teal);
-  }
-
-  .p-num-imm {
-    color: var(--teal);
-    font-size: 0.85rem;
-    margin-bottom: 24px;
-    display: block;
-    font-weight: 800;
-  }
-
-  .pillar-box-imm h3 {
-    font-size: 2rem;
-    margin-bottom: 16px;
-    font-family: var(--title);
-    text-transform: uppercase;
-  }
+  .stat-box-imm.highlight-imm { border-color: var(--teal); background: var(--teal-glow); }
+  .s-val-imm { font-size: 3rem; font-family: var(--title); color: var(--white); display: block; margin-bottom: 16px; }
+  .highlight-imm .s-val-imm { color: var(--teal); }
 
   .services-imm {
      width: 100%;
@@ -215,7 +213,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
      display: flex;
      align-items: center;
      gap: 48px;
-     padding: 32px 0;
+     padding: 24px 0;
      border-bottom: 1px solid var(--rim);
      transition: 0.3s;
   }
@@ -227,12 +225,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   .service-row-imm span {
     color: var(--teal);
-    font-weight: 800;
-    font-family: monospace;
+    font-weight: 600;
+    font-family: var(--body);
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
   }
 
   .service-row-imm h3 {
-     font-size: 3.5rem;
+     font-size: 3rem;
      font-family: var(--title);
      text-transform: uppercase;
   }
@@ -273,10 +273,21 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     resize: none;
   }
 
+  .scene-label-imm {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: var(--teal);
+    margin-bottom: 16px;
+    display: block;
+    font-weight: 600;
+  }
+
   @media (max-width: 1024px) {
-    .pillars-imm, .contact-split-imm, .form-row-imm {
+    .stats-grid-imm, .contact-split-imm, .form-row-imm {
       grid-template-columns: 1fr;
     }
+    .service-row-imm h3 { font-size: 1.8rem; }
   }
 </style>
 

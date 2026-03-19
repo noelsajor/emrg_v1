@@ -21,6 +21,7 @@ const {
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content={description} data-i18n-attr="content:meta.description" />
   <title>{title}</title>
+  <link rel="icon" type="image/png" href="/favicon.png" />
   
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} data-i18n-attr="content:meta.og_description" />
@@ -31,7 +32,7 @@ const {
   
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Funnel+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet" />
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.0/three.min.js" defer></script>
 </head>
@@ -44,7 +45,7 @@ const {
 
   <nav id="nav" aria-label="Main navigation" data-i18n-attr="aria-label:aria.main_nav">
     <a href="/" class="nav-logo" id="logo-link" data-i18n-attr="aria-label:aria.emrg_home">
-      EMRG<span>.</span>
+      <img src="/images/emrg-logo.png" alt="EMRG Logo" class="logo-img" />
     </a>
     <ul class="nav-links" id="nav-list">
       <!-- Generated dynamically -->
@@ -124,11 +125,10 @@ const {
           }
 
           // Create Nav Item (Desktop)
-          if (navList) {
+          if (navList && i > 0) {
             const li = document.createElement('li');
             const a = document.createElement('a');
             a.href = `#scene-${i}`;
-            a.className = i === 0 ? 'active' : '';
             a.setAttribute('data-index', i);
             a.setAttribute('data-i18n', `dots.${key}_label`);
             a.textContent = label;
@@ -143,10 +143,10 @@ const {
           }
 
           // Create Nav Item (Mobile)
-          if (mobileNavList) {
+          if (mobileNavList && i > 0) {
             const a = document.createElement('a');
             a.href = `#scene-${i}`;
-            a.className = 'mobile-menu-link-imm' + (i === 0 ? ' active' : '');
+            a.className = 'mobile-menu-link-imm';
             a.setAttribute('data-index', i);
             a.setAttribute('data-i18n', `dots.${key}_label`);
             a.textContent = label;
@@ -650,7 +650,7 @@ const {
         camera.position.z = 4.2;
         clock = new THREE.Clock();
         const geo = new THREE.PlaneGeometry(8, 8, 80, 80);
-        const mat = new THREE.MeshBasicMaterial({ color: 0x00e5c8, transparent: true, opacity: 0.07, wireframe: true });
+        const mat = new THREE.MeshBasicMaterial({ color: 0x7360f8, transparent: true, opacity: 0.07, wireframe: true });
         mesh = new THREE.Mesh(geo, mat);
         mesh.rotation.x = -0.65;
         mesh.position.y = -0.4;

@@ -14,17 +14,16 @@ import CTA from '../components/CTA.astro';
       <div class="content-wrap">
         <div class="hero-grid-health">
           <div class="hero-copy">
-            <p class="scene-label">SEO y crecimiento digital especializado en salud</p>
-            <h1 class="hero-title">Más visibilidad en Google. <span class="accent">Más pacientes.</span></h1>
+            <p class="scene-label">Sector Salud</p>
+            <h1 class="hero-title">¿Tus pacientes te buscan en Google o <span class="accent">solo te encuentran por recomendación?</span></h1>
             <p class="hero-sub">
-              Ayudamos a médicos, dentistas, clínicas y consultorios a atraer pacientes
-              cualificados con SEO para clínicas, diseño web para médicos, CRO y estrategia
-              digital enfocada en resultados reales.
+              Creamos sitios web que generan confianza y citas médicas en automático. 
+              Diseño web para médicos y clínicas que buscan autoridad digital.
             </p>
 
             <div class="hero-actions-health">
-              <button class="nav-cta" onclick="window.goToScene(5)">Solicitar auditoría gratuita</button>
-              <button class="btn-outline-health" onclick="window.goToScene(4)">Ver casos de éxito</button>
+              <button class="nav-cta" onclick="window.goToScene(5)">Quiero digitalizar mi consulta</button>
+              <button class="btn-outline-health" onclick="window.goToScene(3)">Ver servicios</button>
             </div>
 
             <div class="hero-chips">
@@ -34,21 +33,8 @@ import CTA from '../components/CTA.astro';
             </div>
           </div>
 
-          <aside class="hero-card-health">
-            <div class="stat-cell-health">
-              <div class="stat-figure-health">Captación</div>
-              <div class="stat-desc-health">Enfoque principal</div>
-            </div>
-            <div class="stat-cell-health">
-              <div class="stat-figure-health">SEO+Web+CRO</div>
-              <div class="stat-desc-health">Servicios clave</div>
-            </div>
-            <div class="hero-note-health">
-              <p>
-                Una estrategia digital médica no debe atraer tráfico genérico. Debe atraer
-                búsquedas con intención y generar confianza.
-              </p>
-            </div>
+          <aside class="hero-image-scene">
+            <img src="/images/hero-medical.png" alt="Consultorio" class="hero-img-scene" />
           </aside>
         </div>
       </div>
@@ -57,8 +43,12 @@ import CTA from '../components/CTA.astro';
     <section class="scene" id="scene-1">
       <div class="content-wrap">
         <div class="section-header-health">
-          <p class="scene-label">Problema</p>
-          <h2 class="scene-title">Muchos centros de salud tienen presencia digital, pero no un sistema que <em>genere pacientes.</em></h2>
+          <p class="scene-label">El Problema</p>
+          <h2 class="scene-title">¿Tu web actual parece un <em class="accent">folleto viejo?</em></h2>
+          <p class="hero-sub">
+            La autoridad digital en salud no se improvisa. Si no transmites confianza 
+            desde el primer clic, estás perdiendo pacientes.
+          </p>
         </div>
 
         <div class="pillars-grid-health">
@@ -125,34 +115,25 @@ import CTA from '../components/CTA.astro';
     <section class="scene" id="scene-3">
       <div class="content-wrap">
         <div class="section-header-health">
-          <p class="scene-label">Servicios</p>
-          <h2 class="scene-title">Estrategias diseñadas para el <em>crecimiento local.</em></h2>
+          <p class="scene-label">La Solución</p>
+          <h2 class="scene-title">Servicios con <em class="accent">estándar médico.</em></h2>
         </div>
 
         <div class="services-grid-health">
           <div class="service-item-health">
              <span class="pillar-num">01</span>
-             <h3 class="case-brand-imm">SEO para Médicos</h3>
+             <h3 class="case-brand-imm">Diseño UX/UI Médico</h3>
+             <p class="pillar-tagline">Webs rápidas y confiables optimizadas para citas.</p>
           </div>
           <div class="service-item-health">
              <span class="pillar-num">02</span>
-             <h3 class="case-brand-imm">SEO para Dentistas</h3>
+             <h3 class="case-brand-imm">SEO Local (Map Pack)</h3>
+             <p class="pillar-tagline">Aparece cuando busquen tu especialidad en tu ciudad.</p>
           </div>
           <div class="service-item-health">
              <span class="pillar-num">03</span>
-             <h3 class="case-brand-imm">SEO para Clínicas</h3>
-          </div>
-          <div class="service-item-health">
-             <span class="pillar-num">04</span>
-             <h3 class="case-brand-imm">SEO Local</h3>
-          </div>
-          <div class="service-item-health">
-             <span class="pillar-num">05</span>
-             <h3 class="case-brand-imm">Web Médica</h3>
-          </div>
-          <div class="service-item-health">
-             <span class="pillar-num">06</span>
-             <h3 class="case-brand-imm">Marketing Clínico</h3>
+             <h3 class="case-brand-imm">Contenido Experto</h3>
+             <p class="pillar-tagline">Artículos que responden las dudas de tus pacientes.</p>
           </div>
         </div>
       </div>
@@ -162,7 +143,7 @@ import CTA from '../components/CTA.astro';
       <div class="content-wrap">
         <div class="section-header-health">
           <p class="scene-label">Casos de Éxito</p>
-          <h2 class="scene-title">Resultados en <em>Visibilidad y Confianza.</em></h2>
+          <h2 class="scene-title">Resultados en <em class="accent">Visibilidad y Confianza.</em></h2>
         </div>
 
         <div class="cases-row-health">
@@ -178,10 +159,37 @@ import CTA from '../components/CTA.astro';
              <h3 class="case-brand-imm">Consultorio Especialistas</h3>
              <p class="case-desc-imm">SEO local para captar pacientes de zonas cercanas con enfoque en reserva.</p>
           </article>
-           <article class="case-card-imm">
-             <h3 class="case-brand-imm">Centro Multiservicio</h3>
-             <p class="case-desc-imm">Arquitectura pensada para crecer sin canibalizar especialidades.</p>
-          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="scene" id="scene-4-proof">
+      <div class="content-wrap">
+        <div class="section-header-health">
+          <p class="scene-label">Prueba Social</p>
+          <h2 class="scene-title">Confianza avalada por el <em class="accent">sector.</em></h2>
+        </div>
+
+        <div class="testimonial-carousel-container-imm">
+          <div class="testimonial-track-imm" id="testimonial-track">
+            <article class="testimonial-slide-imm active">
+              <p>“Profesionales que entienden las necesidades específicas de nosotros los especialistas.”</p>
+              <strong>Dr. Alejandro Ruiz — Dermatólogo</strong>
+            </article>
+            <article class="testimonial-slide-imm">
+              <p>“Mi clínica duplicó las citas desde que renovamos la web con el enfoque SEO local.”</p>
+              <strong>Dra. Elena Martínez — Clínica Dental</strong>
+            </article>
+            <article class="testimonial-slide-imm">
+              <p>“La autoridad digital que hemos construido nos ha permitido dejar de depender de referidos.”</p>
+              <strong>Dr. Roberto Silva — Cirujano Plástico</strong>
+            </article>
+          </div>
+          <div class="carousel-dots-imm">
+            <button class="dot-imm active" aria-label="Slide 1"></button>
+            <button class="dot-imm" aria-label="Slide 2"></button>
+            <button class="dot-imm" aria-label="Slide 3"></button>
+          </div>
         </div>
       </div>
     </section>
@@ -189,9 +197,9 @@ import CTA from '../components/CTA.astro';
     <section class="scene" id="scene-5">
       <div class="content-wrap form-split-health">
          <div class="form-copy-health">
-            <p class="scene-label">Auditoría</p>
-            <h2 class="scene-title">Solicita un <em>Diagnóstico Digital.</em></h2>
-            <p class="hero-sub">Analizamos tu posicionamiento actual y detectamos barreras de conversión.</p>
+            <p class="scene-label">Diagnóstico</p>
+            <h2 class="scene-title">Quiero digitalizar mi consulta y <em class="accent">atraer más pacientes.</em></h2>
+            <p class="hero-sub">Agenda tu auditoría gratuita y descubre cómo podemos ayudarte.</p>
          </div>
          <form class="qualification-form-health" action="#" method="post">
             <div class="form-row">
@@ -209,9 +217,10 @@ import CTA from '../components/CTA.astro';
                   <option>Atraer más pacientes</option>
                   <option>Mejorar posicionamiento</option>
                   <option>Rediseñar la web</option>
+                  <option>Reducir dependencia de referidos</option>
                </select>
             </div>
-            <button class="nav-cta" type="submit">Enviar Solicitud</button>
+            <button class="nav-cta" type="submit">Quiero mi auditoría ahora</button>
             <p class="form-success-health" style="margin-top: 1rem; color: var(--teal); font-size: 0.8rem;"></p>
          </form>
       </div>
@@ -229,6 +238,10 @@ import CTA from '../components/CTA.astro';
     width: 100%;
   }
 
+  .section-header-health {
+    margin-bottom: 48px;
+  }
+
   .accent {
     color: var(--teal);
   }
@@ -239,6 +252,22 @@ import CTA from '../components/CTA.astro';
     gap: 80px;
     align-items: center;
     width: 100%;
+  }
+
+  .hero-grid-health .hero-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1;
+    letter-spacing: -0.01em;
+  }
+
+  .hero-grid-health .hero-sub {
+    max-width: 480px;
+    text-align: left;
+    margin: 0 0 32px;
+  }
+
+  .scene-title {
+    font-size: clamp(2rem, 4.5vw, 3.5rem);
   }
 
   .hero-actions-health {
@@ -299,11 +328,98 @@ import CTA from '../components/CTA.astro';
     margin-top: 20px;
   }
 
+  /* Image Scene Styles */
+  .hero-image-scene {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid var(--rim2);
+    box-shadow: 0 0 50px rgba(186, 211, 65, 0.2);
+    transform: perspective(1000px) rotateY(-5deg);
+    transition: all 0.5s;
+    width: 100%;
+  }
+
+  .hero-image-scene:hover {
+    transform: perspective(1000px) rotateY(0deg) scale(1.02);
+    box-shadow: 0 0 70px rgba(186, 211, 65, 0.4);
+  }
+
+  .hero-img-scene {
+    width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: 16/10;
+    object-fit: cover;
+  }
+
+  /* Carousel Styles for Scene */
+  .testimonial-carousel-container-imm {
+    margin-top: 40px;
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 60px;
+  }
+
+  .testimonial-track-imm {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .testimonial-slide-imm {
+    min-width: 100%;
+    padding: 60px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--rim);
+    text-align: center;
+    opacity: 0.3;
+    transform: scale(0.9);
+    transition: all 0.5s;
+  }
+
+  .testimonial-slide-imm.active {
+    opacity: 1;
+    transform: scale(1);
+    border-color: var(--teal);
+    background: rgba(186, 211, 65, 0.05);
+  }
+
+  .testimonial-slide-imm p {
+    font-size: 1.8rem;
+    font-style: italic;
+    color: var(--white);
+    margin-bottom: 24px;
+    font-family: var(--title);
+  }
+
+  .carousel-dots-imm {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 32px;
+  }
+
+  .dot-imm {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--rim2);
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .dot-imm.active {
+    background: var(--teal);
+    width: 20px;
+    border-radius: 10px;
+  }
+
   .pillars-grid-health {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px 60px;
-    margin-top: 40px;
+    margin-top: 0;
   }
 
   .pillar-row-health {
@@ -337,7 +453,7 @@ import CTA from '../components/CTA.astro';
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
-    margin-top: 60px;
+    margin-top: 0;
   }
 
   .services-grid-health {
@@ -361,7 +477,7 @@ import CTA from '../components/CTA.astro';
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
-    margin-top: 40px;
+    margin-top: 0;
   }
 
   .featured-case {
@@ -415,6 +531,31 @@ import CTA from '../components/CTA.astro';
         form.reset();
         if (success) success.textContent = "SOLICITUD RECIBIDA CON ÉXITO.";
       });
+    }
+
+    // Carousel Logic
+    const track = document.getElementById('testimonial-track');
+    const slides = Array.from(track ? track.children : []);
+    const dots = Array.from(document.querySelectorAll('.dot-imm'));
+    let currentIndex = 0;
+
+    function updateCarousel(idx) {
+      if (!track) return;
+      track.style.transform = `translateX(-${idx * 100}%)`;
+      slides.forEach((s, i) => s.classList.toggle('active', i === idx));
+      dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+      currentIndex = idx;
+    }
+
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => updateCarousel(i));
+    });
+
+    if (slides.length > 0) {
+      setInterval(() => {
+        let next = (currentIndex + 1) % slides.length;
+        updateCarousel(next);
+      }, 5000);
     }
   });
 </script>

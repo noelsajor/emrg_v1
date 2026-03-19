@@ -5,162 +5,141 @@ import Footer from '../components/Footer.astro';
 import CtaSection from '../components/CtaSection.astro';
 ---
 
-<BaseLayout title="Enfoque Marca Personal | EMRG" description="Estrategia digital 360 para consultores, expertos y profesionales que quieren construir autoridad y atraer mejores clientes.">
+<BaseLayout title="Enfoque Marca Personal | EMRG" description="SEO, Contenidos y Estrategia Digital para quienes no se conforman con lo básico. Convierte tu web en un imán de leads.">
   <Nav />
   
-  <main class="expertise-page personal-theme">
-    <section class="expertise-hero">
-      <div class="container">
-        <div class="hero-content">
-          <div class="expertise-tag">Autoridad & Influencia</div>
-          <h1>Convierte tu experiencia en <span class="highlight">activos digitales.</span></h1>
-          <p class="hero-lead">Diseñamos sistemas de visibilidad para consultores, expertos y profesionales que quieren dejar de depender de referencias y liderar su categoría.</p>
-          <div class="hero-actions">
-            <a href="#contacto" class="btn-primary">Solicitar Auditoría</a>
-            <a href="#framework" class="btn-secondary">Nuestro Framework</a>
+  <main id="personal-focus">
+    <section class="hero-section section">
+      <div class="container hero-grid-personal">
+        <div class="hero-copy">
+          <div class="eyebrow-personal">Personal Branding</div>
+          <h1>¿Tu web solo la ves tú? <span class="highlight">Vamos a cambiar eso.</span></h1>
+          <p class="hero-text-personal">SEO, Contenidos y Estrategia Digital para quienes no se conforman con lo básico. Construimos el sistema que te posiciona como el referente de tu sector.</p>
+          <div class="hero-actions-personal">
+            <a href="#contacto" class="btn btn-primary">Diseñar mi Estrategia</a>
+            <a href="#comparativa" class="btn btn-secondary">Web vs. Imán de Leads</a>
           </div>
+        </div>
+        <div class="hero-image-personal">
+          <img src="/images/hero-branding.png" alt="High-Authority Personal Brand Identity" class="hero-img-main" />
         </div>
       </div>
     </section>
 
-    <section class="expertise-pillars">
+    <section id="comparativa" class="section section-alt-personal">
        <div class="container">
-          <div class="pillars-grid">
-             <div class="pillar-card">
-                <span class="p-num">01</span>
-                <h3>Diferenciación</h3>
-                <p>Ocupa un espacio único en la mente de tu cliente ideal.</p>
+          <h2 class="section-title centered">El "Antes y Después"</h2>
+          <div class="comparison-grid">
+             <div class="comparison-card before">
+                <div class="card-label">Antes: Web "Tarjeta"</div>
+                <ul class="comparison-list">
+                   <li>Invisibilidad en buscadores</li>
+                   <li>Estética genérica sin alma</li>
+                   <li>Sin llamadas a la acción claras</li>
+                   <li>Carga lenta y no optimizada</li>
+                   <li>Un gasto, no una inversión</li>
+                </ul>
              </div>
-             <div class="pillar-card">
-                <span class="p-num">02</span>
-                <h3>Visibilidad</h3>
-                <p>Aparece cuando buscan soluciones que tú dominas.</p>
-             </div>
-             <div class="pillar-card">
-                <span class="p-num">03</span>
-                <h3>Autoridad</h3>
-                <p>Construye confianza incluso antes del primer contacto.</p>
+             <div class="comparison-card after">
+                <div class="card-label highlight">Después: Imán de Leads</div>
+                <ul class="comparison-list">
+                   <li>Dominio de palabras clave clave</li>
+                   <li>Diseño que inspira autoridad</li>
+                   <li>Rutas de conversión optimizadas</li>
+                   <li>Velocidad extrema en móviles</li>
+                   <li>Un generador de negocio 24/7</li>
+                </ul>
              </div>
           </div>
        </div>
     </section>
 
-    <section class="expertise-problem section">
+    <section id="servicios" class="section">
       <div class="container">
-        <div class="grid-split">
+        <h2 class="section-title">Servicios <span class="accent">Detallados.</span></h2>
+        <div class="services-grid-personal">
+          <div class="service-personal-card">
+            <div class="service-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </div>
+            <h3>Auditoría SEO profunda</h3>
+            <p>Analizamos cada rincón de tu presencia actual para encontrar fugas de autoridad y oportunidades de tráfico.</p>
+          </div>
+          <div class="service-personal-card">
+            <div class="service-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+            </div>
+            <h3>Web optimizada</h3>
+            <p>Desarrollo enfocado en velocidad y dispositivos móviles, asegurando una experiencia de usuario premium.</p>
+          </div>
+          <div class="service-personal-card">
+            <div class="service-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            </div>
+            <h3>Blog Corporativo</h3>
+            <p>Estrategia de contenidos basada en palabras clave para atraerte clientes mientras duermes.</p>
+          </div>
+          <div class="service-personal-card">
+            <div class="service-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+            </div>
+            <h3>Propósito Comercial</h3>
+            <p>Gestión de redes sociales que no solo buscan "likes", sino que convierten seguidores en compradores.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt-personal">
+      <div class="container">
+        <div class="grid-split-personal">
           <div class="text-block">
-            <h2 class="section-title">El experto <span class="accent">invisible.</span></h2>
-            <p>Tener experiencia no garantiza ser el elegido. Muchos profesionales valiosos siguen dependiendo de recomendaciones esporádicas porque su presencia digital no refleja su nivel real.</p>
-            
-            <div class="issue-box">
-               <div class="issue-item">
-                  <strong>Mensaje Genérico</strong>
-                  <p>Si tu propuesta suena igual que el resto, compites por precio.</p>
-               </div>
-               <div class="issue-item">
-                  <strong>Activos Débiles</strong>
-                  <p>Una web desactualizada que no valida tu credibilidad.</p>
-               </div>
+            <h2 class="section-title">Por qué <span class="accent">Nosotros.</span></h2>
+            <p>No somos una agencia más. Entendemos que tu marca es tu activo más valioso.</p>
+            <div class="visual-quote-personal">
+              <blockquote>
+                "Somos tu equipo de marketing externo, pero con tu misma pasión."
+              </blockquote>
             </div>
           </div>
-          <div class="visual-quote">
-            <blockquote>
-              "Tu marca personal no necesita más ruido. Necesita un sistema que convierta expertise en demanda."
-            </blockquote>
+          <div class="contact-info-personal">
+            <h2 class="section-title">Hablemos de tu <span class="highlight">Propósito.</span></h2>
+            <p>Cuéntanos sobre tu proyecto y diseñamos tu estrategia integral hoy mismo.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="expertise-authority section dark-bg" id="framework">
+    <section id="contacto" class="section">
       <div class="container">
-        <h2 class="section-title centeredText">Framework de <span class="highlight">Autoridad 360.</span></h2>
-        <div class="authority-steps">
-          <div class="step-card">
-            <div class="step-label">Fase 1</div>
-            <h3>Diagnóstico</h3>
-            <p>Auditoría de activos, puntos de fuga y posicionamiento actual.</p>
-          </div>
-          <div class="step-card">
-            <div class="step-label">Fase 2</div>
-            <h3>Claridad</h3>
-            <p>Definición de mensaje comercial y especialización de nicho.</p>
-          </div>
-          <div class="step-card">
-            <div class="step-label">Fase 3</div>
-            <h3>Sistemas</h3>
-            <p>Despliegue de web estratégica y activos de autoridad.</p>
-          </div>
-          <div class="step-card">
-            <div class="step-label">Fase 4</div>
-            <h3>Impacto</h3>
-            <p>SEO personal y captación de leads de alto valor.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="expertise-services section">
-      <div class="container">
-        <h2 class="section-title">Estructura para <span class="highlight">Expertos.</span></h2>
-        <div class="services-list">
-          <div class="service-item">
-            <h3>SEO de Autoridad</h3>
-            <p>Posicionamos tus servicios y expertise para búsquedas de alta intención.</p>
-          </div>
-          <div class="service-item">
-            <h3>Web Estratégica</h3>
-            <p>Arquitectura de conversión diseñada específicamente para profesionales.</p>
-          </div>
-          <div class="service-item">
-            <h3>Embudo de Expertos</h3>
-            <p>Sistema de captación de leads para consultores y mentores.</p>
-          </div>
-          <div class="service-item">
-            <h3>Reposicionamiento Digital</h3>
-            <p>Evolucionamos tu marca para atraer clientes de mayor nivel.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contacto" class="expertise-contact section">
-      <div class="container">
-        <div class="contact-grid">
-          <div class="contact-info">
-            <h2 class="section-title">Construyamos tu <br/><span class="highlight">Autoridad Digital.</span></h2>
-            <p>Analizamos el estado actual de tu marca personal y trazamos un plan para elevar tu demanda.</p>
-            <div class="form-perks">
-               <div>✓ Auditoría de posicionamiento</div>
-               <div>✓ Análisis de activos digitales</div>
-               <div>✓ Roadmap de especialización</div>
+        <form class="qualification-form-personal personal-form" id="formulario">
+          <div class="form-grid-personal">
+            <div class="input-group">
+               <label>Tu Nombre</label>
+               <input type="text" placeholder="Ej. Juan Pérez" required />
+            </div>
+            <div class="input-group">
+               <label>Tu Profesión</label>
+               <input type="text" placeholder="Ej. Consultor de Negocios" required />
             </div>
           </div>
-          <form class="diagnosis-form personal-form">
-            <div class="form-grid">
-               <input type="text" placeholder="Tu Nombre completo" required />
-               <input type="text" placeholder="Especialidad / Profesión" required />
-            </div>
-            <input type="text" placeholder="Nombre de tu marca o proyecto" required />
-            <div class="form-grid">
-               <select required>
-                  <option value="">Objetivo Principal</option>
-                  <option>Ganar Visibilidad</option>
-                  <option>Fortalecer Autoridad</option>
-                  <option>Captar Mejores Clientes</option>
-                  <option>Otro</option>
-               </select>
-               <input type="url" placeholder="Web Actual (si tienes)" />
-            </div>
-            <textarea placeholder="Cuéntanos sobre tu expertise y qué buscas lograr..." required></textarea>
-            <div class="form-grid">
-               <input type="email" placeholder="Email" required />
-               <input type="tel" placeholder="WhatsApp" required />
-            </div>
-            <button type="submit" class="btn-primary">Solicitar Auditoría</button>
-            <p class="success-msg" style="display:none; margin-top: 1rem; color: var(--accent);">Auditoría enviada. Revisaremos tu caso personalmente.</p>
-          </form>
-        </div>
+          <div class="input-group">
+             <label>Cuéntanos tu proyecto</label>
+             <textarea placeholder="¿Cuál es tu meta principal para este año?" required></textarea>
+          </div>
+          <div class="form-grid-personal">
+             <div class="input-group">
+                <label>Email</label>
+                <input type="email" placeholder="hola@tuempresa.com" required />
+             </div>
+             <div class="input-group">
+                <label>WhatsApp</label>
+                <input type="tel" placeholder="+34 600 000 000" required />
+             </div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">Cuéntanos sobre tu proyecto</button>
+          <p class="success-msg" style="display:none; margin-top: 1.5rem; text-align: center; color: var(--accent);">¡Recibido! Diseñaremos tu estrategia personalizada y te contactaremos en breve.</p>
+        </form>
       </div>
     </section>
   </main>
@@ -170,18 +149,14 @@ import CtaSection from '../components/CtaSection.astro';
 </BaseLayout>
 
 <style>
-  :root {
-    --accent: #f0abfc;
-    --accent-dark: #d946ef;
-    --void: #09090b;
-    --glass: rgba(255, 255, 255, 0.02);
-    --border: rgba(255, 255, 255, 0.07);
+  #personal-focus {
+    background: var(--bg);
+    color: #fff;
   }
 
-  .expertise-page {
-    background: var(--void);
-    color: #fff;
-    font-family: 'Syne', sans-serif;
+  .hero-section {
+    padding-top: 10rem;
+    padding-bottom: 5rem;
   }
 
   .container {
@@ -191,7 +166,11 @@ import CtaSection from '../components/CtaSection.astro';
   }
 
   .section {
-    padding: 120px 0;
+    padding: 100px 0;
+  }
+
+  .section-alt-personal {
+    background: var(--bg-2);
   }
 
   .highlight {
@@ -199,247 +178,249 @@ import CtaSection from '../components/CtaSection.astro';
   }
 
   .accent {
-    color: var(--accent-dark);
+    color: var(--accent-light);
   }
 
-  .centeredText {
+  .centered {
     text-align: center;
   }
 
-  .expertise-tag {
-    display: inline-block;
-    padding: 6px 16px;
-    background: var(--glass);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
+  /* Typography */
+  #personal-focus h1 {
+    font-size: clamp(1.8rem, 4.5vw, 3rem);
+    line-height: 1.1;
     margin-bottom: 2rem;
-    color: var(--accent);
-  }
-
-  .expertise-hero {
-    padding: 220px 0 100px;
-  }
-
-  .expertise-hero h1 {
-    font-size: clamp(3.5rem, 9vw, 8rem);
-    line-height: 0.85;
-    letter-spacing: -0.05em;
-    margin-bottom: 2.5rem;
-  }
-
-  .hero-lead {
-    font-size: 1.3rem;
-    color: #a1a1aa;
-    max-width: 650px;
-    line-height: 1.5;
-    margin-bottom: 3.5rem;
-  }
-
-  .hero-actions {
-    display: flex;
-    gap: 1.5rem;
-  }
-
-  .pillars-grid {
-     display: grid;
-     grid-template-columns: repeat(3, 1fr);
-     gap: 30px;
-     border-top: 1px solid var(--border);
-     padding-top: 60px;
-  }
-
-  .pillar-card {
-     padding: 40px;
-     background: var(--glass);
-     border: 1px solid var(--border);
-  }
-
-  .p-num {
-     display: block;
-     font-size: 1rem;
-     color: var(--accent);
-     margin-bottom: 1.5rem;
-     font-weight: 800;
-  }
-
-  .pillar-card h3 {
-     font-size: 1.8rem;
-     margin-bottom: 1rem;
-  }
-
-  .grid-split {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 120px;
-    align-items: center;
+    max-width: 20ch;
+    letter-spacing: -0.02em;
   }
 
   .section-title {
-    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-size: clamp(2rem, 3.5vw, 3.2rem);
     margin-bottom: 2.5rem;
-    line-height: 0.95;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
   }
 
-  .text-block p {
-    font-size: 1.2rem;
-    color: #a1a1aa;
-    line-height: 1.7;
-    margin-bottom: 3rem;
-  }
-
-  .issue-box {
-     display: grid;
-     gap: 2rem;
-  }
-
-  .issue-item strong {
-     display: block;
-     color: var(--accent);
-     margin-bottom: 0.5rem;
-  }
-
-  .visual-quote {
-     font-size: 2.5rem;
-     line-height: 1.1;
-     font-style: italic;
-     color: #fff;
-     position: relative;
-  }
-  .visual-quote::before {
-     content: '"';
-     position: absolute;
-     left: -40px;
-     top: -20px;
-     font-size: 5rem;
-     color: var(--accent);
-     opacity: 0.2;
-  }
-
-  .dark-bg {
-    background: #0d0d10;
-  }
-
-  .authority-steps {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    margin-top: 60px;
-  }
-
-  .step-card {
-    padding: 30px;
-    border: 1px solid var(--border);
-    transition: 0.3s;
-  }
-  .step-card:hover {
-     background: var(--glass);
-     border-color: var(--accent);
-  }
-
-  .step-label {
-    font-size: 0.7rem;
+  /* Components */
+  .eyebrow-personal {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0 0 1.5rem;
+    color: var(--accent);
+    font-size: 0.8rem;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    color: var(--accent);
-    margin-bottom: 1rem;
   }
 
-  .services-list {
-     display: grid;
-     grid-template-columns: 1fr 1fr;
-     gap: 30px;
-     margin-top: 40px;
+  .eyebrow-personal::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 15px var(--accent);
   }
 
-  .service-item {
-     padding: 50px;
-     background: var(--glass);
-     border: 1px solid var(--border);
+  .hero-text-personal {
+    font-size: 1.1rem;
+    color: var(--gray-2);
+    max-width: 50ch;
+    margin-bottom: 3rem;
+    line-height: 1.6;
   }
 
-  .service-item h3 {
-     font-size: 2rem;
-     margin-bottom: 1.5rem;
-     color: #fff;
-  }
-
-  .contact-grid {
+  /* Grid Layouts */
+  .hero-grid-personal {
     display: grid;
     grid-template-columns: 1fr 1.2fr;
-    gap: 100px;
+    gap: 4rem;
+    align-items: center;
   }
 
-  .form-perks {
-     margin-top: 3rem;
-     display: grid;
-     gap: 1rem;
-     font-size: 1.1rem;
-     color: var(--accent);
-  }
-
-  .diagnosis-form {
-    display: grid;
-    gap: 1.5rem;
-    background: #0f0f13;
-    padding: 60px;
+  .hero-image-personal {
+    position: relative;
+    border-radius: var(--radius-lg);
     border: 1px solid var(--border);
+    box-shadow: 0 0 50px rgba(139, 92, 246, 0.15);
+    width: 100%;
   }
 
-  .form-grid {
+  .hero-img-main {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-lg);
+    display: block;
+    object-fit: cover;
+  }
+
+  .hero-actions-personal {
+    display: flex;
+    gap: 1.25rem;
+  }
+
+  /* Comparison Grid */
+  .comparison-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
+    gap: 2rem;
+    margin-top: 3rem;
   }
 
-  input, select, textarea {
-    background: transparent;
+  .comparison-card {
+    padding: 3rem;
+    background: var(--bg-card);
     border: 1px solid var(--border);
-    padding: 1.25rem;
+    border-radius: var(--radius-lg);
+    transition: 0.3s;
+  }
+
+  .comparison-card.after {
+    border-color: var(--accent);
+    background: rgba(139, 92, 246, 0.03);
+  }
+
+  .card-label {
+    font-size: 1.25rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .comparison-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  .comparison-list li {
+    padding-left: 1.75rem;
+    position: relative;
+    color: var(--gray-2);
+  }
+
+  .comparison-list li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+  }
+
+  .after .comparison-list li {
+    color: var(--white);
+  }
+
+  /* Services Grid */
+  .services-grid-personal {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .service-personal-card {
+     padding: 3rem;
+     background: var(--bg-card);
+     border: 1px solid var(--border);
+     border-radius: var(--radius-lg);
+     transition: 0.3s;
+  }
+
+  .service-personal-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-5px);
+  }
+
+  .service-icon {
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+  }
+
+  .service-personal-card h3 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    color: var(--white);
+  }
+
+  /* Split Visual */
+  .grid-split-personal {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 6rem;
+    align-items: center;
+  }
+
+  .visual-quote-personal {
+     font-size: 2.2rem;
+     line-height: 1.2;
+     font-style: italic;
+     margin-top: 3rem;
+     color: var(--accent-light);
+  }
+
+  /* Form */
+  .qualification-form-personal {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--bg-card);
+    padding: 4rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+  }
+
+  .form-grid-personal {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .input-group label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--gray-1);
+    letter-spacing: 0.05em;
+  }
+
+  input, textarea {
+    background: rgba(0,0,0,0.2);
+    border: 1px solid var(--border);
+    padding: 1.1rem;
     color: #fff;
     font-family: inherit;
     width: 100%;
+    border-radius: 4px;
+    font-size: 0.95rem;
   }
 
   textarea {
     height: 120px;
+    resize: none;
   }
 
-  .btn-primary {
-    background: var(--accent);
-    color: var(--void);
-    padding: 1.25rem 2.5rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    border: none;
-    cursor: pointer;
-    transition: 0.3s;
-    text-align: center;
+  .btn-full {
+    width: 100%;
+    margin-top: 1rem;
   }
 
-  .btn-primary:hover {
-    background: #fff;
-  }
-
-  .btn-secondary {
-    background: transparent;
-    color: #fff;
-    border: 1px solid var(--border);
-    padding: 1.25rem 2.5rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-
+  /* Responsive */
   @media (max-width: 1024px) {
-    .grid-split, .contact-grid, .pillars-grid, .authority-steps, .services-list, .form-grid {
+    .hero-grid-personal, .comparison-grid, .services-grid-personal, .grid-split-personal, .form-grid-personal {
       grid-template-columns: 1fr;
     }
+    .hero-image-personal { order: -1; }
+    #personal-focus h1 { font-size: 2.5rem; }
+    .qualification-form-personal { padding: 2.5rem; }
   }
 </style>
 
@@ -450,7 +431,8 @@ import CtaSection from '../components/CtaSection.astro';
       form.addEventListener('submit', (e) => {
         e.preventDefault();
         form.reset();
-        form.querySelector('.success-msg').style.display = 'block';
+        const success = form.querySelector('.success-msg');
+        if (success) success.style.display = 'block';
       });
     }
   });
