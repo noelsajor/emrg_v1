@@ -1,0 +1,236 @@
+---
+---
+<section class="about-hero wrap">
+  <div class="hero-content">
+    <div class="section-rule">
+      <span class="section-rule-label" data-i18n="about.label">Manifesto</span>
+      <div class="section-rule-line"></div>
+      <span class="section-rule-num">01</span>
+    </div>
+    <h1 class="serif" data-i18n-html="about.title">We believe in <em>performance</em> as an art form.</h1>
+  </div>
+</section>
+
+<section class="about-grid wrap">
+  <div class="grid-left">
+    <div class="sticky-note">
+      <h3 class="mono" data-i18n="about.principle_label">The Core Principle</h3>
+      <p data-i18n="about.principle_text">Speed is a feature. Quality is a requirement. Results are the only metric that matters.</p>
+    </div>
+  </div>
+  <div class="grid-right mono">
+    <div class="content-block">
+      <h2 class="serif" data-i18n="about.story_title">The EMRG Way</h2>
+      <p data-i18n="about.story_p1">In a world of bloated agencies and slow turnarounds, we chose a different path. We unified brand design and store engineering into a single, high-speed execution engine.</p>
+      <p data-i18n="about.story_p2">Our partners are founders who realize that their store is their most important salesperson. We ensure that salesperson is world-class, 24/7.</p>
+    </div>
+    
+    <div class="metrics-row">
+      <div class="metric">
+        <span class="val serif">7</span>
+        <span class="lbl">Day Launch</span>
+      </div>
+      <div class="metric">
+        <span class="val serif">100</span>
+        <span class="lbl">Percent Focus</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about-focus wrap mono">
+  <div class="focus-inner">
+    <div class="section-rule">
+      <span class="section-rule-label" data-i18n="about.focus_label">Focus</span>
+      <div class="section-rule-line"></div>
+      <span class="section-rule-num">02</span>
+    </div>
+    <h2 class="serif" data-i18n="about.focus_title">Strategic Focus</h2>
+    
+    <div class="focus-list">
+      <a href="/enfoque-salud" class="focus-item">
+        <span class="focus-idx">01</span>
+        <div class="focus-txt">
+          <h3 class="serif" data-i18n="about.focus_salud">Enfoque en Salud</h3>
+          <p data-i18n="about.focus_salud_desc">Performance diagnostics and design for health ecosystems.</p>
+        </div>
+        <span class="focus-arrow">→</span>
+      </a>
+      <a href="/enfoque-legal" class="focus-item">
+        <span class="focus-idx">02</span>
+        <div class="focus-txt">
+          <h3 class="serif" data-i18n="about.focus_legal">Enfoque Legal</h3>
+          <p data-i18n="about.focus_legal_desc">Authority-driven branding systems for the legal sector.</p>
+        </div>
+        <span class="focus-arrow">→</span>
+      </a>
+      <a href="/enfoque-pymes" class="focus-item">
+        <span class="focus-idx">03</span>
+        <div class="focus-txt">
+          <h3 class="serif" data-i18n="about.focus_pymes">Enfoque Emprendedore/PYMES</h3>
+          <p data-i18n="about.focus_pymes_desc">Scalable growth engines for small and medium businesses.</p>
+        </div>
+        <span class="focus-arrow">→</span>
+      </a>
+      <a href="/enfoque-retail" class="focus-item">
+        <span class="focus-idx">04</span>
+        <div class="focus-txt">
+          <h3 class="serif" data-i18n="about.focus_retail">Enfoque Retail/Mayoristas</h3>
+          <p data-i18n="about.focus_retail_desc">Complex B2B and B2C infrastructure for scale.</p>
+        </div>
+        <span class="focus-arrow">→</span>
+      </a>
+      <a href="/enfoque-marca-personal" class="focus-item">
+        <span class="focus-idx">05</span>
+        <div class="focus-txt">
+          <h3 class="serif" data-i18n="about.focus_personal">Enfoque Marca Personal</h3>
+          <p data-i18n="about.focus_personal_desc">Authority building and digital systems for experts.</p>
+        </div>
+        <span class="focus-arrow">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about-focus {
+    padding-bottom: 150px;
+  }
+  .focus-inner {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .about-focus h2 {
+    font-size: 3rem;
+    margin-top: 32px;
+    margin-bottom: 64px;
+  }
+  .focus-list {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid var(--border-strong);
+  }
+  .focus-item {
+    display: grid;
+    grid-template-columns: 80px 1fr 40px;
+    align-items: center;
+    padding: 32px 0;
+    border-bottom: 1px solid var(--border);
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+  }
+  .focus-item:hover {
+    background: var(--paper-2);
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .focus-idx {
+    font-size: 0.75rem;
+    color: var(--muted);
+    font-weight: 500;
+  }
+  .focus-txt h3 {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+    color: var(--ink);
+  }
+  .focus-txt p {
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin: 0;
+  }
+  .focus-arrow {
+    font-size: 1.25rem;
+    color: var(--accent);
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+  }
+  .focus-item:hover .focus-arrow {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  @media (max-width: 640px) {
+    .focus-item {
+      grid-template-columns: 1fr 40px;
+    }
+    .focus-idx { display: none; }
+  }
+  .about-hero {
+    padding: 140px 0 60px;
+  }
+  .about-hero h1 {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    margin-top: 32px;
+    max-width: 900px;
+  }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 80px;
+    padding-bottom: 120px;
+  }
+  .sticky-note {
+    background: var(--paper-2);
+    border: 1px solid var(--border-strong);
+    padding: 32px;
+    position: sticky;
+    top: 100px;
+  }
+  .sticky-note h3 {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 16px;
+    color: var(--accent);
+  }
+  .sticky-note p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--ink);
+  }
+  .grid-right h2 {
+    font-size: 2.5rem;
+    margin-bottom: 32px;
+  }
+  .grid-right p {
+    font-size: 0.9rem;
+    line-height: 1.8;
+    color: var(--muted);
+    margin-bottom: 24px;
+    max-width: 650px;
+  }
+  .metrics-row {
+    display: flex;
+    gap: 48px;
+    margin-top: 64px;
+    padding-top: 48px;
+    border-top: 1px solid var(--border);
+  }
+  .metric {
+    display: flex;
+    flex-direction: column;
+  }
+  .metric .val {
+    font-size: 3.5rem;
+    color: var(--ink);
+    line-height: 1;
+  }
+  .metric .lbl {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    margin-top: 8px;
+  }
+  @media (max-width: 992px) {
+    .about-grid {
+      grid-template-columns: 1fr;
+    }
+    .sticky-note {
+      position: relative;
+      top: 0;
+    }
+  }
+</style>

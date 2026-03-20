@@ -1,0 +1,416 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout title="Enfoque en Salud | EMRG" description="SEO y crecimiento digital especializado en salud. Ayudamos a clínicas y médicos a atraer más pacientes.">
+  <Nav />
+  <main id="health-focus">
+    
+    <!-- Hero Section: Matching Site B Hero structure -->
+    <section id="hero" aria-labelledby="hero-h1">
+      <div class="hero-main">
+        <div class="hero-left sr">
+          <div>
+            <div class="hero-eyebrow">Sector Salud</div>
+            <h1 id="hero-h1">¿Tus pacientes te buscan en Google o <em>solo te encuentran</em> por recomendación?</h1>
+            <div class="hero-cta-group">
+              <a href="#formulario" class="btn-ink">
+                <span>Quiero digitalizar mi consulta</span>
+                <span class="arrow">→</span>
+              </a>
+              <a href="#servicios" class="btn-bare">
+                <span>Ver servicios</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="hero-right sr sr-d1">
+          <img src="/images/hero-medical.png" alt="Consultorio moderno" class="hero-img-b" />
+          <div class="hero-deco">01</div>
+          <div class="hero-stat-block">
+            <div class="hero-stat-eyebrow">Objetivo Principal</div>
+            <div class="hero-stat-num">Citas</div>
+            <div class="hero-stat-sub">En automático</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-chips-row sr sr-d2">
+        <div class="hero-chip"><span>Especialización Salud</span></div>
+        <div class="hero-chip"><span>SEO Local</span></div>
+        <div class="hero-chip"><span>Web Médica</span></div>
+      </div>
+    </section>
+
+    <!-- Problem Section: Matching Site B Pillars header style -->
+    <section id="problem">
+      <div class="pillars-header sr">
+        <div class="section-rule">
+          <div class="section-rule-label">El Problema</div>
+          <div class="section-rule-line"></div>
+          <div class="section-rule-num">Situación Actual</div>
+        </div>
+        <h2 class="display">¿Tu web actual parece un <em>folleto viejo?</em></h2>
+        <p class="pillars-sub">
+          La autoridad digital en salud no se improvisa. Si tu presencia online no transmite confianza 
+          desde el primer clic, estás perdiendo pacientes frente a clínicas que sí cuidan su imagen profesional.
+        </p>
+      </div>
+      
+      <div class="pillars-grid sr sr-d1">
+        <div class="pillar-col">
+          <div class="pillar-index">01</div>
+          <h3 class="pillar-name">Invisibilidad</h3>
+          <p class="pillar-tagline">Si no apareces en búsquedas clave como "dentista en [ciudad]", estás perdiendo demanda activa.</p>
+        </div>
+        <div class="pillar-col">
+          <div class="pillar-index">02</div>
+          <h3 class="pillar-name">Baja Conversión</h3>
+          <p class="pillar-tagline">Tu web informa pero no guía al usuario hacia una cita o llamada clara.</p>
+        </div>
+        <div class="pillar-col">
+          <div class="pillar-index">03</div>
+          <h3 class="pillar-name">Dependencia</h3>
+          <p class="pillar-tagline">Los referidos ayudan, pero no son una estrategia de crecimiento predecible para llenar agendas.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Solution Section: Using Pillars Grid style -->
+    <section id="servicios">
+      <div class="pillars-header sr">
+        <div class="section-rule">
+          <div class="section-rule-label">La Solución</div>
+          <div class="section-rule-line"></div>
+          <div class="section-rule-num">Nuestros Servicios</div>
+        </div>
+        <h2 class="display">Servicios que transforman tu <em>presencia médica</em>.</h2>
+      </div>
+
+      <div class="pillars-grid sr sr-d1">
+        <div class="pillar-col">
+          <div class="pillar-index">01</div>
+          <h3 class="pillar-name">Diseño UX Médico</h3>
+          <p class="pillar-tagline">Interfaces que transmiten profesionalismo. Webs rápidas, intuitivas y optimizadas.</p>
+          <div class="pillar-items">
+            {['Estructura de Confianza', 'Optimización Móvil', 'CTAs de Cita', 'Velocidad de Carga'].map(item => (
+              <div class="pillar-item">
+                <span>{item}</span>
+                <span class="pillar-arrow">→</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div class="pillar-col">
+          <div class="pillar-index">02</div>
+          <h3 class="pillar-name">SEO Local</h3>
+          <p class="pillar-tagline">Aparece en los primeros resultados de Google Maps cuando busquen tu especialidad.</p>
+          <div class="pillar-items">
+            {['Google Business Profile', 'Keywords de Ciudad', 'Gestión de Reseñas', 'Map Pack Rankings'].map(item => (
+              <div class="pillar-item">
+                <span>{item}</span>
+                <span class="pillar-arrow">→</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div class="pillar-col">
+          <div class="pillar-index">03</div>
+          <h3 class="pillar-name">Contenido Experto</h3>
+          <p class="pillar-tagline">Artículos que responden las dudas reales de tus pacientes y crean autoridad.</p>
+          <div class="pillar-items">
+            {['Blog Estratégico', 'Educación al Paciente', 'Autoridad de Marca', 'Inbound Marketing'].map(item => (
+              <div class="pillar-item">
+                <span>{item}</span>
+                <span class="pillar-arrow">→</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Social Proof Carousel: Adapted to Site B style -->
+    <section id="testimonials">
+      <div class="testi-wrap">
+        <div class="sr">
+          <div class="section-rule">
+            <div class="section-rule-label">Prueba Social</div>
+            <div class="section-rule-line"></div>
+            <div class="section-rule-num">Confianza Médica</div>
+          </div>
+          <h2 class="display">Confianza avalada por el <em>sector</em>.</h2>
+        </div>
+
+        <div class="testimonial-carousel-container-b">
+          <div class="testimonial-track-b" id="testimonial-track">
+            {[
+              { by: 'Dr. Alejandro Ruiz', role: 'Dermatólogo', q: 'Profesionales que entienden las necesidades específicas de nosotros los especialistas.' },
+              { by: 'Dra. Elena Martínez', role: 'Clínica Dental', q: 'Mi clínica duplicó las citas desde que renovamos la web con el enfoque SEO local.' },
+              { by: 'Dr. Roberto Silva', role: 'Cirujano Plástico', q: 'La autoridad digital que hemos construido nos ha permitido dejar de depender de referidos.' }
+            ].map((item, idx) => (
+              <div class={`testi-slide-b ${idx === 0 ? 'active' : ''}`}>
+                <span class="testi-mark-b">“</span>
+                <p class="testi-q-b">{item.q}</p>
+                <div class="testi-foot-b">
+                  <div>
+                    <div class="testi-by-b">{item.by}</div>
+                    <div class="testi-role-b">{item.role}</div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+          
+          <div class="carousel-dots-b">
+            <button class="dot-b active"></button>
+            <button class="dot-b"></button>
+            <button class="dot-b"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Form: Matching Site B CTA structure -->
+    <section id="formulario">
+      <div class="cta-grid b-form-grid">
+        <div class="cta-left sr">
+          <div class="cta-eyebrow">Diagnóstico</div>
+          <h2 class="cta-title">Quiero digitalizar mi consulta y atraer <em>más pacientes</em>.</h2>
+          <p class="cta-body-text">Agenda tu auditoría gratuita y descubre cómo podemos ayudarte a crecer.</p>
+        </div>
+        <div class="cta-right sr sr-d1">
+          <form class="qualification-form-health-b" id="health-form">
+            <div class="form-row-b">
+              <input type="text" placeholder="NOMBRE" required />
+            </div>
+            <div class="form-row-b">
+              <input type="text" placeholder="ESPECIALIDAD" required />
+            </div>
+            <div class="form-row-b">
+              <input type="email" placeholder="EMAIL" required />
+            </div>
+            <div class="form-row-b">
+              <select required>
+                <option value="">OBJETIVO PRINCIPAL</option>
+                <option>Atraer más pacientes</option>
+                <option>Mejorar posicionamiento</option>
+                <option>Rediseñar la web</option>
+                <option>Reducir dependencia de referidos</option>
+              </select>
+            </div>
+            <button class="btn-ink btn-full" type="submit">
+              <span>Solicitar Auditoría</span>
+              <span class="arrow">→</span>
+            </button>
+            <p class="form-success-b" style="display:none; margin-top:1rem; color:var(--accent); font-weight:500;">¡Recibido! Te contactaremos pronto.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+  /* Base Overrides and Local Styles for Site B Architectural Match */
+  #health-focus {
+    background: var(--paper);
+  }
+
+  .hero-img-b {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.9;
+    will-change: transform;
+    transition: transform 0.1s linear;
+  }
+
+  /* Testimonial Carousel Styles (Site B Match) */
+  .testimonial-carousel-container-b {
+    position: relative;
+    overflow: hidden;
+    margin-top: 64px;
+    padding-bottom: 40px;
+  }
+
+  .testimonial-track-b {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+
+  .testi-slide-b {
+    min-width: 100%;
+    padding: 0 0 40px;
+    opacity: 0.2;
+    transform: scale(0.95);
+    transition: all 0.6s ease;
+  }
+
+  .testi-slide-b.active {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .testi-mark-b {
+    font-family: var(--font-serif);
+    font-size: 6rem;
+    color: var(--accent);
+    line-height: 1;
+    opacity: 0.2;
+    margin-bottom: -40px;
+    display: block;
+  }
+
+  .testi-q-b {
+    font-family: var(--font-serif);
+    font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+    line-height: 1.2;
+    color: var(--ink);
+    margin-bottom: 32px;
+    letter-spacing: -0.02em;
+  }
+
+  .testi-by-b {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ink);
+  }
+
+  .testi-role-b {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-top: 4px;
+  }
+
+  .carousel-dots-b {
+    display: flex;
+    gap: 12px;
+    margin-top: 32px;
+  }
+
+  .dot-b {
+    width: 32px;
+    height: 2px;
+    background: var(--border-strong);
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  .dot-b.active {
+    background: var(--accent);
+  }
+
+  /* Form Styles (Site B Match) */
+  #formulario {
+    background: var(--ink);
+  }
+
+  .b-form-grid {
+    border-top: 1px solid var(--border-strong);
+    margin: 0 auto;
+    max-width: var(--max);
+    padding: 80px var(--pad);
+  }
+
+  .form-row-b {
+    margin-bottom: 12px;
+  }
+
+  .qualification-form-health-b input, 
+  .qualification-form-health-b select {
+    width: 100%;
+    padding: 16px;
+    background: rgba(245, 240, 232, 0.05);
+    border: 1px solid rgba(245, 240, 232, 0.15);
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--paper);
+    transition: all 0.3s;
+  }
+
+  .qualification-form-health-b input:focus, 
+  .qualification-form-health-b select:focus {
+    outline: none;
+    background: rgba(245, 240, 232, 0.1);
+    border-color: var(--accent);
+  }
+
+  .btn-full {
+    width: 100%;
+    margin-top: 24px;
+    justify-content: center;
+  }
+
+  @media (max-width: 1024px) {
+    .b-form-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+  }
+</style>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Carousel
+    const track = document.getElementById('testimonial-track');
+    const slides = Array.from(track ? track.children : []);
+    const dots = Array.from(document.querySelectorAll('.dot-b'));
+    let curIdx = 0;
+
+    function upd(i) {
+      if (!track) return;
+      track.style.transform = `translateX(-${i * 100}%)`;
+      slides.forEach((s, idx) => s.classList.toggle('active', idx === i));
+      dots.forEach((d, idx) => d.classList.toggle('active', idx === i));
+      curIdx = i;
+    }
+
+    dots.forEach((d, i) => d.addEventListener('click', () => upd(i)));
+
+    if (slides.length > 0) {
+      setInterval(() => {
+        curIdx = (curIdx + 1) % slides.length;
+        upd(curIdx);
+      }, 5000);
+    }
+
+    // Form
+    const f = document.getElementById('health-form');
+    if (f) {
+      f.addEventListener('submit', (e) => {
+        e.preventDefault();
+        f.reset();
+        const s = document.querySelector('.form-success-b');
+        if (s) s.style.display = 'block';
+      });
+    }
+
+    // Subtle Parallax for Hero Image
+    const heroImg = document.querySelector('.hero-img-b');
+    if (heroImg) {
+      window.addEventListener('scroll', () => {
+        const scroll = window.pageYOffset;
+        // Subtle shift (0.15 speed) and slight initial scale to prevent gaps
+        heroImg.style.transform = `translateY(${scroll * 0.15}px) scale(1.1)`;
+      });
+    }
+  });
+</script>

@@ -1,0 +1,479 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout title="Enfoque Marca Personal | EMRG" description="SEO, Contenidos y Estrategia Digital para quienes no se conforman con lo básico. Convierte tu web en un imán de leads.">
+  <Nav />
+  
+  <main class="editorial-page">
+    <section class="hero-editorial wrap">
+      <div class="hero-content">
+        <div class="section-rule">
+          <span class="rule-lbl">Personal Branding</span>
+          <div class="rule-line"></div>
+          <span class="rule-num">§05</span>
+        </div>
+        <h1 class="serif">¿Tu web solo <em>la ves tú?</em></h1>
+        <p class="hero-sub mono">SEO, Contenidos y Estrategia Digital para quienes no se conforman con lo básico. Vamos a cambiar eso.</p>
+        
+        <div class="hero-actions">
+           <a href="#formulario" class="btn btn-primary">Diseñar mi Estrategia</a>
+           <a href="#comparativa" class="btn btn-rim">Web vs. Imán de Leads</a>
+        </div>
+      </div>
+      
+      <div class="hero-image-box">
+         <img src="/images/hero-branding.png" alt="Personal Identity Concept" class="hero-img-editorial" />
+      </div>
+    </section>
+
+    <div class="strip-editorial wrap">
+       <div class="strip-inner mono">
+          <span>MENSAJE COMERCIAL</span> — <span>VISIBILIDAD SEO</span> — <span>AUTORIDAD</span> — <span>LEAD MAGNET</span> — <span>CONVERSIÓN</span>
+       </div>
+    </div>
+
+    <section id="comparativa" class="section problem-editorial wrap">
+       <div class="section-rule">
+          <span class="rule-lbl">El "Antes y Después"</span>
+          <div class="rule-line"></div>
+          <span class="rule-num">Compare</span>
+       </div>
+       <div class="grid-split">
+          <div class="split-left">
+             <h2 class="serif">De una web "Tarjeta" a un <em>Imán de Leads.</em></h2>
+             <p class="mono-label">CASO DE ESTUDIO: SISTEMAS DE AUTORIDAD</p>
+          </div>
+          <div class="split-right">
+             <div class="comparison-editorial">
+                <div class="comp-item">
+                   <h3 class="serif">La Realidad Anterior</h3>
+                   <ul class="mono-list">
+                      <li>Invisibilidad total en Google</li>
+                      <li>Estética genérica sin propósito</li>
+                      <li>Sin rutas de captación claras</li>
+                      <li>Carga lenta y pobre en móvil</li>
+                   </ul>
+                </div>
+                <div class="comp-item highlight-box">
+                   <h3 class="serif">El Nuevo Estándar</h3>
+                   <ul class="mono-list">
+                      <li>Dominio de palabras clave estratégicas</li>
+                      <li>Diseño que proyecta autoridad real</li>
+                      <li>Embudo de conversión optimizado</li>
+                      <li>Velocidad extrema en móvil</li>
+                   </ul>
+                </div>
+             </div>
+          </div>
+       </div>
+    </section>
+
+    <section class="section services-editorial wrap" id="servicios">
+       <div class="section-rule">
+          <span class="rule-lbl">Servicios Detallados</span>
+          <div class="rule-line"></div>
+          <span class="rule-num">§04</span>
+       </div>
+       <h2 class="serif">Nuestros <em>Servicios.</em></h2>
+       <div class="services-stack">
+          <div class="service-row">
+             <span class="serif">01</span>
+             <h3 class="serif">Auditoría SEO profunda</h3>
+             <p>Análisis de activos y fugas de autoridad.</p>
+          </div>
+          <div class="service-row">
+             <span class="serif">02</span>
+             <h3 class="serif">Web Optimizada</h3>
+             <p>Desarrollo premium para velocidad y móviles.</p>
+          </div>
+          <div class="service-row">
+             <span class="serif">03</span>
+             <h3 class="serif">Blog Corporativo</h3>
+             <p>Estrategia de contenidos basada en palabras clave.</p>
+          </div>
+          <div class="service-row">
+             <span class="serif">04</span>
+             <h3 class="serif">Redes Sociales Útiles</h3>
+             <p>Gestión con propósito comercial directo.</p>
+          </div>
+       </div>
+    </section>
+
+    <section class="section reasons-editorial wrap">
+       <div class="grid-split">
+          <div class="split-left">
+             <h2 class="serif">Por qué <em>EMRG.</em></h2>
+          </div>
+          <div class="split-right">
+             <div class="quote-editorial">
+                <p class="serif">"Somos tu equipo de marketing externo, pero con tu misma pasión."</p>
+                <span class="mono">CULTURA DE RESULTADOS</span>
+             </div>
+          </div>
+       </div>
+    </section>
+
+    <!-- Contact Form: Matching Site B CTA structure (Dark variant) -->
+    <section id="formulario">
+      <div class="cta-grid b-form-grid">
+        <div class="cta-left sr">
+          <div class="cta-eyebrow">Estrategia Personal</div>
+          <h2 class="cta-title">Cuéntanos sobre <em>tu proyecto.</em></h2>
+          <p class="cta-body-text">Diseñamos tu estrategia integral personalizada para convertir tu web en un imán de leads.</p>
+        </div>
+        <div class="cta-right sr sr-d1">
+          <form class="personal-contact-form-b" id="personal-form">
+            <div class="form-row-b">
+              <input type="text" placeholder="NOMBRE COMPLETO" required />
+            </div>
+            <div class="form-row-b">
+              <input type="text" placeholder="ESPECIALIDAD" required />
+            </div>
+            <div class="form-row-b">
+              <input type="email" placeholder="EMAIL CORPORATIVO" required />
+            </div>
+            <div class="form-row-b">
+              <input type="tel" placeholder="WHATSAPP" required />
+            </div>
+            <div class="form-row-b">
+              <textarea placeholder="CUÉNTANOS TU META PRINCIPAL..." required style="width:100%; background: rgba(245, 240, 232, 0.05); border: 1px solid rgba(245, 240, 232, 0.15); padding: 18px; font-family: var(--font-mono); color: var(--paper); min-height: 120px; font-size: 0.8rem;"></textarea>
+            </div>
+            <button class="btn-ink btn-full" type="submit">
+              <span>Diseñar mi Estrategia</span>
+              <span class="arrow">→</span>
+            </button>
+            <p class="form-success-b" style="display:none; margin-top:1rem; color:var(--accent); font-weight:500;">¡Estrategia solicitada! Revisaremos tu caso en breve.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .editorial-page {
+    background: var(--paper);
+    color: var(--ink);
+  }
+
+  .serif {
+    font-family: var(--font-serif);
+  }
+
+  .mono {
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+  }
+
+  .mono-label {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+  }
+
+  .wrap {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding-left: var(--pad);
+    padding-right: var(--pad);
+  }
+
+  .section-rule {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 48px;
+  }
+
+  .rule-lbl {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--muted);
+  }
+
+  .rule-line {
+    flex-grow: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  .rule-num {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--accent);
+  }
+
+  .section {
+    padding: 120px 0;
+  }
+
+  .hero-editorial {
+    padding: 140px 0 120px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .hero-editorial h1 {
+    font-size: clamp(3.5rem, 8vw, 6rem);
+    line-height: .9;
+    margin-bottom: 40px;
+    letter-spacing: -0.04em;
+  }
+
+  .hero-editorial h1 em {
+    color: var(--accent);
+  }
+
+  .hero-sub {
+    max-width: 450px;
+    margin-bottom: 48px;
+    color: var(--muted);
+    font-size: 0.9rem;
+    text-transform: none;
+    letter-spacing: normal;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 24px;
+  }
+
+  .hero-image-box {
+    position: relative;
+    border: 1px solid var(--border-strong);
+    padding: 20px;
+    background: white;
+  }
+
+  .hero-img-editorial {
+    width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+  }
+
+  .strip-editorial {
+    padding: 24px 0;
+    border-top: 1px solid var(--border-strong);
+    border-bottom: 1px solid var(--border-strong);
+  }
+
+  .strip-inner {
+    display: flex;
+    justify-content: space-between;
+    color: var(--muted);
+  }
+
+  .grid-split {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 80px;
+  }
+
+  .split-left h2 {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    line-height: 1.05;
+  }
+
+  .comparison-editorial {
+     display: grid;
+     gap: 40px;
+  }
+
+  .comp-item h3 {
+     font-size: 1.5rem;
+     margin-bottom: 1.5rem;
+     border-bottom: 1px solid var(--border);
+     padding-bottom: 10px;
+  }
+
+  .highlight-box {
+     background: var(--ink);
+     color: var(--paper);
+     padding: 40px;
+  }
+
+  .highlight-box h3 {
+     color: var(--accent);
+     border-color: rgba(255,255,255,0.1);
+  }
+
+  .mono-list {
+     list-style: none;
+     padding: 0;
+     display: grid;
+     gap: 12px;
+     font-family: var(--font-mono);
+     font-size: 0.75rem;
+     text-transform: uppercase;
+     letter-spacing: 0.05em;
+  }
+
+  .services-stack {
+    margin-top: 64px;
+    border-top: 1px solid var(--border-strong);
+  }
+
+  .service-row {
+    display: grid;
+    grid-template-columns: 80px 1fr 400px;
+    align-items: center;
+    padding: 40px 0;
+    border-bottom: 1px solid var(--border-strong);
+  }
+
+  .service-row span {
+    font-size: 1.2rem;
+    color: var(--accent);
+  }
+
+  .service-row h3 {
+    font-size: 2.2rem;
+  }
+
+  .service-row p {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-align: right;
+  }
+
+  .quote-editorial {
+     border-left: 4px solid var(--accent);
+     padding-left: 40px;
+  }
+
+  .quote-editorial p {
+     font-size: 2.2rem;
+     line-height: 1.2;
+     margin-bottom: 20px;
+  }
+
+  /* Form Styles (Site B Match) */
+  #formulario {
+    background: var(--ink);
+  }
+
+  .cta-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .b-form-grid {
+    border-top: 1px solid var(--border-strong);
+    margin: 0 auto;
+    max-width: var(--max);
+    padding: 100px var(--pad);
+  }
+
+  .cta-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .cta-eyebrow::before {
+    content: '';
+    width: 20px;
+    height: 1px;
+    background: var(--muted);
+  }
+
+  .cta-title {
+    font-family: var(--font-serif);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1.1;
+    color: var(--paper);
+    margin-bottom: 32px;
+    letter-spacing: -0.02em;
+  }
+
+  .cta-title em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .cta-body-text {
+    font-size: 1rem;
+    color: var(--paper-3);
+    max-width: 400px;
+    line-height: 1.6;
+  }
+
+  .form-row-b {
+    margin-bottom: 12px;
+  }
+
+  .personal-contact-form-b input, 
+  .personal-contact-form-b select {
+    width: 100%;
+    padding: 18px;
+    background: rgba(245, 240, 232, 0.05);
+    border: 1px solid rgba(245, 240, 232, 0.15);
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--paper);
+    transition: all 0.3s;
+  }
+
+  .personal-contact-form-b input:focus, 
+  .personal-contact-form-b select:focus,
+  .personal-contact-form-b textarea:focus {
+    outline: none;
+    background: rgba(245, 240, 232, 0.1);
+    border-color: var(--accent);
+  }
+
+  .btn-full {
+    width: 100%;
+    margin-top: 24px;
+    justify-content: center;
+  }
+
+  @media (max-width: 1024px) {
+    .hero-editorial, .grid-split, .service-row, .cta-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    .hero-editorial h1 { font-size: 3.5rem; }
+    .hero-image-box { order: -1; }
+    .service-row p { text-align: left; }
+    .split-left h2 { font-size: 2.5rem; }
+  }
+</style>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const mainForm = document.getElementById('personal-form');
+    if (mainForm) {
+      mainForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        mainForm.reset();
+        const success = mainForm.querySelector('.form-success-b');
+        if (success) success.style.display = 'block';
+      });
+    }
+  });
+</script>

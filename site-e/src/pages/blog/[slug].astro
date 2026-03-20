@@ -1,0 +1,75 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import { getAllPosts, getPostBySlug } from '../../lib/sanity.queries';
+
+export async function getStaticPaths() {
+  const posts = await getAllPosts();
+  return posts.map((post: any) => ({
+    params: { slug: post.slug },
+  }));
+}
+
+const { slug } = Astro.params;
+const post = await getPostBySlug(slug as string);
+
+if (!post) {
+  return Astro.redirect('/404');
+}
+
+const title = `${post.title} — EMRG Blog`;
+const description = post.seo?.metaDesc || post.excerpt;
+---
+
+<BaseLayout title={title} description={description}>
+  <Nav />
+
+  <main style="padding-top: var(--nav-h);">
+    <article class="wrap sr" style="padding-top:80px; max-width: 800px;">
+      <div class="blog-post-header">
+        <div class="blog-card-meta" style="margin-bottom: 24px;">
+           <span>{post.categories?.join(', ')}</span>
+           <span>•</span>
+           <span>{new Date(post.publishedAt).toLocaleDateString()}</span>
+           <span>•</span>
+           <span>5 min read</span>
+        </div>
+        <h1 class="serif" style="font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1.1; margin-bottom: 40px;">
+          {post.title}
+        </h1>
+        {post.author && (
+          <div style="display:flex; align-items:center; gap:16px; margin-bottom: 64px; padding: 24px; border: 1px solid var(--border);">
+            <div style="width:48px; height:48px; border-radius:50%; background:var(--ink);"></div>
+            <div>
+              <div style="font-weight:600; font-size: 0.9rem;">{post.author.name}</div>
+              <div style="font-size: 0.75rem; color: var(--muted);">{post.author.role}</div>
+            </div>
+          </div>
+        )}
+      </div>
+
+      <div class="blog-content" style="font-size: 1.1rem; line-height: 1.8; color: var(--ink);">
+        <!-- Body content would be rendered here using a PortableText component -->
+        <p>{post.excerpt}</p>
+        <div style="padding: 100px 0; color: var(--muted); font-style: italic; border-top: 1px solid var(--border-strong); margin-top: 60px;">
+          [Portable Text Content from Sanity will be rendered here]
+        </div>
+      </div>
+      
+      <div style="margin-top: 80px; padding-top: 40px; border-top: 1px solid var(--border-strong);">
+         <h3 class="serif" style="font-size: 2rem; margin-bottom: 32px;">Related Insights</h3>
+         <div class="blog-grid" style="grid-template-columns: repeat(2, 1fr); gap: 24px;">
+           {post.relatedPosts?.map((rp: any) => (
+             <a href={`/blog/${rp.slug}`} class="blog-card" style="gap:12px">
+               <div style="background: var(--paper-2); width:100%; aspect-ratio:16/9; border:1px solid var(--border-strong);"></div>
+               <h4 style="font-size: 1.1rem; font-family: var(--font-serif);">{rp.title}</h4>
+             </a>
+           ))}
+         </div>
+      </div>
+    </article>
+  </main>
+
+  <Footer />
+</BaseLayout>

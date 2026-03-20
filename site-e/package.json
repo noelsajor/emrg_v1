@@ -1,0 +1,20 @@
+{
+    "name": "emrg-site-e",
+    "type": "module",
+    "version": "0.0.1",
+    "scripts": {
+        "dev": "astro dev",
+        "start": "astro dev",
+        "build": "astro build",
+        "preview": "astro preview",
+        "astro": "astro"
+    },
+    "dependencies": {
+        "@astrojs/rss": "^4.0.5",
+        "@astrojs/sitemap": "^3.0.5",
+        "@sanity/client": "^6.12.1",
+        "@sanity/image-url": "^1.0.2",
+        "astro": "^4.4.1",
+        "groq": "^3.28.0"
+    }
+}

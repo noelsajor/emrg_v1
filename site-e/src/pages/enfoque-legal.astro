@@ -1,0 +1,328 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout title="Enfoque Legal | EMRG" description="SEO y estrategias digitales para despachos de abogados y firmas legales. Construimos prestigio y captamos clientes cualificados.">
+  <Nav />
+  <main id="legal-focus">
+    
+    <!-- Hero Section: Matching Site B Hero structure -->
+    <section id="hero" aria-labelledby="hero-h1">
+      <div class="hero-main">
+        <div class="hero-left sr">
+          <div>
+            <div class="hero-eyebrow">Sector Legal</div>
+            <h1 id="hero-h1">Tu despacho merece una presencia digital tan <em>sólida como tus argumentos</em>.</h1>
+            <div class="hero-cta-group">
+              <a href="#formulario" class="btn-ink">
+                <span>Solicitar Auditoría Gratuita</span>
+                <span class="arrow">→</span>
+              </a>
+              <a href="#servicios" class="btn-bare">
+                <span>Ver Servicios</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="hero-right sr sr-d1">
+          <img src="/images/hero-legal.png" alt="Despacho legal profesional" class="hero-img-b" />
+          <div class="hero-deco">01</div>
+          <div class="hero-stat-block">
+            <div class="hero-stat-eyebrow">Objetivo</div>
+            <div class="hero-stat-num">Prestigio</div>
+            <div class="hero-stat-sub">Autoridad digital</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-chips-row sr sr-d2">
+        <div class="hero-chip"><span>Especialización Legal</span></div>
+        <div class="hero-chip"><span>Gestión de Reputación</span></div>
+        <div class="hero-chip"><span>Marketing Ético</span></div>
+      </div>
+    </section>
+
+    <!-- Value Prop Section: Matching Site B Pillars header style -->
+    <section id="propuesta">
+      <div class="pillars-header sr">
+        <div class="section-rule">
+          <div class="section-rule-label">La Propuesta</div>
+          <div class="section-rule-line"></div>
+          <div class="section-rule-num">01 — 03</div>
+        </div>
+        <h2 class="display">No solo hacemos webs, <em>construimos prestigio.</em></h2>
+        <p class="pillars-sub">
+          Estrategias personalizadas para firmas que entienden que en el sector legal la reputación online es el activo que cierra los casos antes de la primera reunión.
+        </p>
+      </div>
+      
+      <div class="pillars-grid sr sr-d1">
+        <div class="pillar-col">
+          <div class="pillar-index">01</div>
+          <h3 class="pillar-name">Arquitectura Web</h3>
+          <p class="pillar-tagline">Estructura optimizada para áreas Penal, Mercantil y de Familia.</p>
+        </div>
+        <div class="pillar-col">
+          <div class="pillar-index">02</div>
+          <h3 class="pillar-name">Redes Sociales</h3>
+          <p class="pillar-tagline">Tono institucional en LinkedIn e Instagram para socios y firma.</p>
+        </div>
+        <div class="pillar-col">
+          <div class="pillar-index">03</div>
+          <h3 class="pillar-name">Fidelización</h3>
+          <p class="pillar-tagline">Email Marketing estratégico para mantener el top-of-mind sectorial.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section: Using Pillars Grid style -->
+    <section id="servicios">
+      <div class="pillars-header sr">
+        <div class="section-rule">
+          <div class="section-rule-label">Estrategia</div>
+          <div class="section-rule-line"></div>
+          <div class="section-rule-num">Servicios Destacados</div>
+        </div>
+        <h2 class="display">Servicios que <em>elevan</em> tu firma.</h2>
+      </div>
+
+      <div class="pillars-grid sr sr-d1">
+        <div class="pillar-col">
+          <div class="pillar-index">01</div>
+          <h3 class="pillar-name">Arquitectura Legal</h3>
+          <p class="pillar-tagline">Webs que transmiten rigor. Diseñamos para áreas específicas con jerarquía clara.</p>
+          <div class="pillar-items">
+            {['Penal', 'Mercantil', 'Familia', 'Casos de Éxito'].map(item => (
+              <div class="pillar-item">
+                <span>{item}</span>
+                <span class="pillar-arrow">→</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div class="pillar-col">
+          <div class="pillar-index">02</div>
+          <h3 class="pillar-name">Email Marketing</h3>
+          <p class="pillar-tagline">Contenidos de valor para tus clientes actuales. Fidelización y recurrencia.</p>
+          <div class="pillar-items">
+            {['Newsletter Legal', 'Updates del Sector', 'Captación CRM', 'Flujos Automatizados'].map(item => (
+              <div class="pillar-item">
+                <span>{item}</span>
+                <span class="pillar-arrow">→</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div class="pillar-col">
+          <div class="pillar-index">03</div>
+          <h3 class="pillar-name">Gestión RRSS</h3>
+          <p class="pillar-tagline">Construimos autoridad en LinkedIn. Estrategia de marca personal para socios.</p>
+          <div class="pillar-items">
+            {['LinkedIn Ads', 'Marca Personal', 'Contenido Institucional', 'Community Management'].map(item => (
+              <div class="pillar-item">
+                <span>{item}</span>
+                <span class="pillar-arrow">→</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Authority Block -->
+    <section id="autoridad">
+      <div class="authority-banner-b sr">
+        <div class="container-b">
+           <h2 class="display-sm">Expertos en marketing para <em>expertos en leyes</em>.</h2>
+           <p class="mono-b">Metodología adaptada a la ética y rigor del sector legal.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Form: Matching Site B CTA structure (Dark variant) -->
+    <section id="formulario">
+      <div class="cta-grid b-form-grid">
+        <div class="cta-left sr">
+          <div class="cta-eyebrow">Diagnóstico firma</div>
+          <h2 class="cta-title">Solicita una auditoría gratuita para <em>tu firma legal</em>.</h2>
+          <p class="cta-body-text">Analizamos tu presencia digital y te entregamos un roadmap de crecimiento personalizado.</p>
+        </div>
+        <div class="cta-right sr sr-d1">
+          <form class="legal-contact-form-b" id="legal-form">
+            <div class="form-row-b">
+              <input type="text" placeholder="NOMBRE COMPLETO" required />
+            </div>
+            <div class="form-row-b">
+              <input type="text" placeholder="FIRMA / DESPACHO" required />
+            </div>
+            <div class="form-row-b">
+              <input type="email" placeholder="EMAIL CORPORATIVO" required />
+            </div>
+            <div class="form-row-b">
+              <select required>
+                <option value="">ÁREA DE PRÁCTICA PRINCIPAL</option>
+                <option>Derecho Penal</option>
+                <option>Derecho Mercantil</option>
+                <option>Derecho de Familia</option>
+                <option>Derecho Laboral</option>
+                <option>Otro</option>
+              </select>
+            </div>
+            <button class="btn-ink btn-full" type="submit">
+              <span>Enviar solicitud</span>
+              <span class="arrow">→</span>
+            </button>
+            <p class="form-success-b" style="display:none; margin-top:1rem; color:var(--accent); font-weight:500;">¡Recibido! Nos pondremos en contacto pronto.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+  /* Base Overrides and Local Styles for Site B Architectural Match */
+  #legal-focus {
+    background: var(--paper);
+  }
+
+  .hero-img-b {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.95;
+    will-change: transform;
+    transition: transform 0.1s linear;
+  }
+
+  .display-sm {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 4vw, 3rem);
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 24px;
+  }
+  
+  .display-sm em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .authority-banner-b {
+    padding: 100px var(--pad);
+    background: var(--paper-2);
+    border-top: 1px solid var(--border-strong);
+    border-bottom: 1px solid var(--border-strong);
+    text-align: center;
+  }
+
+  .mono-b {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+
+  /* Form Styles (Site B Match) */
+  #formulario {
+    background: var(--ink);
+  }
+
+  .b-form-grid {
+    border-top: 1px solid var(--border-strong);
+    margin: 0 auto;
+    max-width: var(--max);
+    padding: 100px var(--pad);
+  }
+
+  .form-row-b {
+    margin-bottom: 12px;
+  }
+
+  .legal-contact-form-b input, 
+  .legal-contact-form-b select {
+    width: 100%;
+    padding: 18px;
+    background: rgba(245, 240, 232, 0.05);
+    border: 1px solid rgba(245, 240, 232, 0.15);
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--paper);
+    transition: all 0.3s;
+  }
+
+  .legal-contact-form-b input:focus, 
+  .legal-contact-form-b select:focus {
+    outline: none;
+    background: rgba(245, 240, 232, 0.1);
+    border-color: var(--accent);
+  }
+
+  .btn-full {
+    width: 100%;
+    margin-top: 24px;
+    justify-content: center;
+  }
+
+  @media (max-width: 1100px) {
+    .hero-main {
+      grid-template-columns: 1fr;
+    }
+    .hero-right {
+      display: none;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .b-form-grid {
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }
+  }
+</style>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Form
+    const f = document.getElementById('legal-form');
+    if (f) {
+      f.addEventListener('submit', (e) => {
+        e.preventDefault();
+        f.reset();
+        const s = document.querySelector('.form-success-b');
+        if (s) s.style.display = 'block';
+      });
+    }
+
+    // Intersection Observer for animations
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('vis');
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.sr').forEach(el => obs.observe(el));
+
+    // Subtle Parallax for Hero Image
+    const heroImg = document.querySelector('.hero-img-b');
+    if (heroImg) {
+      window.addEventListener('scroll', () => {
+        const scroll = window.pageYOffset;
+        heroImg.style.transform = `translateY(${scroll * 0.15}px) scale(1.1)`;
+      });
+    }
+  });
+</script>

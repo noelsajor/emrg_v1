@@ -1,0 +1,2543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" id="meta-desc" content="EMRG is a founder-led ecommerce performance studio. We design the brand, build the store, and engineer the growth system for DTC product brands.">
+<meta name="robots" content="index, follow">
+<title>EMRG — Ecommerce Performance Studio</title>
+
+<meta property="og:title" content="EMRG — Ecommerce Performance Studio">
+<meta property="og:description" id="og-desc" content="We design the brand. We build the store. We engineer the growth system.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://emrg.studio">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "EMRG",
+  "url": "https://emrg.studio",
+  "description": "Founder-led ecommerce performance studio.",
+  "email": "hello@emrg.studio"
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+/* =============================================
+   CSS VARIABLES
+============================================= */
+:root {
+  --ink: #0a0a08;
+  --paper: #f5f0e8;
+  --paper-2: #ede8dc;
+  --paper-3: #e4dece;
+  --accent: #c8401a;
+  --accent-2: #1a6bc8;
+  --gold: #b8962e;
+  --border: #0a0a0833;
+  --border-strong: #0a0a08;
+  --muted: #6b6459;
+  --font-serif: 'DM Serif Display', Georgia, serif;
+  --font-mono: 'DM Mono', 'Courier New', monospace;
+  --nav-h: 64px;
+  --max: 1280px;
+  --pad: 48px;
+  --t: 0.25s ease;
+}
+
+/* =============================================
+   RESET
+============================================= */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  html { scroll-behavior: auto; }
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-mono);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+a { color: inherit; text-decoration: none; }
+button { font-family: var(--font-mono); cursor: pointer; }
+ul, ol { list-style: none; }
+::selection { background: var(--ink); color: var(--paper); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* =============================================
+   UTILITY
+============================================= */
+.wrap {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 var(--pad);
+}
+.serif { font-family: var(--font-serif); }
+.mono { font-family: var(--font-mono); }
+
+/* =============================================
+   LANG TOGGLE
+============================================= */
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--border-strong);
+  overflow: hidden;
+}
+.lang-btn {
+  padding: 6px 12px;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  transition: background var(--t), color var(--t);
+  border-right: 1px solid var(--border-strong);
+  line-height: 1;
+}
+.lang-btn:last-child { border-right: none; }
+.lang-btn.active {
+  background: var(--ink);
+  color: var(--paper);
+}
+.lang-btn:hover:not(.active) {
+  background: var(--paper-2);
+  color: var(--ink);
+}
+
+/* Mobile lang toggle — inherit mobile-menu styling context */
+.mobile-lang-wrap {
+  margin-top: 24px;
+  align-self: flex-start;
+}
+.mobile-lang-wrap .lang-toggle {
+  border-color: var(--border-strong);
+}
+.mobile-lang-wrap .lang-btn {
+  padding: 8px 16px;
+  font-size: 0.72rem;
+}
+
+/* =============================================
+   MARQUEE
+============================================= */
+.marquee-wrap {
+  overflow: hidden;
+  border-top: 1px solid var(--border-strong);
+  border-bottom: 1px solid var(--border-strong);
+  background: var(--ink);
+  padding: 10px 0;
+}
+.marquee-track {
+  display: flex;
+  gap: 0;
+  animation: marquee 28s linear infinite;
+  width: max-content;
+}
+.marquee-wrap:hover .marquee-track { animation-play-state: paused; }
+.marquee-item {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 0 32px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--paper);
+  white-space: nowrap;
+}
+.marquee-dot {
+  width: 4px;
+  height: 4px;
+  background: var(--accent);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* =============================================
+   NAV
+============================================= */
+#nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  height: var(--nav-h);
+  background: var(--paper);
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--t), background var(--t);
+  display: flex;
+  align-items: center;
+}
+#nav.scrolled {
+  border-bottom-color: var(--border-strong);
+  background: rgba(245,240,232,0.97);
+  backdrop-filter: blur(12px);
+}
+.nav-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 var(--pad);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-logo {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+.nav-logo em {
+  font-style: italic;
+  color: var(--accent);
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+.nav-links a {
+  display: block;
+  padding: 8px 16px;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  transition: color var(--t);
+  border-right: 1px solid var(--border);
+}
+.nav-links a:first-child { border-left: 1px solid var(--border); }
+.nav-links a:hover, .nav-links a.active { color: var(--ink); }
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1px solid var(--ink);
+  transition: background var(--t), color var(--t);
+}
+.nav-cta:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: var(--ink);
+  transition: var(--t);
+}
+.hamburger.open span:nth-child(1) { transform: translateY(5.5px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-5.5px) rotate(-45deg); }
+
+/* Mobile Menu */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  inset: 0;
+  top: var(--nav-h);
+  background: var(--paper);
+  z-index: 999;
+  flex-direction: column;
+  padding: 40px var(--pad);
+  border-top: 1px solid var(--border-strong);
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu a {
+  font-family: var(--font-serif);
+  font-size: 2.8rem;
+  color: var(--ink);
+  border-bottom: 1px solid var(--border);
+  padding: 16px 0;
+  transition: color var(--t);
+}
+.mobile-menu a:hover { color: var(--accent); }
+.mobile-menu .nav-cta {
+  margin-top: 32px;
+  align-self: flex-start;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+}
+
+/* =============================================
+   HERO
+============================================= */
+#hero {
+  padding-top: var(--nav-h);
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  border-bottom: 1px solid var(--border-strong);
+}
+
+.hero-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: 1px solid var(--border-strong);
+}
+
+.hero-left {
+  padding: 80px var(--pad) 80px;
+  border-right: 1px solid var(--border-strong);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hero-right {
+  padding: 80px var(--pad) 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: var(--paper-2);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Large editorial decorative number */
+.hero-deco {
+  position: absolute;
+  top: -20px;
+  right: -30px;
+  font-family: var(--font-serif);
+  font-size: 18rem;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(10,10,8,0.08);
+  line-height: 1;
+  user-select: none;
+  pointer-events: none;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 48px;
+}
+.hero-eyebrow::before {
+  content: '';
+  width: 24px;
+  height: 1px;
+  background: var(--muted);
+}
+
+h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(3rem, 6.5vw, 5.5rem);
+  line-height: 1.04;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 48px;
+}
+h1 em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.hero-cta-group {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.btn-ink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 24px;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1px solid var(--ink);
+  transition: background var(--t), color var(--t), border-color var(--t);
+  width: fit-content;
+}
+.btn-ink:hover { background: var(--accent); border-color: var(--accent); }
+
+.btn-bare {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 24px;
+  background: transparent;
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1px solid var(--border-strong);
+  transition: background var(--t), border-color var(--t);
+  width: fit-content;
+}
+.btn-bare:hover { background: var(--paper-2); }
+
+.arrow { font-size: 1rem; }
+
+.hero-stat-block {
+  position: relative;
+  z-index: 1;
+}
+.hero-stat-eyebrow {
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+.hero-stat-num {
+  font-family: var(--font-serif);
+  font-size: 4rem;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+.hero-stat-sub {
+  font-size: 0.8rem;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+
+.hero-chips-row {
+  display: flex;
+  border-top: 1px solid var(--border-strong);
+}
+.hero-chip {
+  flex: 1;
+  padding: 20px var(--pad);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border-right: 1px solid var(--border-strong);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.hero-chip:last-child { border-right: none; }
+.hero-chip::before {
+  content: '—';
+  color: var(--accent);
+  font-size: 0.9rem;
+}
+
+/* =============================================
+   TRUST
+============================================= */
+#trust {
+  border-bottom: 1px solid var(--border-strong);
+  background: var(--ink);
+}
+.trust-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.trust-cell {
+  padding: 56px var(--pad);
+  border-right: 1px solid rgba(245,240,232,0.1);
+  text-align: left;
+}
+.trust-cell:last-child { border-right: none; }
+.trust-fig {
+  font-family: var(--font-serif);
+  font-size: 3.2rem;
+  color: var(--paper);
+  letter-spacing: -0.04em;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+.trust-fig span { color: var(--accent); }
+.trust-desc {
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(245,240,232,0.45);
+  line-height: 1.6;
+}
+.trust-disclaimer-bar {
+  background: var(--ink);
+  border-top: 1px solid rgba(245,240,232,0.08);
+  padding: 12px var(--pad);
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  color: rgba(245,240,232,0.25);
+  text-transform: uppercase;
+}
+
+/* =============================================
+   SECTIONS SHARED
+============================================= */
+.section-rule {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 64px;
+}
+.section-rule-label {
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.section-rule-line {
+  flex: 1;
+  height: 1px;
+  background: var(--border-strong);
+}
+.section-rule-num {
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+h2.display {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 4.5vw, 4rem);
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+  color: var(--ink);
+}
+h2.display em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+/* =============================================
+   PILLARS
+============================================= */
+#pillars {
+  border-bottom: 1px solid var(--border-strong);
+}
+.pillars-header {
+  padding: 80px var(--pad) 0;
+  max-width: var(--max);
+  margin: 0 auto;
+}
+.pillars-sub {
+  font-size: 0.85rem;
+  color: var(--muted);
+  max-width: 420px;
+  line-height: 1.75;
+  margin-top: 20px;
+  margin-bottom: 64px;
+  letter-spacing: 0.01em;
+}
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--border-strong);
+  max-width: var(--max);
+  margin: 0 auto;
+}
+.pillar-col {
+  border-right: 1px solid var(--border-strong);
+  padding: 48px var(--pad);
+  transition: background var(--t);
+}
+.pillar-col:last-child { border-right: none; }
+.pillar-col:hover { background: var(--paper-2); }
+.pillar-index {
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 32px;
+  font-weight: 500;
+}
+.pillar-name {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+.pillar-tagline {
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin-bottom: 36px;
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+}
+.pillar-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: 40px;
+}
+.pillar-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-top: 1px solid var(--border);
+  font-size: 0.78rem;
+  color: var(--ink);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+.pillar-item:last-child { border-bottom: 1px solid var(--border); }
+.pillar-arrow { color: var(--muted); font-size: 0.8rem; }
+.btn-text {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 2px;
+  transition: color var(--t), border-color var(--t);
+}
+.btn-text:hover { color: var(--accent); border-color: var(--accent); }
+
+/* =============================================
+   WORK
+============================================= */
+#work {
+  border-bottom: 1px solid var(--border-strong);
+  background: var(--paper);
+}
+.work-header {
+  padding: 80px var(--pad) 0;
+  max-width: var(--max);
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 64px;
+  flex-wrap: wrap;
+}
+.work-grid {
+  max-width: var(--max);
+  margin: 0 auto;
+  border-top: 1px solid var(--border-strong);
+}
+.case-row {
+  display: grid;
+  grid-template-columns: 80px 1fr 1fr 1fr auto;
+  align-items: center;
+  gap: 0;
+  border-bottom: 1px solid var(--border-strong);
+  padding: 0;
+  transition: background var(--t);
+  cursor: pointer;
+}
+.case-row:hover { background: var(--paper-2); }
+.case-num {
+  padding: 32px 24px;
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border-right: 1px solid var(--border);
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+}
+.case-brand-name {
+  padding: 32px 32px;
+  border-right: 1px solid var(--border);
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.case-brand-serif {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+.case-brand-type {
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.case-summary {
+  padding: 32px 32px;
+  border-right: 1px solid var(--border);
+  font-size: 0.8rem;
+  color: var(--muted);
+  line-height: 1.65;
+  letter-spacing: 0.01em;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+}
+.case-stats {
+  padding: 32px 32px;
+  border-right: 1px solid var(--border);
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: center;
+}
+.stat-line {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.stat-val {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  color: var(--accent);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  min-width: 60px;
+}
+.stat-lbl {
+  font-size: 0.68rem;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+}
+.case-link {
+  padding: 32px 32px;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+}
+.case-link span {
+  writing-mode: vertical-rl;
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  transition: color var(--t);
+}
+.case-row:hover .case-link span { color: var(--accent); }
+
+/* =============================================
+   PROCESS
+============================================= */
+#process {
+  background: var(--paper-2);
+  border-bottom: 1px solid var(--border-strong);
+}
+.process-wrap {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 80px var(--pad);
+}
+.process-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: end;
+  margin-bottom: 80px;
+}
+.process-list {
+  display: flex;
+  flex-direction: column;
+}
+.process-item {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 0;
+  border-top: 1px solid var(--border-strong);
+  padding: 32px 0;
+  transition: background var(--t);
+}
+.process-item:last-child { border-bottom: 1px solid var(--border-strong); }
+.process-num {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  color: var(--paper-3);
+  letter-spacing: -0.04em;
+  line-height: 1;
+  padding-top: 4px;
+}
+.process-content {}
+.process-title {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+.process-desc {
+  font-size: 0.8rem;
+  color: var(--muted);
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+  max-width: 480px;
+}
+
+/* =============================================
+   PACKAGES
+============================================= */
+#packages {
+  border-bottom: 1px solid var(--border-strong);
+  background: var(--paper);
+}
+.packages-wrap {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 80px var(--pad);
+}
+.platform-toggle {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--border-strong);
+  margin-bottom: 56px;
+}
+.toggle-opt {
+  padding: 10px 24px;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  transition: background var(--t), color var(--t);
+  border-right: 1px solid var(--border-strong);
+  cursor: pointer;
+}
+.toggle-opt:last-child { border-right: none; }
+.toggle-opt.active {
+  background: var(--ink);
+  color: var(--paper);
+}
+.packages-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 1px solid var(--border-strong);
+}
+.pkg {
+  border-right: 1px solid var(--border-strong);
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.pkg:last-child { border-right: none; }
+.pkg.featured { background: var(--ink); color: var(--paper); }
+.pkg-header {
+  padding: 40px 36px 32px;
+  border-bottom: 1px solid var(--border-strong);
+}
+.pkg.featured .pkg-header { border-bottom-color: rgba(245,240,232,0.1); }
+.pkg-badge {
+  display: inline-block;
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--paper);
+  background: var(--accent);
+  padding: 3px 10px;
+  margin-bottom: 16px;
+}
+.pkg-name-head {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 8px;
+  line-height: 1.15;
+}
+.pkg.featured .pkg-name-head { color: var(--paper); }
+.pkg-for {
+  font-size: 0.75rem;
+  color: var(--muted);
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+}
+.pkg.featured .pkg-for { color: rgba(245,240,232,0.5); }
+.pkg-price-block {
+  padding: 24px 36px;
+  border-bottom: 1px solid var(--border-strong);
+}
+.pkg.featured .pkg-price-block { border-bottom-color: rgba(245,240,232,0.1); }
+.pkg-price {
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  color: var(--ink);
+  letter-spacing: -0.04em;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.pkg.featured .pkg-price { color: var(--paper); }
+.pkg-timeline {
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 500;
+}
+.pkg-features {
+  padding: 32px 36px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.pkg-feat {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.78rem;
+  color: var(--ink);
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+.pkg.featured .pkg-feat {
+  color: rgba(245,240,232,0.8);
+  border-bottom-color: rgba(245,240,232,0.08);
+}
+.pkg-feat:last-child { border-bottom: none; padding-bottom: 0; }
+.feat-dash {
+  flex-shrink: 0;
+  width: 12px;
+  height: 1px;
+  background: var(--accent);
+  margin-top: 9px;
+}
+.pkg-cta {
+  padding: 24px 36px;
+  border-top: 1px solid var(--border-strong);
+}
+.pkg.featured .pkg-cta { border-top-color: rgba(245,240,232,0.1); }
+.btn-pkg {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 14px 20px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1px solid var(--border-strong);
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  transition: background var(--t), color var(--t), border-color var(--t);
+}
+.btn-pkg:hover { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.pkg.featured .btn-pkg {
+  background: var(--accent);
+  color: var(--paper);
+  border-color: var(--accent);
+}
+.pkg.featured .btn-pkg:hover { background: var(--paper); color: var(--ink); border-color: var(--paper); }
+
+/* =============================================
+   TESTIMONIALS
+============================================= */
+#testimonials {
+  background: var(--paper-2);
+  border-bottom: 1px solid var(--border-strong);
+}
+.testi-wrap {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 80px var(--pad);
+}
+.testi-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+  border: 1px solid var(--border-strong);
+  margin-top: 64px;
+}
+.testi {
+  padding: 48px 40px;
+  border-right: 1px solid var(--border-strong);
+  border-bottom: 1px solid var(--border-strong);
+  transition: background var(--t);
+}
+.testi:nth-child(2n) { border-right: none; }
+.testi:nth-child(3), .testi:nth-child(4) { border-bottom: none; }
+.testi:hover { background: var(--paper-3); }
+.testi-mark {
+  font-family: var(--font-serif);
+  font-size: 3rem;
+  color: var(--accent);
+  line-height: 0.8;
+  margin-bottom: 20px;
+  display: block;
+  opacity: 0.5;
+}
+.testi-q {
+  font-size: 0.88rem;
+  line-height: 1.8;
+  color: var(--ink);
+  margin-bottom: 32px;
+  letter-spacing: 0.01em;
+}
+.testi-foot {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border-top: 1px solid var(--border);
+  padding-top: 24px;
+}
+.testi-initials {
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--border-strong);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  flex-shrink: 0;
+}
+.testi-by { font-size: 0.78rem; font-weight: 500; color: var(--ink); letter-spacing: 0.01em; }
+.testi-role { font-size: 0.7rem; color: var(--muted); letter-spacing: 0.02em; margin-top: 2px; }
+
+/* =============================================
+   FAQ
+============================================= */
+#faq {
+  border-bottom: 1px solid var(--border-strong);
+  background: var(--paper);
+}
+.faq-wrap {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 80px var(--pad);
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 120px;
+}
+.faq-left { position: sticky; top: calc(var(--nav-h) + 40px); align-self: start; }
+.faq-contact {
+  margin-top: 32px;
+  font-size: 0.78rem;
+  color: var(--muted);
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+}
+.faq-contact a { color: var(--accent); border-bottom: 1px solid var(--accent); padding-bottom: 1px; }
+
+.faq-list { display: flex; flex-direction: column; }
+.faq-item { border-top: 1px solid var(--border-strong); }
+.faq-item:last-child { border-bottom: 1px solid var(--border-strong); }
+.faq-btn {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 24px 0;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--ink);
+  letter-spacing: 0.01em;
+  line-height: 1.5;
+  transition: color var(--t);
+}
+.faq-btn:hover { color: var(--accent); }
+.faq-btn[aria-expanded="true"] { color: var(--accent); }
+.faq-icon-box {
+  width: 24px;
+  height: 24px;
+  border: 1px solid var(--border-strong);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+  transition: background var(--t), border-color var(--t);
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--muted);
+}
+.faq-btn[aria-expanded="true"] .faq-icon-box {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--paper);
+  transform: rotate(45deg);
+}
+.faq-ans {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.45s cubic-bezier(0.4,0,0.2,1);
+}
+.faq-ans.open { max-height: 400px; }
+.faq-ans-inner {
+  padding-bottom: 28px;
+  font-size: 0.82rem;
+  color: var(--muted);
+  line-height: 1.8;
+  letter-spacing: 0.01em;
+  max-width: 560px;
+}
+
+/* =============================================
+   CTA
+============================================= */
+#cta {
+  background: var(--ink);
+  border-bottom: 1px solid rgba(245,240,232,0.1);
+}
+.cta-grid {
+  max-width: var(--max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-left: 1px solid rgba(245,240,232,0.08);
+  border-right: 1px solid rgba(245,240,232,0.08);
+}
+.cta-left {
+  padding: 100px var(--pad);
+  border-right: 1px solid rgba(245,240,232,0.08);
+}
+.cta-right {
+  padding: 100px var(--pad);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.cta-eyebrow {
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(245,240,232,0.35);
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.cta-eyebrow::before { content: ''; width: 20px; height: 1px; background: rgba(245,240,232,0.25); }
+.cta-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: var(--paper);
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+  margin-bottom: 0;
+}
+.cta-title em {
+  font-style: italic;
+  color: var(--accent);
+}
+.cta-body-text {
+  font-size: 0.8rem;
+  color: rgba(245,240,232,0.45);
+  line-height: 1.8;
+  letter-spacing: 0.01em;
+  margin-bottom: 48px;
+}
+.cta-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+.btn-cta-primary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 24px;
+  background: var(--accent);
+  color: var(--paper);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1px solid var(--accent);
+  transition: background var(--t), border-color var(--t);
+}
+.btn-cta-primary:hover { background: #a83415; border-color: #a83415; }
+.btn-cta-secondary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 24px;
+  background: transparent;
+  color: rgba(245,240,232,0.7);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1px solid rgba(245,240,232,0.15);
+  transition: border-color var(--t), color var(--t);
+}
+.btn-cta-secondary:hover { border-color: rgba(245,240,232,0.4); color: var(--paper); }
+.cta-note {
+  font-size: 0.68rem;
+  color: rgba(245,240,232,0.2);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* =============================================
+   FOOTER
+============================================= */
+footer {
+  background: var(--ink);
+  border-top: 1px solid rgba(245,240,232,0.06);
+}
+.footer-wrap {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 var(--pad);
+}
+.footer-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  border-bottom: 1px solid rgba(245,240,232,0.08);
+}
+.footer-col {
+  padding: 48px 0;
+  padding-right: 40px;
+  border-right: 1px solid rgba(245,240,232,0.08);
+}
+.footer-col:last-child { border-right: none; }
+.footer-logo {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  color: var(--paper);
+  letter-spacing: -0.02em;
+  display: inline-block;
+  margin-bottom: 12px;
+}
+.footer-logo em { font-style: italic; color: var(--accent); }
+.footer-tag {
+  font-size: 0.75rem;
+  color: rgba(245,240,232,0.35);
+  line-height: 1.65;
+  letter-spacing: 0.01em;
+  margin-bottom: 20px;
+}
+.footer-mail {
+  font-size: 0.75rem;
+  color: rgba(245,240,232,0.5);
+  letter-spacing: 0.04em;
+  transition: color var(--t);
+}
+.footer-mail:hover { color: var(--paper); }
+.footer-col-label {
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(245,240,232,0.2);
+  margin-bottom: 20px;
+}
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.footer-nav a {
+  font-size: 0.78rem;
+  color: rgba(245,240,232,0.45);
+  letter-spacing: 0.02em;
+  transition: color var(--t);
+}
+.footer-nav a:hover { color: var(--paper); }
+.footer-socials {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.footer-social-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.75rem;
+  color: rgba(245,240,232,0.45);
+  transition: color var(--t);
+  letter-spacing: 0.04em;
+}
+.footer-social-link:hover { color: var(--paper); }
+.footer-social-link::before {
+  content: '';
+  width: 8px;
+  height: 1px;
+  background: currentColor;
+  flex-shrink: 0;
+}
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 0;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.footer-copy {
+  font-size: 0.68rem;
+  color: rgba(245,240,232,0.2);
+  letter-spacing: 0.06em;
+}
+.footer-legal {
+  display: flex;
+  gap: 24px;
+}
+.footer-legal a {
+  font-size: 0.68rem;
+  color: rgba(245,240,232,0.2);
+  letter-spacing: 0.06em;
+  transition: color var(--t);
+}
+.footer-legal a:hover { color: rgba(245,240,232,0.5); }
+
+/* =============================================
+   SCROLL REVEAL
+============================================= */
+.sr {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.sr.vis { opacity: 1; transform: translateY(0); }
+.sr-d1 { transition-delay: 0.08s; }
+.sr-d2 { transition-delay: 0.16s; }
+.sr-d3 { transition-delay: 0.24s; }
+
+/* =============================================
+   RESPONSIVE
+============================================= */
+@media (max-width: 1100px) {
+  .hero-main { grid-template-columns: 1fr; }
+  .hero-right { display: none; }
+  .trust-row { grid-template-columns: repeat(2, 1fr); }
+  .trust-cell:nth-child(2) { border-right: none; }
+  .trust-cell:nth-child(3) { border-top: 1px solid rgba(245,240,232,0.1); }
+  .pillars-grid { grid-template-columns: 1fr; }
+  .pillar-col { border-right: none; border-bottom: 1px solid var(--border-strong); }
+  .packages-grid { grid-template-columns: 1fr; }
+  .pkg { border-right: none; border-bottom: 1px solid var(--border-strong); }
+  .pkg:last-child { border-bottom: none; }
+  .testi-grid { grid-template-columns: 1fr; }
+  .testi:nth-child(2n) { border-right: 1px solid var(--border-strong); }
+  .testi:nth-child(3), .testi:nth-child(4) { border-bottom: 1px solid var(--border-strong); }
+  .testi:last-child { border-bottom: none; }
+  .footer-top { grid-template-columns: 1fr 1fr; }
+  .footer-col:nth-child(2) { border-right: none; }
+  .footer-col:nth-child(3) { border-top: 1px solid rgba(245,240,232,0.08); }
+  .cta-grid { grid-template-columns: 1fr; }
+  .cta-left { border-right: none; border-bottom: 1px solid rgba(245,240,232,0.08); }
+  .process-header { grid-template-columns: 1fr; gap: 32px; }
+  .faq-wrap { grid-template-columns: 1fr; gap: 48px; }
+  .faq-left { position: static; }
+}
+
+@media (max-width: 768px) {
+  :root { --pad: 24px; }
+  .nav-links, .nav-cta { display: none; }
+  .nav-lang-desktop { display: none; }
+  .hamburger { display: flex; }
+  .case-row { grid-template-columns: 1fr; border: none; border-bottom: 1px solid var(--border-strong); }
+  .case-num { display: none; }
+  .case-brand-name, .case-summary, .case-stats, .case-link { border-right: none; border-bottom: 1px solid var(--border); align-self: auto; }
+  .case-link span { writing-mode: horizontal-tb; }
+  .trust-row { grid-template-columns: 1fr 1fr; }
+  .footer-top { grid-template-columns: 1fr; }
+  .footer-col { border-right: none; border-bottom: 1px solid rgba(245,240,232,0.08); }
+  .footer-col:last-child { border-bottom: none; }
+  .testi { border-right: none !important; }
+  .hero-chips-row { flex-direction: column; }
+  .hero-chip { border-right: none; border-bottom: 1px solid var(--border-strong); }
+  h1 { font-size: 2.6rem; }
+  .work-header { padding-top: 60px; margin-bottom: 40px; }
+}
+</style>
+</head>
+<body>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap" aria-hidden="true">
+  <div class="marquee-track">
+    <div class="marquee-item"><span class="marquee-dot"></span> Brand Identity</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Shopify Builds</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> 7-Day Launch</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> WooCommerce</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> CRO Engineering</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Email &amp; SMS Flows</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Packaging Design</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Growth Systems</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> DTC Performance</div>
+    <!-- Duplicate for seamless loop -->
+    <div class="marquee-item"><span class="marquee-dot"></span> Brand Identity</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Shopify Builds</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> 7-Day Launch</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> WooCommerce</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> CRO Engineering</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Email &amp; SMS Flows</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Packaging Design</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Growth Systems</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> DTC Performance</div>
+  </div>
+</div>
+
+<!-- NAV -->
+<header>
+  <nav id="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo" aria-label="EMRG home">EM<em>R</em>G</a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="#pillars" data-i18n="nav.services">Services</a></li>
+        <li><a href="#work" data-i18n="nav.work">Work</a></li>
+        <li><a href="#process" data-i18n="nav.process">Process</a></li>
+        <li><a href="#packages" data-i18n="nav.packages">Packages</a></li>
+        <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
+        <li><a href="#cta" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+
+      <div style="display:flex;align-items:center;gap:12px;">
+        <div class="lang-toggle nav-lang-desktop" role="group" aria-label="Select language">
+          <button class="lang-btn active" id="lang-en" aria-pressed="true" aria-label="Switch to English">EN</button>
+          <button class="lang-btn" id="lang-es" aria-pressed="false" aria-label="Cambiar a Español">ES</button>
+        </div>
+        <a href="#cta" class="nav-cta" id="nav-cta-btn"><span data-i18n="nav.cta">Book a Call</span> <span>→</span></a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- Mobile Menu -->
+<nav id="mobile-menu" class="mobile-menu" aria-label="Mobile navigation" aria-hidden="true">
+  <a href="#pillars" class="mm-link" data-i18n="nav.services">Services</a>
+  <a href="#work" class="mm-link" data-i18n="nav.work">Work</a>
+  <a href="#process" class="mm-link" data-i18n="nav.process">Process</a>
+  <a href="#packages" class="mm-link" data-i18n="nav.packages">Packages</a>
+  <a href="#faq" class="mm-link" data-i18n="nav.faq">FAQ</a>
+  <a href="#cta" class="mm-link" data-i18n="nav.contact">Contact</a>
+  <a href="#cta" class="nav-cta" style="margin-top:32px;align-self:flex-start;" id="mob-cta-btn"><span data-i18n="hero.cta.primary">Book a 15-min Call</span> →</a>
+  <div class="mobile-lang-wrap">
+    <div class="lang-toggle" role="group" aria-label="Select language">
+      <button class="lang-btn active" id="lang-en-mob" aria-pressed="true" aria-label="Switch to English">EN</button>
+      <button class="lang-btn" id="lang-es-mob" aria-pressed="false" aria-label="Cambiar a Español">ES</button>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+<!-- HERO -->
+<section id="hero" aria-labelledby="h1">
+  <div class="hero-main">
+    <div class="hero-left">
+      <div>
+        <p class="hero-eyebrow" data-i18n="hero.eyebrow">Ecommerce Performance Studio</p>
+        <h1 id="h1" data-i18n-html="hero.h1">We design the brand.<br>We build the store.<br>We <em>engineer</em> the growth system.</h1>
+      </div>
+      <div class="hero-cta-group">
+        <a href="#cta" class="btn-ink" id="hero-btn-primary"><span data-i18n="hero.cta.primary">Book a 15-min Call</span> <span class="arrow">→</span></a>
+        <a href="#work" class="btn-bare" id="hero-btn-secondary"><span data-i18n="hero.cta.secondary">View Work</span> <span class="arrow">↓</span></a>
+      </div>
+    </div>
+
+    <div class="hero-right" aria-hidden="true">
+      <div class="hero-deco">01</div>
+      <div class="hero-stat-block">
+        <p class="hero-stat-eyebrow" data-i18n="hero.stat.eyebrow">Average launch timeline</p>
+        <div class="hero-stat-num">5–7</div>
+        <p class="hero-stat-sub" data-i18n="hero.stat.sub">Days from brief to live store</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-chips-row" role="list">
+    <div class="hero-chip" role="listitem" data-i18n="hero.chip1">7-Day Launch</div>
+    <div class="hero-chip" role="listitem" data-i18n="hero.chip2">CRO-First Execution</div>
+    <div class="hero-chip" role="listitem" data-i18n="hero.chip3">Built for Scale</div>
+    <div class="hero-chip" role="listitem" data-i18n="hero.chip4">DTC Specialists</div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<section id="trust" aria-label="Key statistics">
+  <div class="trust-row" role="list">
+    <div class="trust-cell sr" role="listitem">
+      <div class="trust-fig">25<span>+</span></div>
+      <div class="trust-desc" data-i18n="trust.s1">Ecommerce builds delivered</div>
+    </div>
+    <div class="trust-cell sr sr-d1" role="listitem">
+      <div class="trust-fig">5<span>–7</span></div>
+      <div class="trust-desc" data-i18n="trust.s2">Day average launch</div>
+    </div>
+    <div class="trust-cell sr sr-d2" role="listitem">
+      <div class="trust-fig"><span>+</span>22<span>%</span></div>
+      <div class="trust-desc" data-i18n="trust.s3">Average CVR improvement</div>
+    </div>
+    <div class="trust-cell sr sr-d3" role="listitem">
+      <div class="trust-fig">100<span>%</span></div>
+      <div class="trust-desc" data-i18n="trust.s4">Conversion-focused by default</div>
+    </div>
+  </div>
+  <div class="trust-disclaimer-bar" data-i18n="trust.disclaimer">Results vary by business, product, and market conditions.</div>
+</section>
+
+<!-- PILLARS -->
+<section id="pillars" aria-labelledby="pillars-h">
+  <div class="pillars-header">
+    <div class="section-rule">
+      <span class="section-rule-label" data-i18n="pillars.label">What We Do</span>
+      <span class="section-rule-line"></span>
+      <span class="section-rule-num">01 / 06</span>
+    </div>
+    <h2 class="display" id="pillars-h" data-i18n-html="pillars.h2">Three pillars.<br><em>One cohesive system.</em></h2>
+    <p class="pillars-sub" data-i18n="pillars.sub">Every engagement covers what actually moves the needle. Brand, store, and growth infrastructure — executed as one integrated system.</p>
+  </div>
+  <div class="pillars-grid">
+
+    <article class="pillar-col sr" aria-labelledby="p1">
+      <div class="pillar-index" data-i18n="pillars.p1.index">01 — Brand</div>
+      <h3 class="pillar-name" id="p1" data-i18n-html="pillars.p1.name">Brand &amp;<br>Packaging</h3>
+      <p class="pillar-tagline" data-i18n="pillars.p1.tagline">Identity that earns attention before a single word is read.</p>
+      <ul class="pillar-items" role="list">
+        <li class="pillar-item"><span data-i18n="pillars.p1.i1">Brand identity systems</span><span class="pillar-arrow">→</span></li>
+        <li class="pillar-item"><span data-i18n="pillars.p1.i2">Packaging design</span><span class="pillar-arrow">→</span></li>
+        <li class="pillar-item"><span data-i18n="pillars.p1.i3">Product storytelling</span><span class="pillar-arrow">→</span></li>
+        <li class="pillar-item"><span data-i18n="pillars.p1.i4">Visual guidelines</span><span class="pillar-arrow">→</span></li>
+      </ul>
+      <a href="#cta" class="btn-text" data-i18n="pillars.cta">Start a project →</a>
+    </article>
+
+    <article class="pillar-col sr sr-d1" aria-labelledby="p2">
+      <div class="pillar-index" data-i18n="pillars.p2.index">02 — Store</div>
+      <h3 class="pillar-name" id="p2" data-i18n-html="pillars.p2.name">Ecommerce<br>Engineering</h3>
+      <p class="pillar-tagline" data-i18n="pillars.p2.tagline">Stores built to convert — not just to exist.</p>
+      <ul class="pillar-items" role="list">
+        <li class="pillar-item"><span data-i18n="pillars.p2.i1">Shopify &amp; WooCommerce builds</span><span class="pillar-arrow">→</span></li>
+        <li class="pillar-item"><span data-i18n="pillars.p2.i2">High-converting PDP systems</span><span class="pillar-arrow">→</span></li>
+        <li class="pillar-item"><span data-i18n="pillars.p2.i3">Pixel &amp; analytics setup</span><span class="pillar-arrow">→</span></li>
+        <li class="pillar-item"><span data-i18n="pillars.p2.i4">Performance &amp; SEO foundation</span><span class="pillar-arrow">→</span></li>
+      </ul>
+      <a href="#cta" class="btn-text" data-i18n="pillars.cta">Start a project →</a>
+    </article>
+
+    <article class="pillar-col sr sr-d2" aria-labelledby="p3">
+      <div class="pillar-index" data-i18n="pillars.p3.index">03 — Growth</div>
+      <h3 class="pillar-name" id="p3" data-i18n-html="pillars.p3.name">Growth<br>Systems</h3>
+      <p class="pillar-tagline" data-i18n="pillars.p3.tagline">The infrastructure that compounds revenue over time.</p>
+      <ul class="pillar-items" role="list">
+        <li class="pillar-item"><span data-i18n="pillars.p3.i1">Email &amp; SMS flows</span><span class="pillar-arrow">→</span></li>
+        <li class="pillar-item"><span data-i18n="pillars.p3.i2">Post-purchase optimization</span><span class="pillar-arrow">→</span></li>
+        <li class="pillar-item"><span data-i18n="pillars.p3.i3">Loyalty &amp; referral systems</span><span class="pillar-arrow">→</span></li>
+        <li class="pillar-item"><span data-i18n="pillars.p3.i4">Affiliate infrastructure</span><span class="pillar-arrow">→</span></li>
+        <li class="pillar-item"><span data-i18n="pillars.p3.i5">CRO sprints</span><span class="pillar-arrow">→</span></li>
+      </ul>
+      <a href="#cta" class="btn-text" data-i18n="pillars.cta">Start a project →</a>
+    </article>
+
+  </div>
+</section>
+
+<!-- WORK -->
+<section id="work" aria-labelledby="work-h">
+  <div class="work-header">
+    <div>
+      <div class="section-rule">
+        <span class="section-rule-label" data-i18n="work.label">Featured Work</span>
+        <span class="section-rule-line"></span>
+        <span class="section-rule-num">02 / 06</span>
+      </div>
+      <h2 class="display" id="work-h" data-i18n-html="work.h2">Outcomes,<br><em>not outputs.</em></h2>
+    </div>
+    <a href="#cta" class="btn-bare" style="align-self:flex-end;" id="work-viewall-btn"><span data-i18n="work.viewall">View all work</span> →</a>
+  </div>
+
+  <div class="work-grid" role="list">
+
+    <article class="case-row sr" role="listitem" tabindex="0" aria-label="Solera case study">
+      <div class="case-num">01</div>
+      <div class="case-brand-name">
+        <div class="case-brand-serif">Solera</div>
+        <div class="case-brand-type" data-i18n="work.c1.type">Skincare DTC · Shopify</div>
+      </div>
+      <div class="case-summary" data-i18n="work.c1.summary">Entering a saturated skincare market with no digital presence. Needed a brand and store capable of converting cold traffic from day one.</div>
+      <div class="case-stats">
+        <div class="stat-line"><span class="stat-val">+28%</span><span class="stat-lbl" data-i18n="work.stat.cvr">CVR vs industry avg</span></div>
+        <div class="stat-line"><span class="stat-val">6 <span data-i18n="work.stat.days">days</span></span><span class="stat-lbl" data-i18n="work.stat.launch">Launch timeline</span></div>
+        <div class="stat-line"><span class="stat-val">+19%</span><span class="stat-lbl" data-i18n="work.stat.aov">AOV lift</span></div>
+      </div>
+      <div class="case-link"><span data-i18n="work.readcase">Read Case</span></div>
+    </article>
+
+    <article class="case-row sr sr-d1" role="listitem" tabindex="0" aria-label="Varka case study">
+      <div class="case-num">02</div>
+      <div class="case-brand-name">
+        <div class="case-brand-serif">Varka</div>
+        <div class="case-brand-type" data-i18n="work.c2.type">Nutrition DTC · WooCommerce</div>
+      </div>
+      <div class="case-summary" data-i18n="work.c2.summary">Existing store suffering from slow load times, poor mobile UX, and no post-purchase retention system in place.</div>
+      <div class="case-stats">
+        <div class="stat-line"><span class="stat-val">-42%</span><span class="stat-lbl" data-i18n="work.stat.load">Page load time</span></div>
+        <div class="stat-line"><span class="stat-val">+22%</span><span class="stat-lbl" data-i18n="work.stat.repeat">Repeat purchase rate</span></div>
+        <div class="stat-line"><span class="stat-val">+14%</span><span class="stat-lbl">AOV</span></div>
+      </div>
+      <div class="case-link"><span data-i18n="work.readcase">Read Case</span></div>
+    </article>
+
+    <article class="case-row sr sr-d2" role="listitem" tabindex="0" aria-label="Dune case study">
+      <div class="case-num">03</div>
+      <div class="case-brand-name">
+        <div class="case-brand-serif">Dune</div>
+        <div class="case-brand-type" data-i18n="work.c3.type">Apparel DTC · Shopify</div>
+      </div>
+      <div class="case-summary" data-i18n="work.c3.summary">Apparel brand pivoting from wholesale to DTC. Needed a flagship store and full brand system built for conversion from day one.</div>
+      <div class="case-stats">
+        <div class="stat-line"><span class="stat-val">+34%</span><span class="stat-lbl" data-i18n="work.stat.cvrimprove">CVR improvement</span></div>
+        <div class="stat-line"><span class="stat-val">7 <span data-i18n="work.stat.days">days</span></span><span class="stat-lbl" data-i18n="work.stat.fullaunch">Full launch</span></div>
+        <div class="stat-line"><span class="stat-val">3.8x</span><span class="stat-lbl" data-i18n="work.stat.roas">ROAS month 1</span></div>
+      </div>
+      <div class="case-link"><span data-i18n="work.readcase">Read Case</span></div>
+    </article>
+
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process" aria-labelledby="process-h">
+  <div class="process-wrap">
+    <div class="process-header">
+      <div>
+        <div class="section-rule">
+          <span class="section-rule-label" data-i18n="process.label">Process</span>
+          <span class="section-rule-line"></span>
+          <span class="section-rule-num">03 / 06</span>
+        </div>
+        <h2 class="display" id="process-h" data-i18n-html="process.h2">Zero to live.<br><em>Days, not months.</em></h2>
+      </div>
+      <p style="font-size:0.82rem;color:var(--muted);line-height:1.8;letter-spacing:0.01em;max-width:380px;" data-i18n="process.sub">A focused four-step process built around speed, quality, and results. Every decision made with conversion logic at its core.</p>
+    </div>
+
+    <div class="process-list" role="list">
+      <div class="process-item sr" role="listitem">
+        <div class="process-num">01</div>
+        <div class="process-content">
+          <h3 class="process-title" data-i18n="process.s1.title">Audit &amp; Strategy</h3>
+          <p class="process-desc" data-i18n="process.s1.desc">We assess your brand, market, competitors, and conversion opportunities. Clear direction before a single pixel is designed.</p>
+        </div>
+      </div>
+      <div class="process-item sr sr-d1" role="listitem">
+        <div class="process-num">02</div>
+        <div class="process-content">
+          <h3 class="process-title" data-i18n="process.s2.title">Brand &amp; UX Direction</h3>
+          <p class="process-desc" data-i18n="process.s2.desc">Identity, visual language, and store architecture defined. Every decision made with conversion logic at its core.</p>
+        </div>
+      </div>
+      <div class="process-item sr sr-d2" role="listitem">
+        <div class="process-num">03</div>
+        <div class="process-content">
+          <h3 class="process-title" data-i18n="process.s3.title">Build &amp; Integration</h3>
+          <p class="process-desc" data-i18n="process.s3.desc">Store built, pixels fired, flows configured, SEO foundation laid. Everything tested before it touches a customer.</p>
+        </div>
+      </div>
+      <div class="process-item sr sr-d3" role="listitem">
+        <div class="process-num">04</div>
+        <div class="process-content">
+          <h3 class="process-title" data-i18n="process.s4.title">Launch &amp; Optimize</h3>
+          <p class="process-desc" data-i18n="process.s4.desc">Go live with confidence. We monitor, iterate, and optimize based on real data — not assumptions.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PACKAGES -->
+<section id="packages" aria-labelledby="packages-h">
+  <div class="packages-wrap">
+    <div class="section-rule">
+      <span class="section-rule-label" data-i18n="packages.label">Packages</span>
+      <span class="section-rule-line"></span>
+      <span class="section-rule-num">04 / 06</span>
+    </div>
+    <h2 class="display" id="packages-h" style="margin-bottom:8px;" data-i18n-html="packages.h2">Productized.<br><em>Predictable.</em> Proven.</h2>
+    <p style="font-size:0.82rem;color:var(--muted);line-height:1.8;margin-bottom:48px;letter-spacing:0.01em;" data-i18n="packages.sub">Scoped packages so you know exactly what you're getting — and what it costs.</p>
+
+    <div class="platform-toggle" role="group" aria-label="Select platform">
+      <button class="toggle-opt active" id="btn-shopify" aria-pressed="true">Shopify</button>
+      <button class="toggle-opt" id="btn-woo" aria-pressed="false">WooCommerce</button>
+    </div>
+
+    <div class="packages-grid">
+      <!-- Launch Sprint -->
+      <article class="pkg sr" aria-labelledby="pkg1">
+        <div class="pkg-header">
+          <h3 class="pkg-name-head" id="pkg1" data-i18n="packages.p1.name">Launch Sprint</h3>
+          <p class="pkg-for" data-i18n="packages.p1.for">For brands launching their first DTC store. Everything you need, nothing you don't.</p>
+        </div>
+        <div class="pkg-price-block">
+          <div class="pkg-price">$4,500+</div>
+          <div class="pkg-timeline" id="pkg1-time">5–7 day Shopify launch</div>
+        </div>
+        <div class="pkg-features" id="pkg1-features">
+          <div class="pkg-feat"><span class="feat-dash"></span>Custom Shopify theme build</div>
+          <div class="pkg-feat"><span class="feat-dash"></span>Up to 5 pages (Home, PDP, Collection, About, Contact)</div>
+          <div class="pkg-feat"><span class="feat-dash"></span>Pixel setup (Meta, GA4)</div>
+          <div class="pkg-feat"><span class="feat-dash"></span>SEO foundation</div>
+          <div class="pkg-feat"><span class="feat-dash"></span>Performance optimization</div>
+          <div class="pkg-feat"><span class="feat-dash"></span>Welcome email flow</div>
+          <div class="pkg-feat"><span class="feat-dash"></span>2 rounds of revisions</div>
+        </div>
+        <div class="pkg-cta">
+          <button class="btn-pkg" onclick="window.location='#cta'"><span data-i18n="packages.cta">Book a Call</span> <span>→</span></button>
+        </div>
+      </article>
+
+      <!-- Growth Sprint -->
+      <article class="pkg featured sr sr-d1" aria-labelledby="pkg2">
+        <div class="pkg-header">
+          <div class="pkg-badge" data-i18n="packages.badge">Most Popular</div>
+          <h3 class="pkg-name-head" id="pkg2" data-i18n="packages.p2.name">Growth Sprint</h3>
+          <p class="pkg-for" data-i18n="packages.p2.for">For brands ready to turn their store into a revenue machine. Full-stack execution.</p>
+        </div>
+        <div class="pkg-price-block">
+          <div class="pkg-price">$9,500+</div>
+          <div class="pkg-timeline" id="pkg2-time">Full Shopify build in 10–14 days</div>
+        </div>
+        <div class="pkg-features" id="pkg2-features">
+          <div class="pkg-feat"><span class="feat-dash"></span>Everything in Launch Sprint</div>
+          <div class="pkg-feat"><span class="feat-dash"></span>Brand identity &amp; packaging design</div>
+          <div class="pkg-feat"><span class="feat-dash"></span>Full pixel suite (Meta, GA4, TikTok)</div>
+          <div class="pkg-feat"><span class="feat-dash"></span>Post-purchase email + SMS flows</div>
+          <div class="pkg-feat"><span class="feat-dash"></span>Abandoned cart &amp; browse flows</div>
+          <div class="pkg-feat"><span class="feat-dash"></span>CRO audit &amp; UX sprint</div>
+          <div class="pkg-feat"><span class="feat-dash"></span>Loyalty &amp; referral setup</div>
+          <div class="pkg-feat"><span class="feat-dash"></span>30-day post-launch support</div>
+        </div>
+        <div class="pkg-cta">
+          <button class="btn-pkg" onclick="window.location='#cta'"><span data-i18n="packages.cta">Book a Call</span> <span>→</span></button>
+        </div>
+      </article>
+
+      <!-- Growth Partner -->
+      <article class="pkg sr sr-d2" aria-labelledby="pkg3">
+        <div class="pkg-header">
+          <h3 class="pkg-name-head" id="pkg3" data-i18n="packages.p3.name">Ongoing Growth Partner</h3>
+          <p class="pkg-for" data-i18n="packages.p3.for">For brands post-launch that want senior-level execution on a consistent basis.</p>
+        </div>
+        <div class="pkg-price-block">
+          <div class="pkg-price">$3,000+<span style="font-size:1rem;font-family:var(--font-mono);letter-spacing:0;color:var(--muted);font-weight:400;">/mo</span></div>
+          <div class="pkg-timeline" data-i18n="packages.p3.timeline">Ongoing — minimum 3 months</div>
+        </div>
+        <div class="pkg-features">
+          <div class="pkg-feat"><span class="feat-dash"></span><span data-i18n="packages.p3.f1">Monthly CRO sprints</span></div>
+          <div class="pkg-feat"><span class="feat-dash"></span><span data-i18n="packages.p3.f2">Email &amp; SMS optimization</span></div>
+          <div class="pkg-feat"><span class="feat-dash"></span><span data-i18n="packages.p3.f3">Growth reporting &amp; analytics</span></div>
+          <div class="pkg-feat"><span class="feat-dash"></span><span data-i18n="packages.p3.f4">Store updates &amp; new landing pages</span></div>
+          <div class="pkg-feat"><span class="feat-dash"></span><span data-i18n="packages.p3.f5">Affiliate &amp; referral management</span></div>
+          <div class="pkg-feat"><span class="feat-dash"></span><span data-i18n="packages.p3.f6">Priority response &amp; support</span></div>
+          <div class="pkg-feat"><span class="feat-dash"></span><span data-i18n="packages.p3.f7">Quarterly strategy reviews</span></div>
+        </div>
+        <div class="pkg-cta">
+          <button class="btn-pkg" onclick="window.location='#cta'"><span data-i18n="packages.cta">Book a Call</span> <span>→</span></button>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" aria-labelledby="testi-h">
+  <div class="testi-wrap">
+    <div class="section-rule">
+      <span class="section-rule-label" data-i18n="testi.label">What Founders Say</span>
+      <span class="section-rule-line"></span>
+      <span class="section-rule-num">05 / 06</span>
+    </div>
+    <h2 class="display" id="testi-h" data-i18n-html="testi.h2">Trusted by<br><em>builders.</em></h2>
+
+    <div class="testi-grid" role="list">
+      <article class="testi sr" role="listitem">
+        <span class="testi-mark" aria-hidden="true">"</span>
+        <p class="testi-q" data-i18n="testi.t1.q">We went from idea to live Shopify store in 6 days. The build quality and attention to conversion detail was unlike anything I had seen. Our first week of traffic converted at nearly 4%.</p>
+        <div class="testi-foot">
+          <div class="testi-initials" aria-hidden="true">JL</div>
+          <div>
+            <div class="testi-by">Jordan L.</div>
+            <div class="testi-role" data-i18n="testi.t1.role">Founder, Solera Skincare</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="testi sr sr-d1" role="listitem">
+        <span class="testi-mark" aria-hidden="true">"</span>
+        <p class="testi-q" data-i18n="testi.t2.q">They rebuilt our entire WooCommerce store and set up our email flows in under two weeks. Page speed improved dramatically. Our repeat purchase rate climbed month over month.</p>
+        <div class="testi-foot">
+          <div class="testi-initials" aria-hidden="true">AS</div>
+          <div>
+            <div class="testi-by">Aliya S.</div>
+            <div class="testi-role" data-i18n="testi.t2.role">Head of Marketing, Varka Nutrition</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="testi sr sr-d2" role="listitem">
+        <span class="testi-mark" aria-hidden="true">"</span>
+        <p class="testi-q" data-i18n="testi.t3.q">EMRG doesn't feel like an agency. They work like a senior partner who actually cares about what happens after launch. The growth system they set up is still paying dividends six months later.</p>
+        <div class="testi-foot">
+          <div class="testi-initials" aria-hidden="true">MK</div>
+          <div>
+            <div class="testi-by">Marcus K.</div>
+            <div class="testi-role" data-i18n="testi.t3.role">Founder, Dune Apparel</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="testi sr sr-d3" role="listitem">
+        <span class="testi-mark" aria-hidden="true">"</span>
+        <p class="testi-q" data-i18n="testi.t4.q">We came with just a product and a rough concept. EMRG took it from there — packaging, identity, store, tracking, flows. Six days later we were live and profitable by week three.</p>
+        <div class="testi-foot">
+          <div class="testi-initials" aria-hidden="true">PR</div>
+          <div>
+            <div class="testi-by">Priya R.</div>
+            <div class="testi-role" data-i18n="testi.t4.role">Founder, Lumos Wellness</div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" aria-labelledby="faq-h">
+  <div class="faq-wrap">
+    <div class="faq-left">
+      <div class="section-rule" style="margin-bottom:24px;">
+        <span class="section-rule-label" data-i18n="faq.label">FAQ</span>
+        <span class="section-rule-line"></span>
+        <span class="section-rule-num">06 / 06</span>
+      </div>
+      <h2 class="display" id="faq-h" style="font-size:clamp(1.8rem,3vw,2.8rem);" data-i18n-html="faq.h2">Good questions deserve<br><em>straight answers.</em></h2>
+      <p class="faq-contact" data-i18n-html="faq.contact">Still have something else?<br><a href="mailto:hello@emrg.studio" style="color:var(--accent);border-bottom:1px solid var(--accent);padding-bottom:1px;">hello@emrg.studio</a></p>
+    </div>
+
+    <div>
+      <div class="faq-list" id="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false" aria-controls="fa1">
+            <span data-i18n="faq.q1">Can you really launch in 7 days?</span>
+            <span class="faq-icon-box" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-ans" id="fa1" role="region">
+            <div class="faq-ans-inner" data-i18n="faq.a1">Yes. Our Launch Sprint is scoped specifically for a 5–7 day delivery cycle. This is possible because we have a proven process, defined scope, and we need your brand assets and product information ready at kickoff. Larger or more complex builds take longer — we are always transparent about timelines upfront.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false" aria-controls="fa2">
+            <span data-i18n="faq.q2">What do you need from us to get started?</span>
+            <span class="faq-icon-box" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-ans" id="fa2" role="region">
+            <div class="faq-ans-inner" data-i18n="faq.a2">For a store build: product information, existing brand assets (if any), copy, and Shopify or WooCommerce access. For brand work: a clear brief on your product, audience, and market positioning. We guide you through exactly what we need in our onboarding process.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false" aria-controls="fa3">
+            <span data-i18n="faq.q3">Do you handle packaging design?</span>
+            <span class="faq-icon-box" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-ans" id="fa3" role="region">
+            <div class="faq-ans-inner" data-i18n="faq.a3">Yes. Brand identity and packaging design are part of our Growth Sprint package and available as standalone engagements. We design for production-readiness — files delivered print-ready and spec'd for your manufacturer.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false" aria-controls="fa4">
+            <span data-i18n="faq.q4">Do you support existing stores?</span>
+            <span class="faq-icon-box" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-ans" id="fa4" role="region">
+            <div class="faq-ans-inner" data-i18n="faq.a4">Absolutely. We work with established brands on CRO sprints, store rebuilds, flow optimization, and growth system setup. If you have an existing store that isn't performing, we'll audit it and identify exactly where revenue is being left on the table.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false" aria-controls="fa5">
+            <span data-i18n="faq.q5">What about SEO?</span>
+            <span class="faq-icon-box" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-ans" id="fa5" role="region">
+            <div class="faq-ans-inner" data-i18n="faq.a5">Every store we build includes SEO foundation — structured data, clean URL architecture, optimized meta tags, image alt text, sitemap, and page speed optimization. Ongoing SEO content strategy is available as part of our Growth Partner retainer.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false" aria-controls="fa6">
+            <span data-i18n="faq.q6">What happens after launch?</span>
+            <span class="faq-icon-box" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-ans" id="fa6" role="region">
+            <div class="faq-ans-inner" data-i18n="faq.a6">Growth Sprint includes 30 days of post-launch support. After that, we offer ongoing Growth Partner retainers for brands that want continued optimization, testing, and execution. We don't disappear after handoff.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false" aria-controls="fa7">
+            <span data-i18n="faq.q7">Do you manage paid ads?</span>
+            <span class="faq-icon-box" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-ans" id="fa7" role="region">
+            <div class="faq-ans-inner" data-i18n="faq.a7">We handle the infrastructure that makes ads perform — pixel setup, tracking, landing pages, PDP optimization, and post-click experience. We don't run ad campaigns directly, but we ensure your store is built to convert the traffic your ads send.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false" aria-controls="fa8">
+            <span data-i18n="faq.q8">How do revisions work?</span>
+            <span class="faq-icon-box" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-ans" id="fa8" role="region">
+            <div class="faq-ans-inner" data-i18n="faq.a8">All packages include defined revision rounds (2 for Launch Sprint, 3 for Growth Sprint). Revisions are consolidated feedback sessions — we review everything together, make changes, and move forward. Additional rounds can be added if needed.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta" aria-labelledby="cta-h">
+  <div class="cta-grid">
+    <div class="cta-left">
+      <p class="cta-eyebrow" data-i18n="cta.eyebrow">Ready to build</p>
+      <h2 class="cta-title" id="cta-h" data-i18n-html="cta.h2">Ready to build something<br>that <em>converts?</em></h2>
+    </div>
+    <div class="cta-right">
+      <p class="cta-body-text" data-i18n="cta.body">Tell us where you are. We'll show you where to go. One conversation is all it takes to know if we're the right fit.</p>
+      <div class="cta-actions">
+        <a href="https://cal.com/emrg" class="btn-cta-primary"><span data-i18n="hero.cta.primary">Book a 15-min Call</span> <span>→</span></a>
+        <a href="mailto:hello@emrg.studio" class="btn-cta-secondary"><span data-i18n="cta.email">Email us directly</span> <span>→</span></a>
+      </div>
+      <p class="cta-note" data-i18n="cta.note">We reply within 24–48 hours.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-wrap">
+    <div class="footer-top">
+      <div class="footer-col">
+        <a href="/" class="footer-logo" aria-label="EMRG home">EM<em>R</em>G</a>
+        <p class="footer-tag" data-i18n="footer.tag">Founder-led ecommerce performance studio. Brand, store, growth — as one system.</p>
+        <a href="mailto:hello@emrg.studio" class="footer-mail">hello@emrg.studio</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-label" data-i18n="footer.col.services">Services</div>
+        <nav class="footer-nav" aria-label="Services navigation">
+          <a href="#pillars" data-i18n="footer.link.brand">Brand &amp; Packaging</a>
+          <a href="#pillars" data-i18n="footer.link.ecom">Ecommerce Builds</a>
+          <a href="#pillars" data-i18n="footer.link.growth">Growth Systems</a>
+          <a href="#pillars" data-i18n="footer.link.cro">CRO &amp; Optimization</a>
+        </nav>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-label" data-i18n="footer.col.company">Company</div>
+        <nav class="footer-nav" aria-label="Company navigation">
+          <a href="#work" data-i18n="nav.work">Work</a>
+          <a href="#process" data-i18n="nav.process">Process</a>
+          <a href="#packages" data-i18n="nav.packages">Packages</a>
+          <a href="#faq" data-i18n="nav.faq">FAQ</a>
+        </nav>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-label" data-i18n="footer.col.follow">Follow</div>
+        <div class="footer-socials" role="list">
+          <a href="#" class="footer-social-link" role="listitem" aria-label="Twitter / X">Twitter</a>
+          <a href="#" class="footer-social-link" role="listitem" aria-label="Instagram">Instagram</a>
+          <a href="#" class="footer-social-link" role="listitem" aria-label="LinkedIn">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy" data-i18n="footer.copy">© 2025 EMRG. All rights reserved.</div>
+      <div class="footer-legal">
+        <a href="#" data-i18n="footer.privacy">Privacy</a>
+        <a href="#" data-i18n="footer.terms">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- JS -->
+<script>
+(function() {
+  'use strict';
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* NAV */
+  var nav = document.getElementById('nav');
+  var navAs = document.querySelectorAll('.nav-links a');
+  var sects = document.querySelectorAll('section[id]');
+  window.addEventListener('scroll', function() {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+    var cur = '';
+    sects.forEach(function(s) { if (window.scrollY >= s.offsetTop - 120) cur = s.id; });
+    navAs.forEach(function(a) { a.classList.toggle('active', a.getAttribute('href') === '#' + cur); });
+  }, { passive: true });
+
+  /* MOBILE MENU */
+  var ham = document.getElementById('hamburger');
+  var mob = document.getElementById('mobile-menu');
+  var mmLinks = document.querySelectorAll('.mm-link');
+  var closeMenu = function() {
+    ham.classList.remove('open');
+    ham.setAttribute('aria-expanded', 'false');
+    mob.classList.remove('open');
+    mob.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  };
+  ham.addEventListener('click', function() {
+    var isOpen = !mob.classList.contains('open');
+    ham.classList.toggle('open', isOpen);
+    ham.setAttribute('aria-expanded', isOpen);
+    mob.classList.toggle('open', isOpen);
+    mob.setAttribute('aria-hidden', !isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+  mmLinks.forEach(function(l) { l.addEventListener('click', closeMenu); });
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') { closeMenu(); ham.focus(); } });
+
+  /* FAQ */
+  var faqBtns = document.querySelectorAll('.faq-btn');
+  faqBtns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var exp = btn.getAttribute('aria-expanded') === 'true';
+      faqBtns.forEach(function(b) {
+        b.setAttribute('aria-expanded', 'false');
+        var ans = document.getElementById(b.getAttribute('aria-controls'));
+        if (ans) ans.classList.remove('open');
+      });
+      if (!exp) {
+        btn.setAttribute('aria-expanded', 'true');
+        var ans2 = document.getElementById(btn.getAttribute('aria-controls'));
+        if (ans2) ans2.classList.add('open');
+      }
+    });
+    btn.addEventListener('keydown', function(e) {
+      var items = Array.from(faqBtns);
+      var i = items.indexOf(btn);
+      if (e.key === 'ArrowDown') { e.preventDefault(); (items[i+1] || items[0]).focus(); }
+      if (e.key === 'ArrowUp') { e.preventDefault(); (items[i-1] || items[items.length-1]).focus(); }
+      if (e.key === 'Home') { e.preventDefault(); items[0].focus(); }
+      if (e.key === 'End') { e.preventDefault(); items[items.length-1].focus(); }
+    });
+  });
+
+  /* PLATFORM TOGGLE */
+  var bS = document.getElementById('btn-shopify');
+  var bW = document.getElementById('btn-woo');
+  var currentPlatform = 'shopify';
+
+  var platformsEN = {
+    shopify: {
+      p1: { time: '5–7 day Shopify launch', feats: ['Custom Shopify theme build','Up to 5 pages (Home, PDP, Collection, About, Contact)','Pixel setup (Meta, GA4)','SEO foundation','Performance optimization','Welcome email flow','2 rounds of revisions'] },
+      p2: { time: 'Full Shopify build in 10–14 days', feats: ['Everything in Launch Sprint','Brand identity &amp; packaging design','Full pixel suite (Meta, GA4, TikTok)','Post-purchase email + SMS flows','Abandoned cart &amp; browse flows','CRO audit &amp; UX sprint','Loyalty &amp; referral setup','30-day post-launch support'] }
+    },
+    woo: {
+      p1: { time: '7–10 day WooCommerce launch', feats: ['Custom WooCommerce build','Up to 5 pages (Home, PDP, Shop, About, Contact)','Pixel setup (Meta, GA4)','WooCommerce performance tuning','SEO foundation','Welcome email flow','2 rounds of revisions'] },
+      p2: { time: 'Full WooCommerce build in 12–16 days', feats: ['Everything in Launch Sprint','Brand identity &amp; packaging design','Full pixel suite (Meta, GA4, TikTok)','Post-purchase email + SMS flows','Abandoned cart &amp; browse flows','Plugin optimization &amp; CRO sprint','Loyalty &amp; referral setup','30-day post-launch support'] }
+    }
+  };
+
+  var platformsES = {
+    shopify: {
+      p1: { time: 'Lanzamiento en Shopify en 5–7 días', feats: ['Tema Shopify personalizado','Hasta 5 páginas (Inicio, PDP, Colección, Nosotros, Contacto)','Configuración de píxeles (Meta, GA4)','Base de SEO','Optimización de rendimiento','Flujo de email de bienvenida','2 rondas de revisiones'] },
+      p2: { time: 'Build completo en Shopify en 10–14 días', feats: ['Todo en Launch Sprint','Identidad de marca y diseño de packaging','Suite completa de píxeles (Meta, GA4, TikTok)','Flujos de email + SMS post-compra','Flujos de carrito abandonado','Auditoría CRO y sprint UX','Programa de lealtad y referidos','Soporte 30 días post-lanzamiento'] }
+    },
+    woo: {
+      p1: { time: 'Lanzamiento en WooCommerce en 7–10 días', feats: ['Build personalizado en WooCommerce','Hasta 5 páginas (Inicio, PDP, Tienda, Nosotros, Contacto)','Configuración de píxeles (Meta, GA4)','Optimización de rendimiento WooCommerce','Base de SEO','Flujo de email de bienvenida','2 rondas de revisiones'] },
+      p2: { time: 'Build completo en WooCommerce en 12–16 días', feats: ['Todo en Launch Sprint','Identidad de marca y diseño de packaging','Suite completa de píxeles (Meta, GA4, TikTok)','Flujos de email + SMS post-compra','Flujos de carrito abandonado','Optimización de plugins y sprint CRO','Programa de lealtad y referidos','Soporte 30 días post-lanzamiento'] }
+    }
+  };
+
+  var featDash = '<span class="feat-dash"></span>';
+
+  function applyPlatform(p) {
+    currentPlatform = p;
+    var lang = document.documentElement.lang || 'en';
+    var d = (lang === 'es' ? platformsES : platformsEN)[p];
+    document.getElementById('pkg1-time').textContent = d.p1.time;
+    document.getElementById('pkg1-features').innerHTML = d.p1.feats.map(function(f) { return '<div class="pkg-feat">' + featDash + f + '</div>'; }).join('');
+    document.getElementById('pkg2-time').textContent = d.p2.time;
+    document.getElementById('pkg2-features').innerHTML = d.p2.feats.map(function(f) { return '<div class="pkg-feat">' + featDash + f + '</div>'; }).join('');
+  }
+
+  bS.addEventListener('click', function() { bS.classList.add('active'); bS.setAttribute('aria-pressed','true'); bW.classList.remove('active'); bW.setAttribute('aria-pressed','false'); applyPlatform('shopify'); });
+  bW.addEventListener('click', function() { bW.classList.add('active'); bW.setAttribute('aria-pressed','true'); bS.classList.remove('active'); bS.setAttribute('aria-pressed','false'); applyPlatform('woo'); });
+
+  /* SCROLL REVEAL */
+  if (!reduced) {
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) { if (e.isIntersecting) { e.target.classList.add('vis'); obs.unobserve(e.target); } });
+    }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
+    document.querySelectorAll('.sr').forEach(function(el) { obs.observe(el); });
+  } else {
+    document.querySelectorAll('.sr').forEach(function(el) { el.classList.add('vis'); });
+  }
+
+  /* SMOOTH SCROLL */
+  document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+    a.addEventListener('click', function(e) {
+      var target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        var top = target.getBoundingClientRect().top + window.scrollY - 72;
+        window.scrollTo({ top: top, behavior: reduced ? 'auto' : 'smooth' });
+      }
+    });
+  });
+
+  /* ============================================================
+     I18N DICTIONARY
+  ============================================================ */
+  var I18N = {
+    en: {
+      'meta.desc': 'EMRG is a founder-led ecommerce performance studio. We design the brand, build the store, and engineer the growth system for DTC product brands.',
+      'og.desc': 'We design the brand. We build the store. We engineer the growth system.',
+      'nav.services': 'Services',
+      'nav.work': 'Work',
+      'nav.process': 'Process',
+      'nav.packages': 'Packages',
+      'nav.faq': 'FAQ',
+      'nav.contact': 'Contact',
+      'nav.cta': 'Book a Call',
+      'hero.eyebrow': 'Ecommerce Performance Studio',
+      'hero.h1': 'We design the brand.<br>We build the store.<br>We <em>engineer</em> the growth system.',
+      'hero.cta.primary': 'Book a 15-min Call',
+      'hero.cta.secondary': 'View Work',
+      'hero.stat.eyebrow': 'Average launch timeline',
+      'hero.stat.sub': 'Days from brief to live store',
+      'hero.chip1': '7-Day Launch',
+      'hero.chip2': 'CRO-First Execution',
+      'hero.chip3': 'Built for Scale',
+      'hero.chip4': 'DTC Specialists',
+      'trust.s1': 'Ecommerce builds delivered',
+      'trust.s2': 'Day average launch',
+      'trust.s3': 'Average CVR improvement',
+      'trust.s4': 'Conversion-focused by default',
+      'trust.disclaimer': 'Results vary by business, product, and market conditions.',
+      'pillars.label': 'What We Do',
+      'pillars.h2': 'Three pillars.<br><em>One cohesive system.</em>',
+      'pillars.sub': 'Every engagement covers what actually moves the needle. Brand, store, and growth infrastructure — executed as one integrated system.',
+      'pillars.p1.index': '01 — Brand',
+      'pillars.p1.name': 'Brand &amp;<br>Packaging',
+      'pillars.p1.tagline': 'Identity that earns attention before a single word is read.',
+      'pillars.p1.i1': 'Brand identity systems',
+      'pillars.p1.i2': 'Packaging design',
+      'pillars.p1.i3': 'Product storytelling',
+      'pillars.p1.i4': 'Visual guidelines',
+      'pillars.p2.index': '02 — Store',
+      'pillars.p2.name': 'Ecommerce<br>Engineering',
+      'pillars.p2.tagline': 'Stores built to convert — not just to exist.',
+      'pillars.p2.i1': 'Shopify &amp; WooCommerce builds',
+      'pillars.p2.i2': 'High-converting PDP systems',
+      'pillars.p2.i3': 'Pixel &amp; analytics setup',
+      'pillars.p2.i4': 'Performance &amp; SEO foundation',
+      'pillars.p3.index': '03 — Growth',
+      'pillars.p3.name': 'Growth<br>Systems',
+      'pillars.p3.tagline': 'The infrastructure that compounds revenue over time.',
+      'pillars.p3.i1': 'Email &amp; SMS flows',
+      'pillars.p3.i2': 'Post-purchase optimization',
+      'pillars.p3.i3': 'Loyalty &amp; referral systems',
+      'pillars.p3.i4': 'Affiliate infrastructure',
+      'pillars.p3.i5': 'CRO sprints',
+      'pillars.cta': 'Start a project →',
+      'work.label': 'Featured Work',
+      'work.h2': 'Outcomes,<br><em>not outputs.</em>',
+      'work.viewall': 'View all work',
+      'work.c1.type': 'Skincare DTC · Shopify',
+      'work.c1.summary': 'Entering a saturated skincare market with no digital presence. Needed a brand and store capable of converting cold traffic from day one.',
+      'work.c2.type': 'Nutrition DTC · WooCommerce',
+      'work.c2.summary': 'Existing store suffering from slow load times, poor mobile UX, and no post-purchase retention system in place.',
+      'work.c3.type': 'Apparel DTC · Shopify',
+      'work.c3.summary': 'Apparel brand pivoting from wholesale to DTC. Needed a flagship store and full brand system built for conversion from day one.',
+      'work.stat.cvr': 'CVR vs industry avg',
+      'work.stat.days': 'days',
+      'work.stat.launch': 'Launch timeline',
+      'work.stat.aov': 'AOV lift',
+      'work.stat.load': 'Page load time',
+      'work.stat.repeat': 'Repeat purchase rate',
+      'work.stat.cvrimprove': 'CVR improvement',
+      'work.stat.fullaunch': 'Full launch',
+      'work.stat.roas': 'ROAS month 1',
+      'work.readcase': 'Read Case',
+      'process.label': 'Process',
+      'process.h2': 'Zero to live.<br><em>Days, not months.</em>',
+      'process.sub': 'A focused four-step process built around speed, quality, and results. Every decision made with conversion logic at its core.',
+      'process.s1.title': 'Audit &amp; Strategy',
+      'process.s1.desc': 'We assess your brand, market, competitors, and conversion opportunities. Clear direction before a single pixel is designed.',
+      'process.s2.title': 'Brand &amp; UX Direction',
+      'process.s2.desc': 'Identity, visual language, and store architecture defined. Every decision made with conversion logic at its core.',
+      'process.s3.title': 'Build &amp; Integration',
+      'process.s3.desc': 'Store built, pixels fired, flows configured, SEO foundation laid. Everything tested before it touches a customer.',
+      'process.s4.title': 'Launch &amp; Optimize',
+      'process.s4.desc': 'Go live with confidence. We monitor, iterate, and optimize based on real data — not assumptions.',
+      'packages.label': 'Packages',
+      'packages.h2': 'Productized.<br><em>Predictable.</em> Proven.',
+      'packages.sub': "Scoped packages so you know exactly what you're getting — and what it costs.",
+      'packages.badge': 'Most Popular',
+      'packages.p1.name': 'Launch Sprint',
+      'packages.p1.for': "For brands launching their first DTC store. Everything you need, nothing you don't.",
+      'packages.p2.name': 'Growth Sprint',
+      'packages.p2.for': 'For brands ready to turn their store into a revenue machine. Full-stack execution.',
+      'packages.p3.name': 'Ongoing Growth Partner',
+      'packages.p3.for': 'For brands post-launch that want senior-level execution on a consistent basis.',
+      'packages.p3.timeline': 'Ongoing — minimum 3 months',
+      'packages.p3.f1': 'Monthly CRO sprints',
+      'packages.p3.f2': 'Email &amp; SMS optimization',
+      'packages.p3.f3': 'Growth reporting &amp; analytics',
+      'packages.p3.f4': 'Store updates &amp; new landing pages',
+      'packages.p3.f5': 'Affiliate &amp; referral management',
+      'packages.p3.f6': 'Priority response &amp; support',
+      'packages.p3.f7': 'Quarterly strategy reviews',
+      'packages.cta': 'Book a Call',
+      'testi.label': 'What Founders Say',
+      'testi.h2': 'Trusted by<br><em>builders.</em>',
+      'testi.t1.q': 'We went from idea to live Shopify store in 6 days. The build quality and attention to conversion detail was unlike anything I had seen. Our first week of traffic converted at nearly 4%.',
+      'testi.t1.role': 'Founder, Solera Skincare',
+      'testi.t2.q': 'They rebuilt our entire WooCommerce store and set up our email flows in under two weeks. Page speed improved dramatically. Our repeat purchase rate climbed month over month.',
+      'testi.t2.role': 'Head of Marketing, Varka Nutrition',
+      'testi.t3.q': "EMRG doesn't feel like an agency. They work like a senior partner who actually cares about what happens after launch. The growth system they set up is still paying dividends six months later.",
+      'testi.t3.role': 'Founder, Dune Apparel',
+      'testi.t4.q': 'We came with just a product and a rough concept. EMRG took it from there — packaging, identity, store, tracking, flows. Six days later we were live and profitable by week three.',
+      'testi.t4.role': 'Founder, Lumos Wellness',
+      'faq.label': 'FAQ',
+      'faq.h2': 'Good questions deserve<br><em>straight answers.</em>',
+      'faq.contact': 'Still have something else?<br><a href="mailto:hello@emrg.studio" style="color:var(--accent);border-bottom:1px solid var(--accent);padding-bottom:1px;">hello@emrg.studio</a>',
+      'faq.q1': 'Can you really launch in 7 days?',
+      'faq.a1': 'Yes. Our Launch Sprint is scoped specifically for a 5–7 day delivery cycle. This is possible because we have a proven process, defined scope, and we need your brand assets and product information ready at kickoff. Larger or more complex builds take longer — we are always transparent about timelines upfront.',
+      'faq.q2': 'What do you need from us to get started?',
+      'faq.a2': 'For a store build: product information, existing brand assets (if any), copy, and Shopify or WooCommerce access. For brand work: a clear brief on your product, audience, and market positioning. We guide you through exactly what we need in our onboarding process.',
+      'faq.q3': 'Do you handle packaging design?',
+      'faq.a3': "Yes. Brand identity and packaging design are part of our Growth Sprint package and available as standalone engagements. We design for production-readiness — files delivered print-ready and spec'd for your manufacturer.",
+      'faq.q4': 'Do you support existing stores?',
+      'faq.a4': "Absolutely. We work with established brands on CRO sprints, store rebuilds, flow optimization, and growth system setup. If you have an existing store that isn't performing, we'll audit it and identify exactly where revenue is being left on the table.",
+      'faq.q5': 'What about SEO?',
+      'faq.a5': 'Every store we build includes SEO foundation — structured data, clean URL architecture, optimized meta tags, image alt text, sitemap, and page speed optimization. Ongoing SEO content strategy is available as part of our Growth Partner retainer.',
+      'faq.q6': 'What happens after launch?',
+      'faq.a6': "Growth Sprint includes 30 days of post-launch support. After that, we offer ongoing Growth Partner retainers for brands that want continued optimization, testing, and execution. We don't disappear after handoff.",
+      'faq.q7': 'Do you manage paid ads?',
+      'faq.a7': "We handle the infrastructure that makes ads perform — pixel setup, tracking, landing pages, PDP optimization, and post-click experience. We don't run ad campaigns directly, but we ensure your store is built to convert the traffic your ads send.",
+      'faq.q8': 'How do revisions work?',
+      'faq.a8': 'All packages include defined revision rounds (2 for Launch Sprint, 3 for Growth Sprint). Revisions are consolidated feedback sessions — we review everything together, make changes, and move forward. Additional rounds can be added if needed.',
+      'cta.eyebrow': 'Ready to build',
+      'cta.h2': 'Ready to build something<br>that <em>converts?</em>',
+      'cta.body': "Tell us where you are. We'll show you where to go. One conversation is all it takes to know if we're the right fit.",
+      'cta.email': 'Email us directly',
+      'cta.note': 'We reply within 24–48 hours.',
+      'footer.tag': 'Founder-led ecommerce performance studio. Brand, store, growth — as one system.',
+      'footer.col.services': 'Services',
+      'footer.col.company': 'Company',
+      'footer.col.follow': 'Follow',
+      'footer.link.brand': 'Brand &amp; Packaging',
+      'footer.link.ecom': 'Ecommerce Builds',
+      'footer.link.growth': 'Growth Systems',
+      'footer.link.cro': 'CRO &amp; Optimization',
+      'footer.copy': '© 2025 EMRG. All rights reserved.',
+      'footer.privacy': 'Privacy',
+      'footer.terms': 'Terms'
+    },
+    es: {
+      'meta.desc': 'EMRG es un estudio de rendimiento ecommerce liderado por fundadores. Diseñamos la marca, construimos la tienda e ingeniamos el sistema de crecimiento para marcas DTC.',
+      'og.desc': 'Diseñamos la marca. Construimos la tienda. Ingeniamos el sistema de crecimiento.',
+      'nav.services': 'Servicios',
+      'nav.work': 'Trabajo',
+      'nav.process': 'Proceso',
+      'nav.packages': 'Paquetes',
+      'nav.faq': 'FAQ',
+      'nav.contact': 'Contacto',
+      'nav.cta': 'Reservar Llamada',
+      'hero.eyebrow': 'Estudio de Rendimiento Ecommerce',
+      'hero.h1': 'Diseñamos la marca.<br>Construimos la tienda.<br>Ingeniamos el sistema de <em>crecimiento.</em>',
+      'hero.cta.primary': 'Reservar 15 min',
+      'hero.cta.secondary': 'Ver Trabajo',
+      'hero.stat.eyebrow': 'Tiempo promedio de lanzamiento',
+      'hero.stat.sub': 'Días desde el brief hasta la tienda en vivo',
+      'hero.chip1': 'Lanzamiento en 7 Días',
+      'hero.chip2': 'Ejecución CRO-First',
+      'hero.chip3': 'Construido para Escalar',
+      'hero.chip4': 'Especialistas DTC',
+      'trust.s1': 'Tiendas ecommerce entregadas',
+      'trust.s2': 'Días promedio de lanzamiento',
+      'trust.s3': 'Mejora promedio de CVR',
+      'trust.s4': 'Enfocado en conversión por defecto',
+      'trust.disclaimer': 'Los resultados varían según el negocio, producto y condiciones del mercado.',
+      'pillars.label': 'Lo Que Hacemos',
+      'pillars.h2': 'Tres pilares.<br><em>Un sistema cohesivo.</em>',
+      'pillars.sub': 'Cada proyecto cubre lo que realmente mueve la aguja. Marca, tienda e infraestructura de crecimiento — ejecutados como un sistema integrado.',
+      'pillars.p1.index': '01 — Marca',
+      'pillars.p1.name': 'Marca y<br>Packaging',
+      'pillars.p1.tagline': 'Identidad que gana atención antes de leer una sola palabra.',
+      'pillars.p1.i1': 'Sistemas de identidad de marca',
+      'pillars.p1.i2': 'Diseño de packaging',
+      'pillars.p1.i3': 'Narrativa de producto',
+      'pillars.p1.i4': 'Lineamientos visuales',
+      'pillars.p2.index': '02 — Tienda',
+      'pillars.p2.name': 'Ingeniería<br>Ecommerce',
+      'pillars.p2.tagline': 'Tiendas construidas para convertir, no solo para existir.',
+      'pillars.p2.i1': 'Builds en Shopify y WooCommerce',
+      'pillars.p2.i2': 'Sistemas PDP de alta conversión',
+      'pillars.p2.i3': 'Configuración de píxeles y analítica',
+      'pillars.p2.i4': 'Rendimiento y base de SEO',
+      'pillars.p3.index': '03 — Crecimiento',
+      'pillars.p3.name': 'Sistemas de<br>Crecimiento',
+      'pillars.p3.tagline': 'La infraestructura que hace crecer los ingresos con el tiempo.',
+      'pillars.p3.i1': 'Flujos de Email y SMS',
+      'pillars.p3.i2': 'Optimización post-compra',
+      'pillars.p3.i3': 'Programas de lealtad y referidos',
+      'pillars.p3.i4': 'Infraestructura de afiliados',
+      'pillars.p3.i5': 'Sprints CRO',
+      'pillars.cta': 'Iniciar proyecto →',
+      'work.label': 'Trabajo Destacado',
+      'work.h2': 'Resultados,<br><em>no entregables.</em>',
+      'work.viewall': 'Ver todo el trabajo',
+      'work.c1.type': 'Skincare DTC · Shopify',
+      'work.c1.summary': 'Entrando a un mercado de skincare saturado sin presencia digital. Necesitaban una marca y tienda capaz de convertir tráfico frío desde el primer día.',
+      'work.c2.type': 'Nutrición DTC · WooCommerce',
+      'work.c2.summary': 'Tienda existente con tiempos de carga lentos, UX móvil deficiente y sin sistema de retención post-compra.',
+      'work.c3.type': 'Ropa DTC · Shopify',
+      'work.c3.summary': 'Marca de ropa pivotando de mayorista a DTC. Necesitaban una tienda insignia y sistema de marca completo construido para conversión.',
+      'work.stat.cvr': 'CVR vs promedio del sector',
+      'work.stat.days': 'días',
+      'work.stat.launch': 'Tiempo de lanzamiento',
+      'work.stat.aov': 'Aumento de AOV',
+      'work.stat.load': 'Tiempo de carga',
+      'work.stat.repeat': 'Tasa de recompra',
+      'work.stat.cvrimprove': 'Mejora de CVR',
+      'work.stat.fullaunch': 'Lanzamiento completo',
+      'work.stat.roas': 'ROAS mes 1',
+      'work.readcase': 'Leer Caso',
+      'process.label': 'Proceso',
+      'process.h2': 'De cero a vivo.<br><em>Días, no meses.</em>',
+      'process.sub': 'Un proceso enfocado de cuatro pasos basado en velocidad, calidad y resultados. Cada decisión tomada con lógica de conversión en el centro.',
+      'process.s1.title': 'Auditoría y Estrategia',
+      'process.s1.desc': 'Evaluamos tu marca, mercado, competidores y oportunidades de conversión. Dirección clara antes de diseñar un solo píxel.',
+      'process.s2.title': 'Dirección de Marca y UX',
+      'process.s2.desc': 'Identidad, lenguaje visual y arquitectura de tienda definidos. Cada decisión tomada con lógica de conversión en el centro.',
+      'process.s3.title': 'Build e Integración',
+      'process.s3.desc': 'Tienda construida, píxeles activados, flujos configurados, base SEO establecida. Todo probado antes de llegar a un cliente.',
+      'process.s4.title': 'Lanzamiento y Optimización',
+      'process.s4.desc': 'Salir al mercado con confianza. Monitoreamos, iteramos y optimizamos basándonos en datos reales, no suposiciones.',
+      'packages.label': 'Paquetes',
+      'packages.h2': 'Definidos.<br><em>Predecibles.</em> Probados.',
+      'packages.sub': 'Paquetes delimitados para que sepas exactamente lo que obtienes y cuánto cuesta.',
+      'packages.badge': 'Más Popular',
+      'packages.p1.name': 'Launch Sprint',
+      'packages.p1.for': 'Para marcas que lanzan su primera tienda DTC. Todo lo que necesitas, nada de lo que no.',
+      'packages.p2.name': 'Growth Sprint',
+      'packages.p2.for': 'Para marcas listas para convertir su tienda en una máquina de ingresos. Ejecución completa.',
+      'packages.p3.name': 'Growth Partner Continuo',
+      'packages.p3.for': 'Para marcas post-lanzamiento que quieren ejecución de nivel senior de forma consistente.',
+      'packages.p3.timeline': 'Continuo — mínimo 3 meses',
+      'packages.p3.f1': 'Sprints CRO mensuales',
+      'packages.p3.f2': 'Optimización de Email y SMS',
+      'packages.p3.f3': 'Reportes de crecimiento y analítica',
+      'packages.p3.f4': 'Actualizaciones de tienda y nuevas landing pages',
+      'packages.p3.f5': 'Gestión de afiliados y referidos',
+      'packages.p3.f6': 'Respuesta prioritaria y soporte',
+      'packages.p3.f7': 'Revisiones estratégicas trimestrales',
+      'packages.cta': 'Reservar Llamada',
+      'testi.label': 'Lo Que Dicen los Fundadores',
+      'testi.h2': 'La confianza de<br>quienes <em>construyen.</em>',
+      'testi.t1.q': 'Pasamos de idea a tienda Shopify en vivo en 6 días. La calidad del build y la atención al detalle de conversión fue diferente a todo lo que había visto. Nuestra primera semana de tráfico convirtió casi al 4%.',
+      'testi.t1.role': 'Fundadora, Solera Skincare',
+      'testi.t2.q': 'Reconstruyeron toda nuestra tienda WooCommerce y configuraron nuestros flujos de email en menos de dos semanas. La velocidad mejoró notablemente. Nuestra tasa de recompra creció mes a mes.',
+      'testi.t2.role': 'Directora de Marketing, Varka Nutrition',
+      'testi.t3.q': 'EMRG no parece una agencia. Trabajan como un socio senior que realmente se preocupa por lo que pasa después del lanzamiento. El sistema de crecimiento que instalaron sigue generando resultados seis meses después.',
+      'testi.t3.role': 'Fundador, Dune Apparel',
+      'testi.t4.q': 'Llegamos solo con un producto y un concepto básico. EMRG se encargó del resto: packaging, identidad, tienda, tracking, flujos. Seis días después estábamos en vivo y siendo rentables en la semana tres.',
+      'testi.t4.role': 'Fundadora, Lumos Wellness',
+      'faq.label': 'FAQ',
+      'faq.h2': 'Las buenas preguntas merecen<br><em>respuestas directas.</em>',
+      'faq.contact': '¿Tienes algo más?<br><a href="mailto:hello@emrg.studio" style="color:var(--accent);border-bottom:1px solid var(--accent);padding-bottom:1px;">hello@emrg.studio</a>',
+      'faq.q1': '¿Realmente pueden lanzar en 7 días?',
+      'faq.a1': 'Sí. Nuestro Launch Sprint está diseñado específicamente para un ciclo de entrega de 5 a 7 días. Esto es posible porque tenemos un proceso probado, alcance definido y necesitamos tus activos de marca e información de producto listos al inicio. Builds más complejos toman más tiempo — siempre somos transparentes con los plazos.',
+      'faq.q2': '¿Qué necesitan de nosotros para comenzar?',
+      'faq.a2': 'Para un build de tienda: información del producto, activos de marca existentes (si los hay), copy y acceso a Shopify o WooCommerce. Para trabajo de marca: un brief claro de tu producto, audiencia y posicionamiento. Te guiamos por exactamente lo que necesitamos en nuestro proceso de onboarding.',
+      'faq.q3': '¿Se encargan del diseño de packaging?',
+      'faq.a3': 'Sí. La identidad de marca y el diseño de packaging son parte de nuestro paquete Growth Sprint y están disponibles como proyectos independientes. Diseñamos con listo para producción como objetivo — archivos entregados listos para imprenta y especificados para tu fabricante.',
+      'faq.q4': '¿Apoyan tiendas existentes?',
+      'faq.a4': 'Absolutamente. Trabajamos con marcas establecidas en sprints CRO, reconstrucciones de tiendas, optimización de flujos y configuración de sistemas de crecimiento. Si tienes una tienda que no está rindiendo, la auditamos e identificamos exactamente dónde se está perdiendo ingresos.',
+      'faq.q5': '¿Qué hay del SEO?',
+      'faq.a5': 'Cada tienda que construimos incluye una base de SEO: datos estructurados, arquitectura limpia de URLs, meta tags optimizados, texto alternativo de imágenes, sitemap y optimización de velocidad de página. La estrategia de contenido SEO continua está disponible en nuestro retainer de Growth Partner.',
+      'faq.q6': '¿Qué pasa después del lanzamiento?',
+      'faq.a6': 'Growth Sprint incluye 30 días de soporte post-lanzamiento. Después de eso, ofrecemos retainers de Growth Partner para marcas que quieran optimización, pruebas y ejecución continuas. No desaparecemos después de la entrega.',
+      'faq.q7': '¿Gestionan anuncios pagados?',
+      'faq.a7': 'Nos encargamos de la infraestructura que hace que los anuncios rindan: configuración de píxeles, tracking, landing pages, optimización de PDP y experiencia post-clic. No gestionamos campañas directamente, pero nos aseguramos de que tu tienda esté construida para convertir el tráfico que generan tus anuncios.',
+      'faq.q8': '¿Cómo funcionan las revisiones?',
+      'faq.a8': 'Todos los paquetes incluyen rondas de revisión definidas (2 para Launch Sprint, 3 para Growth Sprint). Las revisiones son sesiones de feedback consolidadas: revisamos todo juntos, hacemos cambios y avanzamos. Se pueden añadir rondas adicionales si es necesario.',
+      'cta.eyebrow': 'Listo para construir',
+      'cta.h2': '¿Listo para construir algo<br>que <em>convierte?</em>',
+      'cta.body': 'Dinos dónde estás. Te mostraremos hacia dónde ir. Una conversación es todo lo que se necesita para saber si encajamos.',
+      'cta.email': 'Escríbenos directamente',
+      'cta.note': 'Respondemos en 24–48 horas.',
+      'footer.tag': 'Estudio de rendimiento ecommerce liderado por fundadores. Marca, tienda, crecimiento — como un sistema.',
+      'footer.col.services': 'Servicios',
+      'footer.col.company': 'Empresa',
+      'footer.col.follow': 'Síguenos',
+      'footer.link.brand': 'Marca y Packaging',
+      'footer.link.ecom': 'Tiendas Ecommerce',
+      'footer.link.growth': 'Sistemas de Crecimiento',
+      'footer.link.cro': 'CRO y Optimización',
+      'footer.copy': '© 2025 EMRG. Todos los derechos reservados.',
+      'footer.privacy': 'Privacidad',
+      'footer.terms': 'Términos'
+    }
+  };
+
+  /* ============================================================
+     I18N ENGINE
+  ============================================================ */
+  function applyLang(lang) {
+    var dict = I18N[lang];
+    if (!dict) return;
+
+    /* html lang */
+    document.documentElement.lang = lang;
+
+    /* meta tags */
+    var md = document.getElementById('meta-desc');
+    if (md) md.setAttribute('content', dict['meta.desc']);
+    var og = document.getElementById('og-desc');
+    if (og) og.setAttribute('content', dict['og.desc']);
+
+    /* textContent nodes */
+    var textNodes = document.querySelectorAll('[data-i18n]');
+    textNodes.forEach(function(el) {
+      var key = el.getAttribute('data-i18n');
+      var val = dict[key];
+      if (val === undefined) return;
+      el.textContent = val;
+    });
+
+    /* innerHTML nodes (contain <br>, <em>, <a>) */
+    var htmlNodes = document.querySelectorAll('[data-i18n-html]');
+    htmlNodes.forEach(function(el) {
+      var key = el.getAttribute('data-i18n-html');
+      var val = dict[key];
+      if (val === undefined) return;
+      el.innerHTML = val;
+    });
+
+    /* sync platform toggle lists in new language */
+    applyPlatform(currentPlatform);
+
+    /* update lang toggle button states — desktop */
+    var btnEn = document.getElementById('lang-en');
+    var btnEs = document.getElementById('lang-es');
+    var btnEnM = document.getElementById('lang-en-mob');
+    var btnEsM = document.getElementById('lang-es-mob');
+    var isEs = lang === 'es';
+    if (btnEn) { btnEn.classList.toggle('active', !isEs); btnEn.setAttribute('aria-pressed', String(!isEs)); }
+    if (btnEs) { btnEs.classList.toggle('active', isEs); btnEs.setAttribute('aria-pressed', String(isEs)); }
+    if (btnEnM) { btnEnM.classList.toggle('active', !isEs); btnEnM.setAttribute('aria-pressed', String(!isEs)); }
+    if (btnEsM) { btnEsM.classList.toggle('active', isEs); btnEsM.setAttribute('aria-pressed', String(isEs)); }
+  }
+
+  function detectLang() {
+    var stored = null;
+    try { stored = localStorage.getItem('emrg_lang'); } catch(e) {}
+    if (stored === 'en' || stored === 'es') return stored;
+    var browser = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+    return browser.indexOf('es') === 0 ? 'es' : 'en';
+  }
+
+  function switchLang(lang) {
+    try { localStorage.setItem('emrg_lang', lang); } catch(e) {}
+    applyLang(lang);
+  }
+
+  /* wire toggle buttons */
+  var lEn = document.getElementById('lang-en');
+  var lEs = document.getElementById('lang-es');
+  var lEnM = document.getElementById('lang-en-mob');
+  var lEsM = document.getElementById('lang-es-mob');
+  if (lEn) lEn.addEventListener('click', function() { switchLang('en'); });
+  if (lEs) lEs.addEventListener('click', function() { switchLang('es'); });
+  if (lEnM) lEnM.addEventListener('click', function() { switchLang('en'); });
+  if (lEsM) lEsM.addEventListener('click', function() { switchLang('es'); });
+
+  /* init */
+  applyLang(detectLang());
+
+})();
+</script>
+</body>
+</html>

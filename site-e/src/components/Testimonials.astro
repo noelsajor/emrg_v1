@@ -1,0 +1,35 @@
+---
+---
+<section id="testimonials" aria-labelledby="testimonials-h">
+  <div class="testi-wrap">
+    <div class="sr">
+      <div class="section-rule">
+        <div class="section-rule-label" data-i18n="testi.rule">Proof</div>
+        <div class="section-rule-line"></div>
+        <div class="section-rule-num">4 Global Partners</div>
+      </div>
+      <h2 class="display" id="testimonials-h" data-i18n-html="testi.title">Results that <em>speak</em>.</h2>
+    </div>
+
+    <div class="testi-grid">
+      {[
+        { initial: 'AJ', by: 'Alex Johnson', role: 'CEO, Zencaster', q: 'The level of technical precision EMRG brings to the table is unmatched. Our site speed increased by 3x overnight.' },
+        { initial: 'MK', by: 'Maria K.', role: 'Head of Growth, Lumos', q: 'Working with EMRG felt like adding a whole engineering department to our team. Highly strategic and transparent.' },
+        { initial: 'DR', by: 'David Ross', role: 'Founder, Nomade', q: 'They didn’t just build a store; they built a brand that resonates. Our conversion rates have never been higher.' },
+        { initial: 'SL', by: 'Sarah Lee', role: 'Director of Ops, Vital', q: 'Seamless integration with our ERP and a flawless mobile experience. EMRG is our go-to for all things commerce.' }
+      ].map((item, idx) => (
+        <div class={`testi sr sr-d${idx + 1}`}>
+          <span class="testi-mark">“</span>
+          <p class="testi-q" data-i18n={`testi.q${idx + 1}`}>{item.q}</p>
+          <div class="testi-foot">
+            <div class="testi-initials">{item.initial}</div>
+            <div>
+              <div class="testi-by" data-i18n={`testi.by${idx + 1}`}>{item.by}</div>
+              <div class="testi-role" data-i18n={`testi.role${idx + 1}`}>{item.role}</div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

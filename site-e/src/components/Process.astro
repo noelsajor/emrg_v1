@@ -1,0 +1,33 @@
+---
+---
+<section id="process" aria-labelledby="process-h">
+  <div class="process-wrap">
+    <div class="process-header sr">
+      <div>
+        <div class="section-rule">
+          <div class="section-rule-label" data-i18n="process.rule">Our Process</div>
+          <div class="section-rule-line"></div>
+          <div class="section-rule-num">3 Phases</div>
+        </div>
+        <h2 class="display" id="process-h" data-i18n-html="process.title">The <em>EMRG</em> methodology.</h2>
+      </div>
+      <p class="pillars-sub" style="margin:0" data-i18n="process.desc">We follow a rigorous three-phase system designed to eliminate technical debt and maximize revenue potential from day one.</p>
+    </div>
+
+    <div class="process-list sr sr-d1">
+      {[
+        { num: '01', title: 'Audit & Strategy', desc: 'We take a deep dive into your current metrics, infrastructure, and user behavior to identify growth bottlenecks.' },
+        { num: '02', title: 'Design & Engineering', desc: 'Our team builds high-performance storefronts and visual identities that resonate with your target audience.' },
+        { num: '03', title: 'Optimization & Growth', desc: 'We continuously test, iterate, and refine every touchpoint to ensure maximum conversion and LTV.' }
+      ].map(item => (
+        <div class="process-item">
+          <div class="process-num">{item.num}</div>
+          <div>
+            <h3 class="process-title" data-i18n={`process.p${parseInt(item.num)}.title`}>{item.title}</h3>
+            <p class="process-desc" data-i18n={`process.p${parseInt(item.num)}.desc`}>{item.desc}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

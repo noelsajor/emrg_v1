@@ -7,14 +7,17 @@
     "dev:site-b": "npm run dev --prefix site-b",
     "dev:site-c": "npm run dev --prefix site-c",
     "dev:site-d": "npm run dev --prefix site-d",
+    "dev:site-e": "npm run dev --prefix site-e",
     "build:site-a": "npm run build --prefix site-a",
     "build:site-b": "npm run build --prefix site-b",
     "build:site-c": "npm run build --prefix site-c",
     "build:site-d": "npm run build --prefix site-d",
+    "build:site-e": "npm run build --prefix site-e",
     "preview:site-a": "npm run preview --prefix site-a",
     "preview:site-b": "npm run preview --prefix site-b",
     "preview:site-c": "npm run preview --prefix site-c",
     "preview:site-d": "npm run preview --prefix site-d",
+    "preview:site-e": "npm run preview --prefix site-e",
     "dev": "npm run dev:site-a"
   }
 }

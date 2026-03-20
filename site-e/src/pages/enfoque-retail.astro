@@ -1,0 +1,325 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout title="Enfoque Retail y Mayoristas | EMRG" description="Gestión integral de marketing digital para negocios que venden en grande. Infraestructura e-commerce y SEO de alto rendimiento.">
+  <Nav />
+  <main id="retail-focus">
+    
+    <!-- Hero Section: Matching Site B Hero structure -->
+    <section id="hero" aria-labelledby="hero-h1">
+      <div class="hero-main">
+        <div class="hero-left sr">
+          <div>
+            <div class="hero-eyebrow">Retail & Distribution</div>
+            <h1 id="hero-h1">Vender en <em>Grande.</em></h1>
+            <div class="hero-cta-group">
+              <a href="#formulario" class="btn-ink">
+                <span>Escalar Ventas</span>
+                <span class="arrow">→</span>
+              </a>
+              <a href="#servicios" class="btn-bare">
+                <span>Ver Capacidades</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="hero-right sr sr-d1">
+          <img src="/images/hero-retail.png" alt="Retail Growth" class="hero-img-b" />
+          <div class="hero-deco">01</div>
+          <div class="hero-stat-block">
+            <div class="hero-stat-eyebrow">Objetivo</div>
+            <div class="hero-stat-num">Ventas</div>
+            <div class="hero-stat-sub">A gran escala</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-chips-row sr sr-d2">
+        <div class="hero-chip"><span>E-commerce</span></div>
+        <div class="hero-chip"><span>SEO de Catálogo</span></div>
+        <div class="hero-chip"><span>Infraestructura Escalable</span></div>
+      </div>
+    </section>
+
+    <!-- Problem Section: Matching Site B Pillars header style -->
+    <section id="problema">
+      <div class="pillars-header sr">
+        <div class="section-rule">
+          <div class="section-rule-label">El Enfoque</div>
+          <div class="section-rule-line"></div>
+          <div class="section-rule-num">Resultados Tangibles</div>
+        </div>
+        <h2 class="display">Convertimos catálogos masivos en <em>máquinas de ventas.</em></h2>
+        <p class="pillars-sub">
+          Nuestra metodología se basa en datos, automatización y una ejecución impecable que prioriza el ROI. 
+          Si vendes en volumen, necesitas infraestructura digital que trabaje a tu ritmo.
+        </p>
+      </div>
+      
+      <div class="pillars-grid sr sr-d1">
+        <div class="pillar-col">
+          <div class="pillar-index">01</div>
+          <h3 class="pillar-name">Growth Rate</h3>
+          <p class="pillar-tagline">Escalamos tu tráfico cualificado con estrategias SEO de alto rendimiento para catálogos extensos.</p>
+        </div>
+        <div class="pillar-col">
+          <div class="pillar-index">02</div>
+          <h3 class="pillar-name">Conversion Lift</h3>
+          <p class="pillar-tagline">Optimizamos cada punto de contacto para maximizar las conversiones y el valor del carrito promedio.</p>
+        </div>
+        <div class="pillar-col">
+          <div class="pillar-index">03</div>
+          <h3 class="pillar-name">Retención</h3>
+          <p class="pillar-tagline">Sistemas automatizados de email marketing que recuperan carritos y fidelizan compradores recurrentes.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section: Using Pillars Grid style -->
+    <section id="servicios">
+      <div class="pillars-header sr">
+        <div class="section-rule">
+          <div class="section-rule-label">Servicios Clave</div>
+          <div class="section-rule-line"></div>
+          <div class="section-rule-num">Nuestras Capacidades</div>
+        </div>
+        <h2 class="display">Estrategias que <em>Convierten.</em></h2>
+      </div>
+
+      <div class="pillars-grid sr sr-d1">
+        <div class="pillar-col">
+          <div class="pillar-index">01</div>
+          <h3 class="pillar-name">E-commerce de Rendimiento</h3>
+          <p class="pillar-tagline">Tiendas online rápidas y robustas, diseñadas para catálogos con miles de SKUs.</p>
+          <div class="pillar-items">
+            {['Shopify / WooCommerce', 'Catálogos Masivos', 'Checkout Optimizado', 'Velocidad de Carga'].map(item => (
+              <div class="pillar-item">
+                <span>{item}</span>
+                <span class="pillar-arrow">→</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div class="pillar-col">
+          <div class="pillar-index">02</div>
+          <h3 class="pillar-name">Email Marketing Automático</h3>
+          <p class="pillar-tagline">Sistemas de recuperación de carritos abandonados y promociones dinámicas por catálogo.</p>
+          <div class="pillar-items">
+            {['Carritos Abandonados', 'Promociones Dinámicas', 'Segmentación CRM', 'Flujos Automatizados'].map(item => (
+              <div class="pillar-item">
+                <span>{item}</span>
+                <span class="pillar-arrow">→</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div class="pillar-col">
+          <div class="pillar-index">03</div>
+          <h3 class="pillar-name">SEO de Producto</h3>
+          <p class="pillar-tagline">Posicionamiento orgánico de categorías estrella y productos con alta demanda específica.</p>
+          <div class="pillar-items">
+            {['Keywords de Producto', 'Fichas Optimizadas', 'Categorías SEO', 'Contenido Comercial'].map(item => (
+              <div class="pillar-item">
+                <span>{item}</span>
+                <span class="pillar-arrow">→</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Authority Block -->
+    <section id="autoridad">
+      <div class="authority-banner-b sr">
+        <div class="container-b">
+           <h2 class="display-sm">Infraestructura digital para <em>vender en volumen</em>.</h2>
+           <p class="mono-b">Gestión de redes sociales enfocada 100% en catálogo y conversión comercial.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Form: Matching Site B CTA structure (Dark variant) -->
+    <section id="formulario">
+      <div class="cta-grid b-form-grid">
+        <div class="cta-left sr">
+          <div class="cta-eyebrow">Diagnóstico Retail</div>
+          <h2 class="cta-title">Hablemos de <em>Escalar tu Negocio.</em></h2>
+          <p class="cta-body-text">Hablemos de cómo escalar tus ventas este mismo mes con una infraestructura digital profesional y un catálogo optimizado.</p>
+        </div>
+        <div class="cta-right sr sr-d1">
+          <form class="retail-contact-form-b" id="retail-form">
+            <div class="form-row-b">
+              <input type="text" placeholder="TU NOMBRE" required />
+            </div>
+            <div class="form-row-b">
+              <input type="text" placeholder="RETAILER / EMPRESA" required />
+            </div>
+            <div class="form-row-b">
+              <input type="text" placeholder="NÚMERO DE PRODUCTOS" required />
+            </div>
+            <div class="form-row-b">
+              <input type="email" placeholder="EMAIL CORPORATIVO" required />
+            </div>
+            <div class="form-row-b">
+              <input type="tel" placeholder="WHATSAPP DE CONTACTO" required />
+            </div>
+            <button class="btn-ink btn-full" type="submit">
+              <span>Iniciar Conversación</span>
+              <span class="arrow">→</span>
+            </button>
+            <p class="form-success-b" style="display:none; margin-top:1rem; color:var(--accent); font-weight:500;">¡Recibido! Analizaremos tu catálogo para nuestra primera reunión.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+  /* Base Overrides and Local Styles for Site B Architectural Match */
+  #retail-focus {
+    background: var(--paper);
+  }
+
+  .hero-img-b {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.9;
+    will-change: transform;
+    transition: transform 0.1s linear;
+  }
+
+  .display-sm {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 4vw, 3rem);
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 24px;
+  }
+  
+  .display-sm em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .authority-banner-b {
+    padding: 100px var(--pad);
+    background: var(--paper-2);
+    border-top: 1px solid var(--border-strong);
+    border-bottom: 1px solid var(--border-strong);
+    text-align: center;
+  }
+
+  .mono-b {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+
+  /* Form Styles (Site B Match) */
+  #formulario {
+    background: var(--ink);
+  }
+
+  .b-form-grid {
+    border-top: 1px solid var(--border-strong);
+    margin: 0 auto;
+    max-width: var(--max);
+    padding: 100px var(--pad);
+  }
+
+  .form-row-b {
+    margin-bottom: 12px;
+  }
+
+  .retail-contact-form-b input, 
+  .retail-contact-form-b select {
+    width: 100%;
+    padding: 18px;
+    background: rgba(245, 240, 232, 0.05);
+    border: 1px solid rgba(245, 240, 232, 0.15);
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--paper);
+    transition: all 0.3s;
+  }
+
+  .retail-contact-form-b input:focus, 
+  .retail-contact-form-b select:focus {
+    outline: none;
+    background: rgba(245, 240, 232, 0.1);
+    border-color: var(--accent);
+  }
+
+  .btn-full {
+    width: 100%;
+    margin-top: 24px;
+    justify-content: center;
+  }
+
+  @media (max-width: 1100px) {
+    .hero-main {
+      grid-template-columns: 1fr;
+    }
+    .hero-right {
+      display: none;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .b-form-grid {
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }
+  }
+</style>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Form
+    const f = document.getElementById('retail-form');
+    if (f) {
+      f.addEventListener('submit', (e) => {
+        e.preventDefault();
+        f.reset();
+        const s = document.querySelector('.form-success-b');
+        if (s) s.style.display = 'block';
+      });
+    }
+
+    // Intersection Observer for animations
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('vis');
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.sr').forEach(el => obs.observe(el));
+
+    // Subtle Parallax for Hero Image
+    const heroImg = document.querySelector('.hero-img-b');
+    if (heroImg) {
+      window.addEventListener('scroll', () => {
+        const scroll = window.pageYOffset;
+        heroImg.style.transform = `translateY(${scroll * 0.15}px) scale(1.1)`;
+      });
+    }
+  });
+</script>
