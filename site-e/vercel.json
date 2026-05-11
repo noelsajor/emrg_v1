@@ -2,6 +2,5 @@
   "github": {
     "silent": true
   },
-  "buildCommand": "pnpm run build",
-  "ignoreCommand": "git diff --quiet HEAD^ HEAD . ../studio"
+  "buildCommand": "pnpm run build"
 }
