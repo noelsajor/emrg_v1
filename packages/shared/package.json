@@ -1,0 +1,25 @@
+{
+  "name": "@emrg/shared",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "exports": {
+    ".": "./src/index.ts",
+    "./components/*.astro": "./src/components/*.astro",
+    "./sanity/*": "./src/sanity/*.ts",
+    "./seo": "./src/seo/index.ts",
+    "./utils/*": "./src/utils/*.ts",
+    "./types": "./src/types/index.ts",
+    "./assets/*": "./src/assets/*"
+  },
+  "dependencies": {
+    "@sanity/client": "^6.29.1",
+    "@sanity/image-url": "^2.0.3",
+    "astro": "^5.17.0",
+    "groq": "^3.28.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "vitest": "^3.0.0"
+  }
+}

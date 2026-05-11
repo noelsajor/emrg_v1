@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Nav from '../components/Nav.astro';
-import Footer from '../components/Footer.astro';
+import Nav from '@emrg/shared/components/Nav.astro';
+import Footer from '@emrg/shared/components/Footer.astro';
 ---
 
 <BaseLayout title="Enfoque en Salud | EMRG" description="SEO y crecimiento digital especializado en salud. Ayudamos a clínicas y médicos a atraer más pacientes.">
@@ -28,7 +28,7 @@ import Footer from '../components/Footer.astro';
         </div>
         
         <div class="hero-right sr sr-d1">
-          <img src="/images/hero-medical.png" alt="Consultorio moderno" class="hero-img-b" />
+          <img src="/images/hero-medical.png" alt="Consultorio moderno" class="hero-img-b" width={640} height={640} loading="eager" decoding="async" />
           <div class="hero-deco">01</div>
           <div class="hero-stat-block">
             <div class="hero-stat-eyebrow">Objetivo Principal</div>

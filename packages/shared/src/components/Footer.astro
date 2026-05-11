@@ -1,0 +1,92 @@
+---
+import type { SiteSettings } from '../types';
+import { getSiteSettings } from '../sanity/queries';
+import { getClient } from '../sanity/client';
+
+export interface Props {
+  settings?: SiteSettings;
+}
+
+const settings = Astro.props.settings ?? await getSiteSettings(getClient());
+
+const columns = settings.footerColumns.length > 0 ? settings.footerColumns : null;
+const socials = settings.socialLinks.length > 0 ? settings.socialLinks : null;
+const contactEmail = settings.contactEmail || 'hello@emrg.studio';
+const footerText = settings.footerText || 'Engineering high-performance commerce engines for founder-led brands.';
+const copyrightText = (settings.copyright || `© ${new Date().getFullYear()} EMRG Performance Studio.`).replace('{year}', String(new Date().getFullYear()));
+---
+
+<footer role="contentinfo">
+  <div class="footer-wrap">
+    <div class="footer-top">
+      <div class="footer-col">
+        <a href="#hero" class="footer-logo">
+          <img src="/images/emrg-logo.png" alt="EMRG Logo" class="logo-img" width={300} height={61} loading="lazy" decoding="async" />
+        </a>
+        <p class="footer-tag" data-i18n="footer.tag">{footerText}</p>
+        <a href={`mailto:${contactEmail}`} class="footer-mail">{contactEmail}</a>
+      </div>
+
+      {columns
+        ? columns.map(col => (
+            <div class="footer-col">
+              <div class="footer-col-label">{col.title}</div>
+              <div class="footer-nav">
+                {col.links.map(link => (
+                  <a href={link.href} data-i18n={link.dataI18n || undefined}>{link.title}</a>
+                ))}
+              </div>
+            </div>
+          ))
+        : (
+            <>
+              <div class="footer-col">
+                <div class="footer-col-label" data-i18n="footer.l1">Navigation</div>
+                <div class="footer-nav">
+                  <a href="#pillars" data-i18n="nav.services">Services</a>
+                  <a href="#work" data-i18n="nav.work">Work</a>
+                  <a href="#process" data-i18n="nav.process">Process</a>
+                  <a href="#packages" data-i18n="nav.pricing">Pricing</a>
+                </div>
+              </div>
+
+              <div class="footer-col">
+                <div class="footer-col-label" data-i18n="footer.l2">Resources</div>
+                <div class="footer-nav">
+                  <a href="/blog">Blog</a>
+                  <a href="#faq" data-i18n="nav.faq">FAQ</a>
+                  <a href="https://emrg.sh" target="_blank">emrg.sh</a>
+                </div>
+              </div>
+
+              <div class="footer-col">
+                <div class="footer-col-label" data-i18n="footer.l3">Connect</div>
+                <div class="footer-socials">
+                  {socials
+                    ? socials.map(s => (
+                        <a href={s.url} class="footer-social-link">{s.label || s.platform}</a>
+                      ))
+                    : (
+                        <>
+                          <a href="#" class="footer-social-link">LinkedIn</a>
+                          <a href="#" class="footer-social-link">Twitter / X</a>
+                          <a href="#" class="footer-social-link">Instagram</a>
+                        </>
+                      )
+                  }
+                </div>
+              </div>
+            </>
+          )
+      }
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-copy" set:html={copyrightText + ' <span data-i18n="footer.rights">All rights reserved.</span>'}></div>
+      <div class="footer-legal">
+        <a href="#" data-i18n="footer.privacy">Privacy Policy</a>
+        <a href="#" data-i18n="footer.terms">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>

@@ -1,13 +1,19 @@
-export function buildOrganizationJsonLd() {
+import type { SiteSettings } from '@emrg/shared';
+
+export function buildOrganizationJsonLd(settings?: SiteSettings) {
+    const name = settings?.siteName || "EMRG";
+    const logo = settings?.logo || "https://emrg.studio/logo.png";
+    const email = settings?.contactEmail || "hello@emrg.studio";
+
     return JSON.stringify({
         "@context": "https://schema.org",
         "@type": "Organization",
-        "name": "EMRG",
+        "name": name,
         "url": "https://emrg.studio",
-        "logo": "https://emrg.studio/logo.png",
+        "logo": logo,
         "contactPoint": {
             "@type": "ContactPoint",
-            "email": "hello@emrg.studio",
+            "email": email,
             "contactType": "customer service"
         }
     });

@@ -1,8 +1,10 @@
 import rss from '@astrojs/rss';
-import { getAllPosts } from '../lib/sanity.queries';
+import { getClient } from '@emrg/shared/sanity/client';
+import { getPosts } from '@emrg/shared/sanity/queries';
 
 export async function GET(context) {
-    const posts = await getAllPosts();
+    const client = getClient();
+    const posts = await getPosts(client);
     return rss({
         title: 'EMRG — Ecommerce Performance Journal',
         description: 'Insights, strategies, and technical guides for scaling DTC commerce engines.',

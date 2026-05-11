@@ -1,75 +1,73 @@
 ---
 ---
-<section id="packages" aria-labelledby="packages-heading">
+
+<section id="packages" class="py-section bg-bg-2" aria-labelledby="packages-heading">
   <div class="container">
-    <div class="packages-header">
-      <div class="section-label" data-i18n="packages.label">Packages</div>
-      <h2 class="section-title" id="packages-heading" data-i18n="packages.title">Productized. Predictable. Proven.</h2>
-      <p class="section-sub" data-i18n="packages.sub">Scoped packages so you know exactly what you're getting — and what it costs.</p>
+    <div class="mb-12">
+      <div class="inline-flex items-center gap-2.5 text-[0.72rem] font-bold tracking-[0.14em] uppercase text-accent mb-5 before:w-5 before:h-px before:bg-accent" data-i18n="packages.label">Packages</div>
+      <h2 class="section-title text-white text-[clamp(1.8rem,3.5vw,2.8rem)] font-extrabold tracking-tight leading-tight mb-4" id="packages-heading" data-i18n="packages.title">Productized. Predictable. Proven.</h2>
+      <p class="text-base text-gray-2 max-w-[520px] leading-relaxed" data-i18n="packages.sub">Scoped packages so you know exactly what you're getting — and what it costs.</p>
     </div>
 
-    <div class="platform-toggle" role="group" aria-label="Select platform">
-      <button class="toggle-btn active" id="btn-shopify" aria-pressed="true">Shopify</button>
-      <button class="toggle-btn" id="btn-woo" aria-pressed="false">WooCommerce</button>
+    <div class="inline-flex items-center bg-bg-card border border-border rounded-full p-1 mb-14 gap-1" role="group" aria-label="Select platform">
+      <button class="toggle-btn px-5 py-2 rounded-full text-sm font-semibold border-none bg-transparent text-gray-2 transition-all duration-300 tracking-wide active:bg-accent active:text-white active:shadow-[0_0_20px_rgba(139,92,246,0.3)]" id="btn-shopify" aria-pressed="true">Shopify</button>
+      <button class="toggle-btn px-5 py-2 rounded-full text-sm font-semibold border-none bg-transparent text-gray-2 transition-all duration-300 tracking-wide active:bg-accent active:text-white active:shadow-[0_0_20px_rgba(139,92,246,0.3)]" id="btn-woo" aria-pressed="false">WooCommerce</button>
     </div>
 
-    <div class="packages-grid">
-      <!-- Launch Sprint -->
-      <article class="pkg-card reveal" aria-labelledby="pkg-1-name" data-popular-label="Most Popular">
-        <h3 class="pkg-name" id="pkg-1-name" data-i18n="packages.pkg1.name">Launch Sprint</h3>
-        <p class="pkg-for" data-i18n="packages.pkg1.for">For brands launching their first DTC store. Everything you need, nothing you don't.</p>
-        <div class="pkg-price">$4,500<span style="font-size:1rem;color:var(--gray-2);font-weight:500;">+</span></div>
-        <div class="pkg-timeline" id="pkg-1-timeline">5–7 day Shopify launch</div>
-        <div class="pkg-divider"></div>
-        <ul class="pkg-list" id="pkg-1-list" role="list">
-          <li><span class="check" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8L6.5 11.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Custom Shopify theme build</li>
-          <li><span class="check" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8L6.5 11.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Up to 5 pages (Home, PDP, Collection, About, Contact)</li>
-          <li><span class="check" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8L6.5 11.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Pixel setup (Meta, GA4)</li>
-          <li><span class="check" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8L6.5 11.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>SEO foundation</li>
-          <li><span class="check" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8L6.5 11.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Performance optimization</li>
-          <li><span class="check" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8L6.5 11.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Welcome email flow</li>
-          <li><span class="check" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8L6.5 11.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>2 rounds of revisions</li>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <article class="pkg-card bg-bg-card border border-border rounded-[20px] p-10 transition-all duration-300 flex flex-col hover:border-[rgba(139,92,246,0.4)] hover:-translate-y-1 reveal" aria-labelledby="pkg-1-name" data-popular-label="Most Popular">
+        <h3 class="text-lg font-extrabold text-white tracking-tight mb-1.5" id="pkg-1-name" data-i18n="packages.pkg1.name">Launch Sprint</h3>
+        <p class="text-sm text-gray-2 mb-6 leading-relaxed" data-i18n="packages.pkg1.for">For brands launching their first DTC store. Everything you need, nothing you don't.</p>
+        <div class="text-[1.8rem] font-extrabold text-white tracking-tight leading-none mb-1">$4,500<span class="text-base text-gray-2 font-medium">+</span></div>
+        <div class="text-sm text-accent-light font-semibold mb-7 tracking-wide" id="pkg-1-timeline">5–7 day Shopify launch</div>
+        <div class="h-px bg-border mb-6"></div>
+        <ul class="list-none flex flex-col gap-2.5 mb-8 flex-1" id="pkg-1-list" role="list">
+          <li class="flex items-start gap-2.5 text-sm text-gray-1 font-medium leading-relaxed"><span class="check shrink-0 mt-0.5 text-accent" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8L6.5 11.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Custom Shopify theme build</li>
+          <li class="flex items-start gap-2.5 text-sm text-gray-1 font-medium leading-relaxed"><span class="check shrink-0 mt-0.5 text-accent" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8L6.5 11.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Up to 5 pages</li>
+          <li class="flex items-start gap-2.5 text-sm text-gray-1 font-medium leading-relaxed"><span class="check shrink-0 mt-0.5 text-accent" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8L6.5 11.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Pixel setup (Meta, GA4)</li>
+          <li class="flex items-start gap-2.5 text-sm text-gray-1 font-medium leading-relaxed"><span class="check shrink-0 mt-0.5 text-accent" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8L6.5 11.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>SEO foundation</li>
+          <li class="flex items-start gap-2.5 text-sm text-gray-1 font-medium leading-relaxed"><span class="check shrink-0 mt-0.5 text-accent" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8L6.5 11.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Performance optimization</li>
+          <li class="flex items-start gap-2.5 text-sm text-gray-1 font-medium leading-relaxed"><span class="check shrink-0 mt-0.5 text-accent" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8L6.5 11.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Welcome email flow</li>
+          <li class="flex items-start gap-2.5 text-sm text-gray-1 font-medium leading-relaxed"><span class="check shrink-0 mt-0.5 text-accent" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8L6.5 11.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>2 rounds of revisions</li>
         </ul>
-        <a href="#cta" class="btn btn-outline" data-i18n="packages.cta">Book a Call</a>
+        <a href="#cta" class="inline-flex items-center gap-2 px-7 py-3.5 rounded-lg font-display text-sm font-semibold tracking-wider border cursor-pointer whitespace-nowrap transition-all duration-300 bg-transparent text-white border-border hover:border-accent hover:text-accent-light hover:bg-[rgba(115,96,248,0.15)] hover:-translate-y-px" data-i18n="packages.cta">Book a Call</a>
       </article>
 
-      <!-- Growth Sprint -->
-      <article class="pkg-card featured reveal reveal-delay-1" aria-labelledby="pkg-2-name" data-popular-label="Most Popular">
-        <h3 class="pkg-name" id="pkg-2-name" data-i18n="packages.pkg2.name">Growth Sprint</h3>
-        <p class="pkg-for" data-i18n="packages.pkg2.for">For brands ready to turn their store into a revenue machine. Full stack execution.</p>
-        <div class="pkg-price">$9,500<span style="font-size:1rem;color:var(--gray-2);font-weight:500;">+</span></div>
-        <div class="pkg-timeline" id="pkg-2-timeline">Full build on Shopify in 10–14 days</div>
-        <div class="pkg-divider"></div>
-        <ul class="pkg-list" id="pkg-2-list" role="list">
-          <li><span class="check" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8L6.5 11.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Everything in Launch Sprint</li>
-          <li><span class="check" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8L6.5 11.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Brand identity &amp; packaging design</li>
-          <li><span class="check" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8L6.5 11.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Full pixel suite (Meta, GA4, TikTok)</li>
-          <li><span class="check" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8L6.5 11.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Post-purchase email + SMS flows</li>
-          <li><span class="check" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8L6.5 11.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Abandoned cart &amp; browse flows</li>
-          <li><span class="check" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8L6.5 11.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>CRO audit &amp; UX sprint</li>
-          <li><span class="check" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8L6.5 11.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Loyalty &amp; referral setup</li>
-          <li><span class="check" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8L6.5 11.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>30-day post-launch support</li>
+      <article class="pkg-card bg-bg-card border border-accent rounded-[20px] p-10 transition-all duration-300 flex flex-col relative bg-gradient-to-br from-[rgba(139,92,246,0.08)] to-[rgba(139,92,246,0.02)] before:absolute before:top-[-12px] before:left-1/2 before:-translate-x-1/2 before:bg-accent before:text-white before:px-3.5 before:py-1 before:rounded-full before:text-[0.7rem] before:font-bold before:tracking-widest before:uppercase before:whitespace-nowrap before:content-[attr(data-popular-label)] reveal reveal-delay-1" aria-labelledby="pkg-2-name" data-popular-label="Most Popular">
+        <h3 class="text-lg font-extrabold text-white tracking-tight mb-1.5" id="pkg-2-name" data-i18n="packages.pkg2.name">Growth Sprint</h3>
+        <p class="text-sm text-gray-2 mb-6 leading-relaxed" data-i18n="packages.pkg2.for">For brands ready to turn their store into a revenue machine. Full stack execution.</p>
+        <div class="text-[1.8rem] font-extrabold text-white tracking-tight leading-none mb-1">$9,500<span class="text-base text-gray-2 font-medium">+</span></div>
+        <div class="text-sm text-accent-light font-semibold mb-7 tracking-wide" id="pkg-2-timeline">Full build on Shopify in 10–14 days</div>
+        <div class="h-px bg-border mb-6"></div>
+        <ul class="list-none flex flex-col gap-2.5 mb-8 flex-1" id="pkg-2-list" role="list">
+          <li class="flex items-start gap-2.5 text-sm text-gray-1 font-medium leading-relaxed"><span class="check shrink-0 mt-0.5 text-accent" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8L6.5 11.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Everything in Launch Sprint</li>
+          <li class="flex items-start gap-2.5 text-sm text-gray-1 font-medium leading-relaxed"><span class="check shrink-0 mt-0.5 text-accent" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8L6.5 11.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Brand identity &amp; packaging design</li>
+          <li class="flex items-start gap-2.5 text-sm text-gray-1 font-medium leading-relaxed"><span class="check shrink-0 mt-0.5 text-accent" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8L6.5 11.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Full pixel suite (Meta, GA4, TikTok)</li>
+          <li class="flex items-start gap-2.5 text-sm text-gray-1 font-medium leading-relaxed"><span class="check shrink-0 mt-0.5 text-accent" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8L6.5 11.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Post-purchase email + SMS flows</li>
+          <li class="flex items-start gap-2.5 text-sm text-gray-1 font-medium leading-relaxed"><span class="check shrink-0 mt-0.5 text-accent" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8L6.5 11.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Abandoned cart &amp; browse flows</li>
+          <li class="flex items-start gap-2.5 text-sm text-gray-1 font-medium leading-relaxed"><span class="check shrink-0 mt-0.5 text-accent" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8L6.5 11.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>CRO audit &amp; UX sprint</li>
+          <li class="flex items-start gap-2.5 text-sm text-gray-1 font-medium leading-relaxed"><span class="check shrink-0 mt-0.5 text-accent" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8L6.5 11.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Loyalty &amp; referral setup</li>
+          <li class="flex items-start gap-2.5 text-sm text-gray-1 font-medium leading-relaxed"><span class="check shrink-0 mt-0.5 text-accent" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8L6.5 11.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>30-day post-launch support</li>
         </ul>
-        <a href="#cta" class="btn btn-primary" data-i18n="packages.cta">Book a Call</a>
+        <a href="#cta" class="inline-flex items-center gap-2 px-7 py-3.5 rounded-lg font-display text-sm font-semibold tracking-wider border-none cursor-pointer whitespace-nowrap transition-all duration-300 bg-accent text-white hover:bg-accent-light hover:shadow-[0_0_30px_rgba(139,92,246,0.4)] hover:-translate-y-px" data-i18n="packages.cta">Book a Call</a>
       </article>
 
-      <!-- Growth Partner -->
-      <article class="pkg-card reveal reveal-delay-2" aria-labelledby="pkg-3-name" data-popular-label="Most Popular">
-        <h3 class="pkg-name" id="pkg-3-name" data-i18n="packages.pkg3.name">Ongoing Growth Partner</h3>
-        <p class="pkg-for" data-i18n="packages.pkg3.for">For brands post-launch that want senior-level execution on a consistent basis.</p>
-        <div class="pkg-price">$3,000<span style="font-size:1rem;color:var(--gray-2);font-weight:500;">/mo+</span></div>
-        <div class="pkg-timeline" data-i18n="packages.pkg3.timeline">Ongoing — minimum 3 months</div>
-        <div class="pkg-divider"></div>
-        <ul class="pkg-list" role="list">
-          <li><span class="check" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8L6.5 11.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="packages.pkg3.item1">Monthly CRO sprints</span></li>
-          <li><span class="check" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8L6.5 11.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="packages.pkg3.item2">Email &amp; SMS optimization</span></li>
-          <li><span class="check" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8L6.5 11.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="packages.pkg3.item3">Growth reporting &amp; analytics</span></li>
-          <li><span class="check" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8L6.5 11.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="packages.pkg3.item4">Store updates &amp; new landing pages</span></li>
-          <li><span class="check" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8L6.5 11.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="packages.pkg3.item5">Affiliate &amp; referral management</span></li>
-          <li><span class="check" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8L6.5 11.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="packages.pkg3.item6">Priority response &amp; support</span></li>
-          <li><span class="check" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8L6.5 11.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="packages.pkg3.item7">Quarterly strategy reviews</span></li>
+      <article class="pkg-card bg-bg-card border border-border rounded-[20px] p-10 transition-all duration-300 flex flex-col hover:border-[rgba(139,92,246,0.4)] hover:-translate-y-1 reveal reveal-delay-2" aria-labelledby="pkg-3-name" data-popular-label="Most Popular">
+        <h3 class="text-lg font-extrabold text-white tracking-tight mb-1.5" id="pkg-3-name" data-i18n="packages.pkg3.name">Ongoing Growth Partner</h3>
+        <p class="text-sm text-gray-2 mb-6 leading-relaxed" data-i18n="packages.pkg3.for">For brands post-launch that want senior-level execution on a consistent basis.</p>
+        <div class="text-[1.8rem] font-extrabold text-white tracking-tight leading-none mb-1">$3,000<span class="text-base text-gray-2 font-medium">/mo+</span></div>
+        <div class="text-sm text-accent-light font-semibold mb-7 tracking-wide" data-i18n="packages.pkg3.timeline">Ongoing — minimum 3 months</div>
+        <div class="h-px bg-border mb-6"></div>
+        <ul class="list-none flex flex-col gap-2.5 mb-8 flex-1" role="list">
+          <li class="flex items-start gap-2.5 text-sm text-gray-1 font-medium leading-relaxed"><span class="check shrink-0 mt-0.5 text-accent" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8L6.5 11.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="packages.pkg3.item1">Monthly CRO sprints</span></li>
+          <li class="flex items-start gap-2.5 text-sm text-gray-1 font-medium leading-relaxed"><span class="check shrink-0 mt-0.5 text-accent" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8L6.5 11.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="packages.pkg3.item2">Email &amp; SMS optimization</span></li>
+          <li class="flex items-start gap-2.5 text-sm text-gray-1 font-medium leading-relaxed"><span class="check shrink-0 mt-0.5 text-accent" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8L6.5 11.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="packages.pkg3.item3">Growth reporting &amp; analytics</span></li>
+          <li class="flex items-start gap-2.5 text-sm text-gray-1 font-medium leading-relaxed"><span class="check shrink-0 mt-0.5 text-accent" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8L6.5 11.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="packages.pkg3.item4">Store updates &amp; new landing pages</span></li>
+          <li class="flex items-start gap-2.5 text-sm text-gray-1 font-medium leading-relaxed"><span class="check shrink-0 mt-0.5 text-accent" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8L6.5 11.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="packages.pkg3.item5">Affiliate &amp; referral management</span></li>
+          <li class="flex items-start gap-2.5 text-sm text-gray-1 font-medium leading-relaxed"><span class="check shrink-0 mt-0.5 text-accent" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8L6.5 11.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="packages.pkg3.item6">Priority response &amp; support</span></li>
+          <li class="flex items-start gap-2.5 text-sm text-gray-1 font-medium leading-relaxed"><span class="check shrink-0 mt-0.5 text-accent" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8L6.5 11.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="packages.pkg3.item7">Quarterly strategy reviews</span></li>
         </ul>
-        <a href="#cta" class="btn btn-outline" data-i18n="packages.cta">Book a Call</a>
+        <a href="#cta" class="inline-flex items-center gap-2 px-7 py-3.5 rounded-lg font-display text-sm font-semibold tracking-wider border cursor-pointer whitespace-nowrap transition-all duration-300 bg-transparent text-white border-border hover:border-accent hover:text-accent-light hover:bg-[rgba(115,96,248,0.15)] hover:-translate-y-px" data-i18n="packages.cta">Book a Call</a>
       </article>
     </div>
   </div>

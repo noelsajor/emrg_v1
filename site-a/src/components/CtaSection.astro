@@ -1,22 +1,21 @@
 ---
 ---
-<section id="cta" aria-labelledby="cta-heading">
-  <div class="cta-bg" aria-hidden="true">
-    <div class="cta-orb"></div>
+
+<section id="cta" class="py-[160px] bg-bg text-center relative overflow-hidden" aria-labelledby="cta-heading">
+  <div class="cta-bg absolute inset-0 pointer-events-none" aria-hidden="true">
+    <div class="cta-orb absolute w-[600px] h-[600px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full" style="background:radial-gradient(circle,rgba(139,92,246,0.12) 0%,transparent 70%)"></div>
   </div>
-  <div class="container">
-    <div class="cta-inner">
-      <div class="section-label" style="justify-content:center;" data-i18n="cta.label">Let's Build</div>
-      <h2 class="cta-title" id="cta-heading" data-i18n="cta.title">Ready to build something that converts?</h2>
-      <p class="cta-sub" data-i18n="cta.sub">Tell us where you are. We'll show you where to go.</p>
-      <div class="cta-actions">
-        <a href="https://cal.com/emrg" class="btn btn-primary" id="cta-primary-btn">
-          <span data-i18n="hero.cta.primary">Book a 15-min Call</span>
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-        <a href="mailto:hello@emrg.studio" class="btn btn-outline" data-i18n="cta.email">Email Us</a>
-      </div>
-      <p class="cta-note" data-i18n="cta.note">We reply within 24–48 hours.</p>
+  <div class="container relative z-[1]">
+    <div class="inline-flex items-center gap-2.5 text-[0.72rem] font-bold tracking-[0.14em] uppercase text-accent mb-5 mx-auto before:w-5 before:h-px before:bg-accent" data-i18n="cta.label" style="justify-content:center;">Let's Build</div>
+    <h2 class="text-[clamp(2rem,5vw,4rem)] font-extrabold tracking-tight text-white leading-[1.1] mb-5 max-w-[700px] mx-auto" id="cta-heading" data-i18n="cta.title">Ready to build something that converts?</h2>
+    <p class="text-base text-gray-2 mb-12 leading-relaxed" data-i18n="cta.sub">Tell us where you are. We'll show you where to go.</p>
+    <div class="flex items-center justify-center gap-4 flex-wrap mb-6">
+      <a href="https://cal.com/emrg" class="inline-flex items-center gap-2 px-7 py-3.5 rounded-lg font-display text-sm font-semibold tracking-wider border-none cursor-pointer whitespace-nowrap transition-all duration-300 bg-accent text-white hover:bg-accent-light hover:shadow-[0_0_30px_rgba(139,92,246,0.4)] hover:-translate-y-px" id="cta-primary-btn">
+        <span data-i18n="hero.cta.primary">Book a 15-min Call</span>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="mailto:hello@emrg.studio" class="inline-flex items-center gap-2 px-7 py-3.5 rounded-lg font-display text-sm font-semibold tracking-wider border cursor-pointer whitespace-nowrap transition-all duration-300 bg-transparent text-white border-border hover:border-accent hover:text-accent-light hover:bg-[rgba(115,96,248,0.15)] hover:-translate-y-px" data-i18n="cta.email">Email Us</a>
     </div>
+    <p class="text-[0.78rem] text-gray-3 tracking-wide" data-i18n="cta.note">We reply within 24–48 hours.</p>
   </div>
 </section>

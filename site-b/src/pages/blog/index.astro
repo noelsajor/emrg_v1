@@ -1,10 +1,13 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import Nav from '../../components/Nav.astro';
-import Footer from '../../components/Footer.astro';
-import { getAllPosts } from '../../lib/sanity.queries';
+import Nav from '@emrg/shared/components/Nav.astro';
+import Footer from '@emrg/shared/components/Footer.astro';
+import { getClient } from '@emrg/shared/sanity/client';
+import { getPosts } from '@emrg/shared/sanity/queries';
+import { formatBlogDate } from '@emrg/shared';
 
-const posts = await getAllPosts();
+const client = getClient();
+const posts = await getPosts(client);
 
 const title = "Blog — EMRG Ecommerce Journal";
 const description = "Insights, strategies, and technical guides for scaling DTC commerce engines.";
@@ -34,7 +37,7 @@ const description = "Insights, strategies, and technical guides for scaling DTC 
             <div class="blog-card-meta">
               <span>{post.categories?.join(', ')}</span>
               <span>•</span>
-              <span>{new Date(post.publishedAt).toLocaleDateString()}</span>
+              <span>{formatBlogDate(post.publishedAt)}</span>
             </div>
             <h2 class="blog-card-title" style="font-size: 2rem;">
               <a href={`/blog/${post.slug}`}>{post.title}</a>

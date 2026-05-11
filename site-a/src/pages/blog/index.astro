@@ -16,17 +16,17 @@ const seo = {
 <BaseLayout {...seo}>
   <Nav />
   <main>
-    <section class="blog-hero">
+    <section class="pt-40 pb-20 bg-bg border-b border-gray-4 md:pt-30 md:pb-15">
       <div class="container">
-        <div class="section-label">Journal</div>
-        <h1 class="section-title">The Performance Journal</h1>
-        <p class="section-sub">Senior-level ecommerce insights, growth strategies, and performance engineering for DTC brands.</p>
+        <div class="inline-flex items-center gap-2.5 text-[0.72rem] font-bold tracking-[0.14em] uppercase text-accent mb-5 before:w-5 before:h-px before:bg-accent">Journal</div>
+        <h1 class="text-white text-[clamp(1.8rem,3.5vw,2.8rem)] font-extrabold tracking-tight leading-tight mb-4">The Performance Journal</h1>
+        <p class="text-base text-gray-2 max-w-[520px] leading-relaxed">Senior-level ecommerce insights, growth strategies, and performance engineering for DTC brands.</p>
       </div>
     </section>
 
-    <section class="blog-list">
+    <section class="py-20 pb-[120px] bg-bg md:py-10 md:pb-20">
       <div class="container">
-        <div class="blog-grid">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {posts.map((post: any) => (
             <BlogCard post={post} />
           ))}
@@ -36,32 +36,3 @@ const seo = {
   </main>
   <Footer />
 </BaseLayout>
-
-<style>
-  .blog-hero {
-    padding: 160px 0 80px;
-    background: var(--bg);
-    border-bottom: 1px solid var(--gray-4);
-  }
-
-  .blog-list {
-    padding: 80px 0 120px;
-    background: var(--bg);
-  }
-
-  .blog-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 40px;
-  }
-
-  @media (max-width: 768px) {
-    .blog-hero {
-      padding: 120px 0 60px;
-    }
-    
-    .blog-list {
-      padding: 40px 0 80px;
-    }
-  }
-</style>

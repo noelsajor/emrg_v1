@@ -1,63 +1,80 @@
 ---
 ---
-<section id="testimonials" aria-labelledby="testi-heading">
+
+<section id="testimonials" class="py-section bg-bg" aria-labelledby="testi-heading">
   <div class="container">
-    <div class="section-label" data-i18n="testi.label">What Founders Say</div>
-    <h2 class="section-title" id="testi-heading" data-i18n="testi.title">Trusted by builders.</h2>
+    <div class="inline-flex items-center gap-2.5 text-[0.72rem] font-bold tracking-[0.14em] uppercase text-accent mb-5 before:w-5 before:h-px before:bg-accent" data-i18n="testi.label">What Founders Say</div>
+    <h2 class="section-title text-white text-[clamp(1.8rem,3.5vw,2.8rem)] font-extrabold tracking-tight leading-tight" id="testi-heading" data-i18n="testi.title">Trusted by builders.</h2>
 
-    <div class="testi-grid" role="list">
-      <article class="testi-card reveal" role="listitem">
-        <div class="testi-stars" aria-label="5 out of 5 stars">
-          <span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-16" role="list">
+      <article class="bg-bg-card border border-border rounded-[20px] p-10 transition-all duration-300 relative hover:border-[rgba(139,92,246,0.4)] hover:-translate-y-0.5 reveal" role="listitem">
+        <div class="flex gap-1 mb-5" aria-label="5 out of 5 stars">
+          <span class="text-[#fbbf24] text-sm" aria-hidden="true">★</span>
+          <span class="text-[#fbbf24] text-sm" aria-hidden="true">★</span>
+          <span class="text-[#fbbf24] text-sm" aria-hidden="true">★</span>
+          <span class="text-[#fbbf24] text-sm" aria-hidden="true">★</span>
+          <span class="text-[#fbbf24] text-sm" aria-hidden="true">★</span>
         </div>
-        <p class="testi-quote" data-i18n="testi.t1.quote">We went from idea to live Shopify store in 6 days. The build quality and attention to conversion detail was unlike anything I had seen from other agencies. Our first week of traffic converted at nearly 4%.</p>
-        <div class="testi-author">
-          <div class="testi-avatar" aria-hidden="true">JL</div>
+        <p class="text-base text-gray-1 leading-relaxed mb-7 relative before:absolute before:-top-5 before:-left-2 before:text-[4rem] before:text-accent before:opacity-30 before:font-extrabold before:leading-none before:content-['"']" data-i18n="testi.t1.quote">We went from idea to live Shopify store in 6 days. The build quality and attention to conversion detail was unlike anything I had seen from other agencies. Our first week of traffic converted at nearly 4%.</p>
+        <div class="flex items-center gap-3.5">
+          <div class="w-10 h-10 rounded-full bg-[rgba(115,96,248,0.15)] border border-[rgba(139,92,246,0.3)] flex items-center justify-center font-bold text-sm text-accent-light shrink-0" aria-hidden="true">JL</div>
           <div>
-            <div class="testi-name">Jordan L.</div>
-            <div class="testi-role" data-i18n="testi.t1.role">Founder, Solera Skincare</div>
+            <div class="text-sm font-bold text-white tracking-tight">Jordan L.</div>
+            <div class="text-sm text-gray-2 mt-0.5" data-i18n="testi.t1.role">Founder, Solera Skincare</div>
           </div>
         </div>
       </article>
 
-      <article class="testi-card reveal reveal-delay-1" role="listitem">
-        <div class="testi-stars" aria-label="5 out of 5 stars">
-          <span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span>
+      <article class="bg-bg-card border border-border rounded-[20px] p-10 transition-all duration-300 relative hover:border-[rgba(139,92,246,0.4)] hover:-translate-y-0.5 reveal reveal-delay-1" role="listitem">
+        <div class="flex gap-1 mb-5" aria-label="5 out of 5 stars">
+          <span class="text-[#fbbf24] text-sm" aria-hidden="true">★</span>
+          <span class="text-[#fbbf24] text-sm" aria-hidden="true">★</span>
+          <span class="text-[#fbbf24] text-sm" aria-hidden="true">★</span>
+          <span class="text-[#fbbf24] text-sm" aria-hidden="true">★</span>
+          <span class="text-[#fbbf24] text-sm" aria-hidden="true">★</span>
         </div>
-        <p class="testi-quote" data-i18n="testi.t2.quote">They rebuilt our entire WooCommerce store and set up our email flows in under two weeks. Page speed improved dramatically. Our repeat purchase rate climbed month over month from day one.</p>
-        <div class="testi-author">
-          <div class="testi-avatar" aria-hidden="true">AS</div>
+        <p class="text-base text-gray-1 leading-relaxed mb-7 relative before:absolute before:-top-5 before:-left-2 before:text-[4rem] before:text-accent before:opacity-30 before:font-extrabold before:leading-none before:content-['"']" data-i18n="testi.t2.quote">They rebuilt our entire WooCommerce store and set up our email flows in under two weeks. Page speed improved dramatically. Our repeat purchase rate climbed month over month from day one.</p>
+        <div class="flex items-center gap-3.5">
+          <div class="w-10 h-10 rounded-full bg-[rgba(115,96,248,0.15)] border border-[rgba(139,92,246,0.3)] flex items-center justify-center font-bold text-sm text-accent-light shrink-0" aria-hidden="true">AS</div>
           <div>
-            <div class="testi-name">Aliya S.</div>
-            <div class="testi-role" data-i18n="testi.t2.role">Head of Marketing, Varka Nutrition</div>
+            <div class="text-sm font-bold text-white tracking-tight">Aliya S.</div>
+            <div class="text-sm text-gray-2 mt-0.5" data-i18n="testi.t2.role">Head of Marketing, Varka Nutrition</div>
           </div>
         </div>
       </article>
 
-      <article class="testi-card reveal reveal-delay-2" role="listitem">
-        <div class="testi-stars" aria-label="5 out of 5 stars">
-          <span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span>
+      <article class="bg-bg-card border border-border rounded-[20px] p-10 transition-all duration-300 relative hover:border-[rgba(139,92,246,0.4)] hover:-translate-y-0.5 reveal reveal-delay-2" role="listitem">
+        <div class="flex gap-1 mb-5" aria-label="5 out of 5 stars">
+          <span class="text-[#fbbf24] text-sm" aria-hidden="true">★</span>
+          <span class="text-[#fbbf24] text-sm" aria-hidden="true">★</span>
+          <span class="text-[#fbbf24] text-sm" aria-hidden="true">★</span>
+          <span class="text-[#fbbf24] text-sm" aria-hidden="true">★</span>
+          <span class="text-[#fbbf24] text-sm" aria-hidden="true">★</span>
         </div>
-        <p class="testi-quote" data-i18n="testi.t3.quote">EMRG doesn't feel like an agency. They work like a senior partner who actually cares about what happens after launch. The growth system they set up is still paying dividends six months later.</p>
-        <div class="testi-author">
-          <div class="testi-avatar" aria-hidden="true">MK</div>
+        <p class="text-base text-gray-1 leading-relaxed mb-7 relative before:absolute before:-top-5 before:-left-2 before:text-[4rem] before:text-accent before:opacity-30 before:font-extrabold before:leading-none before:content-['"']" data-i18n="testi.t3.quote">EMRG doesn't feel like an agency. They work like a senior partner who actually cares about what happens after launch. The growth system they set up is still paying dividends six months later.</p>
+        <div class="flex items-center gap-3.5">
+          <div class="w-10 h-10 rounded-full bg-[rgba(115,96,248,0.15)] border border-[rgba(139,92,246,0.3)] flex items-center justify-center font-bold text-sm text-accent-light shrink-0" aria-hidden="true">MK</div>
           <div>
-            <div class="testi-name">Marcus K.</div>
-            <div class="testi-role" data-i18n="testi.t3.role">Founder, Dune Apparel</div>
+            <div class="text-sm font-bold text-white tracking-tight">Marcus K.</div>
+            <div class="text-sm text-gray-2 mt-0.5" data-i18n="testi.t3.role">Founder, Dune Apparel</div>
           </div>
         </div>
       </article>
 
-      <article class="testi-card reveal reveal-delay-3" role="listitem">
-        <div class="testi-stars" aria-label="5 out of 5 stars">
-          <span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span>
+      <article class="bg-bg-card border border-border rounded-[20px] p-10 transition-all duration-300 relative hover:border-[rgba(139,92,246,0.4)] hover:-translate-y-0.5 reveal reveal-delay-3" role="listitem">
+        <div class="flex gap-1 mb-5" aria-label="5 out of 5 stars">
+          <span class="text-[#fbbf24] text-sm" aria-hidden="true">★</span>
+          <span class="text-[#fbbf24] text-sm" aria-hidden="true">★</span>
+          <span class="text-[#fbbf24] text-sm" aria-hidden="true">★</span>
+          <span class="text-[#fbbf24] text-sm" aria-hidden="true">★</span>
+          <span class="text-[#fbbf24] text-sm" aria-hidden="true">★</span>
         </div>
-        <p class="testi-quote" data-i18n="testi.t4.quote">We came with just a product and a rough brand concept. EMRG took it from there — packaging, identity, store, tracking, flows. Six days later we were live and profitable by week three.</p>
-        <div class="testi-author">
-          <div class="testi-avatar" aria-hidden="true">PR</div>
+        <p class="text-base text-gray-1 leading-relaxed mb-7 relative before:absolute before:-top-5 before:-left-2 before:text-[4rem] before:text-accent before:opacity-30 before:font-extrabold before:leading-none before:content-['"']" data-i18n="testi.t4.quote">We came with just a product and a rough brand concept. EMRG took it from there — packaging, identity, store, tracking, flows. Six days later we were live and profitable by week three.</p>
+        <div class="flex items-center gap-3.5">
+          <div class="w-10 h-10 rounded-full bg-[rgba(115,96,248,0.15)] border border-[rgba(139,92,246,0.3)] flex items-center justify-center font-bold text-sm text-accent-light shrink-0" aria-hidden="true">PR</div>
           <div>
-            <div class="testi-name">Priya R.</div>
-            <div class="testi-role" data-i18n="testi.t4.role">Founder, Lumos Wellness</div>
+            <div class="text-sm font-bold text-white tracking-tight">Priya R.</div>
+            <div class="text-sm text-gray-2 mt-0.5" data-i18n="testi.t4.role">Founder, Lumos Wellness</div>
           </div>
         </div>
       </article>

@@ -2,18 +2,19 @@
    CSS VARIABLES
 ============================================= */
 :root {
-    --ink: #7360f8;
+    --ink: #5a45f2;
     --paper: #fff2ec;
     --paper-2: #fff2ec;
     --paper-3: #fff2ec;
-    --accent: #bad341;
+    --accent: #839623;
+    --accent-bright: #bad341;
     --accent-2: #bc9bf2;
     --gold: #bc9bf2;
-    --border: #7360f833;
-    --border-strong: #7360f8;
-    --muted: #7360f899;
-    --font-serif: 'Funnel Display', sans-serif;
-    --font-mono: 'Funnel Display', sans-serif;
+    --border: #5a45f233;
+    --border-strong: #5a45f2;
+    --muted: #6955f8;
+    --font-serif: 'Cabinet Grotesk', sans-serif;
+    --font-mono: 'Satoshi', sans-serif;
     --nav-h: 64px;
     --max: 1280px;
     --pad: 48px;
@@ -276,8 +277,9 @@ ol {
     font-weight: 500;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--muted);
-    transition: color var(--t);
+    color: var(--ink);
+    opacity: 0.85;
+    transition: color var(--t), opacity var(--t);
     border-right: 1px solid var(--border);
 }
 
@@ -288,6 +290,7 @@ ol {
 .nav-links a:hover,
 .nav-links a.active {
     color: var(--ink);
+    opacity: 1;
 }
 
 .nav-cta {
@@ -485,8 +488,9 @@ h1 em {
 }
 
 .btn-ink:hover {
-    background: var(--accent);
-    border-color: var(--accent);
+    background: var(--accent-bright);
+    border-color: var(--accent-bright);
+    color: var(--ink);
 }
 
 .btn-bare {
@@ -1605,7 +1609,7 @@ footer {
 
 .footer-tag {
     font-size: 0.75rem;
-    color: rgba(245, 240, 232, 0.35);
+    color: rgba(255, 242, 236, 0.75);
     line-height: 1.65;
     letter-spacing: 0.01em;
     margin-bottom: 20px;
@@ -1613,7 +1617,7 @@ footer {
 
 .footer-mail {
     font-size: 0.75rem;
-    color: rgba(245, 240, 232, 0.5);
+    color: rgba(255, 242, 236, 0.85);
     letter-spacing: 0.04em;
     transition: color var(--t);
 }
@@ -1627,7 +1631,7 @@ footer {
     font-weight: 500;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: rgba(245, 240, 232, 0.2);
+    color: rgba(255, 242, 236, 0.5);
     margin-bottom: 20px;
 }
 
@@ -1639,7 +1643,7 @@ footer {
 
 .footer-nav a {
     font-size: 0.78rem;
-    color: rgba(245, 240, 232, 0.45);
+    color: rgba(255, 242, 236, 0.8);
     letter-spacing: 0.02em;
     transition: color var(--t);
 }
@@ -1659,7 +1663,7 @@ footer {
     align-items: center;
     gap: 12px;
     font-size: 0.75rem;
-    color: rgba(245, 240, 232, 0.45);
+    color: rgba(255, 242, 236, 0.8);
     transition: color var(--t);
     letter-spacing: 0.04em;
 }
@@ -1687,7 +1691,7 @@ footer {
 
 .footer-copy {
     font-size: 0.68rem;
-    color: rgba(245, 240, 232, 0.2);
+    color: rgba(255, 242, 236, 0.45);
     letter-spacing: 0.06em;
 }
 
@@ -1698,7 +1702,7 @@ footer {
 
 .footer-legal a {
     font-size: 0.68rem;
-    color: rgba(245, 240, 232, 0.2);
+    color: rgba(255, 242, 236, 0.45);
     letter-spacing: 0.06em;
     transition: color var(--t);
 }

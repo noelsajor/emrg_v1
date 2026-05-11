@@ -1,18 +1,22 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import Nav from '../../components/Nav.astro';
-import Footer from '../../components/Footer.astro';
-import { getAllPosts, getPostBySlug } from '../../lib/sanity.queries';
+import Nav from '@emrg/shared/components/Nav.astro';
+import Footer from '@emrg/shared/components/Footer.astro';
+import { getClient } from '@emrg/shared/sanity/client';
+import { getPosts, getPostBySlug } from '@emrg/shared/sanity/queries';
+import { formatBlogDate } from '@emrg/shared';
 
 export async function getStaticPaths() {
-  const posts = await getAllPosts();
+  const client = getClient();
+  const posts = await getPosts(client);
   return posts.map((post: any) => ({
     params: { slug: post.slug },
   }));
 }
 
+const client = getClient();
 const { slug } = Astro.params;
-const post = await getPostBySlug(slug as string);
+const post = await getPostBySlug(client, slug as string);
 
 if (!post) {
   return Astro.redirect('/404');
@@ -31,7 +35,7 @@ const description = post.seo?.metaDesc || post.excerpt;
         <div class="blog-card-meta" style="margin-bottom: 24px;">
            <span>{post.categories?.join(', ')}</span>
            <span>•</span>
-           <span>{new Date(post.publishedAt).toLocaleDateString()}</span>
+           <span>{formatBlogDate(post.publishedAt)}</span>
            <span>•</span>
            <span>5 min read</span>
         </div>

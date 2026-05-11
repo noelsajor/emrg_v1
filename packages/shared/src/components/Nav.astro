@@ -1,0 +1,70 @@
+---
+import { getClient } from '../sanity/client'
+import { getSiteSettings } from '../sanity/queries'
+import type { SiteSettings, NavItem } from '../types'
+
+export interface Props {
+  settings?: SiteSettings
+}
+
+const { settings: _settings } = Astro.props
+const settings = _settings ?? await getSiteSettings(getClient())
+const navLinks: NavItem[] = settings.mainNavigation.length > 0
+  ? settings.mainNavigation
+  : [
+      { title: 'Services', href: '/#pillars', dataI18n: 'nav.services' },
+      { title: 'Work', href: '/#work', dataI18n: 'nav.work' },
+      { title: 'Process', href: '/#process', dataI18n: 'nav.process' },
+      { title: 'Pricing', href: '/#packages', dataI18n: 'nav.pricing' },
+      { title: 'About Us', href: '/about', dataI18n: 'nav.about' },
+      { title: 'FAQ', href: '/#faq', dataI18n: 'nav.faq' },
+    ]
+---
+<nav id="nav" aria-label="Main Navigation">
+  <div class="nav-inner">
+    <a href="/#hero" class="nav-logo">
+      <img src="/images/emrg-logo.png" alt="EMRG Logo" class="logo-img" width={300} height={61} loading="eager" decoding="async" />
+    </a>
+    
+    <div class="nav-links" role="navigation">
+      {navLinks.map((link) => (
+        <a href={link.href} data-i18n={link.dataI18n}>{link.title}</a>
+      ))}
+    </div>
+
+    <div style="display: flex; align-items: center; gap: 24px;">
+      <div class="lang-toggle nav-lang-desktop" role="group" aria-label="Language Selector">
+        <button id="lang-en" class="lang-btn" aria-label="Switch to English">EN</button>
+        <button id="lang-es" class="lang-btn" aria-label="Switch to Spanish">ES</button>
+      </div>
+      
+      <a href="#cta" class="nav-cta">
+        <span data-i18n="nav.cta">Get Started</span>
+        <span class="arrow">→</span>
+      </a>
+
+      <button id="hamburger" class="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div id="mobile-menu" class="mobile-menu" aria-hidden="true">
+  {navLinks.map((link) => (
+    <a href={link.href} class="mm-link" data-i18n={link.dataI18n}>{link.title}</a>
+  ))}
+  
+  <a href="#cta" class="nav-cta mm-link" style="margin-top: 32px;">
+    <span data-i18n="nav.cta">Get Started</span>
+  </a>
+
+  <div class="mobile-lang-wrap">
+    <div class="lang-toggle" role="group" aria-label="Mobile Language Selector">
+      <button id="lang-en-mob" class="lang-btn" aria-label="Switch to English">EN</button>
+      <button id="lang-es-mob" class="lang-btn" aria-label="Switch to Spanish">ES</button>
+    </div>
+  </div>
+</div>

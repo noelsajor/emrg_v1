@@ -1,5 +1,6 @@
 ---
 import { urlFor } from '../lib/sanity.client';
+import { formatBlogDate } from '@emrg/shared';
 
 interface Props {
   post: {
@@ -27,7 +28,7 @@ const { post, showExcerpt = true } = Astro.props;
   
   <div style="margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--rim); display: flex; justify-content: space-between; align-items: center;">
     <span style="font-size: 0.65rem; color: var(--mist); text-transform: uppercase; letter-spacing: 0.1em;">
-      {new Date(post.publishedAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
+      {formatBlogDate(post.publishedAt)}
     </span>
     <a href={`/blog/${post.slug}`} class="pillar-cta-link" style="padding-top: 0; display: inline-flex; align-items: center;">Read Entry →</a>
   </div>

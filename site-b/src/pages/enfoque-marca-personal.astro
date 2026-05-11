@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Nav from '../components/Nav.astro';
-import Footer from '../components/Footer.astro';
+import Nav from '@emrg/shared/components/Nav.astro';
+import Footer from '@emrg/shared/components/Footer.astro';
 ---
 
 <BaseLayout title="Enfoque Marca Personal | EMRG" description="SEO, Contenidos y Estrategia Digital para quienes no se conforman con lo básico. Convierte tu web en un imán de leads.">
@@ -25,7 +25,7 @@ import Footer from '../components/Footer.astro';
       </div>
       
       <div class="hero-image-box">
-         <img src="/images/hero-branding.png" alt="Personal Identity Concept" class="hero-img-editorial" />
+         <img src="/images/hero-branding.png" alt="Personal Identity Concept" class="hero-img-editorial" width={640} height={640} loading="eager" decoding="async" />
       </div>
     </section>
 

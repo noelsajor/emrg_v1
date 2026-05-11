@@ -6,69 +6,65 @@ import Footer from '../components/Footer.astro';
 
 <BaseLayout title="Enfoque en Salud | EMRG" description="SEO y crecimiento digital especializado en salud. Ayudamos a clínicas y médicos a atraer más pacientes.">
   <Nav />
-  <main id="health-focus">
-    <section class="hero-section section">
-      <div class="container hero-grid-health">
-        <div class="hero-copy">
-          <p class="eyebrow-health">Sector Salud</p>
-          <h1>¿Tus pacientes te buscan en Google o solo te encuentran por recomendación?</h1>
-          <p class="hero-text-health">
+  <main id="health-focus" class="bg-bg">
+    <section class="section pt-32 bg-bg">
+      <div class="container grid grid-cols-1 gap-12 items-center lg:grid-cols-[1fr_1.2fr]">
+        <div class="max-w-[500px]">
+          <p class="inline-flex items-center gap-2 text-[0.8rem] font-bold uppercase tracking-[0.1em] text-accent mb-6 before:w-2 before:h-2 before:rounded-full before:bg-accent before:shadow-[0_0_15px_#7360f8]">Sector Salud</p>
+          <h1 class="text-[clamp(1.8rem,4vw,2.8rem)] leading-[1.2] mb-8 max-w-[18ch] text-white">¿Tus pacientes te buscan en Google o solo te encuentran por recomendación?</h1>
+          <p class="text-[1.1rem] text-gray-2 max-w-[60ch] mb-10">
             Creamos sitios web que generan confianza y citas médicas en automático.
             Diseño web para médicos y clínicas que buscan autoridad digital.
           </p>
-          
-          <div class="hero-actions-health">
+          <div class="flex gap-4 mb-8">
             <a class="btn btn-primary" href="#formulario">Quiero digitalizar mi consulta</a>
             <a class="btn btn-secondary" href="#servicios">Ver servicios</a>
           </div>
-
-          <ul class="trust-list-health" aria-label="Indicadores de confianza">
-            <li>Especialización en sector salud</li>
-            <li>SEO local orientado a citas</li>
-            <li>Webs pensadas para convertir</li>
+          <ul class="flex flex-wrap gap-6 text-gray-1 font-semibold text-[0.9rem]" aria-label="Indicadores de confianza">
+            <li class="pl-4 relative before:content-['•'] before:absolute before:left-0 before:text-accent">Especialización en sector salud</li>
+            <li class="pl-4 relative before:content-['•'] before:absolute before:left-0 before:text-accent">SEO local orientado a citas</li>
+            <li class="pl-4 relative before:content-['•'] before:absolute before:left-0 before:text-accent">Webs pensadas para convertir</li>
           </ul>
         </div>
-
-        <div class="hero-image-health">
-          <img src="/images/hero-medical.png" alt="Consultorio moderno" class="hero-img-main" />
+        <div class="relative rounded-lg border border-white/10 shadow-[0_0_50px_rgba(139,92,246,0.2)] transition-all duration-300 w-full max-w-[800px] lg:justify-self-end hover:scale-[1.02] hover:shadow-[0_0_70px_rgba(139,92,246,0.35)]">
+          <img src="/images/hero-medical.png" alt="Consultorio moderno" class="w-full h-auto rounded-lg block aspect-[16/10] object-cover" width={640} height={640} loading="eager" decoding="async" />
         </div>
       </div>
     </section>
 
-    <section class="section section-alt-health" aria-labelledby="problemas-title">
+    <section class="section bg-bg-2" aria-labelledby="problemas-title">
       <div class="container">
-        <div class="section-heading-health">
-          <p class="eyebrow-health">El Problema</p>
+        <div class="max-w-[800px] mb-16">
+          <p class="inline-flex items-center gap-2 text-[0.8rem] font-bold uppercase tracking-[0.1em] text-accent mb-6 before:w-2 before:h-2 before:rounded-full before:bg-accent before:shadow-[0_0_15px_#7360f8]">El Problema</p>
           <h2 id="problemas-title">¿Tu web actual parece un folleto viejo?</h2>
           <p>
             La autoridad digital en salud no se improvisa. Si tu presencia online no transmite confianza 
             desde el primer clic, estás perdiendo pacientes frente a clínicas que sí cuidan su imagen profesional.
           </p>
         </div>
-
-        <div class="problem-grid-health">
-          <article class="problem-card-health">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <article class="bg-bg-card border border-white/10 rounded p-8 transition-all duration-300">
             <h3>No apareces en búsquedas clave</h3>
             <p>
-              Si tu clínica no posiciona para términos como “dentista en [ciudad]” o
-              “dermatólogo cerca de mí”, estás perdiendo demanda activa cada semana.
+              Si tu clínica no posiciona para términos como "dentista en [ciudad]" o
+              "dermatólogo cerca de mí", estás perdiendo demanda activa cada semana.
             </p>
           </article>
-          <article class="problem-card-health">
+          <article class="bg-bg-card border border-white/10 rounded p-8 transition-all duration-300">
             <h3>Tu web no convierte</h3>
             <p>
               Muchas webs médicas informan, pero no guían al usuario hacia una acción clara:
               reservar, llamar o solicitar valoración.
             </p>
           </article>
-          <article class="problem-card-health">
+          <article class="bg-bg-card border border-white/10 rounded p-8 transition-all duration-300">
             <h3>Dependes demasiado de recomendaciones</h3>
             <p>
               Los referidos ayudan, pero no son una estrategia de crecimiento predecible para
               llenar agendas de forma consistente.
             </p>
           </article>
-          <article class="problem-card-health">
+          <article class="bg-bg-card border border-white/10 rounded p-8 transition-all duration-300">
             <h3>Tu competencia gana terreno local</h3>
             <p>
               Clínicas con mejor SEO local, mejores reseñas y páginas mejor estructuradas
@@ -81,8 +77,8 @@ import Footer from '../components/Footer.astro';
 
     <section class="section" aria-labelledby="autoridad-title">
       <div class="container">
-        <div class="section-heading-health">
-          <p class="eyebrow-health">Autoridad</p>
+        <div class="max-w-[800px] mb-16">
+          <p class="inline-flex items-center gap-2 text-[0.8rem] font-bold uppercase tracking-[0.1em] text-accent mb-6 before:w-2 before:h-2 before:rounded-full before:bg-accent before:shadow-[0_0_15px_#7360f8]">Autoridad</p>
           <h2 id="autoridad-title">Una propuesta creada para el contexto real del sector salud.</h2>
           <p>
             No aplicamos plantillas genéricas de marketing. Diseñamos estrategias para
@@ -90,23 +86,22 @@ import Footer from '../components/Footer.astro';
             digital que facilite la decisión del paciente.
           </p>
         </div>
-
-        <div class="authority-grid-health">
-          <article class="authority-card-health">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <article class="bg-bg-card border border-white/10 rounded p-8 transition-all duration-300">
             <h3>SEO para clínicas y especialidades</h3>
             <p>
               Arquitectura de contenidos, páginas de servicio, optimización local y estrategia
               enfocada en búsquedas con intención de cita.
             </p>
           </article>
-          <article class="authority-card-health">
+          <article class="bg-bg-card border border-white/10 rounded p-8 transition-all duration-300">
             <h3>Diseño web orientado a confianza</h3>
             <p>
               Estructuras claras, mensajes precisos, llamadas a la acción visibles y una
               experiencia que reduzca fricción para agendar.
             </p>
           </article>
-          <article class="authority-card-health">
+          <article class="bg-bg-card border border-white/10 rounded p-8 transition-all duration-300">
             <h3>CRO para convertir más visitas</h3>
             <p>
               Mejoramos formularios, jerarquía de información, pruebas sociales y rutas de
@@ -114,31 +109,29 @@ import Footer from '../components/Footer.astro';
             </p>
           </article>
         </div>
-
-        <div class="logos-strip-health" aria-label="Pruebas de confianza">
-          <span>Estrategia local</span>
-          <span>Optimización SEO</span>
-          <span>Mejora de conversión</span>
-          <span>Captación de pacientes</span>
-          <span>Web médica especializada</span>
+        <div class="flex justify-center items-center gap-12 flex-wrap opacity-70" aria-label="Pruebas de confianza">
+          <span class="font-bold text-gray-2 text-[1.2rem] border border-dashed border-white/10 px-8 py-4 rounded-[8px]">Estrategia local</span>
+          <span class="font-bold text-gray-2 text-[1.2rem] border border-dashed border-white/10 px-8 py-4 rounded-[8px]">Optimización SEO</span>
+          <span class="font-bold text-gray-2 text-[1.2rem] border border-dashed border-white/10 px-8 py-4 rounded-[8px]">Mejora de conversión</span>
+          <span class="font-bold text-gray-2 text-[1.2rem] border border-dashed border-white/10 px-8 py-4 rounded-[8px]">Captación de pacientes</span>
+          <span class="font-bold text-gray-2 text-[1.2rem] border border-dashed border-white/10 px-8 py-4 rounded-[8px]">Web médica especializada</span>
         </div>
       </div>
     </section>
 
-    <section class="section section-alt-health" id="servicios" aria-labelledby="servicios-title">
+    <section class="section bg-bg-2" id="servicios" aria-labelledby="servicios-title">
       <div class="container">
-        <div class="section-heading-health">
-          <p class="eyebrow-health">La Solución</p>
+        <div class="max-w-[800px] mb-16">
+          <p class="inline-flex items-center gap-2 text-[0.8rem] font-bold uppercase tracking-[0.1em] text-accent mb-6 before:w-2 before:h-2 before:rounded-full before:bg-accent before:shadow-[0_0_15px_#7360f8]">La Solución</p>
           <h2 id="servicios-title">Servicios que transforman tu presencia médica</h2>
           <p>
             No se trata solo de una web bonita, sino de una herramienta de captación diseñada 
             para el sector salud.
           </p>
         </div>
-
-        <div class="services-grid-health-main">
-          <article class="service-card-health-featured">
-            <div class="service-icon-health">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <article class="bg-bg-card border border-white/10 rounded-lg py-12 px-8 text-center transition-all duration-300 hover:border-accent hover:-translate-y-1 hover:shadow-accent">
+            <div class="mb-6 text-accent-light flex justify-center">
               <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
             </div>
             <h3>Diseño web con estándar médico (UX/UI)</h3>
@@ -147,9 +140,8 @@ import Footer from '../components/Footer.astro';
               intuitivas y totalmente optimizadas para dispositivos móviles.
             </p>
           </article>
-
-          <article class="service-card-health-featured">
-            <div class="service-icon-health">
+          <article class="bg-bg-card border border-white/10 rounded-lg py-12 px-8 text-center transition-all duration-300 hover:border-accent hover:-translate-y-1 hover:shadow-accent">
+            <div class="mb-6 text-accent-light flex justify-center">
               <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
             </div>
             <h3>SEO Local (Map Pack)</h3>
@@ -158,9 +150,8 @@ import Footer from '../components/Footer.astro';
               Dominamos el ecosistema de Google Maps para atraer pacientes locales.
             </p>
           </article>
-
-          <article class="service-card-health-featured">
-            <div class="service-icon-health">
+          <article class="bg-bg-card border border-white/10 rounded-lg py-12 px-8 text-center transition-all duration-300 hover:border-accent hover:-translate-y-1 hover:shadow-accent">
+            <div class="mb-6 text-accent-light flex justify-center">
               <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
             </div>
             <h3>Contenido experto</h3>
@@ -173,37 +164,34 @@ import Footer from '../components/Footer.astro';
       </div>
     </section>
 
-    <section class="section section-social-proof" aria-labelledby="proof-title">
+    <section class="section" aria-labelledby="proof-title">
       <div class="container">
-        <div class="section-heading-health centered">
-          <p class="eyebrow-health">Prueba Social</p>
+        <div class="max-w-[800px] mb-16 text-center mx-auto">
+          <p class="inline-flex items-center gap-2 text-[0.8rem] font-bold uppercase tracking-[0.1em] text-accent mb-6 before:w-2 before:h-2 before:rounded-full before:bg-accent before:shadow-[0_0_15px_#7360f8]">Prueba Social</p>
           <h2 id="proof-title">Confianza avalada por el sector</h2>
         </div>
-        
-        <div class="social-proof-grid">
-          <div class="social-proof-logos">
-            <!-- Simulated medical association logos -->
-            <div class="logo-placeholder">Asociación Médica</div>
-            <div class="logo-placeholder">Colegio de Médicos</div>
-            <div class="logo-placeholder">Certificación Salud 2024</div>
+        <div class="grid gap-16">
+          <div class="flex justify-center items-center gap-12 flex-wrap opacity-70" aria-label="Pruebas de confianza">
+            <div class="font-bold text-gray-2 text-[1.2rem] border border-dashed border-white/10 px-8 py-4 rounded-[8px]">Asociación Médica</div>
+            <div class="font-bold text-gray-2 text-[1.2rem] border border-dashed border-white/10 px-8 py-4 rounded-[8px]">Colegio de Médicos</div>
+            <div class="font-bold text-gray-2 text-[1.2rem] border border-dashed border-white/10 px-8 py-4 rounded-[8px]">Certificación Salud 2024</div>
           </div>
-          
-          <div class="testimonial-carousel" id="salud-carousel">
+          <div class="max-w-[800px] mx-auto mt-10 bg-bg-card border border-white/10 rounded-[24px] p-5 overflow-hidden relative w-full" id="salud-carousel">
             <div class="carousel-track" id="testimonial-track">
               <article class="testimonial-card active">
-                <p class="t-quote">“Profesionales que entienden las necesidades específicas de nosotros los especialistas.”</p>
-                <div class="t-author">Dr. Alejandro Ruiz — Dermatólogo</div>
+                <p class="text-[clamp(1.1rem,3vw,1.4rem)] italic mb-6 text-white leading-[1.5]">"Profesionales que entienden las necesidades específicas de nosotros los especialistas."</p>
+                <div class="text-[0.85rem] uppercase text-accent font-bold tracking-wider">Dr. Alejandro Ruiz — Dermatólogo</div>
               </article>
               <article class="testimonial-card">
-                <p class="t-quote">“Mi clínica duplicó las citas desde que renovamos la web con el enfoque SEO local.”</p>
-                <div class="t-author">Dra. Elena Martínez — Clínica Dental</div>
+                <p class="text-[clamp(1.1rem,3vw,1.4rem)] italic mb-6 text-white leading-[1.5]">"Mi clínica duplicó las citas desde que renovamos la web con el enfoque SEO local."</p>
+                <div class="text-[0.85rem] uppercase text-accent font-bold tracking-wider">Dra. Elena Martínez — Clínica Dental</div>
               </article>
               <article class="testimonial-card">
-                <p class="t-quote">“La autoridad digital que hemos construido nos ha permitido dejar de depender de referidos.”</p>
-                <div class="t-author">Dr. Roberto Silva — Cirujano Plástico</div>
+                <p class="text-[clamp(1.1rem,3vw,1.4rem)] italic mb-6 text-white leading-[1.5]">"La autoridad digital que hemos construido nos ha permitido dejar de depender de referidos."</p>
+                <div class="text-[0.85rem] uppercase text-accent font-bold tracking-wider">Dr. Roberto Silva — Cirujano Plástico</div>
               </article>
             </div>
-            <div class="carousel-nav" id="carousel-dots">
+            <div class="flex justify-center gap-2 mt-5 pb-[10px]" id="carousel-dots">
               <button class="dot active" aria-label="Slide 1"></button>
               <button class="dot" aria-label="Slide 2"></button>
               <button class="dot" aria-label="Slide 3"></button>
@@ -213,10 +201,10 @@ import Footer from '../components/Footer.astro';
       </div>
     </section>
 
-    <section class="section" id="casos" aria-labelledby="casos-title">
+    <section class="section bg-bg-2" id="casos" aria-labelledby="casos-title">
       <div class="container">
-        <div class="section-heading-health">
-          <p class="eyebrow-health">Casos de éxito</p>
+        <div class="max-w-[800px] mb-16">
+          <p class="inline-flex items-center gap-2 text-[0.8rem] font-bold uppercase tracking-[0.1em] text-accent mb-6 before:w-2 before:h-2 before:rounded-full before:bg-accent before:shadow-[0_0_15px_#7360f8]">Casos de éxito</p>
           <h2 id="casos-title">Mini casos enfocados en visibilidad, confianza y captación.</h2>
           <p>
             Ejemplos del tipo de mejoras que una clínica o consulta puede conseguir al trabajar una
@@ -224,9 +212,9 @@ import Footer from '../components/Footer.astro';
           </p>
         </div>
 
-        <div class="case-grid-health">
-          <article class="case-card-health featured-health">
-            <span class="case-tag-health">Clínica dental</span>
+        <div class="grid grid-cols-1 gap-6 mb-12 lg:grid-cols-[1.2fr_0.9fr_0.9fr]">
+          <article class="bg-bg-card border border-accent/10 rounded p-8 transition-all duration-300 bg-gradient-to-br from-bg-card to-bg-3">
+            <span class="inline-block px-3 py-1.5 bg-accent/10 text-accent-light rounded-full text-[0.75rem] font-bold mb-4 uppercase tracking-wider">Clínica dental</span>
             <h3>De una web informativa a una página que genera solicitudes de valoración</h3>
             <p>
               Se reorganizó la estructura de servicios, se optimizaron páginas para búsquedas
@@ -239,8 +227,8 @@ import Footer from '../components/Footer.astro';
             </ul>
           </article>
 
-          <article class="case-card-health">
-            <span class="case-tag-health">Consultorio médico</span>
+          <article class="bg-bg-card border border-white/10 rounded p-8 transition-all duration-300">
+            <span class="inline-block px-3 py-1.5 bg-accent/10 text-accent-light rounded-full text-[0.75rem] font-bold mb-4 uppercase tracking-wider">Consultorio médico</span>
             <h3>SEO local para captar pacientes de zonas cercanas</h3>
             <p>
               Ajuste de páginas por especialidad y ciudad, mejora del contenido clave y enfoque
@@ -248,8 +236,8 @@ import Footer from '../components/Footer.astro';
             </p>
           </article>
 
-          <article class="case-card-health">
-            <span class="case-tag-health">Clínica multiservicio</span>
+          <article class="bg-bg-card border border-white/10 rounded p-8 transition-all duration-300">
+            <span class="inline-block px-3 py-1.5 bg-accent/10 text-accent-light rounded-full text-[0.75rem] font-bold mb-4 uppercase tracking-wider">Clínica multiservicio</span>
             <h3>Arquitectura pensada para crecer sin canibalizar servicios</h3>
             <p>
               Reestructuración SEO y mejora de navegación para que cada servicio compita con una
@@ -258,25 +246,25 @@ import Footer from '../components/Footer.astro';
           </article>
         </div>
 
-        <div class="testimonials-health" aria-label="Testimonios">
-          <article class="testimonial-card-health">
+        <div class="grid grid-cols-1 gap-6 lg:grid-cols-3">
+          <article class="bg-bg-card border border-white/10 rounded p-8 transition-all duration-300">
             <p>
-              “Lo más valioso fue entender qué estaba frenando las conversiones. No era solo
-              tráfico: era estructura, confianza y claridad.”
+              "Lo más valioso fue entender qué estaba frenando las conversiones. No era solo
+              tráfico: era estructura, confianza y claridad."
             </p>
             <strong>Directora de clínica dental</strong>
           </article>
-          <article class="testimonial-card-health">
+          <article class="bg-bg-card border border-white/10 rounded p-8 transition-all duration-300">
             <p>
-              “La auditoría mostró oportunidades concretas para posicionarnos mejor en Google y
-              dejar de depender únicamente de recomendaciones.”
+              "La auditoría mostró oportunidades concretas para posicionarnos mejor en Google y
+              dejar de depender únicamente de recomendaciones."
             </p>
             <strong>Médico especialista</strong>
           </article>
-          <article class="testimonial-card-health">
+          <article class="bg-bg-card border border-white/10 rounded p-8 transition-all duration-300">
             <p>
-              “Por primera vez sentimos que la web estaba pensada para atraer pacientes, no solo
-              para verse bien.”
+              "Por primera vez sentimos que la web estaba pensada para atraer pacientes, no solo
+              para verse bien."
             </p>
             <strong>Gerencia de centro médico</strong>
           </article>
@@ -284,93 +272,93 @@ import Footer from '../components/Footer.astro';
       </div>
     </section>
 
-    <section class="section section-alt-health" aria-labelledby="leadmagnet-title">
-      <div class="container lead-magnet-health">
-        <div class="lead-copy-health">
-          <p class="eyebrow-health">Lead magnet</p>
+    <section class="section" aria-labelledby="leadmagnet-title">
+      <div class="container grid grid-cols-1 gap-16 items-start lg:grid-cols-2">
+        <div>
+          <p class="inline-flex items-center gap-2 text-[0.8rem] font-bold uppercase tracking-[0.1em] text-accent mb-6 before:w-2 before:h-2 before:rounded-full before:bg-accent before:shadow-[0_0_15px_#7360f8]">Lead magnet</p>
           <h2 id="leadmagnet-title">Checklist gratuita: 12 puntos para saber si tu clínica está perdiendo pacientes desde Google</h2>
           <p>
             Una guía práctica para detectar los errores más comunes en SEO local, diseño web y
             conversión que limitan la captación de pacientes.
           </p>
-          <ul class="check-list-health">
-            <li>Detecta fallos de visibilidad local</li>
-            <li>Evalúa si tu web transmite confianza clínica</li>
-            <li>Identifica barreras que frenan solicitudes de cita</li>
+          <ul class="list-none p-0 grid gap-4 mt-8">
+            <li class="relative pl-8 font-medium text-gray-1 before:content-['✓'] before:absolute before:left-0 before:text-accent before:font-black">Detecta fallos de visibilidad local</li>
+            <li class="relative pl-8 font-medium text-gray-1 before:content-['✓'] before:absolute before:left-0 before:text-accent before:font-black">Evalúa si tu web transmite confianza clínica</li>
+            <li class="relative pl-8 font-medium text-gray-1 before:content-['✓'] before:absolute before:left-0 before:text-accent before:font-black">Identifica barreras que frenan solicitudes de cita</li>
           </ul>
         </div>
 
-        <form class="lead-form-health" action="#" method="post" aria-label="Formulario para solicitar checklist">
-          <div class="form-row-health">
-            <label for="lead-nombre">Nombre</label>
-            <input id="lead-nombre" name="nombre" type="text" autocomplete="name" required />
+        <form class="bg-bg-card border border-white/10 rounded p-8 transition-all duration-300" action="#" method="post" aria-label="Formulario para solicitar checklist">
+          <div class="flex flex-col gap-2 mb-6">
+            <label class="text-sm font-bold uppercase text-gray-1 tracking-wider" for="lead-nombre">Nombre</label>
+            <input class="bg-bg-3 border border-white/10 text-white p-4 rounded-[8px] font-body transition-all duration-300 focus:outline-none focus:border-accent focus:shadow-[0_0_0_2px_rgba(115,96,248,0.1)]" id="lead-nombre" name="nombre" type="text" autocomplete="name" required />
           </div>
-          <div class="form-row-health">
-            <label for="lead-email">Email</label>
-            <input id="lead-email" name="email" type="email" autocomplete="email" required />
+          <div class="flex flex-col gap-2 mb-6">
+            <label class="text-sm font-bold uppercase text-gray-1 tracking-wider" for="lead-email">Email</label>
+            <input class="bg-bg-3 border border-white/10 text-white p-4 rounded-[8px] font-body transition-all duration-300 focus:outline-none focus:border-accent focus:shadow-[0_0_0_2px_rgba(115,96,248,0.1)]" id="lead-email" name="email" type="email" autocomplete="email" required />
           </div>
-          <div class="form-row-health">
-            <label for="lead-especialidad">Clínica o especialidad</label>
-            <input id="lead-especialidad" name="especialidad" type="text" required />
+          <div class="flex flex-col gap-2 mb-6">
+            <label class="text-sm font-bold uppercase text-gray-1 tracking-wider" for="lead-especialidad">Clínica o especialidad</label>
+            <input class="bg-bg-3 border border-white/10 text-white p-4 rounded-[8px] font-body transition-all duration-300 focus:outline-none focus:border-accent focus:shadow-[0_0_0_2px_rgba(115,96,248,0.1)]" id="lead-especialidad" name="especialidad" type="text" required />
           </div>
           <button class="btn btn-primary" type="submit">Quiero la checklist gratuita</button>
-          <p class="form-note-health">Al enviar este formulario, aceptas ser contactado para compartir la guía y una recomendación inicial.</p>
+          <p class="text-[0.8rem] text-gray-3 mt-4">Al enviar este formulario, aceptas ser contactado para compartir la guía y una recomendación inicial.</p>
         </form>
       </div>
     </section>
 
-    <section class="consultation-section section" aria-labelledby="consulta-title">
-      <div class="container consultation-grid-health">
-        <div class="consultation-copy-health">
-          <p class="eyebrow-health">Consultoría</p>
+    <section class="section bg-bg-2" aria-labelledby="consulta-title">
+      <div class="container grid grid-cols-1 gap-16 items-start lg:grid-cols-2">
+        <div>
+          <p class="inline-flex items-center gap-2 text-[0.8rem] font-bold uppercase tracking-[0.1em] text-accent mb-6 before:w-2 before:h-2 before:rounded-full before:bg-accent before:shadow-[0_0_15px_#7360f8]">Consultoría</p>
           <h2 id="consulta-title">Solicita una auditoría gratuita de tu presencia digital médica</h2>
           <p>
             Revisamos si tu clínica está bien posicionada, si tu web está preparada para convertir
             y qué oportunidades concretas existen para captar más pacientes.
           </p>
-          <div class="consultation-points-health">
-            <div>
+          <div class="grid gap-4 mt-8">
+            <div class="p-6 bg-bg-card border border-white/10 rounded">
               <strong>Qué revisamos</strong>
               <p>SEO actual, estructura web, autoridad percibida, CTAs y oportunidades de crecimiento local.</p>
             </div>
-            <div>
+            <div class="p-6 bg-bg-card border border-white/10 rounded">
               <strong>Qué recibes</strong>
               <p>Un diagnóstico inicial con hallazgos prioritarios y siguientes pasos recomendados.</p>
             </div>
           </div>
         </div>
 
-        <form class="qualification-form-health" id="formulario" action="#" method="post" novalidate>
+        <form class="bg-bg-card border border-white/10 rounded p-8 transition-all duration-300" id="formulario" action="#" method="post" novalidate>
           <h3>Quiero digitalizar mi consulta y atraer más pacientes</h3>
 
-          <div class="form-grid-health">
-            <div class="form-row-health">
-              <label for="nombre">Nombre</label>
-              <input id="nombre" name="nombre" type="text" autocomplete="name" required />
-              <span class="error-message" aria-live="polite"></span>
+          <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+            <div class="flex flex-col gap-2 mb-6">
+              <label class="text-sm font-bold uppercase text-gray-1 tracking-wider" for="nombre">Nombre</label>
+              <input class="bg-bg-3 border border-white/10 text-white p-4 rounded-[8px] font-body transition-all duration-300 focus:outline-none focus:border-accent focus:shadow-[0_0_0_2px_rgba(115,96,248,0.1)]" id="nombre" name="nombre" type="text" autocomplete="name" required />
+              <span class="text-[#ff4444] text-sm err" aria-live="polite"></span>
             </div>
 
-            <div class="form-row-health">
-              <label for="especialidad">Clínica o especialidad</label>
-              <input id="especialidad" name="especialidad" type="text" required />
-              <span class="error-message" aria-live="polite"></span>
+            <div class="flex flex-col gap-2 mb-6">
+              <label class="text-sm font-bold uppercase text-gray-1 tracking-wider" for="especialidad">Clínica o especialidad</label>
+              <input class="bg-bg-3 border border-white/10 text-white p-4 rounded-[8px] font-body transition-all duration-300 focus:outline-none focus:border-accent focus:shadow-[0_0_0_2px_rgba(115,96,248,0.1)]" id="especialidad" name="especialidad" type="text" required />
+              <span class="text-[#ff4444] text-sm err" aria-live="polite"></span>
             </div>
 
-            <div class="form-row-health">
-              <label for="ciudad">Ciudad</label>
-              <input id="ciudad" name="ciudad" type="text" autocomplete="address-level2" required />
-              <span class="error-message" aria-live="polite"></span>
+            <div class="flex flex-col gap-2 mb-6">
+              <label class="text-sm font-bold uppercase text-gray-1 tracking-wider" for="ciudad">Ciudad</label>
+              <input class="bg-bg-3 border border-white/10 text-white p-4 rounded-[8px] font-body transition-all duration-300 focus:outline-none focus:border-accent focus:shadow-[0_0_0_2px_rgba(115,96,248,0.1)]" id="ciudad" name="ciudad" type="text" autocomplete="address-level2" required />
+              <span class="text-[#ff4444] text-sm err" aria-live="polite"></span>
             </div>
 
-            <div class="form-row-health">
-              <label for="web">Sitio web actual</label>
-              <input id="web" name="web" type="url" placeholder="https://" />
-              <span class="error-message" aria-live="polite"></span>
+            <div class="flex flex-col gap-2 mb-6">
+              <label class="text-sm font-bold uppercase text-gray-1 tracking-wider" for="web">Sitio web actual</label>
+              <input class="bg-bg-3 border border-white/10 text-white p-4 rounded-[8px] font-body transition-all duration-300 focus:outline-none focus:border-accent focus:shadow-[0_0_0_2px_rgba(115,96,248,0.1)]" id="web" name="web" type="url" placeholder="https://" />
+              <span class="text-[#ff4444] text-sm err" aria-live="polite"></span>
             </div>
 
-            <div class="form-row-health form-row-full-health">
-              <label for="objetivo">Objetivo principal</label>
-              <select id="objetivo" name="objetivo" required>
+            <div class="flex flex-col gap-2 mb-6 md:col-span-2">
+              <label class="text-sm font-bold uppercase text-gray-1 tracking-wider" for="objetivo">Objetivo principal</label>
+              <select class="bg-bg-3 border border-white/10 text-white p-4 rounded-[8px] font-body transition-all duration-300 focus:outline-none focus:border-accent focus:shadow-[0_0_0_2px_rgba(115,96,248,0.1)]" id="objetivo" name="objetivo" required>
                 <option value="">Selecciona una opción</option>
                 <option>Atraer más pacientes</option>
                 <option>Mejorar posicionamiento en Google</option>
@@ -378,36 +366,36 @@ import Footer from '../components/Footer.astro';
                 <option>Reducir dependencia de referidos</option>
                 <option>Escalar presencia digital de la clínica</option>
               </select>
-              <span class="error-message" aria-live="polite"></span>
+              <span class="text-[#ff4444] text-sm err" aria-live="polite"></span>
             </div>
 
-            <div class="form-row-health">
-              <label for="email">Email</label>
-              <input id="email" name="email" type="email" autocomplete="email" required />
-              <span class="error-message" aria-live="polite"></span>
+            <div class="flex flex-col gap-2 mb-6">
+              <label class="text-sm font-bold uppercase text-gray-1 tracking-wider" for="email">Email</label>
+              <input class="bg-bg-3 border border-white/10 text-white p-4 rounded-[8px] font-body transition-all duration-300 focus:outline-none focus:border-accent focus:shadow-[0_0_0_2px_rgba(115,96,248,0.1)]" id="email" name="email" type="email" autocomplete="email" required />
+              <span class="text-[#ff4444] text-sm err" aria-live="polite"></span>
             </div>
 
-            <div class="form-row-health">
-              <label for="telefono">Teléfono (opcional)</label>
-              <input id="telefono" name="telefono" type="tel" autocomplete="tel" />
-              <span class="error-message" aria-live="polite"></span>
+            <div class="flex flex-col gap-2 mb-6">
+              <label class="text-sm font-bold uppercase text-gray-1 tracking-wider" for="telefono">Teléfono (opcional)</label>
+              <input class="bg-bg-3 border border-white/10 text-white p-4 rounded-[8px] font-body transition-all duration-300 focus:outline-none focus:border-accent focus:shadow-[0_0_0_2px_rgba(115,96,248,0.1)]" id="telefono" name="telefono" type="tel" autocomplete="tel" />
+              <span class="text-[#ff4444] text-sm err" aria-live="polite"></span>
             </div>
           </div>
 
           <button class="btn btn-primary btn-full" type="submit">Quiero digitalizar mi consulta ahora</button>
-          <p class="form-note-health">
+          <p class="text-[0.8rem] text-gray-3 mt-4">
             Respuesta orientativa para clínicas, médicos, dentistas y consultorios que buscan una
             estrategia digital especializada.
           </p>
-          <p class="form-success" role="status" aria-live="polite"></p>
+          <p class="text-accent-2 font-medium mt-4" role="status" aria-live="polite"></p>
         </form>
       </div>
     </section>
 
-    <section class="section section-alt-health" id="faq" aria-labelledby="faq-title">
+    <section class="section" id="faq" aria-labelledby="faq-title">
       <div class="container">
-        <div class="section-heading-health">
-          <p class="eyebrow-health">FAQ</p>
+        <div class="max-w-[800px] mb-16">
+          <p class="inline-flex items-center gap-2 text-[0.8rem] font-bold uppercase tracking-[0.1em] text-accent mb-6 before:w-2 before:h-2 before:rounded-full before:bg-accent before:shadow-[0_0_15px_#7360f8]">FAQ</p>
           <h2 id="faq-title">Preguntas frecuentes antes de solicitar una auditoría</h2>
           <p>
             Resolvemos dudas comunes sobre SEO para clínicas, diseño web médico y crecimiento
@@ -415,43 +403,43 @@ import Footer from '../components/Footer.astro';
           </p>
         </div>
 
-        <div class="faq-list-health">
-          <details class="faq-item-health">
-            <summary>¿Trabajan solo con clínicas grandes?</summary>
-            <p>
+        <div class="grid gap-4">
+          <details class="faq-item-health bg-bg-card border border-white/10 rounded px-6">
+            <summary class="list-none py-6 cursor-pointer font-bold text-white flex justify-between items-center">¿Trabajan solo con clínicas grandes?</summary>
+            <p class="pb-6 text-gray-2">
               No. La propuesta funciona tanto para clínicas consolidadas como para consultorios,
               especialistas y centros que quieren fortalecer su captación digital.
             </p>
           </details>
 
-          <details class="faq-item-health">
-            <summary>¿Qué diferencia hay entre SEO general y SEO para clínicas?</summary>
-            <p>
+          <details class="faq-item-health bg-bg-card border border-white/10 rounded px-6">
+            <summary class="list-none py-6 cursor-pointer font-bold text-white flex justify-between items-center">¿Qué diferencia hay entre SEO general y SEO para clínicas?</summary>
+            <p class="pb-6 text-gray-2">
               El contexto médico requiere una estructura más precisa: intención local, confianza,
               autoridad temática, especialidades, tratamientos y una conversión enfocada en cita o
               contacto.
             </p>
           </details>
 
-          <details class="faq-item-health">
-            <summary>¿Necesito rediseñar mi web para mejorar resultados?</summary>
-            <p>
+          <details class="faq-item-health bg-bg-card border border-white/10 rounded px-6">
+            <summary class="list-none py-6 cursor-pointer font-bold text-white flex justify-between items-center">¿Necesito rediseñar mi web para mejorar resultados?</summary>
+            <p class="pb-6 text-gray-2">
               No siempre. En algunos casos bastan mejoras de estructura, contenido y conversión. En
               otros, una web poco clara o lenta sí frena seriamente el rendimiento.
             </p>
           </details>
 
-          <details class="faq-item-health">
-            <summary>¿El SEO local realmente ayuda a conseguir más pacientes?</summary>
-            <p>
+          <details class="faq-item-health bg-bg-card border border-white/10 rounded px-6">
+            <summary class="list-none py-6 cursor-pointer font-bold text-white flex justify-between items-center">¿El SEO local realmente ayuda a conseguir más pacientes?</summary>
+            <p class="pb-6 text-gray-2">
               Sí. Cuando una clínica aparece mejor posicionada en búsquedas locales relevantes,
               incrementa su visibilidad ante personas con intención real de agendar.
             </p>
           </details>
 
-          <details class="faq-item-health">
-            <summary>¿Qué incluye la auditoría gratuita?</summary>
-            <p>
+          <details class="faq-item-health bg-bg-card border border-white/10 rounded px-6">
+            <summary class="list-none py-6 cursor-pointer font-bold text-white flex justify-between items-center">¿Qué incluye la auditoría gratuita?</summary>
+            <p class="pb-6 text-gray-2">
               Un análisis inicial de presencia en Google, estructura del sitio, oportunidades de
               captación y puntos de mejora para convertir mejor el tráfico actual.
             </p>
@@ -460,10 +448,10 @@ import Footer from '../components/Footer.astro';
       </div>
     </section>
 
-    <section class="section final-cta-health" aria-labelledby="cta-final-title">
-      <div class="container final-cta-box-health">
+    <section class="section" aria-labelledby="cta-final-title">
+      <div class="container bg-gradient-to-br from-accent to-accent-2 rounded-lg p-12 lg:p-16 grid grid-cols-1 gap-12 items-center text-white lg:grid-cols-[1fr_auto] lg:text-left">
         <div>
-          <p class="eyebrow-health white">Siguiente paso</p>
+          <p class="inline-flex items-center gap-2 text-[0.8rem] font-bold uppercase tracking-[0.1em] text-white mb-6 before:w-2 before:h-2 before:rounded-full before:bg-white">Siguiente paso</p>
           <h2 id="cta-final-title">Si tu clínica quiere crecer con una autoridad digital real, empecemos hoy mismo.</h2>
           <p>
             Descubre cómo podemos ayudarte a digitalizar tu consulta y atraer pacientes en automático.
@@ -477,511 +465,59 @@ import Footer from '../components/Footer.astro';
 </BaseLayout>
 
 <style>
-  /* Health-specific styles adapted for Site A (Dark Theme) */
-  .hero-section {
-    padding-top: 8rem;
-    background: var(--bg);
-  }
-
-  /* Specific H1 override for this page - making it smaller to allow room for a big image */
-  #health-focus h1 {
-    font-size: clamp(1.8rem, 4vw, 2.8rem);
-    line-height: 1.2;
-    margin-bottom: 2rem;
-    max-width: 18ch;
-  }
-
-  .hero-grid-health {
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 3rem;
-    align-items: center;
-  }
-
-  .hero-copy {
-    max-width: 500px;
-  }
-
-
-  .eyebrow-health {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin: 0 0 1.5rem;
-    color: var(--accent);
-    font-size: 0.8rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-  }
-
-  .eyebrow-health::before {
-    content: "";
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--accent);
-    box-shadow: 0 0 15px var(--accent);
-  }
-
-  .eyebrow-health.white {
-    color: var(--white);
-  }
-  .eyebrow-health.white::before {
-    background: var(--white);
-    box-shadow: none;
-  }
-
-  .hero-text-health {
-    font-size: 1.1rem;
-    color: var(--gray-2);
-    max-width: 60ch;
-    margin-bottom: 2.5rem;
-  }
-
-  .hero-actions-health {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 2rem;
-  }
-
-  .trust-list-health {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    color: var(--gray-1);
-    font-weight: 600;
-    font-size: 0.9rem;
-  }
-
-  .trust-list-health li {
-    position: relative;
-    padding-left: 1rem;
-  }
-
-  .trust-list-health li::before {
-    content: "•";
-    position: absolute;
-    left: 0;
-    color: var(--accent);
-  }
-
-  .hero-card-health, .problem-card-health, .authority-card-health, .service-card-health, .case-card-health, .testimonial-card-health, .metric-card-health, .lead-form-health, .qualification-form-health {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 2rem;
-    transition: var(--transition);
-  }
-
-  .hero-card-health {
-    display: grid;
-    gap: 1rem;
-    padding: 1.5rem;
-  }
-
-  .metric-card-health {
-    padding: 1rem 1.25rem;
-  }
-
-  .metric-label-health {
-    display: block;
-    color: var(--gray-2);
-    font-size: 0.8rem;
-    margin-bottom: 0.25rem;
-  }
-
-  .hero-note-health {
-    padding: 1rem 1.25rem;
-    background: var(--accent-glow);
-    border: 1px solid rgba(139, 92, 246, 0.2);
-    border-radius: var(--radius);
-    font-size: 0.9rem;
-    color: var(--gray-2);
-  }
-
-  .hero-image-health {
-    position: relative;
-    border-radius: var(--radius-lg);
-    border: 1px solid var(--border);
-    box-shadow: 0 0 50px rgba(139, 92, 246, 0.2);
-    transition: var(--transition);
-    width: 100%;
-    max-width: 800px; /* Allow it to grow much larger */
-    justify-self: end;
-  }
-
-  .hero-image-health:hover {
-    transform: scale(1.02);
-    box-shadow: 0 0 70px rgba(139, 92, 246, 0.35);
-  }
-
-  .hero-img-main {
-    width: 100%;
-    height: auto;
-    border-radius: var(--radius-lg);
-    display: block;
-    aspect-ratio: 16/10; /* Wider aspect ratio for better presence */
-    object-fit: cover;
-  }
-
-  /* Services Grid Main */
-  .services-grid-health-main {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-  }
-
-  .service-card-health-featured {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    padding: 3rem 2rem;
-    transition: var(--transition);
-    text-align: center;
-  }
-
-  .service-card-health-featured:hover {
-    border-color: var(--accent);
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-accent);
-  }
-
-  .service-icon-health {
-    margin-bottom: 1.5rem;
-    color: var(--accent-light);
-    display: flex;
-    justify-content: center;
-  }
-
-  /* Social Proof */
-  .section-social-proof {
-    background: var(--bg);
-  }
-
-  .section-heading-health.centered {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .social-proof-grid {
-    display: grid;
-    gap: 4rem;
-  }
-
-  .social-proof-logos {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 3rem;
-    flex-wrap: wrap;
-    opacity: 0.7;
-  }
-
-  .logo-placeholder {
-    font-weight: 700;
-    color: var(--gray-2);
-    font-size: 1.2rem;
-    border: 1px dashed var(--border);
-    padding: 1rem 2rem;
-    border-radius: 8px;
-  }
-
-  /* Testimonial Carousel Sync - Refined */
-  .testimonial-carousel {
-    max-width: 800px;
-    margin: 40px auto 0;
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 24px;
-    padding: 20px;
-    overflow: hidden;
-    position: relative;
-    width: 100%;
-  }
-  
   .carousel-track {
     display: flex !important;
     flex-direction: row !important;
     transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     width: 100%;
   }
-  
+
   .testimonial-card {
     min-width: 100%;
     flex: 0 0 100%;
     padding: 40px;
     text-align: center;
     opacity: 0;
-    transition: opacity 0.4s, transform 0.4s;
+    transition: opacity 0.4s;
     display: block;
   }
-  
+
   .testimonial-card.active {
     opacity: 1;
   }
-  
-  .t-quote {
-    font-size: clamp(1.1rem, 3vw, 1.4rem);
-    font-style: italic;
-    margin-bottom: 1.5rem;
-    color: var(--white);
-    line-height: 1.5;
-  }
-  
-  .t-author {
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    color: var(--accent);
-    font-weight: 700;
-    letter-spacing: 0.05em;
-  }
-  
-  .carousel-nav {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    margin-top: 20px;
-    padding-bottom: 10px;
-  }
-  
-  .dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--border);
-    border: none;
-    cursor: pointer;
-    transition: 0.3s;
-    padding: 0;
-  }
-  
+
   .dot.active {
-    background: var(--accent);
+    background: #7360f8;
     transform: scale(1.4);
-  }
-
-  .section-alt-health {
-    background: var(--bg-2);
-  }
-
-  .section-heading-health {
-    max-width: 800px;
-    margin-bottom: 4rem;
-  }
-
-  .problem-grid-health, .authority-grid-health, .services-grid-health {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-  }
-
-  .case-grid-health {
-    display: grid;
-    grid-template-columns: 1.2fr 0.9fr 0.9fr;
-    gap: 1.5rem;
-    margin-bottom: 3rem;
-  }
-
-  .featured-health {
-    background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-3) 100%);
-    border-color: var(--accent-glow);
-  }
-
-  .case-tag-health {
-    display: inline-block;
-    padding: 0.4rem 0.8rem;
-    background: var(--accent-glow);
-    color: var(--accent-light);
-    border-radius: 100px;
-    font-size: 0.75rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-
-  .testimonials-health {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-  }
-
-  .lead-magnet-health, .consultation-grid-health {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: start;
-  }
-
-  .check-list-health {
-    list-style: none;
-    padding: 0;
-    display: grid;
-    gap: 1rem;
-    margin-top: 2rem;
-  }
-
-  .check-list-health li {
-    position: relative;
-    padding-left: 2rem;
-    font-weight: 500;
-    color: var(--gray-1);
-  }
-
-  .check-list-health li::before {
-    content: "✓";
-    position: absolute;
-    left: 0;
-    color: var(--accent);
-    font-weight: 900;
-  }
-
-  .form-row-health {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .form-grid-health {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-  }
-
-  .form-row-full-health {
-    grid-column: 1 / -1;
-  }
-
-  input, select {
-    background: var(--bg-3);
-    border: 1px solid var(--border);
-    color: var(--white);
-    padding: 1rem;
-    border-radius: 8px;
-    font-family: inherit;
-    transition: var(--transition);
-  }
-
-  input:focus, select:focus {
-    outline: none;
-    border-color: var(--accent);
-    box-shadow: 0 0 0 2px var(--accent-glow);
-  }
-
-  .form-note-health {
-    font-size: 0.8rem;
-    color: var(--gray-3);
-    margin-top: 1rem;
-  }
-
-  .consultation-points-health {
-    display: grid;
-    gap: 1rem;
-    margin-top: 2rem;
-  }
-
-  .consultation-points-health > div {
-    padding: 1.5rem;
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-  }
-
-  .faq-list-health {
-    display: grid;
-    gap: 1rem;
-  }
-
-  .faq-item-health {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 0 1.5rem;
-  }
-
-  .faq-item-health summary {
-    list-style: none;
-    padding: 1.5rem 0;
-    cursor: pointer;
-    font-weight: 700;
-    color: var(--white);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
   }
 
   .faq-item-health summary::after {
     content: "+";
-    color: var(--accent);
+    color: #7360f8;
     font-size: 1.5rem;
   }
 
   .faq-item-health[open] summary::after {
     content: "−";
   }
-
-  .faq-item-health p {
-    padding-bottom: 1.5rem;
-    color: var(--gray-2);
-  }
-
-  .final-cta-box-health {
-    padding: 4rem;
-    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
-    border-radius: var(--radius-lg);
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 3rem;
-    align-items: center;
-    color: var(--white);
-  }
-
-  .final-cta-box-health h2, .final-cta-box-health p {
-    color: var(--white);
-  }
-
-  @media (max-width: 1024px) {
-    .hero-grid-health, .case-grid-health, .testimonials-health, .lead-magnet-health, .consultation-grid-health, .final-cta-box-health {
-      grid-template-columns: 1fr;
-    }
-    .final-cta-box-health {
-      text-align: center;
-      padding: 3rem 2rem;
-    }
-    .final-cta-box-health .btn {
-      justify-self: center;
-    }
-  }
-
-  @media (max-width: 768px) {
-    .form-grid-health {
-      grid-template-columns: 1fr;
-    }
-  }
 </style>
 
 <script is:inline>
-  // Form handling
   document.addEventListener('DOMContentLoaded', () => {
-    const qualificationForm = document.querySelector(".qualification-form-health");
+    const qualificationForm = document.querySelector("#formulario");
     
     if (qualificationForm) {
       qualificationForm.addEventListener("submit", (event) => {
         event.preventDefault();
 
         const fields = qualificationForm.querySelectorAll("input[required], select[required]");
-        const successMessage = qualificationForm.querySelector(".form-success");
+        const successMessage = qualificationForm.querySelector("[role='status']");
         let firstInvalidField = null;
         let isValid = true;
 
         fields.forEach((field) => {
-          const wrapper = field.closest(".form-row-health");
-          const errorElement = wrapper ? wrapper.querySelector(".error-message") : null;
+          const wrapper = field.closest(".flex-col");
+          const errorElement = wrapper ? wrapper.querySelector(".err") : null;
           let message = "";
 
           if (!field.value.trim()) {
@@ -998,7 +534,7 @@ import Footer from '../components/Footer.astro';
 
           if (message) {
             isValid = false;
-            field.style.borderColor = "var(--danger, #ff4444)";
+            field.style.borderColor = "#ff4444";
             if (errorElement) errorElement.textContent = message;
             if (!firstInvalidField) firstInvalidField = field;
           } else {
@@ -1020,7 +556,6 @@ import Footer from '../components/Footer.astro';
       });
     }
 
-    // Testimonial Carousel Logic (Synced with Pymes)
     const track = document.querySelector('#salud-carousel .carousel-track');
     if (track) {
       const slides = Array.from(track.children);
@@ -1042,7 +577,6 @@ import Footer from '../components/Footer.astro';
         dot.addEventListener('click', () => updateCarousel(index));
       });
 
-      // Auto-play
       setInterval(() => {
         let nextSlide = (currentSlide + 1) % slides.length;
         updateCarousel(nextSlide);

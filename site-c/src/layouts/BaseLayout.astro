@@ -1,14 +1,20 @@
 ---
 import '../styles/global.css';
+import { getClient } from '@emrg/shared/sanity/client';
+import { getSiteSettings } from '@emrg/shared/sanity/queries';
+import { generateOrganizationJsonLd } from '../lib/seo';
 
 interface Props {
 	title?: string;
 	description?: string;
 }
 
+const settings = await getSiteSettings(getClient());
+const siteOverride = settings.sites?.find(s => s.siteKey === 'site-c');
+
 const { 
-  title = "EMRG — Ecommerce Performance Studio", 
-  description = "EMRG — Founder-led ecommerce performance studio. We design the brand, build the store, and engineer the growth system." 
+  title = siteOverride?.title ?? settings.siteName, 
+  description = siteOverride?.description ?? settings.siteDescription
 } = Astro.props;
 ---
 
@@ -33,7 +39,7 @@ const {
 		<meta name="twitter:title" content={title}>
 		<meta name="twitter:description" content={description}>
 		
-		<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"EMRG","url":"https://emrg.studio","email":"hello@emrg.studio"}</script>
+		<script type="application/ld+json" set:html={JSON.stringify(generateOrganizationJsonLd(settings))} />
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Funnel+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">

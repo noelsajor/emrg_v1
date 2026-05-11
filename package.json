@@ -1,6 +1,7 @@
 {
   "name": "emrg-v1-root",
   "private": true,
+  "packageManager": "pnpm@10.28.2",
   "scripts": {
     "dev:studio": "npm run dev --prefix studio",
     "dev:site-a": "npm run dev --prefix site-a",
@@ -13,6 +14,7 @@
     "build:site-c": "npm run build --prefix site-c",
     "build:site-d": "npm run build --prefix site-d",
     "build:site-e": "npm run build --prefix site-e",
+    "build:all": "pnpm --filter site-a build && pnpm --filter site-b build && pnpm --filter site-c build && pnpm --filter site-d build && pnpm --filter site-e build",
     "preview:site-a": "npm run preview --prefix site-a",
     "preview:site-b": "npm run preview --prefix site-b",
     "preview:site-c": "npm run preview --prefix site-c",

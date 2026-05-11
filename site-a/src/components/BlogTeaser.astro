@@ -6,61 +6,26 @@ const posts = await getPosts();
 const featuredPosts = posts.slice(0, 3);
 ---
 
-<section id="blog-teaser" aria-labelledby="blog-teaser-heading">
+<section id="blog-teaser" class="py-[100px] bg-bg border-t border-gray-4 md:py-[60px]">
   <div class="container">
-    <div class="work-header">
+    <div class="flex items-end justify-between mb-16 gap-6 flex-wrap">
       <div>
-        <div class="section-label">Insights</div>
-        <h2 class="section-title" id="blog-teaser-heading">The Performance Journal</h2>
+        <div class="inline-flex items-center gap-2.5 text-[0.72rem] font-bold tracking-[0.14em] uppercase text-accent mb-5 before:w-5 before:h-px before:bg-accent">Insights</div>
+        <h2 class="section-title text-white text-[clamp(1.8rem,3.5vw,2.8rem)] font-extrabold tracking-tight leading-tight">The Performance Journal</h2>
       </div>
-      <a href="/blog" class="btn btn-outline">View All Articles</a>
+      <a href="/blog" class="inline-flex items-center gap-2 px-7 py-3.5 rounded-lg font-display text-sm font-semibold tracking-wider border cursor-pointer whitespace-nowrap transition-all duration-300 bg-transparent text-white border-border hover:border-accent hover:text-accent-light hover:bg-[rgba(115,96,248,0.15)] hover:-translate-y-px">View All Articles</a>
     </div>
 
-    <div class="blog-grid">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
       {featuredPosts.length > 0 ? (
         featuredPosts.map((post: any) => (
           <BlogCard post={post} />
         ))
       ) : (
-        <div class="blog-empty">
+        <div class="col-span-full text-center py-20 px-10 bg-bg-2 border border-dashed border-gray-3 rounded-xl text-gray-2">
           <p>New insights coming soon. Stay tuned.</p>
         </div>
       )}
     </div>
   </div>
 </section>
-
-<style>
-  #blog-teaser {
-    padding: 100px 0;
-    background: var(--bg);
-    border-top: 1px solid var(--gray-4);
-  }
-
-  .blog-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 32px;
-    margin-top: 48px;
-  }
-
-  .blog-empty {
-    grid-column: 1 / -1;
-    text-align: center;
-    padding: 80px 40px;
-    background: var(--bg-2);
-    border: 1px dashed var(--gray-3);
-    border-radius: 12px;
-    color: var(--gray-2);
-  }
-
-  @media (max-width: 768px) {
-    #blog-teaser {
-      padding: 60px 0;
-    }
-    
-    .blog-grid {
-      grid-template-columns: 1fr;
-    }
-  }
-</style>

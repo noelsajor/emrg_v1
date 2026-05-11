@@ -1,5 +1,8 @@
 ---
 import '../styles/global.css';
+import { getClient } from '@emrg/shared/sanity/client';
+import { getSiteSettings } from '@emrg/shared/sanity/queries';
+import { generateOrganizationJsonLd } from '../lib/seo';
 
 interface Props {
   title?: string;
@@ -7,10 +10,13 @@ interface Props {
   image?: string;
 }
 
+const settings = await getSiteSettings(getClient());
+const siteOverride = settings.sites?.find(s => s.siteKey === 'site-d');
+
 const { 
-  title = "EMRG — Ecommerce Performance Studio",
-  description = "EMRG — Founder-led ecommerce performance studio. We design the brand, build the store, and engineer the growth system.",
-  image = "/og-image.jpg"
+  title = siteOverride?.title ?? settings.siteName,
+  description = siteOverride?.description ?? settings.siteDescription,
+  image = siteOverride?.ogImage ?? settings.ogImage ?? '/og-image.jpg'
 } = Astro.props;
 ---
 
@@ -28,7 +34,7 @@ const {
   <meta property="og:image" content={new URL(image, Astro.site)} />
   <meta property="og:type" content="website" />
   
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"EMRG","url":"https://emrg.studio","email":"hello@emrg.studio"}</script>
+  <script type="application/ld+json" set:html={JSON.stringify(generateOrganizationJsonLd(settings))} />
   
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -45,7 +51,7 @@ const {
 
   <nav id="nav" aria-label="Main navigation" data-i18n-attr="aria-label:aria.main_nav">
     <a href="/" class="nav-logo" id="logo-link" data-i18n-attr="aria-label:aria.emrg_home">
-      <img src="/images/emrg-logo.png" alt="EMRG Logo" class="logo-img" />
+      <img src="/images/emrg-logo.png" alt="EMRG Logo" class="logo-img" width={300} height={61} loading="eager" decoding="async" />
     </a>
     <ul class="nav-links" id="nav-list">
       <!-- Generated dynamically -->
@@ -54,7 +60,7 @@ const {
       <button class="nav-menu-btn-imm" id="mobile-menu-btn-imm" aria-haspopup="true" aria-controls="mobile-menu-imm" data-i18n-attr="aria-label:aria.open_menu">
         <span data-i18n="nav.menu">Menu</span>
       </button>
-      <a href="https://calendly.com" class="nav-cta" data-i18n="nav.book_call">Book a Call</a>
+      <a href={settings.calendlyUrl ?? 'https://cal.com/emrg'} class="nav-cta" data-i18n="nav.book_call">Book a Call</a>
       <button class="lang-toggle-imm" id="lang-toggle-desktop" aria-label="Switch language" data-i18n-attr="aria-label:aria.switch_lang">EN</button>
     </div>
   </nav>

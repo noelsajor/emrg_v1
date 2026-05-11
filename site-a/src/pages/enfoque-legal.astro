@@ -6,66 +6,68 @@ import Footer from '../components/Footer.astro';
 
 <BaseLayout title="Enfoque Legal | EMRG" description="SEO y estrategias digitales para despachos de abogados y firmas legales. Construimos prestigio y captamos clientes cualificados.">
   <Nav />
-  <main id="legal-focus">
-    <section class="hero-section section">
-      <div class="container hero-grid-legal">
-        <div class="hero-copy">
-          <p class="eyebrow-legal">Sector Legal</p>
-          <h1>Tu despacho merece una presencia digital tan <em>sólida como tus argumentos</em>.</h1>
-          <p class="hero-text-legal">
-            Estrategias de SEO y contenidos para firmas que buscan liderar su sector. 
+  <main id="legal-focus" class="bg-bg text-text">
+    <section class="pt-32 min-h-[80vh] flex items-center bg-bg">
+      <div class="max-w-[1200px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <p class="inline-flex items-center gap-3 text-[0.8rem] font-bold uppercase tracking-[0.15em] text-accent mb-6 before:w-8 before:h-px before:bg-accent">Sector Legal</p>
+          <h1 style="font-size:clamp(2.5rem,5vw,3.8rem);line-height:1.1" class="mb-8 text-white">
+            Tu despacho merece una presencia digital tan <em class="text-accent-light">sólida como tus argumentos</em>.
+          </h1>
+          <p class="text-xl text-text-muted mb-12 max-w-[60ch]">
+            Estrategias de SEO y contenidos para firmas que buscan liderar su sector.
             Construimos la infraestructura digital que tu prestigio demanda.
           </p>
-          
-          <div class="hero-actions-legal">
-            <a class="btn btn-primary" href="#formulario">Solicitar auditoría gratuita</a>
-            <a class="btn btn-secondary" href="#servicios">Ver servicios</a>
+
+          <div class="flex gap-6 mb-12">
+            <a href="#formulario" class="inline-flex items-center justify-center bg-accent text-white px-8 py-4 rounded font-bold text-sm uppercase tracking-wider hover:bg-accent/90 transition duration-300">Solicitar auditoría gratuita</a>
+            <a href="#servicios" class="inline-flex items-center justify-center border border-white/10 text-white px-8 py-4 rounded font-bold text-sm uppercase tracking-wider hover:border-accent transition duration-300">Ver servicios</a>
           </div>
 
-          <ul class="trust-list-legal" aria-label="Indicadores de confianza">
+          <ul class="flex gap-8 text-sm text-text-muted list-none" aria-label="Indicadores de confianza">
             <li>Especialización en firmas legales</li>
             <li>Enfoque en autoridad y prestigio</li>
             <li>Marketing ético y profesional</li>
           </ul>
         </div>
 
-        <div class="hero-image-legal">
-          <img src="/images/hero-legal.png" alt="Despacho legal profesional" class="hero-img-main" />
+        <div class="rounded-lg overflow-hidden border border-white/10 shadow-accent order-[-1] lg:order-none">
+          <img src="/images/hero-legal.png" alt="Despacho legal profesional" class="w-full h-auto block aspect-video lg:aspect-[4/5] object-cover" width={640} height={640} loading="eager" decoding="async" />
         </div>
       </div>
     </section>
 
-    <section class="section section-alt-legal" aria-labelledby="propuesta-title">
-      <div class="container">
-        <div class="section-heading-legal">
-          <p class="eyebrow-legal">Propuesta de Valor</p>
-          <h2 id="propuesta-title">No solo hacemos webs, <em>construimos prestigio</em>.</h2>
-          <p>
-            En el sector legal, la reputación es el activo más valioso. Nuestra metodología se centra en 
-            servicios personalizados y una gestión de reputación que posiciona a tu firma como la 
+    <section class="py-24 bg-bg-2" aria-labelledby="propuesta-title">
+      <div class="max-w-[1200px] mx-auto px-6">
+        <div class="mb-16 max-w-[800px]">
+          <p class="inline-flex items-center gap-3 text-[0.8rem] font-bold uppercase tracking-[0.15em] text-accent mb-6 before:w-8 before:h-px before:bg-accent">Propuesta de Valor</p>
+          <h2 id="propuesta-title" style="font-size:clamp(2rem,4.5vw,3rem)" class="mb-6">No solo hacemos webs, <em class="text-accent-light">construimos prestigio</em>.</h2>
+          <p class="text-lg text-text-muted leading-relaxed">
+            En el sector legal, la reputación es el activo más valioso. Nuestra metodología se centra en
+            servicios personalizados y una gestión de reputación que posiciona a tu firma como la
             referencia indiscutible en su área de práctica.
           </p>
         </div>
 
-        <div class="problem-grid-legal">
-          <article class="problem-card-legal">
-            <h3>Arquitectura de Especialidad</h3>
-            <p>
-              Estructuramos tu sitio para reflejar la profundidad de tus servicios (Penal, Mercantil, Familia) 
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <article class="bg-bg-card p-12 rounded border border-white/10 transition-all duration-300 hover:border-accent hover:-translate-y-1">
+            <h3 class="text-[1.4rem] mb-4 text-white">Arquitectura de Especialidad</h3>
+            <p class="text-text-muted leading-relaxed">
+              Estructuramos tu sitio para reflejar la profundidad de tus servicios (Penal, Mercantil, Familia)
               facilitando que el cliente ideal te encuentre.
             </p>
           </article>
-          <article class="problem-card-legal">
-            <h3>Reputación Digital</h3>
-            <p>
-              Gestionamos la percepción de tu firma en entornos críticos, asegurando que tu 
+          <article class="bg-bg-card p-12 rounded border border-white/10 transition-all duration-300 hover:border-accent hover:-translate-y-1">
+            <h3 class="text-[1.4rem] mb-4 text-white">Reputación Digital</h3>
+            <p class="text-text-muted leading-relaxed">
+              Gestionamos la percepción de tu firma en entornos críticos, asegurando que tu
               autoridad offline se traduzca perfectamente al mundo online.
             </p>
           </article>
-          <article class="problem-card-legal">
-            <h3>Captación Cualificada</h3>
-            <p>
-              No buscamos clics vacíos. Diseñamos estrategias para atraer potenciales clientes que 
+          <article class="bg-bg-card p-12 rounded border border-white/10 transition-all duration-300 hover:border-accent hover:-translate-y-1">
+            <h3 class="text-[1.4rem] mb-4 text-white">Captación Cualificada</h3>
+            <p class="text-text-muted leading-relaxed">
+              No buscamos clics vacíos. Diseñamos estrategias para atraer potenciales clientes que
               valoran la excelencia y la especialización.
             </p>
           </article>
@@ -73,90 +75,90 @@ import Footer from '../components/Footer.astro';
       </div>
     </section>
 
-    <section class="section" aria-labelledby="autoridad-title">
-      <div class="container">
-        <div class="section-heading-legal centered">
-          <p class="eyebrow-legal">Autoridad Sectorial</p>
-          <h2 id="autoridad-title">Expertos en marketing para <em>expertos en leyes</em>.</h2>
-          <p>
-            Entendemos el lenguaje, la ética y las dinámicas del sector legal. No aplicamos 
+    <section class="py-24" aria-labelledby="autoridad-title">
+      <div class="max-w-[1200px] mx-auto px-6">
+        <div class="mb-16 max-w-[800px] text-center mx-auto">
+          <p class="inline-flex items-center gap-3 text-[0.8rem] font-bold uppercase tracking-[0.15em] text-accent mb-6 before:w-8 before:h-px before:bg-accent">Autoridad Sectorial</p>
+          <h2 id="autoridad-title" style="font-size:clamp(2rem,4.5vw,3rem)" class="mb-6">Expertos en marketing para <em class="text-accent-light">expertos en leyes</em>.</h2>
+          <p class="text-lg text-text-muted leading-relaxed">
+            Entendemos el lenguaje, la ética y las dinámicas del sector legal. No aplicamos
             estrategias genéricas; creamos sistemas de crecimiento que respetan la solemnidad de tu profesión.
           </p>
         </div>
 
-        <div class="authority-grid-legal">
-          <div class="authority-stat">
-            <span class="stat-num">+15</span>
-            <span class="stat-label">Firmas asesoradas</span>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-8">
+          <div class="text-center p-12 border border-white/10 rounded">
+            <span class="block text-[3.5rem] font-bold text-accent-light mb-2">+15</span>
+            <span class="uppercase tracking-[0.1em] text-[0.8rem] text-text-muted">Firmas asesoradas</span>
           </div>
-          <div class="authority-stat">
-            <span class="stat-num">Premium</span>
-            <span class="stat-label">Posicionamiento</span>
+          <div class="text-center p-12 border border-white/10 rounded">
+            <span class="block text-[3.5rem] font-bold text-accent-light mb-2">Premium</span>
+            <span class="uppercase tracking-[0.1em] text-[0.8rem] text-text-muted">Posicionamiento</span>
           </div>
-          <div class="authority-stat">
-            <span class="stat-num">LinkedIn</span>
-            <span class="stat-label">Estrategia líder</span>
+          <div class="text-center p-12 border border-white/10 rounded">
+            <span class="block text-[3.5rem] font-bold text-accent-light mb-2">LinkedIn</span>
+            <span class="uppercase tracking-[0.1em] text-[0.8rem] text-text-muted">Estrategia líder</span>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section section-alt-legal" id="servicios" aria-labelledby="servicios-title">
-      <div class="container">
-        <div class="section-heading-legal">
-          <p class="eyebrow-legal">Servicios destacados</p>
-          <h2 id="servicios-title">Estrategias a la medida de tu firma.</h2>
+    <section class="py-24 bg-bg-2" id="servicios" aria-labelledby="servicios-title">
+      <div class="max-w-[1200px] mx-auto px-6">
+        <div class="mb-16 max-w-[800px]">
+          <p class="inline-flex items-center gap-3 text-[0.8rem] font-bold uppercase tracking-[0.15em] text-accent mb-6 before:w-8 before:h-px before:bg-accent">Servicios destacados</p>
+          <h2 id="servicios-title" style="font-size:clamp(2rem,4.5vw,3rem)" class="mb-6">Estrategias a la medida de tu firma.</h2>
         </div>
 
-        <div class="services-grid-legal">
-          <article class="service-card-legal">
-            <div class="service-icon-legal">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <article class="bg-bg-card p-12 rounded-lg border border-white/10">
+            <div class="text-accent mb-6">
               <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
             </div>
-            <h3>Arquitectura Web Legal</h3>
-            <p>Diseño enfocado en áreas de práctica específicas: Penal, Mercantil, Familia. Navegación intuitiva que transmite rigor y profesionalismo.</p>
+            <h3 class="text-[1.5rem] mb-4">Arquitectura Web Legal</h3>
+            <p class="text-text-muted leading-relaxed">Diseño enfocado en áreas de práctica específicas: Penal, Mercantil, Familia. Navegación intuitiva que transmite rigor y profesionalismo.</p>
           </article>
 
-          <article class="service-card-legal">
-            <div class="service-icon-legal">
+          <article class="bg-bg-card p-12 rounded-lg border border-white/10">
+            <div class="text-accent mb-6">
               <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
             </div>
-            <h3>Gestión de Redes Profesionales</h3>
-            <p>Estrategia en LinkedIn e Instagram con tono institucional. Construimos tu red de contactos y reforzamos el liderazgo de opinión de tus socios.</p>
+            <h3 class="text-[1.5rem] mb-4">Gestión de Redes Profesionales</h3>
+            <p class="text-text-muted leading-relaxed">Estrategia en LinkedIn e Instagram con tono institucional. Construimos tu red de contactos y reforzamos el liderazgo de opinión de tus socios.</p>
           </article>
 
-          <article class="service-card-legal">
-            <div class="service-icon-legal">
+          <article class="bg-bg-card p-12 rounded-lg border border-white/10">
+            <div class="text-accent mb-6">
               <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             </div>
-            <h3>Email Marketing de Fidelización</h3>
-            <p>Mantenemos a tu firma en el "top of mind" de tus clientes actuales y antiguos a través de contenidos informativos y de valor legal.</p>
+            <h3 class="text-[1.5rem] mb-4">Email Marketing de Fidelización</h3>
+            <p class="text-text-muted leading-relaxed">Mantenemos a tu firma en el "top of mind" de tus clientes actuales y antiguos a través de contenidos informativos y de valor legal.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section" id="formulario" aria-labelledby="form-title">
-      <div class="container">
-        <div class="form-container-legal">
-          <div class="form-header-legal">
-            <h2 id="form-title">Solicita una auditoría gratuita para tu firma legal</h2>
-            <p>Analizamos tu presencia digital actual y te entregamos una hoja de ruta para mejorar tu prestigio y captación.</p>
+    <section class="py-24" id="formulario" aria-labelledby="form-title">
+      <div class="max-w-[1200px] mx-auto px-6">
+        <div class="max-w-[800px] mx-auto p-8 lg:p-16 bg-bg-card rounded-lg border border-white/10 shadow-card">
+          <div class="text-center mb-12">
+            <h2 id="form-title" class="text-[2.2rem] mb-4">Solicita una auditoría gratuita para tu firma legal</h2>
+            <p class="text-text-muted">Analizamos tu presencia digital actual y te entregamos una hoja de ruta para mejorar tu prestigio y captación.</p>
           </div>
-          
-          <form class="legal-contact-form" id="contact-form">
-            <div class="form-grid-legal">
-              <div class="form-group">
-                <input type="text" name="nombre" placeholder="Nombre completo" required />
+
+          <form id="contact-form">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+              <div>
+                <input type="text" name="nombre" placeholder="Nombre completo" required class="bg-bg-3 border border-white/10 text-white p-5 rounded font-body transition-all duration-300 focus:outline-none focus:border-accent focus:bg-bg-2 w-full" />
               </div>
-              <div class="form-group">
-                <input type="text" name="firma" placeholder="Nombre de la Firma / Despacho" required />
+              <div>
+                <input type="text" name="firma" placeholder="Nombre de la Firma / Despacho" required class="bg-bg-3 border border-white/10 text-white p-5 rounded font-body transition-all duration-300 focus:outline-none focus:border-accent focus:bg-bg-2 w-full" />
               </div>
-              <div class="form-group">
-                <input type="email" name="email" placeholder="Email corporativo" required />
+              <div>
+                <input type="email" name="email" placeholder="Email corporativo" required class="bg-bg-3 border border-white/10 text-white p-5 rounded font-body transition-all duration-300 focus:outline-none focus:border-accent focus:bg-bg-2 w-full" />
               </div>
-              <div class="form-group">
-                <select name="especialidad" required>
+              <div>
+                <select name="especialidad" required class="bg-bg-3 border border-white/10 text-white p-5 rounded font-body transition-all duration-300 focus:outline-none focus:border-accent focus:bg-bg-2 w-full">
                   <option value="">Especialidad principal</option>
                   <option>Derecho Penal</option>
                   <option>Derecho Mercantil / Corporativo</option>
@@ -166,8 +168,8 @@ import Footer from '../components/Footer.astro';
                 </select>
               </div>
             </div>
-            <button type="submit" class="btn btn-primary btn-full">Enviar solicitud de auditoría</button>
-            <p class="form-status-legal" id="form-status"></p>
+            <button type="submit" class="w-full p-5 text-lg inline-flex items-center justify-center bg-accent text-white rounded font-bold hover:bg-accent/90 transition duration-300">Enviar solicitud de auditoría</button>
+            <p class="text-center mt-6 font-medium text-accent-light" id="form-status"></p>
           </form>
         </div>
       </div>
@@ -175,288 +177,6 @@ import Footer from '../components/Footer.astro';
   </main>
   <Footer />
 </BaseLayout>
-
-<style>
-  /* Legal focus specific styles for Site A (Dark Theme) */
-  #legal-focus {
-    background: var(--bg);
-    color: var(--text);
-  }
-
-  .hero-section {
-    padding-top: 8rem;
-    min-height: 80vh;
-    display: flex;
-    align-items: center;
-  }
-
-  .hero-grid-legal {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
-  }
-
-  .eyebrow-legal {
-    color: var(--accent);
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    font-size: 0.8rem;
-    margin-bottom: 1.5rem;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-  }
-
-  .eyebrow-legal::before {
-    content: "";
-    width: 32px;
-    height: 1px;
-    background: var(--accent);
-  }
-
-  h1 {
-    font-size: clamp(2.5rem, 5vw, 3.8rem);
-    line-height: 1.1;
-    margin-bottom: 2rem;
-  }
-
-  h1 em {
-    font-style: italic;
-    color: var(--accent-light);
-  }
-
-  .hero-text-legal {
-    font-size: 1.25rem;
-    color: var(--text-muted);
-    margin-bottom: 3rem;
-    max-width: 60ch;
-  }
-
-  .hero-actions-legal {
-    display: flex;
-    gap: 1.5rem;
-    margin-bottom: 3rem;
-  }
-
-  .trust-list-legal {
-    list-style: none;
-    display: flex;
-    gap: 2rem;
-    font-size: 0.9rem;
-    color: var(--text-muted);
-  }
-
-  .hero-image-legal {
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    border: 1px solid var(--border);
-    box-shadow: var(--shadow-accent);
-  }
-
-  .hero-img-main {
-    width: 100%;
-    height: auto;
-    display: block;
-    aspect-ratio: 4/5;
-    object-fit: cover;
-  }
-
-  /* Section Alt */
-  .section-alt-legal {
-    background: var(--bg-2);
-  }
-
-  .section-heading-legal {
-    margin-bottom: 4rem;
-    max-width: 800px;
-  }
-
-  .section-heading-legal.centered {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .section-heading-legal h2 {
-    font-size: clamp(2rem, 4.5vw, 3rem);
-    margin-bottom: 1.5rem;
-  }
-
-  .section-heading-legal p {
-    font-size: 1.15rem;
-    color: var(--text-muted);
-    line-height: 1.7;
-  }
-
-  /* Problem/Value Cards */
-  .problem-grid-legal {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-  }
-
-  .problem-card-legal {
-    background: var(--bg-card);
-    padding: 3rem;
-    border-radius: var(--radius);
-    border: 1px solid var(--border);
-    transition: var(--transition);
-  }
-
-  .problem-card-legal:hover {
-    border-color: var(--accent);
-    transform: translateY(-5px);
-  }
-
-  .problem-card-legal h3 {
-    font-size: 1.4rem;
-    margin-bottom: 1rem;
-    color: var(--white);
-  }
-
-  .problem-card-legal p {
-    color: var(--text-muted);
-    line-height: 1.6;
-  }
-
-  /* Authority Stats */
-  .authority-grid-legal {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    margin-top: 2rem;
-  }
-
-  .authority-stat {
-    text-align: center;
-    padding: 3rem;
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-  }
-
-  .stat-num {
-    display: block;
-    font-size: 3.5rem;
-    font-weight: 700;
-    color: var(--accent-light);
-    margin-bottom: 0.5rem;
-  }
-
-  .stat-label {
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    font-size: 0.8rem;
-    color: var(--text-muted);
-  }
-
-  /* Services */
-  .services-grid-legal {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-  }
-
-  .service-card-legal {
-    background: var(--bg-card);
-    padding: 3rem;
-    border-radius: var(--radius-lg);
-    border: 1px solid var(--border);
-  }
-
-  .service-icon-legal {
-    color: var(--accent);
-    margin-bottom: 1.5rem;
-  }
-
-  .service-card-legal h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-  }
-
-  .service-card-legal p {
-    color: var(--text-muted);
-    line-height: 1.6;
-  }
-
-  /* Form Section */
-  .form-container-legal {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 4rem;
-    background: var(--bg-card);
-    border-radius: var(--radius-lg);
-    border: 1px solid var(--border);
-    box-shadow: var(--shadow);
-  }
-
-  .form-header-legal {
-    text-align: center;
-    margin-bottom: 3rem;
-  }
-
-  .form-header-legal h2 {
-    font-size: 2.2rem;
-    margin-bottom: 1rem;
-  }
-
-  .form-grid-legal {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-    margin-bottom: 2rem;
-  }
-
-  input, select {
-    width: 100%;
-    padding: 1.25rem;
-    background: var(--bg-3);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    color: var(--white);
-    font-family: inherit;
-    transition: var(--transition);
-  }
-
-  input:focus, select:focus {
-    outline: none;
-    border-color: var(--accent);
-    background: var(--bg-2);
-  }
-
-  .btn-full {
-    width: 100%;
-    padding: 1.25rem;
-    font-size: 1.1rem;
-  }
-
-  .form-status-legal {
-    text-align: center;
-    margin-top: 1.5rem;
-    font-weight: 500;
-    color: var(--accent-light);
-  }
-
-  @media (max-width: 1024px) {
-    .hero-grid-legal, .problem-grid-legal, .services-grid-legal, .authority-grid-legal {
-      grid-template-columns: 1fr;
-      gap: 2rem;
-    }
-    .hero-image-legal {
-      order: -1;
-    }
-    .hero-img-main {
-      aspect-ratio: 16/9;
-    }
-    .form-grid-legal {
-      grid-template-columns: 1fr;
-    }
-    .form-container-legal {
-      padding: 2rem;
-    }
-  }
-</style>
 
 <script is:inline>
   document.addEventListener('DOMContentLoaded', () => {

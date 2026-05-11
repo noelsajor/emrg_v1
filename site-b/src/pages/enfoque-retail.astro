@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Nav from '../components/Nav.astro';
-import Footer from '../components/Footer.astro';
+import Nav from '@emrg/shared/components/Nav.astro';
+import Footer from '@emrg/shared/components/Footer.astro';
 ---
 
 <BaseLayout title="Enfoque Retail y Mayoristas | EMRG" description="Gestión integral de marketing digital para negocios que venden en grande. Infraestructura e-commerce y SEO de alto rendimiento.">
@@ -28,7 +28,7 @@ import Footer from '../components/Footer.astro';
         </div>
         
         <div class="hero-right sr sr-d1">
-          <img src="/images/hero-retail.png" alt="Retail Growth" class="hero-img-b" />
+          <img src="/images/hero-retail.png" alt="Retail Growth" class="hero-img-b" width={640} height={640} loading="eager" decoding="async" />
           <div class="hero-deco">01</div>
           <div class="hero-stat-block">
             <div class="hero-stat-eyebrow">Objetivo</div>

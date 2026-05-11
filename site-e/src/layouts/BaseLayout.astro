@@ -1,6 +1,9 @@
 ---
 import '../styles/global.css';
 import i18nData from '../data/i18n.json';
+import { getClient } from '@emrg/shared/sanity/client';
+import { getSiteSettings } from '@emrg/shared/sanity/queries';
+import { generateOrganizationJsonLd } from '@emrg/shared/seo';
 
 interface Props {
   title?: string;
@@ -9,9 +12,12 @@ interface Props {
   ogDescription?: string;
 }
 
+const settings = await getSiteSettings(getClient());
+const siteOverride = settings.sites?.find(s => s.siteKey === 'site-e');
+
 const { 
-  title = "EMRG — Unleash your vision", 
-  description = "EMRG is a modern performance studio. We design the brand, build the store, and engineer the growth system for DTC product brands.",
+  title = siteOverride?.title ?? settings.siteName, 
+  description = siteOverride?.description ?? settings.siteDescription,
   ogTitle,
   ogDescription
 } = Astro.props;
@@ -32,20 +38,9 @@ const {
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://emrg.studio">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300;400;700;800&display=swap" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@800,500,700,400,900&f[]=satoshi@700,500,300,400,900&display=swap" rel="stylesheet">
     
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "EMRG",
-      "url": "https://emrg.studio",
-      "description": "Founder-led ecommerce performance studio.",
-      "email": "hello@emrg.studio"
-    }
-    </script>
+    <script type="application/ld+json" set:html={JSON.stringify(generateOrganizationJsonLd(settings))} />
 </head>
 <body>
     <slot />

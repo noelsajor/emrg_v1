@@ -5,6 +5,7 @@ import BlogCard from '../../components/BlogCard.astro';
 import { generateSchemaMarkup, generateBreadcrumbSchema } from '../../lib/seo';
 import { client, urlFor } from '../../lib/sanity.client';
 import { postBySlugQuery } from '../../lib/sanity.queries';
+import { formatBlogDate } from '@emrg/shared';
 
 export async function getStaticPaths() {
   const posts = await client.fetch(`*[_type == "post" && defined(slug.current)]{ "slug": slug.current }`);
@@ -50,7 +51,7 @@ const breadcrumbs = generateBreadcrumbSchema([
 
       {post.mainImage && (
         <div style="margin-bottom: 64px; border: 1px solid var(--rim); border-radius: 12px; overflow: hidden; background: var(--deep); box-shadow: 0 20px 40px rgba(0,0,0,0.4);">
-          <img src={urlFor(post.mainImage).url()} alt={post.title} style="width: 100%; height: auto; display: block;" />
+          <img src={urlFor(post.mainImage).url()} alt={post.title} width={1200} height={675} loading="eager" decoding="async" style="width: 100%; height: auto; display: block;" />
         </div>
       )}
       
@@ -63,7 +64,7 @@ const breadcrumbs = generateBreadcrumbSchema([
           </div>
         </div>
         <div style="font-size: 0.65rem; color: var(--mist); text-transform: uppercase;">
-          Published {new Date(post.publishedAt).toLocaleDateString()}
+          Published {formatBlogDate(post.publishedAt)}
         </div>
       </div>
 
@@ -78,7 +79,7 @@ const breadcrumbs = generateBreadcrumbSchema([
           if (block._type === 'image') {
             return (
               <figure style="margin: 48px 0; border: 1px solid var(--rim); border-radius: 8px; overflow: hidden; background: var(--deep);">
-                <img src={urlFor(block).url()} alt={block.alt || ""} style="width: 100%; height: auto; display: block;" />
+                <img src={urlFor(block).url()} alt={block.alt || ""} width={1200} height={675} loading="lazy" decoding="async" style="width: 100%; height: auto; display: block;" />
                 {block.caption && <figcaption style="padding: 16px; font-size: 0.8rem; color: var(--mist); text-align: center; border-top: 1px solid var(--rim);">{block.caption}</figcaption>}
               </figure>
             );

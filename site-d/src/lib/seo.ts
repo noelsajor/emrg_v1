@@ -1,3 +1,5 @@
+import type { SiteSettings } from '@emrg/shared';
+
 export interface SeoProps {
     title: string;
     description: string;
@@ -45,5 +47,24 @@ export function generateBreadcrumbSchema(items: { name: string; item: string }[]
             "name": item.name,
             "item": item.item
         }))
+    };
+}
+
+export function generateOrganizationJsonLd(settings?: SiteSettings) {
+    const name = settings?.siteName || "EMRG";
+    const logo = settings?.logo || "https://emrg.studio/logo.png";
+    const email = settings?.contactEmail || "hello@emrg.studio";
+
+    return {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": name,
+        "url": "https://emrg.studio",
+        "logo": logo,
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "email": email,
+            "contactType": "customer service"
+        }
     };
 }

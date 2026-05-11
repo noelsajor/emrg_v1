@@ -1,4 +1,14 @@
 ---
+import type { SiteSettings } from '@emrg/shared';
+import { getClient, getSiteSettings } from '@emrg/shared';
+
+export interface Props {
+  settings?: SiteSettings;
+}
+
+const { settings: _settings } = Astro.props;
+const settings = _settings ?? await getSiteSettings(getClient());
+const calendlyUrl = settings.calendlyUrl ?? 'https://cal.com/emrg';
 ---
 
 <section id="scene-0" class="scene active" data-i18n-attr="aria-label:hero.eyebrow">
@@ -10,7 +20,7 @@
     End-to-end ecommerce execution — brand identity, store engineering, and growth infrastructure for DTC brands built to win.
   </p>
   <div class="hero-cta-row">
-    <a href="https://calendly.com" class="btn-primary-imm" data-i18n="hero.cta_book">Book a 15-min Call →</a>
+    <a href={calendlyUrl} class="btn-primary-imm" data-i18n="hero.cta_book">Book a 15-min Call →</a>
     <button class="btn-outline-imm" onclick="goToScene(3)" data-i18n="hero.cta_work">View Work</button>
   </div>
   <div class="hero-chips">

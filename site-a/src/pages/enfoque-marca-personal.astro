@@ -7,138 +7,136 @@ import CtaSection from '../components/CtaSection.astro';
 
 <BaseLayout title="Enfoque Marca Personal | EMRG" description="SEO, Contenidos y Estrategia Digital para quienes no se conforman con lo básico. Convierte tu web en un imán de leads.">
   <Nav />
-  
-  <main id="personal-focus">
-    <section class="hero-section section">
-      <div class="container hero-grid-personal">
-        <div class="hero-copy">
-          <div class="eyebrow-personal">Personal Branding</div>
-          <h1>¿Tu web solo la ves tú? <span class="highlight">Vamos a cambiar eso.</span></h1>
-          <p class="hero-text-personal">SEO, Contenidos y Estrategia Digital para quienes no se conforman con lo básico. Construimos el sistema que te posiciona como el referente de tu sector.</p>
-          <div class="hero-actions-personal">
+
+  <main id="personal-focus" class="bg-bg text-white">
+    <section class="py-24 bg-bg">
+      <div class="max-w-[1200px] mx-auto px-8 grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-16 items-center">
+        <div>
+          <p class="inline-flex items-center gap-2 text-[0.8rem] font-bold uppercase tracking-[0.1em] text-accent mb-6 before:w-2 before:h-2 before:rounded-full before:bg-accent before:shadow-[0_0_15px_#7360f8]">Personal Branding</p>
+          <h1 class="text-[clamp(1.8rem,4.5vw,3rem)] leading-tight mb-8 max-w-[20ch] tracking-tight text-white">¿Tu web solo la ves tú? <span class="text-accent">Vamos a cambiar eso.</span></h1>
+          <p class="text-[1.1rem] text-gray-2 max-w-[50ch] mb-12 leading-relaxed">SEO, Contenidos y Estrategia Digital para quienes no se conforman con lo básico. Construimos el sistema que te posiciona como el referente de tu sector.</p>
+          <div class="flex gap-5">
             <a href="#contacto" class="btn btn-primary">Diseñar mi Estrategia</a>
             <a href="#comparativa" class="btn btn-secondary">Web vs. Imán de Leads</a>
           </div>
         </div>
-        <div class="hero-image-personal">
-          <img src="/images/hero-branding.png" alt="High-Authority Personal Brand Identity" class="hero-img-main" />
+        <div class="relative rounded-lg border border-white/10 shadow-[0_0_50px_rgba(139,92,246,0.15)] w-full lg:order-[-1]">
+          <img src="/images/hero-branding.png" alt="High-Authority Personal Brand Identity" class="w-full h-auto rounded-lg block object-cover" width={640} height={640} loading="eager" decoding="async" />
         </div>
       </div>
     </section>
 
-    <section id="comparativa" class="section section-alt-personal">
-       <div class="container">
-          <h2 class="section-title centered">El "Antes y Después"</h2>
-          <div class="comparison-grid">
-             <div class="comparison-card before">
-                <div class="card-label">Antes: Web "Tarjeta"</div>
-                <ul class="comparison-list">
-                   <li>Invisibilidad en buscadores</li>
-                   <li>Estética genérica sin alma</li>
-                   <li>Sin llamadas a la acción claras</li>
-                   <li>Carga lenta y no optimizada</li>
-                   <li>Un gasto, no una inversión</li>
-                </ul>
-             </div>
-             <div class="comparison-card after">
-                <div class="card-label highlight">Después: Imán de Leads</div>
-                <ul class="comparison-list">
-                   <li>Dominio de palabras clave clave</li>
-                   <li>Diseño que inspira autoridad</li>
-                   <li>Rutas de conversión optimizadas</li>
-                   <li>Velocidad extrema en móviles</li>
-                   <li>Un generador de negocio 24/7</li>
-                </ul>
-             </div>
+    <section id="comparativa" class="py-24 bg-bg-2">
+      <div class="max-w-[1200px] mx-auto px-8">
+        <h2 class="text-[clamp(2rem,3.5vw,3.2rem)] mb-10 leading-tight tracking-tighter text-center">El "Antes y Después"</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+          <div class="bg-bg-card border border-white/10 p-12 rounded-lg">
+            <div class="text-xl font-extrabold mb-8 uppercase tracking-wider">Antes: Web "Tarjeta"</div>
+            <ul class="list-none p-0 grid gap-5">
+              <li class="pl-7 relative text-gray-2 before:content-['→'] before:absolute before:left-0 before:text-accent">Invisibilidad en buscadores</li>
+              <li class="pl-7 relative text-gray-2 before:content-['→'] before:absolute before:left-0 before:text-accent">Estética genérica sin alma</li>
+              <li class="pl-7 relative text-gray-2 before:content-['→'] before:absolute before:left-0 before:text-accent">Sin llamadas a la acción claras</li>
+              <li class="pl-7 relative text-gray-2 before:content-['→'] before:absolute before:left-0 before:text-accent">Carga lenta y no optimizada</li>
+              <li class="pl-7 relative text-gray-2 before:content-['→'] before:absolute before:left-0 before:text-accent">Un gasto, no una inversión</li>
+            </ul>
           </div>
-       </div>
+          <div class="bg-bg-card border border-accent p-12 rounded-lg bg-[rgba(115,96,248,0.03)]">
+            <div class="text-xl font-extrabold mb-8 uppercase tracking-wider text-accent">Después: Imán de Leads</div>
+            <ul class="list-none p-0 grid gap-5">
+              <li class="pl-7 relative text-white before:content-['→'] before:absolute before:left-0 before:text-accent">Dominio de palabras clave clave</li>
+              <li class="pl-7 relative text-white before:content-['→'] before:absolute before:left-0 before:text-accent">Diseño que inspira autoridad</li>
+              <li class="pl-7 relative text-white before:content-['→'] before:absolute before:left-0 before:text-accent">Rutas de conversión optimizadas</li>
+              <li class="pl-7 relative text-white before:content-['→'] before:absolute before:left-0 before:text-accent">Velocidad extrema en móviles</li>
+              <li class="pl-7 relative text-white before:content-['→'] before:absolute before:left-0 before:text-accent">Un generador de negocio 24/7</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section id="servicios" class="section">
-      <div class="container">
-        <h2 class="section-title">Servicios <span class="accent">Detallados.</span></h2>
-        <div class="services-grid-personal">
-          <div class="service-personal-card">
-            <div class="service-icon">
+    <section id="servicios" class="py-24">
+      <div class="max-w-[1200px] mx-auto px-8">
+        <h2 class="text-[clamp(2rem,3.5vw,3.2rem)] mb-10 leading-tight tracking-tighter">Servicios <span class="text-accent-light">Detallados.</span></h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-bg-card border border-white/10 p-12 rounded-lg transition-all duration-300 hover:border-accent hover:-translate-y-1">
+            <div class="text-accent mb-6">
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
             </div>
-            <h3>Auditoría SEO profunda</h3>
+            <h3 class="text-[1.6rem] mb-4 text-white">Auditoría SEO profunda</h3>
             <p>Analizamos cada rincón de tu presencia actual para encontrar fugas de autoridad y oportunidades de tráfico.</p>
           </div>
-          <div class="service-personal-card">
-            <div class="service-icon">
+          <div class="bg-bg-card border border-white/10 p-12 rounded-lg transition-all duration-300 hover:border-accent hover:-translate-y-1">
+            <div class="text-accent mb-6">
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
             </div>
-            <h3>Web optimizada</h3>
+            <h3 class="text-[1.6rem] mb-4 text-white">Web optimizada</h3>
             <p>Desarrollo enfocado en velocidad y dispositivos móviles, asegurando una experiencia de usuario premium.</p>
           </div>
-          <div class="service-personal-card">
-            <div class="service-icon">
+          <div class="bg-bg-card border border-white/10 p-12 rounded-lg transition-all duration-300 hover:border-accent hover:-translate-y-1">
+            <div class="text-accent mb-6">
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
             </div>
-            <h3>Blog Corporativo</h3>
+            <h3 class="text-[1.6rem] mb-4 text-white">Blog Corporativo</h3>
             <p>Estrategia de contenidos basada en palabras clave para atraerte clientes mientras duermes.</p>
           </div>
-          <div class="service-personal-card">
-            <div class="service-icon">
+          <div class="bg-bg-card border border-white/10 p-12 rounded-lg transition-all duration-300 hover:border-accent hover:-translate-y-1">
+            <div class="text-accent mb-6">
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
             </div>
-            <h3>Propósito Comercial</h3>
+            <h3 class="text-[1.6rem] mb-4 text-white">Propósito Comercial</h3>
             <p>Gestión de redes sociales que no solo buscan "likes", sino que convierten seguidores en compradores.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section section-alt-personal">
-      <div class="container">
-        <div class="grid-split-personal">
-          <div class="text-block">
-            <h2 class="section-title">Por qué <span class="accent">Nosotros.</span></h2>
+    <section class="py-24 bg-bg-2">
+      <div class="max-w-[1200px] mx-auto px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-24 items-center">
+          <div>
+            <h2 class="text-[clamp(2rem,3.5vw,3.2rem)] mb-10 leading-tight tracking-tighter">Por qué <span class="text-accent-light">Nosotros.</span></h2>
             <p>No somos una agencia más. Entendemos que tu marca es tu activo más valioso.</p>
-            <div class="visual-quote-personal">
-              <blockquote>
-                "Somos tu equipo de marketing externo, pero con tu misma pasión."
-              </blockquote>
-            </div>
+            <blockquote class="text-[2.2rem] leading-tight italic mt-12 text-accent-light">
+              "Somos tu equipo de marketing externo, pero con tu misma pasión."
+            </blockquote>
           </div>
-          <div class="contact-info-personal">
-            <h2 class="section-title">Hablemos de tu <span class="highlight">Propósito.</span></h2>
+          <div>
+            <h2 class="text-[clamp(2rem,3.5vw,3.2rem)] mb-10 leading-tight tracking-tighter">Hablemos de tu <span class="text-accent">Propósito.</span></h2>
             <p>Cuéntanos sobre tu proyecto y diseñamos tu estrategia integral hoy mismo.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="contacto" class="section">
-      <div class="container">
-        <form class="qualification-form-personal personal-form" id="formulario">
-          <div class="form-grid-personal">
-            <div class="input-group">
-               <label>Tu Nombre</label>
-               <input type="text" placeholder="Ej. Juan Pérez" required />
+    <section id="contacto" class="py-24">
+      <div class="max-w-[1200px] mx-auto px-8">
+        <form class="personal-form max-w-[800px] mx-auto bg-bg-card p-16 border border-white/10 rounded-lg lg:p-10" id="formulario">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            <div class="flex flex-col gap-2 mb-6">
+              <label class="text-[0.85rem] font-bold uppercase text-gray-1 tracking-wider">Tu Nombre</label>
+              <input type="text" placeholder="Ej. Juan Pérez" class="bg-black/20 border border-white/10 p-[1.1rem] text-white font-body w-full rounded-sm text-[0.95rem] focus:outline-none focus:border-accent" required />
             </div>
-            <div class="input-group">
-               <label>Tu Profesión</label>
-               <input type="text" placeholder="Ej. Consultor de Negocios" required />
+            <div class="flex flex-col gap-2 mb-6">
+              <label class="text-[0.85rem] font-bold uppercase text-gray-1 tracking-wider">Tu Profesión</label>
+              <input type="text" placeholder="Ej. Consultor de Negocios" class="bg-black/20 border border-white/10 p-[1.1rem] text-white font-body w-full rounded-sm text-[0.95rem] focus:outline-none focus:border-accent" required />
             </div>
           </div>
-          <div class="input-group">
-             <label>Cuéntanos tu proyecto</label>
-             <textarea placeholder="¿Cuál es tu meta principal para este año?" required></textarea>
+          <div class="flex flex-col gap-2 mb-6">
+            <label class="text-[0.85rem] font-bold uppercase text-gray-1 tracking-wider">Cuéntanos tu proyecto</label>
+            <textarea placeholder="¿Cuál es tu meta principal para este año?" class="bg-black/20 border border-white/10 p-[1.1rem] text-white font-body w-full rounded-sm text-[0.95rem] focus:outline-none focus:border-accent h-[120px] resize-none" required></textarea>
           </div>
-          <div class="form-grid-personal">
-             <div class="input-group">
-                <label>Email</label>
-                <input type="email" placeholder="hola@tuempresa.com" required />
-             </div>
-             <div class="input-group">
-                <label>WhatsApp</label>
-                <input type="tel" placeholder="+34 600 000 000" required />
-             </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            <div class="flex flex-col gap-2 mb-6">
+              <label class="text-[0.85rem] font-bold uppercase text-gray-1 tracking-wider">Email</label>
+              <input type="email" placeholder="hola@tuempresa.com" class="bg-black/20 border border-white/10 p-[1.1rem] text-white font-body w-full rounded-sm text-[0.95rem] focus:outline-none focus:border-accent" required />
+            </div>
+            <div class="flex flex-col gap-2 mb-6">
+              <label class="text-[0.85rem] font-bold uppercase text-gray-1 tracking-wider">WhatsApp</label>
+              <input type="tel" placeholder="+34 600 000 000" class="bg-black/20 border border-white/10 p-[1.1rem] text-white font-body w-full rounded-sm text-[0.95rem] focus:outline-none focus:border-accent" required />
+            </div>
           </div>
-          <button type="submit" class="btn btn-primary btn-full">Cuéntanos sobre tu proyecto</button>
-          <p class="success-msg" style="display:none; margin-top: 1.5rem; text-align: center; color: var(--accent);">¡Recibido! Diseñaremos tu estrategia personalizada y te contactaremos en breve.</p>
+          <button type="submit" class="btn btn-primary w-full mt-4">Cuéntanos sobre tu proyecto</button>
+          <p class="success-msg hidden mt-6 text-center text-accent">¡Recibido! Diseñaremos tu estrategia personalizada y te contactaremos en breve.</p>
         </form>
       </div>
     </section>
@@ -147,282 +145,6 @@ import CtaSection from '../components/CtaSection.astro';
   <CtaSection />
   <Footer />
 </BaseLayout>
-
-<style>
-  #personal-focus {
-    background: var(--bg);
-    color: #fff;
-  }
-
-  .hero-section {
-    padding-top: 10rem;
-    padding-bottom: 5rem;
-  }
-
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-  }
-
-  .section {
-    padding: 100px 0;
-  }
-
-  .section-alt-personal {
-    background: var(--bg-2);
-  }
-
-  .highlight {
-    color: var(--accent);
-  }
-
-  .accent {
-    color: var(--accent-light);
-  }
-
-  .centered {
-    text-align: center;
-  }
-
-  /* Typography */
-  #personal-focus h1 {
-    font-size: clamp(1.8rem, 4.5vw, 3rem);
-    line-height: 1.1;
-    margin-bottom: 2rem;
-    max-width: 20ch;
-    letter-spacing: -0.02em;
-  }
-
-  .section-title {
-    font-size: clamp(2rem, 3.5vw, 3.2rem);
-    margin-bottom: 2.5rem;
-    line-height: 1.1;
-    letter-spacing: -0.03em;
-  }
-
-  /* Components */
-  .eyebrow-personal {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin: 0 0 1.5rem;
-    color: var(--accent);
-    font-size: 0.8rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-  }
-
-  .eyebrow-personal::before {
-    content: "";
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--accent);
-    box-shadow: 0 0 15px var(--accent);
-  }
-
-  .hero-text-personal {
-    font-size: 1.1rem;
-    color: var(--gray-2);
-    max-width: 50ch;
-    margin-bottom: 3rem;
-    line-height: 1.6;
-  }
-
-  /* Grid Layouts */
-  .hero-grid-personal {
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 4rem;
-    align-items: center;
-  }
-
-  .hero-image-personal {
-    position: relative;
-    border-radius: var(--radius-lg);
-    border: 1px solid var(--border);
-    box-shadow: 0 0 50px rgba(139, 92, 246, 0.15);
-    width: 100%;
-  }
-
-  .hero-img-main {
-    width: 100%;
-    height: auto;
-    border-radius: var(--radius-lg);
-    display: block;
-    object-fit: cover;
-  }
-
-  .hero-actions-personal {
-    display: flex;
-    gap: 1.25rem;
-  }
-
-  /* Comparison Grid */
-  .comparison-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    margin-top: 3rem;
-  }
-
-  .comparison-card {
-    padding: 3rem;
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    transition: 0.3s;
-  }
-
-  .comparison-card.after {
-    border-color: var(--accent);
-    background: rgba(139, 92, 246, 0.03);
-  }
-
-  .card-label {
-    font-size: 1.25rem;
-    font-weight: 800;
-    margin-bottom: 2rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-
-  .comparison-list {
-    list-style: none;
-    padding: 0;
-    display: grid;
-    gap: 1.25rem;
-  }
-
-  .comparison-list li {
-    padding-left: 1.75rem;
-    position: relative;
-    color: var(--gray-2);
-  }
-
-  .comparison-list li::before {
-    content: "→";
-    position: absolute;
-    left: 0;
-    color: var(--accent);
-  }
-
-  .after .comparison-list li {
-    color: var(--white);
-  }
-
-  /* Services Grid */
-  .services-grid-personal {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-  }
-
-  .service-personal-card {
-     padding: 3rem;
-     background: var(--bg-card);
-     border: 1px solid var(--border);
-     border-radius: var(--radius-lg);
-     transition: 0.3s;
-  }
-
-  .service-personal-card:hover {
-    border-color: var(--accent);
-    transform: translateY(-5px);
-  }
-
-  .service-icon {
-    color: var(--accent);
-    margin-bottom: 1.5rem;
-  }
-
-  .service-personal-card h3 {
-    font-size: 1.6rem;
-    margin-bottom: 1rem;
-    color: var(--white);
-  }
-
-  /* Split Visual */
-  .grid-split-personal {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 6rem;
-    align-items: center;
-  }
-
-  .visual-quote-personal {
-     font-size: 2.2rem;
-     line-height: 1.2;
-     font-style: italic;
-     margin-top: 3rem;
-     color: var(--accent-light);
-  }
-
-  /* Form */
-  .qualification-form-personal {
-    max-width: 800px;
-    margin: 0 auto;
-    background: var(--bg-card);
-    padding: 4rem;
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-  }
-
-  .form-grid-personal {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    margin-bottom: 2rem;
-  }
-
-  .input-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .input-group label {
-    font-size: 0.85rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: var(--gray-1);
-    letter-spacing: 0.05em;
-  }
-
-  input, textarea {
-    background: rgba(0,0,0,0.2);
-    border: 1px solid var(--border);
-    padding: 1.1rem;
-    color: #fff;
-    font-family: inherit;
-    width: 100%;
-    border-radius: 4px;
-    font-size: 0.95rem;
-  }
-
-  textarea {
-    height: 120px;
-    resize: none;
-  }
-
-  .btn-full {
-    width: 100%;
-    margin-top: 1rem;
-  }
-
-  /* Responsive */
-  @media (max-width: 1024px) {
-    .hero-grid-personal, .comparison-grid, .services-grid-personal, .grid-split-personal, .form-grid-personal {
-      grid-template-columns: 1fr;
-    }
-    .hero-image-personal { order: -1; }
-    #personal-focus h1 { font-size: 2.5rem; }
-    .qualification-form-personal { padding: 2.5rem; }
-  }
-</style>
 
 <script is:inline>
   document.addEventListener('DOMContentLoaded', () => {
