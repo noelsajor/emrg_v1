@@ -20,15 +20,16 @@ jobs:
           cache: 'npm'
           cache-dependency-path: ${{ matrix.site }}/package-lock.json
 
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
       - name: Install dependencies
-        working-directory: ${{ matrix.site }}
-        run: npm ci
+        run: pnpm install --filter ${{ matrix.site }}
 
       - name: Type check
-        working-directory: ${{ matrix.site }}
         continue-on-error: true
-        run: npx astro check 2>&1 || echo "Type check skipped (astro check not available)"
+        run: pnpm --filter ${{ matrix.site }} astro check 2>&1 || echo "Type check skipped"
 
       - name: Build
-        working-directory: ${{ matrix.site }}
-        run: npm run build
+        run: pnpm --filter ${{ matrix.site }} build
